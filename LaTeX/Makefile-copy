@@ -4,7 +4,14 @@ targets = UNIT1-Introduction.pdf UNIT2-Statistical-Learning.pdf UNIT3-MC-Methods
 
 targets = UNIT1-Introduction.pdf 
 
+
 all: $(targets)
+$(targets): %.pdf: %.tex
+	lualatex $<
+
+clean:
+	rm -f *.{bcf,run.xml,pro,aux,nav,out,log,idx,ind,ilg,toc,bbl,blg,tdo,lot,lof,glo,snm}
 
 cleanpdf:
-	rm -f $(targets)
+	rm -f ${targets}
+
