@@ -12,5 +12,3 @@ This is a jupyter book that contains the main contents of a course on `Data Scie
 ```{tableofcontents}
 ```
 
-```{tableofcontents}
-```
