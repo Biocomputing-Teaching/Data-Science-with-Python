@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>&lt;no title&gt; &#8212; Data Science with Python Jupyter book</title>
+    <title>UNIT 6. Statistical Learning &#8212; Data Science with Python Jupyter book</title>
   
   
   
@@ -64,8 +64,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'code/UNIT6-Regularization-and-Kernel-Methods';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="&lt;no title&gt;" href="UNIT7-Classification.html" />
-    <link rel="prev" title="&lt;no title&gt;" href="UNIT5-Regression.html" />
+    <link rel="next" title="UNIT 7. Classification" href="UNIT7-Classification.html" />
+    <link rel="prev" title="UNIT 5. Regression" href="UNIT5-Regression.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -156,9 +156,17 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../README.html">Data-Science-with-Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="UNIT1-Introduction.html">UNIT 1. Import and Visualitzation of data with Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UNIT2-Statistical-Learning.html">UNIT 2. Statistical Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UNIT3-MC-Methods.html">UNIT 3. Monte Carlo methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UNIT4-Unsupervised-Learning.html">UNIT 4. Unsupervised Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UNIT5-Regression.html">UNIT 5. Regression</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">UNIT 6. Statistical Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UNIT7-Classification.html">UNIT 7. Classification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UNIT8-Decision-Trees.html">UNIT 8. Decision Tres</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UNIT9-Neural-Networks.html">UNIT 9. Neural Networks</a></li>
 </ul>
 
     </div>
@@ -329,9 +337,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -342,19 +348,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><no title></h1>
+    <h1>UNIT 6. Statistical Learning</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -364,23 +362,10 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># UNIT 6. Statistical Learning
-
-This Unit includes main introduction to regularization and kernel methods, strongly based in {cite:p}`kroese2020`.
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  Cell In[1], line 3
-    This Unit includes main introduction to regularization and kernel methods, strongly based in {cite:p}`kroese2020`.
-         ^
-SyntaxError: invalid syntax
-</pre></div>
-</div>
-</div>
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="unit-6-statistical-learning">
+<h1>UNIT 6. Statistical Learning<a class="headerlink" href="#unit-6-statistical-learning" title="Permalink to this heading">#</a></h1>
+<p>This Unit includes main introduction to regularization and kernel methods, strongly based in <span id="id1">[]</span>.</p>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -419,7 +404,7 @@ SyntaxError: invalid syntax
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">&lt;no title&gt;</p>
+        <p class="prev-next-title">UNIT 5. Regression</p>
       </div>
     </a>
     <a class="right-next"
@@ -427,7 +412,7 @@ SyntaxError: invalid syntax
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">&lt;no title&gt;</p>
+        <p class="prev-next-title">UNIT 7. Classification</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -440,20 +425,6 @@ SyntaxError: invalid syntax
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-  </nav></div>
-
-</div></div>
               
             
           </div>
