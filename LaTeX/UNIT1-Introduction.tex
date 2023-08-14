@@ -24,18 +24,18 @@
 %	 TITLE PAGE
 %----------------------------------------------------------------------------------------
 
-\title[Vectors]{Sistemes de coordenades i espais vectorials: introducció als vectors} % The short title appears at the bottom of every slide, the full title is only on the title page
+\title[Introduction]{Improting, summarizing and visualizing data} % The short title appears at the bottom of every slide, the full title is only on the title page
 
 \author{Jordi Villà i Freixa} % Your name
 \institute[FCTE] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
 {
 Universitat de Vic - Universitat Central de Catalunya \\
-Grau en Multimèdia. Aplicacions i Videojocs\\ % Your institution for the title page
+Study Abroad\\ % Your institution for the title page
 \medskip
 \textit{jordi.villa@uvic.cat} % Your email address
 }
 %\date{\today} % Date, can be changed to a custom date
-\date{curs 2022-2023}
+\date{ccourse 2023-2024}
 \logo{\includegraphics[width=.1\textwidth]{FCTE}}
 \begin{document}
 
@@ -52,58 +52,38 @@ Grau en Multimèdia. Aplicacions i Videojocs\\ % Your institution for the title 
 %	PRESENTATION SLIDES
 %----------------------------------------------------------------------------------------
 
+\begin{frame}
+  \frametitle{Introduction to the course}
+  The material in these slides is strongly based on \cite{kroese2020}. When other materials are going to be used, they will be cited accordingly.
+  \end{frame}
+
 %------------------------------------------------
-\section{Els nombres reals} % Sections can be created in order to organize your presentation into discrete blocks, all sections and subsections are automatically printed in the table of contents as an overview of the talk
+\section{Dealing with data} % Sections can be created in order to organize your presentation into discrete blocks, all sections and subsections are automatically printed in the table of contents as an overview of the talk
 %------------------------------------------------
 
 %\subsection{Subsection Example} % A subsection can be created just before a set of slides with a common theme to further break down your presentation into chunks
-\begin{frame}
-\frametitle{Introducció al curs}
-El material d'aquestes presentacions està basat en anteriors presentacions i apunts d'altres professors \cite{jlgarcia,mcorbera,mcalle} de la UVic-UCC, pàgines web diverses (normalment enllaçades des del text), així com monografies \cite{vanverth,schaum,riley}.
-\end{frame}
+
 
 \begin{frame}
-\frametitle{Perquè necessitem els nombres reals}
+\frametitle{How data is stored?}
 \begin{itemize}
-  \item Per a descriure el món, cal mesurar magnituds
-  \item Per a comprendre'l, cal conèixer com es relacionen les magnituds
-  \item Per a saber com es relacionen les magnituds, cal generar models
+  \item Data canb be thought of as being the result of some random experiment.
+  \item We are interested in analysisng such data.
+  \item The format is typically a set of variables or {\em features} as {\bf columns} while the different items are given as {\bf rows}.
+  \item Typically the first columns represents a unique identifier or index.
+  \item Some columns refer to the experimental settings and others are real variables.
+  \item Many times variables and experimental designs are stored in two different files. The we call the experimental desgins file as the {\bf metadata} file, describing the details of the different experiments (or columns).  
 \end{itemize}
-\footnotesize
-\begin{equation}
-  \mathbb{C} \, Complexos
-      \begin{cases}
-        \mathbb{R} & Reals
-        \begin{cases}
-          \mathbb{Q} & Racionals
-          \begin{cases}
-            \mathbb{Z} & Enters
-            \begin{cases}
-              \mathbb{N} & Naturals \\
-               & Zero \\
-               & Enters \, negatius
-            \end{cases}
-            \\
-            \mathbb{Q}-\mathbb{Z} & Fraccionaris
-          \end{cases}
-          \\
-          \mathbb{R}-\mathbb{Q} & Irracionals
-        \end{cases}
-        \\
-        \mathbb{I} & Imaginaris
-      \end{cases}
-\end{equation}
-\normalsize
 \end{frame}
 
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{exercises}
+\frametitle{Trainign datasets}
+There exist several datasets repositories that one can use to test the methods thyat are being developed. Some of them are woing to be used in this course:
 \begin{itemize}
-\item Escriu equacions polinòmiques amb coeficients enters que tinguin com a solucions nombres naturals, enters, racionals, irracionals (\textit{algebraics})
-\item Escriu una equació polinòmica amb coeficients enters que tingui com a solució el número $\pi$ (\textit{transcendent})
-\item Troba una equació polinòmica amb coeficients constants sense cap nombre real com a  solució
+\item Machine Learning Repository at University of California (\url{https://archive.ics.uci.edu})
+\item Vincent Arel-Bundock repository (\url{https://vincentarelbundock.github.io/Rdatasets/})
 \end{itemize}
 \end{frame}
 
