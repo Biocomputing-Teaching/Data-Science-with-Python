@@ -1,0 +1,17 @@
+rm UNIT2-Statistical-Learning.tex
+rm UNIT3-MC-Methods.tex
+rm UNIT4-Unsupervised-Learning.tex
+rm UNIT5-Regression.tex
+rm UNIT6-Regularization-and-Kernel-Methods.tex
+rm UNIT7-Classification.tex
+rm UNIT8-Decision-Trees.tex
+rm UNIT9-Neural-Networks.tex
+cp minimal.tex UNIT2-Statistical-Learning.tex
+cp minimal.tex UNIT3-MC-Methods.tex
+cp minimal.tex UNIT4-Unsupervised-Learning.tex
+cp minimal.tex UNIT5-Regression.tex
+cp minimal.tex UNIT6-Regularization-and-Kernel-Methods.tex
+cp minimal.tex UNIT7-Classification.tex
+cp minimal.tex UNIT8-Decision-Trees.tex
+cp minimal.tex UNIT9-Neural-Networks.tex
+
