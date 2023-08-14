@@ -4,6 +4,7 @@
 format: jb-book
 root: README
 chapters:
+- file: intro
 - file: markdown
 - file: code/UNIT1-introduction
 - file: markdown-notebooks
