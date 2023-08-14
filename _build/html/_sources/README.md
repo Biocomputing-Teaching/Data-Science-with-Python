@@ -5,7 +5,7 @@ This is a jupyter book that contains the main contents of a course on `Data Scie
 
 ## Theory
 
-* [UNIT 1. Introduction}(LaTeX/UNIT1-Introduction.pdf)
+* [UNIT 1. Introduction](LaTeX/UNIT1-Introduction.pdf)
 
 ## Code
 
