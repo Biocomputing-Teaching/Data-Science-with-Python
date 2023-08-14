@@ -1,0 +1,190 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 1.0 (10/11/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+\documentclass{beamer}
+
+\include{common_beamer.tex}
+%----------------------------------------------------------------------------------------
+%	 TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[Sistemes d'Equacions]{Funcions i Simulacions Físiques} % The short title appears at the bottom of every slide, the full title is only on the title page
+
+\author{Jordi Villà i Freixa} % Your name
+\institute[FCTE] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+Universitat de Vic - Universitat Central de Catalunya \\
+Grau en Multimèdia. Aplicacions i Videojocs\\ % Your institution for the title page
+\medskip
+\textit{jordi.villa@uvic.cat} % Your email address
+}
+%\date{\today} % Date, can be changed to a custom date
+\date{25-30/11, 2021}
+\logo{\includegraphics[width=.1\textwidth]{FCTE}}
+\begin{document}
+
+\begin{frame}
+\titlepage % Print the title page as the first slide
+\end{frame}
+
+\begin{frame}
+\frametitle{Índex} % Table of contents slide, comment this block out to remove it
+\tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+%	PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
+
+\begin{frame}
+\frametitle{Referències}
+El material d'aquestes presentacions està basat en anteriors presentacions i apunts d'altres professors \cite{jlgarcia,mcorbera,mcalle} de la UVic-UCC, pàgines web diverses (normalment enllaçades des del text), així com monografies \cite{vanverth,schaum,riley}.
+\end{frame}
+
+%------------------------------------------------
+%------------------------------------------------
+%------------------------------------------------
+%------------------------------------------------
+%------------------------------------------------
+\section{Funcions reals de variable real} % Sections can be created in order to organize your presentation into discrete blocks, all sections and subsections are automatically printed in the table of contents as an overview of the talk
+%------------------------------------------------
+
+%\subsection{Subsection Example} % A subsection can be created just before a set of slides with a common theme to further break down your presentation into chunks
+
+
+\begin{frame}[allowframebreaks]
+  \frametitle{Relacions i funcions}
+  \begin{definicio}
+    Una relació o correspondència entre dos conjunts $A$ i $B$ és qualsevol operació o criteri que associa elements del conjunt $A$ a elements del conjunt $B$
+  \end{definicio}
+  \begin{definicio}
+    Una funció o aplicació entre dos conjunts $A$ i $B$ és una operació o criteri que a cada element del conjunt $A$ li assigna un únic element del conjunt $B$
+  \end{definicio}
+  Una {\bf funció real de variable real} assigna a cada nombre real $x$ d'un conjunt anomenat {\bf domini} de la funció un únic nombre real $f(x)$ (la seva {\bf imatge}), que forma part del conjunt anomenat {\bf recorregut} de la funció:
+  \[
+    \begin{array}{cccc}
+      f:&\mathbb{R}&\rightarrow&\mathbb{R}\\
+      &x&\rightarrow&f(x)
+    \end{array}
+  \]
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{funcio}
+    \newline Font: \url{https://www.superprof.es}
+  \end{center}
+  S'anomena grafic d'una funció al conjunt de parells $(x,y)$ del pla $\mathbb{R}^2$ on la segona component és la imatge de la primera:
+  \[
+    Graf(f)=\left\{(x,y)\in \mathbb{R}^2: y= f(x)\right\}
+  \]
+  i representa una \textcolor{red}{corba} en el pla. El \textcolor{red}{domini} d'una funció és el conjunt de nombres reals que tenen imatge. La imatge o rang o \textcolor{red}{recorregut} és el conjunt de nombre reals que són imatge d'algun altre nombre real.
+  \begin{center}
+     \includegraphics[width=0.8\textwidth]{domrang}
+  \end{center}
+
+  Per la propietat arquimediana, ens podem acostar a un nombre real tant com volguem. L'Anàlisi matemàtica es basa en aquesta propietat.
+  \begin{definicio}
+    Definim el \textcolor{red}{límit} $L$ d'una funció $f(x)$ en el punt $c$ com el valor al qual s'acosten les imatges de $x$ quan $x$ s'acosta a $c$:
+    \[
+      \lim_{x \rightarrow c} f(x) = L
+    \]
+  \end{definicio}
+
+  \begin{exercici}{}
+    Usant la calculadora, intenta trobar aquests límits:
+    \begin{multicols}{2}
+    \begin{enumerate}
+  \item $\lim_{x \rightarrow \infty} \frac{-4x^3+7}{2x^2-5x+6}$
+  %-infty
+  \item $\lim_{x \rightarrow \infty} \left[\sqrt{x^2+x}-(x+1)\right]$
+  %-1/2 diferencia de quadrats
+  \columnbreak
+  \item $\lim_{x \rightarrow 0} \frac{\sec{x}-1}{x}$
+  % 0
+  \item $\lim_{x \rightarrow 0} (\cos{x})^{\frac{1}{x}}$
+  % e⁰ hopital després de numero e
+  \end{enumerate}
+  \end{multicols}
+  \end{exercici}
+  \bigskip
+  \begin{definicio}
+    Una funció $f(x)$ és contínua en el punt $c$ si i només si $\lim_{x \rightarrow c} f(x) = f(c)$
+  \end{definicio}
+
+  Una funció és contínua si ho és en tots els punts del seu domini.
+
+  \begin{exercici}{}
+    Donada la funció $f(x)=\begin{cases}-3\cos{x}+x&x<0\\x^2+kx-3& 0\leq x\leq 1\\3x+b&  x >1\end{cases}$, quins són els valors de $k$ i $b$ que la fan contínua a tot el seu domini?
+  \end{exercici}
+
+  \begin{definicio}
+    La derivada d'una funció en un punt $x$ es defineix com:
+    \[
+      f'(x) = \lim_{\Delta x \rightarrow 0} \frac{f(x+\Delta x)-f(x)}{\Delta x}
+    \]
+    i representa el pendent de la recta tangent al gràfic de la funció $f(x)$ en el punt $(x,f(x))$.
+  \end{definicio}
+
+  Una funció és derivable en un punt si existeix la derivada en aquest punt, i diem que la funció és derivable si ho és en tot el seu domini.
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{deriv8}
+    \newline Font: \url{https://www.mathspadilla.com}
+  \end{center}
+
+  \framebreak
+
+  \begin{multicols}{2}
+  Podem també definir funcions de múltiples variables. Per exemple, per a una funció de dues variables, a cada parell ordenat li fem correspondre un únic número real:
+  \[
+    \begin{array}{cccc}
+      f:&\mathbb{R}^2&\rightarrow&\mathbb{R}\\
+      &(x,y)&\rightarrow&f(x,y)
+    \end{array}
+  \]
+  \columnbreak
+  \null \vfill
+  \begin{center}
+    \includegraphics[width=0.5\textwidth]{sinxhalfcosy}
+    \newline $f(x,y)=\sin{\frac{x}{2}+\cos{y}}$
+  \end{center}
+  \vfill \null
+\end{multicols}
+
+\end{frame}
+
+\section{Representació paramètrica de funcions}
+
+\begin{frame}
+  Al pla $\mathbb{R}^2$, podem usar diferents reprsenacions de les corbes (ja ho hem vist amb les rectes i els plans):
+  \begin{itemize}
+    \item Forma explícita: $y=f(x)$
+    \item Form implícita: $F(x,y)=0$
+    \item Forma paramètrica: $\left(x(t),y(t)\right)$ on $t\in \mathbb{R}$ o $t\in [a,b]$
+  \end{itemize}
+  Per exemple, podem representar la funció $y=\sqrt{x}$ en forma paramètrica:
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{parametricsqrtx.pdf}
+  \end{center}
+\end{frame}
+
+
+%------------------------------------------------
+%------------------------------------------------
+%------------------------------------------------
+%------------------------------------------------
+
+\input{bibliography.tex}
+
+\end{document}

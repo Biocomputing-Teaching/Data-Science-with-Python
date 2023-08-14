@@ -1,0 +1,434 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 1.0 (10/11/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+\documentclass{beamer}
+
+\include{commons_beamer.tex}
+%----------------------------------------------------------------------------------------
+%	 TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[Àlgebra Lineal]{Transformacions Afins} % The short title appears at the bottom of every slide, the full title is only on the title page
+
+\author{Jordi Villà i Freixa} % Your name
+\institute[FCTE] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+Universitat de Vic - Universitat Central de Catalunya \\
+Grau en Multimèdia. Aplicacions i Videojocs\\ % Your institution for the title page
+\medskip
+\textit{jordi.villa@uvic.cat} % Your email address
+}
+%\date{\today} % Date, can be changed to a custom date
+\date{Octubre 2022}
+\logo{\includegraphics[width=.1\textwidth]{FCTE}}
+\begin{document}
+
+\begin{frame}
+\titlepage % Print the title page as the first slide
+\end{frame}
+
+\begin{frame}
+\frametitle{Índex} % Table of contents slide, comment this block out to remove it
+\tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+%	PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
+
+%------------------------------------------------
+\section{Transformacions Afins 2D} % Sections can be created in order to organize your presentation into discrete blocks, all sections and subsections are automatically printed in the table of contents as an overview of the talk
+%------------------------------------------------
+
+%\subsection{Subsection Example} % A subsection can be created just before a set of slides with a common theme to further break down your presentation into chunks
+\begin{frame}
+\frametitle{Referències}
+El material d'aquestes presentacions està basat en anteriors presentacions i apunts d'altres professors \cite{jlgarcia,mcorbera,mcalle} de la UVic-UCC, pàgines web diverses (normalment enllaçades des del text), així com monografies \cite{vanverth,schaum,riley}.
+\end{frame}
+
+\begin{frame}
+Recordem que en el sistema de coordenades a $\mathbb{R}^2$ $[O;\{\overrightarrow{e_1},\overrightarrow{e_2}\}]$ cada punt $P$ del pla correspon al vector de posició $\overrightarrow{OP}$, que per simplicitat escriurem $\overrightarrow{P}$.
+
+\begin{definicio}
+  Una transformació afí és una aplicació $f:\mathbb{R}^2 \rightarrow \mathbb{R}^2$ que a cada vector posició $\overrightarrow{P}$ li fa correspondre el vector
+  $$
+    f(\overrightarrow{P})= A\overrightarrow{P}+\overrightarrow{B}
+  $$
+  on $A$ és una matriu $2\times 2$ i $\overrightarrow{B}$ un vector de $\mathbb{R}^2$
+\end{definicio}
+\end{frame}
+
+\begin{frame}
+  Si $\overrightarrow{P}=(x,y)$, $f(\overrightarrow{P})=\overrightarrow{P}'= (x',y')$, $\overrightarrow{B}=(b1,b2)$ i $A=\begin{pmatrix}a_{11}&a_{12}\\a_{21}&a_{22}\end{pmatrix}$,
+  aleshores, podem escriure:
+  \begin{eqnarray*}
+    x'&=&a_{11}x+a_{12}y+b_1\\
+    y'&=&a_{21}x+a_{22}y+b_2
+  \end{eqnarray*}
+\end{frame}
+
+\begin{frame}
+  Les transformacions afins $f$ a $\mathbb{R}^2$ canvien punts $P$ del pla per punts $P'$ del pla i, per tant, {\bf transformen objectes} amb les següents propietats:
+\begin{itemize}
+  \item Un conjunt finit de punts va a un altre conjunt finit de punts.
+  \item $f$ preserva rectes: punts alineats continúen estan alineats.
+  \item $f$ preserva paral·lelisme.
+  \item $f$ preserva les raons de distàncies entre punts $P$, $Q$ i $R$ d'una recta:
+  \[
+    \frac{d(P,Q)}{d(Q,R)}=\frac{d(f(P),f(Q))}{d(f(Q),f(R))}
+  \]
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+  \begin{exercici}{}
+    Mostra que el triangle blau es transforma per l'aplicació afí:
+    \[
+      f(\overrightarrow{P})=
+        \begin{pmatrix}0&1\\2&1\end{pmatrix} \overrightarrow{P} +
+        \begin{pmatrix}-10\\-10\end{pmatrix}
+    \]
+    \begin{center}
+      \includegraphics[width=0.6\textwidth]{transafi.png}
+    \end{center}
+  \end{exercici}
+\end{frame}
+
+\subsection{Tipus de transformacions afins i la seva formulació en 2D}
+\begin{frame}
+  \frametitle{TRASLACIÓ}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \begin{definicio}
+        Transformació afí en que $A=I$, prenent la forma
+        \[
+        f(\overrightarrow{P})=I \overrightarrow{P} + \overrightarrow{B}
+        \]
+        Si el vector traslació és nul, tenim una tranformació {\bf identitat}.
+      \end{definicio}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{center}
+        \includegraphics[width=\textwidth]{translation.png}
+      \end{center}
+    \end{column}
+  \end{columns}
+\end{frame}
+%----------------------
+\begin{frame}
+  \frametitle{ESCALA}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \begin{definicio}
+        Transformacions de la forma
+        \[
+        f(\overrightarrow{P})=A \overrightarrow{P}
+        \]
+        on
+        \[
+        A = \begin{pmatrix}a_x&0\\0&a_y\end{pmatrix}
+        \]
+        és la matriu de canvi d'escala, $a_x>0$ és el canvi d'escala en la primera coordinada i $a_y>0$ ho és en la segona.
+      \end{definicio}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{center}
+        \includegraphics[width=\textwidth]{escala.png}
+      \end{center}
+    \end{column}
+  \end{columns}
+\end{frame}
+%----------------------
+\begin{frame}
+  \frametitle{HOMOTÈCIA DE RAÓ (o DE SEMBLANÇA)}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \begin{definicio}
+        Transformacions de la forma
+        \[
+        f(\overrightarrow{P})=A \overrightarrow{P}
+        \]
+        on
+        \[
+        A = \begin{pmatrix}a&0\\0&a\end{pmatrix}
+        \]
+      \end{definicio}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{center}
+        \includegraphics[width=\textwidth]{homotecia.png}
+      \end{center}
+    \end{column}
+  \end{columns}
+\end{frame}
+%----------------------
+\begin{frame}
+  \frametitle{SIMETRIA AXIAL}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \begin{definicio}
+        Transformacions de la forma
+        \[
+        f(\overrightarrow{P})=A \overrightarrow{P}
+        \]
+        on
+        $A = \begin{pmatrix}-1&0\\0&1\end{pmatrix}$ o $A = \begin{pmatrix}1&0\\0&-1\end{pmatrix}$
+        si la simetria és respecte l'eix $OX$ o l'eix $OY$, respectivament.
+      \end{definicio}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{center}
+        \includegraphics[width=0.6\textwidth]{simetriaX.png}
+        \includegraphics[width=0.6\textwidth]{simetriaY.png}
+      \end{center}
+    \end{column}
+  \end{columns}
+\end{frame}
+%----------------------
+\begin{frame}
+  \frametitle{SIMETRIA CENTRAL}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \begin{definicio}
+        Transformacions de la forma
+        \[
+        f(\overrightarrow{P})=A \overrightarrow{P}
+        \]
+        on
+        \[A = \begin{pmatrix}-1&0\\0&-1\end{pmatrix}\]
+        que mou l'objecte respecte el centre de coordenades.
+      \end{definicio}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{center}
+        \includegraphics[width=\textwidth]{simetriaO.png}
+      \end{center}
+    \end{column}
+  \end{columns}
+\end{frame}
+%----------------------
+\begin{frame}
+  \frametitle{GIR op ROTACIÓ}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \begin{definicio}
+        Transformacions que fa una rotació de l'objecte un angle $\theta$ respecte l'origen de coordenades i prenen la forma
+        \[
+        f(\overrightarrow{P})=A \overrightarrow{P}
+        \]
+        on
+        \[
+        A = \begin{pmatrix}\cos{\theta}&-\sin{\theta}\\\sin{\theta}&\cos{\theta}\end{pmatrix}
+        \]
+      \end{definicio}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{center}
+        \includegraphics[width=\textwidth]{rotacio.png}
+      \end{center}
+    \end{column}
+  \end{columns}
+\end{frame}
+%----------------------
+\begin{frame}
+  \frametitle{CISALLAMENT ({\it Shear})}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \begin{definicio}
+        Transformacions de la forma
+        \[
+        f(\overrightarrow{P})=A \overrightarrow{P}
+        \]
+        on
+        $A = \begin{pmatrix}1&\lambda\\0&1\end{pmatrix}$ o $A = \begin{pmatrix}1&0\\\lambda&-1\end{pmatrix}$
+        que deforma només una de les dues coordenades.
+      \end{definicio}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{center}
+        \includegraphics[width=\textwidth]{shear.png}
+      \end{center}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+%--------------
+\begin{frame}
+  A partir d'aquestes transformacions elementals, es poden construir totes les transformacions afins gràcies a la composició consecutiva de les seves accions. Per exemple, una homotècia inversa la faríem fent primer una homotècia i després invertint respecte l'origen de coordenades (simetria central).
+  \begin{center}
+    \includegraphics[width=0.4\textwidth]{homoteciaInversa.png}
+  \end{center}
+\end{frame}
+%--------------
+
+\begin{frame}
+  Per a un canvi d'escala de centre, per exemple, $C=(c_1,c_2)$ i raons $a_x$ i $a_y$ respecte els eixos primer i segon respectivament:
+  \[
+    \begin{pmatrix} x'\\y' \end{pmatrix}=
+      f \left[ \begin{pmatrix} x\\y \end{pmatrix} \right]=
+      \begin{pmatrix}a_x&0\\0&a_y\end{pmatrix}
+      \begin{pmatrix}x-c_1\\y-c_2\end{pmatrix} +
+      \begin{pmatrix}c_1\\c_2\end{pmatrix}
+  \]
+  Exemple en el cas que $a_x \neq a_y$:
+  \begin{center}
+    \includegraphics[width=0.4\textwidth]{canviescala.png}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  Una rotació d'angle $\theta$ al voltant d'un centre $C=(c_1,c_2$:
+  \begin{enumerate}
+    \item Portem el punt $C$ fins a l'origen de coordenades mitjançant una translació mb el vector $-\overrightarrow{C}=(-c_1,-c_2)$.
+    \item Apliquem la rotació.
+    \item Apliquem una translació fins al punt $C$ amb el vector $\overrightarrow{C}$
+  \end{enumerate}
+
+  \[
+    \begin{pmatrix} x'\\y' \end{pmatrix}=
+      f \left[ \begin{pmatrix} x\\y \end{pmatrix} \right]=
+      \begin{pmatrix}\cos{\theta}&-\sin{\theta}\\\sin{\theta}&\cos{\theta}\end{pmatrix}
+      \begin{pmatrix}x-c_1\\y-c_2\end{pmatrix} +
+      \begin{pmatrix}c_1\\c_2\end{pmatrix}
+  \]
+  Exemple:
+  \begin{center}
+    \includegraphics[width=0.4\textwidth]{rotacioC.png}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  Una simetria respecte una recta d'inclinacio $\theta$ que passa pel punt $C=(c_1,c_2)$:
+  \begin{enumerate}
+    \item Portem el punt $C$ fins a l'origen de coordenades mitjançant una translació mb el vector $-\overrightarrow{C}=(-c_1,-c_2)$.
+    \item Apliquem la rotació d'angle $-\theta$ que situa la recta sobre el primer eix.
+    \item Apliquem la reflexió respecte el primer eix.
+    \item Apliquem la rotació d¡angle $\theta$ que torna l'eix fins a la recta.
+    \item Apliquem una translació fins al punt $C$ amb el vector $\overrightarrow{C}$
+  \end{enumerate}
+
+  \[
+    \begin{pmatrix} x'\\y' \end{pmatrix}=
+      f \left[ \begin{pmatrix} x\\y \end{pmatrix} \right]=
+      \begin{pmatrix}\cos{\theta}&-\sin{\theta}\\\sin{\theta}&\cos{\theta}\end{pmatrix}
+      \begin{pmatrix}x-c_1\\y-c_2\end{pmatrix} +
+      \begin{pmatrix}c_1\\c_2\end{pmatrix}
+  \]
+\end{frame}
+\begin{frame}
+  Exemple per a una línea de pendent $-\tan{\pi/3}$ que passa pel centroide del triangle:
+  \begin{center}
+    \includegraphics[width=0.6\textwidth]{simetriatheta.png}
+  \end{center}
+\end{frame}
+
+
+\begin{frame}
+  En general, si la matriu $A$ d'una transformació afí
+  \[
+    f(\overrightarrow{P}) = A \overrightarrow{P} + \overrightarrow{B}
+  \]
+  és invertible ($det(A) \neq 0$), aleshores la transformació inversa existeix:
+  \[
+    f^{-1}(\overrightarrow{P})= A^{-1} \overrightarrow{P} - A^{-1} \overrightarrow{B}
+  \]
+\end{frame}
+
+\begin{frame}
+  Una transformació afí
+  \[
+    f(\overrightarrow{P}) = A \overrightarrow{P} + \overrightarrow{B}
+  \]
+  conserva l'orientació dels objectes si $det(A)>0$. Si $det(A)<0$ la'n canvia.
+
+  \resizebox{10cm}{!}{
+    \begin{tabular}{c|c}
+    \hline
+    \thead{Conserven orientació} & \thead{Canvien orientació} \\ \hline
+    \makecell{Translacions \\ Canvis d'escala i homotècies \\ Simetries centrals \\ Girs \\ cisallaments} & Simetries axials\\
+    \hline
+  \end{tabular}
+}
+\end{frame}
+
+\subsection{Notació homogènia}
+
+\begin{frame}
+  El moviment d'un objecte serà visualitzat com un seguit de transformacions afins aplicades de forma consecutiva a l'objecte. Per tal de fer el procés computacionalment eficient, convé usar la notació homogènia. Així, si $\overrightarrow{B}= \begin{pmatrix}b_1\\b_2\end{pmatrix}$ i $A=\begin{pmatrix}a_{11}&a_{12}\\a_{21}&a_{22}\end{pmatrix}$, aquestes dues expressions són equivalents:
+  \[
+    \begin{array}{ccc}
+      \boxed{\begin{pmatrix}x'\\y'\end{pmatrix} = A \begin{pmatrix}x\\y\end{pmatrix} + \overrightarrow{B}} &
+        \equiv &
+      \boxed{\begin{pmatrix}x'\\y'\\1\end{pmatrix} = \begin{pmatrix}a_{11}&a_{12}&b_1\\a_{21}&a_{22}&b_2\\0&0&1\end{pmatrix} \begin{pmatrix}x\\y\\1\end{pmatrix}}
+    \end{array}
+  \]
+  O bé, si $T(A,\overrightarrow{B})=\begin{pmatrix}A&\overrightarrow{B}\\\overrightarrow{0}^t&1\end{pmatrix}$, $\begin{pmatrix}x'\\y'\\1\end{pmatrix} = T(A,\overrightarrow{B}) \begin{pmatrix}x\\y\\1\end{pmatrix}$
+\end{frame}
+
+\begin{frame}
+  Aleshores, aplicar dues transformacions afins consecutives es resumeix en fer aquesta operació:
+  \[
+    \begin{pmatrix}x'\\y'\\1\end{pmatrix} = T(A_2,\overrightarrow{B_2}) T(A_1,\overrightarrow{B_1}) \begin{pmatrix}x\\y\\1\end{pmatrix}
+  \]
+  \begin{exercici}{}
+    Quina seria la notació homogènia per a un gir de $\frac{\pi}{4}$ en el sentit contrari a les agulles del rellotge seguit d'una homotècia de semblança $\frac{1}{2}$? Resposta:
+  \[
+      \begin{pmatrix}x'\\y'\\1\end{pmatrix}=
+      \begin{pmatrix}\frac{1}{2}&0&0\\0&\frac{1}{2}&0\\0&0&1\end{pmatrix} \cdot
+      \begin{pmatrix}\frac{\sqrt{2}}{2}&-\frac{\sqrt{2}}{2}&0\\\frac{\sqrt{2}}{2}&\frac{\sqrt{2}}{2}&0\\0&0&1\end{pmatrix} \cdot
+      \begin{pmatrix}x\\y\\1\end{pmatrix}
+  \]
+  \end{exercici}
+\end{frame}
+
+\section{Transformacions afins 3D}
+\begin{frame}
+  Podem utilitzar la notació homogènia en transformacions afins a $\mathbb{R}^3$. Si $\overrightarrow{B}= \begin{pmatrix}b_1\\b_2\\b_3\end{pmatrix}$ i $A=\begin{pmatrix}a_{11}&a_{12}&a_{13}\\a_{21}&a_{22}&a_{23}\\a_{31}&a_{32}&a_{33}\end{pmatrix}$,
+  \[
+    \begin{pmatrix}x'\\y'\\z'\end{pmatrix} =A \begin{pmatrix}x\\y\\z\end{pmatrix} + \overrightarrow{B}
+  \]
+  és equivalent a
+  \[
+    \begin{pmatrix}x'\\y'\\z'\\1\end{pmatrix} = \begin{pmatrix}a_{11}&a_{12}&a_{13}&b_1\\a_{21}&a_{22}&a_{23}&b_2\\a_{31}&a_{32}&a_{33}&b_3\\0&0&0&1\end{pmatrix} \begin{pmatrix}x\\y\\z\\1\end{pmatrix}
+  \]
+\end{frame}
+\subsection{Formulació de les transformacions afins en 3D}
+\begin{frame}[allowframebreaks]
+  \begin{longtable}{c|c}
+  \hline
+  \thead{Tipus de transformació afí} & \thead{Operació} \\ \hline
+  Transació de vector $\overrightarrow{B}$ & $A=I_3$\\\hline
+  Canvi d'escala respecte origen & \makecell{$A=\begin{pmatrix}a_x&0&0\\0&a_y&0\\0&0&a_z\end{pmatrix}$,\\ amb $a_x,a_y,a_z >0$}\\\hline
+  Homotècia de raó $a$ & $A=\begin{pmatrix}a&0&0\\0&a&0\\0&0&a\end{pmatrix}$\\\hline
+  Simetria central respecte origen $O$ &  $A=-I_3$\\\hline
+  Simetria especular respecte el pla $xy$ & $A=\begin{pmatrix}1&0&0\\0&1&0\\0&0&-1\end{pmatrix}$\\\hline
+  Simetria especular respecte el pla $yz$ & $A=\begin{pmatrix}-1&0&0\\0&1&0\\0&0&1\end{pmatrix}$\\\hline
+  Simetria especular respecte el pla $xz$ & $A=\begin{pmatrix}1&0&0\\0&-1&0\\0&0&1\end{pmatrix}$\\\hline
+  Cisallament, si $\lambda_1,\lambda_2 \in \mathbf{R}$ &
+            $\begin{array}{c}A=\begin{pmatrix}1&0&0\\\lambda_1&1&0\\\lambda_2&0&1\end{pmatrix}\\
+            A=\begin{pmatrix}1&\lambda_1&0\\0&1&0\\0&\lambda_2&1\end{pmatrix}\\
+            A=\begin{pmatrix}1&0&\lambda_1\\0&1&\lambda_2\\0&0&1\end{pmatrix}\end{array}$\\\hline
+  Gir d'angle $\theta$ en l'eix $x$ & $A=\begin{pmatrix}1&0&0\\0&\cos{\theta}&-\sin{\theta}\\0&\cos{\theta}&\sin{\theta}\end{pmatrix}$\\\hline
+  Gir d'angle $\theta$ en l'eix $y$ & $A=\begin{pmatrix}\cos{\theta}&0&-\sin{\theta}\\0&1&0\\\sin{\theta}&0&\cos{\theta}\end{pmatrix}$\\\hline
+  Gir d'angle $\theta$ en l'eix $z$ & $A=\begin{pmatrix}\cos{\theta}&-\sin{\theta}&0\\\sin{\theta}&\cos{\theta}&0\\0&0&1\end{pmatrix}$\\\hline
+
+\end{longtable}
+\end{frame}
+
+\input{bibliography.tex}
+
+\end{document}

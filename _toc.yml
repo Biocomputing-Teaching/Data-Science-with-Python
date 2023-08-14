@@ -4,4 +4,13 @@
 format: jb-book
 root: intro
 chapters:
+- file: README
 - file: code/UNIT1-Introduction
+- file: code/UNIT2-Statistical-Learning
+- file: code/UNIT3-MC-Methods
+- file: code/UNIT4-Unsupervised-Learning
+- file: code/UNIT5-Regression
+- file: code/UNIT6-Regularization-and-Kernel-Methods
+- file: code/UNIT7-Classification
+- file: code/UNIT8-Decision-Trees
+- file: code/UNIT9-Neural-Networks
