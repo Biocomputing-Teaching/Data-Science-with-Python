@@ -161,4 +161,9 @@ cython_debug/
 
 
 # LaTeX, TeX
-*fdb_latexmk
+*.fdb_latexmk
+*.aux
+*.fls
+*.nav
+*.out
+*.snm
