@@ -337,7 +337,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -353,6 +355,14 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#retrieving-data">Retrieving data</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -365,6 +375,461 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="unit-1-import-and-visualitzation-of-data-with-python">
 <h1>UNIT 1. Import and Visualitzation of data with Python<a class="headerlink" href="#unit-1-import-and-visualitzation-of-data-with-python" title="Permalink to this heading">#</a></h1>
 <p>This Unit includes some fast shortcuts to representing data in Python, closely following <span id="id1">[]</span></p>
+<p>NOTE: being this a training tool, we assume the user will have installed all the needed requirements. In case some package is missing, use a terminal to install it apart using your favorite package manager.</p>
+<p>These notebooks have been tested in Linux Ubuntu using Anaconda as the package manager in most cases. The notebooks are self-containing.</p>
+<section id="retrieving-data">
+<h2>Retrieving data<a class="headerlink" href="#retrieving-data" title="Permalink to this heading">#</a></h2>
+<p>Typically the files containing data to be analyzed are stored in comma separated value (CSV) format. To work with them, the first thing to do is downloading the data. But before we ensure we have a proper folder to download the file.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">directory</span> <span class="o">=</span> <span class="s2">&quot;datasets&quot;</span>
+
+<span class="c1"># Check if the directory exists</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">directory</span><span class="p">):</span>
+    <span class="c1"># If it doesn&#39;t exist, create it</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">directory</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;folder &#39;</span><span class="p">,</span><span class="n">directory</span><span class="p">,</span><span class="s1">&#39; exists&#39;</span><span class="p">)</span>
+
+<span class="c1"># now use wget to download the file into the datasets folder</span>
+<span class="o">!</span>wget<span class="w"> </span>-P<span class="w"> </span><span class="nv">$directory</span><span class="w"> </span>-nc<span class="w"> </span>https://archive.ics.uci.edu/static/public/109/wine.zip<span class="w"> </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>folder  datasets  exists
+El fitxer ‘datasets/wine.zip’ ja existeix, no es baixa.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, we read the content of the zip file using the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> module. Informatiuon of the data can be found in the <a class="reference external" href="https://archive.ics.uci.edu/dataset/109/wine">ML repository at UCI</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">zipfile</span> <span class="kn">import</span> <span class="n">ZipFile</span>
+
+<span class="k">with</span> <span class="n">ZipFile</span><span class="p">(</span><span class="s1">&#39;datasets/wine.zip&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+
+<span class="c1">#extract in current directory</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">members</span> <span class="o">=</span><span class="p">[</span><span class="s1">&#39;wine.names&#39;</span><span class="p">,</span><span class="s2">&quot;wine.data&quot;</span><span class="p">])</span>
+
+<span class="n">wine</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;datasets/wine.data&#39;</span><span class="p">,</span><span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">wine</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+      <th>10</th>
+      <th>11</th>
+      <th>12</th>
+      <th>13</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>14.23</td>
+      <td>1.71</td>
+      <td>2.43</td>
+      <td>15.6</td>
+      <td>127</td>
+      <td>2.80</td>
+      <td>3.06</td>
+      <td>0.28</td>
+      <td>2.29</td>
+      <td>5.64</td>
+      <td>1.04</td>
+      <td>3.92</td>
+      <td>1065</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>13.20</td>
+      <td>1.78</td>
+      <td>2.14</td>
+      <td>11.2</td>
+      <td>100</td>
+      <td>2.65</td>
+      <td>2.76</td>
+      <td>0.26</td>
+      <td>1.28</td>
+      <td>4.38</td>
+      <td>1.05</td>
+      <td>3.40</td>
+      <td>1050</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>13.16</td>
+      <td>2.36</td>
+      <td>2.67</td>
+      <td>18.6</td>
+      <td>101</td>
+      <td>2.80</td>
+      <td>3.24</td>
+      <td>0.30</td>
+      <td>2.81</td>
+      <td>5.68</td>
+      <td>1.03</td>
+      <td>3.17</td>
+      <td>1185</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1</td>
+      <td>14.37</td>
+      <td>1.95</td>
+      <td>2.50</td>
+      <td>16.8</td>
+      <td>113</td>
+      <td>3.85</td>
+      <td>3.49</td>
+      <td>0.24</td>
+      <td>2.18</td>
+      <td>7.80</td>
+      <td>0.86</td>
+      <td>3.45</td>
+      <td>1480</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1</td>
+      <td>13.24</td>
+      <td>2.59</td>
+      <td>2.87</td>
+      <td>21.0</td>
+      <td>118</td>
+      <td>2.80</td>
+      <td>2.69</td>
+      <td>0.39</td>
+      <td>1.82</td>
+      <td>4.32</td>
+      <td>1.04</td>
+      <td>2.93</td>
+      <td>735</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>as we do not have the names of the columns, we can add manually assign them based on the information contained in the web link.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wine</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">,</span><span class="s1">&#39;Alcohol&#39;</span><span class="p">,</span><span class="s1">&#39;Maliacid&#39;</span><span class="p">,</span><span class="s1">&#39;Ash&#39;</span><span class="p">,</span><span class="s1">&#39;Alcalinity_of_ash&#39;</span><span class="p">,</span><span class="s1">&#39;Magnesium&#39;</span><span class="p">,</span><span class="s1">&#39;Total_phenols&#39;</span><span class="p">,</span><span class="s1">&#39;Flavanoids&#39;</span><span class="p">,</span><span class="s1">&#39;Nonflavonoid_phenols&#39;</span><span class="p">,</span><span class="s1">&#39;Proanthocyanins&#39;</span><span class="p">,</span><span class="s1">&#39;Color_intensity&#39;</span><span class="p">,</span><span class="s1">&#39;Hue&#39;</span><span class="p">,</span><span class="s1">&#39;0D280_0D315_of_diluted_wines&#39;</span><span class="p">,</span><span class="s1">&#39;Proline&#39;</span><span class="p">]</span>
+<span class="n">wine</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>class</th>
+      <th>Alcohol</th>
+      <th>Maliacid</th>
+      <th>Ash</th>
+      <th>Alcalinity_of_ash</th>
+      <th>Magnesium</th>
+      <th>Total_phenols</th>
+      <th>Flavanoids</th>
+      <th>Nonflavonoid_phenols</th>
+      <th>Proanthocyanins</th>
+      <th>Color_intensity</th>
+      <th>Hue</th>
+      <th>0D280_0D315_of_diluted_wines</th>
+      <th>Proline</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>14.23</td>
+      <td>1.71</td>
+      <td>2.43</td>
+      <td>15.6</td>
+      <td>127</td>
+      <td>2.80</td>
+      <td>3.06</td>
+      <td>0.28</td>
+      <td>2.29</td>
+      <td>5.64</td>
+      <td>1.04</td>
+      <td>3.92</td>
+      <td>1065</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>13.20</td>
+      <td>1.78</td>
+      <td>2.14</td>
+      <td>11.2</td>
+      <td>100</td>
+      <td>2.65</td>
+      <td>2.76</td>
+      <td>0.26</td>
+      <td>1.28</td>
+      <td>4.38</td>
+      <td>1.05</td>
+      <td>3.40</td>
+      <td>1050</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>13.16</td>
+      <td>2.36</td>
+      <td>2.67</td>
+      <td>18.6</td>
+      <td>101</td>
+      <td>2.80</td>
+      <td>3.24</td>
+      <td>0.30</td>
+      <td>2.81</td>
+      <td>5.68</td>
+      <td>1.03</td>
+      <td>3.17</td>
+      <td>1185</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1</td>
+      <td>14.37</td>
+      <td>1.95</td>
+      <td>2.50</td>
+      <td>16.8</td>
+      <td>113</td>
+      <td>3.85</td>
+      <td>3.49</td>
+      <td>0.24</td>
+      <td>2.18</td>
+      <td>7.80</td>
+      <td>0.86</td>
+      <td>3.45</td>
+      <td>1480</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1</td>
+      <td>13.24</td>
+      <td>2.59</td>
+      <td>2.87</td>
+      <td>21.0</td>
+      <td>118</td>
+      <td>2.80</td>
+      <td>2.69</td>
+      <td>0.39</td>
+      <td>1.82</td>
+      <td>4.32</td>
+      <td>1.04</td>
+      <td>2.93</td>
+      <td>735</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Alternatively, we can directly read the CSV from its URL, without previously downloading it. We will use <a class="reference external" href="https://vincentarelbundock.github.io/Rdatasets/doc/datasets/iris.html">Fisher’s <code class="docutils literal notranslate"><span class="pre">iris</span></code> data</a>. Here we already have the name of the features so we read them directly from the dataset.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dataname</span> <span class="o">=</span> <span class="s1">&#39;https://vincentarelbundock.github.io/Rdatasets/csv/datasets/iris.csv&#39;</span>
+
+<span class="n">iris</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">dataname</span><span class="p">)</span>
+<span class="n">iris</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>Sepal.Length</th>
+      <th>Sepal.Width</th>
+      <th>Petal.Length</th>
+      <th>Petal.Width</th>
+      <th>Species</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>5.1</td>
+      <td>3.5</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>4.9</td>
+      <td>3.0</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>4.7</td>
+      <td>3.2</td>
+      <td>1.3</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>4.6</td>
+      <td>3.1</td>
+      <td>1.5</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>5.0</td>
+      <td>3.6</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>as the first column is a duplicated index column, we can remove it</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s1">&#39;Unnamed:0&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">iris</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s1">&#39;Unnamed:0&#39;</span><span class="p">)</span>
+
+<span class="nn">File ~/.local/lib/python3.10/site-packages/pandas/core/frame.py:5258,</span> in <span class="ni">DataFrame.drop</span><span class="nt">(self, labels, axis, index, columns, level, inplace, errors)</span>
+<span class="g g-Whitespace">   </span><span class="mi">5110</span> <span class="k">def</span> <span class="nf">drop</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">5111</span>     <span class="bp">self</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">5112</span>     <span class="n">labels</span><span class="p">:</span> <span class="n">IndexLabel</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">5119</span>     <span class="n">errors</span><span class="p">:</span> <span class="n">IgnoreRaise</span> <span class="o">=</span> <span class="s2">&quot;raise&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">5120</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataFrame</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">5121</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">5122</span><span class="sd">     Drop specified labels from rows or columns.</span>
+<span class="g g-Whitespace">   </span><span class="mi">5123</span><span class="sd"> </span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">   </span><span class="mi">5256</span><span class="sd">             weight  1.0     0.8</span>
+<span class="g g-Whitespace">   </span><span class="mi">5257</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">5258</span>     <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">5259</span>         <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">5260</span>         <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">5261</span>         <span class="n">index</span><span class="o">=</span><span class="n">index</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">5262</span>         <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">5263</span>         <span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">5264</span>         <span class="n">inplace</span><span class="o">=</span><span class="n">inplace</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">5265</span>         <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">5266</span>     <span class="p">)</span>
+
+<span class="nn">File ~/.local/lib/python3.10/site-packages/pandas/core/generic.py:4549,</span> in <span class="ni">NDFrame.drop</span><span class="nt">(self, labels, axis, index, columns, level, inplace, errors)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4547</span> <span class="k">for</span> <span class="n">axis</span><span class="p">,</span> <span class="n">labels</span> <span class="ow">in</span> <span class="n">axes</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<span class="g g-Whitespace">   </span><span class="mi">4548</span>     <span class="k">if</span> <span class="n">labels</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">4549</span>         <span class="n">obj</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">_drop_axis</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4551</span> <span class="k">if</span> <span class="n">inplace</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">4552</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_update_inplace</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+
+<span class="nn">File ~/.local/lib/python3.10/site-packages/pandas/core/generic.py:4591,</span> in <span class="ni">NDFrame._drop_axis</span><span class="nt">(self, labels, axis, level, errors, only_slice)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4589</span>         <span class="n">new_axis</span> <span class="o">=</span> <span class="n">axis</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4590</span>     <span class="k">else</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">4591</span>         <span class="n">new_axis</span> <span class="o">=</span> <span class="n">axis</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4592</span>     <span class="n">indexer</span> <span class="o">=</span> <span class="n">axis</span><span class="o">.</span><span class="n">get_indexer</span><span class="p">(</span><span class="n">new_axis</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4594</span> <span class="c1"># Case for non-unique axis</span>
+<span class="g g-Whitespace">   </span><span class="mi">4595</span> <span class="k">else</span><span class="p">:</span>
+
+<span class="nn">File ~/.local/lib/python3.10/site-packages/pandas/core/indexes/base.py:6696,</span> in <span class="ni">Index.drop</span><span class="nt">(self, labels, errors)</span>
+<span class="g g-Whitespace">   </span><span class="mi">6694</span> <span class="k">if</span> <span class="n">mask</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
+<span class="g g-Whitespace">   </span><span class="mi">6695</span>     <span class="k">if</span> <span class="n">errors</span> <span class="o">!=</span> <span class="s2">&quot;ignore&quot;</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">6696</span>         <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">labels</span><span class="p">[</span><span class="n">mask</span><span class="p">])</span><span class="si">}</span><span class="s2"> not found in axis&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">6697</span>     <span class="n">indexer</span> <span class="o">=</span> <span class="n">indexer</span><span class="p">[</span><span class="o">~</span><span class="n">mask</span><span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">6698</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">indexer</span><span class="p">)</span>
+
+<span class="ne">KeyError</span>: &quot;[&#39;Unnamed:0&#39;] not found in axis&quot;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -425,6 +890,20 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#retrieving-data">Retrieving data</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
