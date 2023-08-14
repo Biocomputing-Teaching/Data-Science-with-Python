@@ -4,4 +4,4 @@
 format: jb-book
 root: intro
 chapters:
-- file: code/UNIT1-introduction
+- file: code/UNIT1-Introduction
