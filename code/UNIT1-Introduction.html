@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>UNIT 1. Import and Visualitzation of data with Python &#8212; Data Science with Python Jupyter book</title>
   
@@ -44,7 +44,6 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -67,7 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="UNIT 2. Statistical Learning" href="UNIT2-Statistical-Learning.html" />
     <link rel="prev" title="About the course Data-Science-with-Python" href="../README.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
   
   
@@ -223,7 +222,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://github.com/Biocomputing-Teaching/Data-Science-with-Python" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Source repository"
+   title="Dipòsit de fonts"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -240,7 +239,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://github.com/Biocomputing-Teaching/Data-Science-with-Python/issues/new?title=Issue%20on%20page%20%2Fcode/UNIT1-Introduction.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Open an issue"
+   title="Obriu un número"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -261,7 +260,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Descarregueu aquesta pàgina">
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
@@ -270,7 +269,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="../_sources/code/UNIT1-Introduction.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
+   title="Baixeu el fitxer font"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -288,7 +287,7 @@ const thebe_selector_output = ".output, .cell_output"
       <li>
 <button onclick="window.print()"
   class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
+  title="Imprimeix a PDF"
   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -373,12 +372,12 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="unit-1-import-and-visualitzation-of-data-with-python">
-<h1>UNIT 1. Import and Visualitzation of data with Python<a class="headerlink" href="#unit-1-import-and-visualitzation-of-data-with-python" title="Permalink to this heading">#</a></h1>
+<h1>UNIT 1. Import and Visualitzation of data with Python<a class="headerlink" href="#unit-1-import-and-visualitzation-of-data-with-python" title="Permalink to this headline">#</a></h1>
 <p>This Unit includes some fast shortcuts to representing data in Python, closely following <span id="id1">[]</span></p>
 <p>NOTE: being this a training tool, we assume the user will have installed all the needed requirements. In case some package is missing, use a terminal to install it apart using your favorite package manager.</p>
 <p>These notebooks have been tested in Linux Ubuntu using Anaconda as the package manager in most cases. The notebooks are self-containing.</p>
 <section id="retrieving-data">
-<h2>Retrieving data<a class="headerlink" href="#retrieving-data" title="Permalink to this heading">#</a></h2>
+<h2>Retrieving data<a class="headerlink" href="#retrieving-data" title="Permalink to this headline">#</a></h2>
 <p>Typically the files containing data to be analyzed are stored in comma separated value (CSV) format. To work with them, the first thing to do is downloading the data. But before we ensure we have a proper folder to download the file.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -394,13 +393,38 @@ document.write(`
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;folder &#39;</span><span class="p">,</span><span class="n">directory</span><span class="p">,</span><span class="s1">&#39; exists&#39;</span><span class="p">)</span>
 
 <span class="c1"># now use wget to download the file into the datasets folder</span>
-<span class="o">!</span>wget<span class="w"> </span>-P<span class="w"> </span><span class="nv">$directory</span><span class="w"> </span>-nc<span class="w"> </span>https://archive.ics.uci.edu/static/public/109/wine.zip<span class="w"> </span>
+<span class="o">!</span>wget -P <span class="nv">$directory</span> -nc https://archive.ics.uci.edu/static/public/109/wine.zip 
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>folder  datasets  exists
-El fitxer ‘datasets/wine.zip’ ja existeix, no es baixa.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2023-08-15 11:49:37--  https://archive.ics.uci.edu/static/public/109/wine.zip
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>S&#39;està resolent archive.ics.uci.edu (archive.ics.uci.edu)… 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>128.195.10.252
+S&#39;està connectant a archive.ics.uci.edu (archive.ics.uci.edu)|128.195.10.252|:443… 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>conectat.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HTTP: s&#39;ha enviat la petició, s&#39;està esperant una resposta… 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200 OK
+Mida: no especificat
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>S&#39;està desant a: ‘datasets/wine.zip’
+
+
+wine.zip                [&lt;=&gt;                 ]       0  --.-KB/s               
+wine.zip                [ &lt;=&gt;                ]   5,90K  --.-KB/s    in 0s      
+
+2023-08-15 11:49:38 (37,1 MB/s) - s&#39;ha desat ‘datasets/wine.zip’ [6038]
 </pre></div>
 </div>
 </div>
@@ -776,53 +800,62 @@ El fitxer ‘datasets/wine.zip’ ja existeix, no es baixa.
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="nn">Input In [5],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">iris</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s1">&#39;Unnamed:0&#39;</span><span class="p">)</span>
 
-<span class="nn">File ~/.local/lib/python3.10/site-packages/pandas/core/frame.py:5258,</span> in <span class="ni">DataFrame.drop</span><span class="nt">(self, labels, axis, index, columns, level, inplace, errors)</span>
-<span class="g g-Whitespace">   </span><span class="mi">5110</span> <span class="k">def</span> <span class="nf">drop</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">5111</span>     <span class="bp">self</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">5112</span>     <span class="n">labels</span><span class="p">:</span> <span class="n">IndexLabel</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="nn">File ~/anaconda3/lib/python3.9/site-packages/pandas/util/_decorators.py:311,</span> in <span class="ni">deprecate_nonkeyword_arguments.&lt;locals&gt;.decorate.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">305</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">num_allow_args</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">306</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">307</span>         <span class="n">msg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arguments</span><span class="o">=</span><span class="n">arguments</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">308</span>         <span class="ne">FutureWarning</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">309</span>         <span class="n">stacklevel</span><span class="o">=</span><span class="n">stacklevel</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">310</span>     <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">311</span> <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.9/site-packages/pandas/core/frame.py:4906,</span> in <span class="ni">DataFrame.drop</span><span class="nt">(self, labels, axis, index, columns, level, inplace, errors)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4774</span> <span class="nd">@deprecate_nonkeyword_arguments</span><span class="p">(</span><span class="n">version</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">allowed_args</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;self&quot;</span><span class="p">,</span> <span class="s2">&quot;labels&quot;</span><span class="p">])</span>
+<span class="g g-Whitespace">   </span><span class="mi">4775</span> <span class="k">def</span> <span class="nf">drop</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">4776</span>     <span class="bp">self</span><span class="p">,</span>
    <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">5119</span>     <span class="n">errors</span><span class="p">:</span> <span class="n">IgnoreRaise</span> <span class="o">=</span> <span class="s2">&quot;raise&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">5120</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataFrame</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">5121</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">5122</span><span class="sd">     Drop specified labels from rows or columns.</span>
-<span class="g g-Whitespace">   </span><span class="mi">5123</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">4783</span>     <span class="n">errors</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;raise&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4784</span> <span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">4785</span>     <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">4786</span><span class="sd">     Drop specified labels from rows or columns.</span>
+<span class="g g-Whitespace">   </span><span class="mi">4787</span><span class="sd"> </span>
 <span class="sd">   (...)</span>
-<span class="g g-Whitespace">   </span><span class="mi">5256</span><span class="sd">             weight  1.0     0.8</span>
-<span class="g g-Whitespace">   </span><span class="mi">5257</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">5258</span>     <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">5259</span>         <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">5260</span>         <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">5261</span>         <span class="n">index</span><span class="o">=</span><span class="n">index</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">5262</span>         <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">5263</span>         <span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">5264</span>         <span class="n">inplace</span><span class="o">=</span><span class="n">inplace</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">5265</span>         <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">5266</span>     <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4904</span><span class="sd">             weight  1.0     0.8</span>
+<span class="g g-Whitespace">   </span><span class="mi">4905</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">4906</span>     <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">4907</span>         <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4908</span>         <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4909</span>         <span class="n">index</span><span class="o">=</span><span class="n">index</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4910</span>         <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4911</span>         <span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4912</span>         <span class="n">inplace</span><span class="o">=</span><span class="n">inplace</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4913</span>         <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4914</span>     <span class="p">)</span>
 
-<span class="nn">File ~/.local/lib/python3.10/site-packages/pandas/core/generic.py:4549,</span> in <span class="ni">NDFrame.drop</span><span class="nt">(self, labels, axis, index, columns, level, inplace, errors)</span>
-<span class="g g-Whitespace">   </span><span class="mi">4547</span> <span class="k">for</span> <span class="n">axis</span><span class="p">,</span> <span class="n">labels</span> <span class="ow">in</span> <span class="n">axes</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-<span class="g g-Whitespace">   </span><span class="mi">4548</span>     <span class="k">if</span> <span class="n">labels</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">4549</span>         <span class="n">obj</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">_drop_axis</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">4551</span> <span class="k">if</span> <span class="n">inplace</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">4552</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_update_inplace</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+<span class="nn">File ~/anaconda3/lib/python3.9/site-packages/pandas/core/generic.py:4150,</span> in <span class="ni">NDFrame.drop</span><span class="nt">(self, labels, axis, index, columns, level, inplace, errors)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4148</span> <span class="k">for</span> <span class="n">axis</span><span class="p">,</span> <span class="n">labels</span> <span class="ow">in</span> <span class="n">axes</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<span class="g g-Whitespace">   </span><span class="mi">4149</span>     <span class="k">if</span> <span class="n">labels</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">4150</span>         <span class="n">obj</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">_drop_axis</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4152</span> <span class="k">if</span> <span class="n">inplace</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">4153</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_update_inplace</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
 
-<span class="nn">File ~/.local/lib/python3.10/site-packages/pandas/core/generic.py:4591,</span> in <span class="ni">NDFrame._drop_axis</span><span class="nt">(self, labels, axis, level, errors, only_slice)</span>
-<span class="g g-Whitespace">   </span><span class="mi">4589</span>         <span class="n">new_axis</span> <span class="o">=</span> <span class="n">axis</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">4590</span>     <span class="k">else</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">4591</span>         <span class="n">new_axis</span> <span class="o">=</span> <span class="n">axis</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">4592</span>     <span class="n">indexer</span> <span class="o">=</span> <span class="n">axis</span><span class="o">.</span><span class="n">get_indexer</span><span class="p">(</span><span class="n">new_axis</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">4594</span> <span class="c1"># Case for non-unique axis</span>
-<span class="g g-Whitespace">   </span><span class="mi">4595</span> <span class="k">else</span><span class="p">:</span>
+<span class="nn">File ~/anaconda3/lib/python3.9/site-packages/pandas/core/generic.py:4185,</span> in <span class="ni">NDFrame._drop_axis</span><span class="nt">(self, labels, axis, level, errors)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4183</span>         <span class="n">new_axis</span> <span class="o">=</span> <span class="n">axis</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4184</span>     <span class="k">else</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">4185</span>         <span class="n">new_axis</span> <span class="o">=</span> <span class="n">axis</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4186</span>     <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">reindex</span><span class="p">(</span><span class="o">**</span><span class="p">{</span><span class="n">axis_name</span><span class="p">:</span> <span class="n">new_axis</span><span class="p">})</span>
+<span class="g g-Whitespace">   </span><span class="mi">4188</span> <span class="c1"># Case for non-unique axis</span>
+<span class="g g-Whitespace">   </span><span class="mi">4189</span> <span class="k">else</span><span class="p">:</span>
 
-<span class="nn">File ~/.local/lib/python3.10/site-packages/pandas/core/indexes/base.py:6696,</span> in <span class="ni">Index.drop</span><span class="nt">(self, labels, errors)</span>
-<span class="g g-Whitespace">   </span><span class="mi">6694</span> <span class="k">if</span> <span class="n">mask</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
-<span class="g g-Whitespace">   </span><span class="mi">6695</span>     <span class="k">if</span> <span class="n">errors</span> <span class="o">!=</span> <span class="s2">&quot;ignore&quot;</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">6696</span>         <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">labels</span><span class="p">[</span><span class="n">mask</span><span class="p">])</span><span class="si">}</span><span class="s2"> not found in axis&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">6697</span>     <span class="n">indexer</span> <span class="o">=</span> <span class="n">indexer</span><span class="p">[</span><span class="o">~</span><span class="n">mask</span><span class="p">]</span>
-<span class="g g-Whitespace">   </span><span class="mi">6698</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">indexer</span><span class="p">)</span>
+<span class="nn">File ~/anaconda3/lib/python3.9/site-packages/pandas/core/indexes/base.py:6017,</span> in <span class="ni">Index.drop</span><span class="nt">(self, labels, errors)</span>
+<span class="g g-Whitespace">   </span><span class="mi">6015</span> <span class="k">if</span> <span class="n">mask</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
+<span class="g g-Whitespace">   </span><span class="mi">6016</span>     <span class="k">if</span> <span class="n">errors</span> <span class="o">!=</span> <span class="s2">&quot;ignore&quot;</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">6017</span>         <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">labels</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span><span class="si">}</span><span class="s2"> not found in axis&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">6018</span>     <span class="n">indexer</span> <span class="o">=</span> <span class="n">indexer</span><span class="p">[</span><span class="o">~</span><span class="n">mask</span><span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">6019</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">indexer</span><span class="p">)</span>
 
 <span class="ne">KeyError</span>: &quot;[&#39;Unnamed:0&#39;] not found in axis&quot;
 </pre></div>
@@ -914,7 +947,7 @@ El fitxer ‘datasets/wine.zip’ ja existeix, no es baixa.
   <div class="footer-item">
     
 <p class="component-author">
-By CBBL teaching
+Per CBBL teaching
 </p>
 
   </div>
