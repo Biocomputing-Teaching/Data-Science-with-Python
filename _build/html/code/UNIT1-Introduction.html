@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>UNIT 1. Import and Visualitzation of data with Python &#8212; Data Science with Python Jupyter book</title>
   
@@ -44,6 +44,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -60,13 +61,15 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'code/UNIT1-Introduction';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="UNIT 2. Statistical Learning" href="UNIT2-Statistical-Learning.html" />
     <link rel="prev" title="About the course Data-Science-with-Python" href="../README.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -158,6 +161,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../README.html">About the course Data-Science-with-Python</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">UNIT 1. Import and Visualitzation of data with Python</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="UNIT2-Statistical-Learning.html">UNIT 2. Statistical Learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="UNIT3-MC-Methods.html">UNIT 3. Monte Carlo methods</a></li>
 <li class="toctree-l1"><a class="reference internal" href="UNIT4-Unsupervised-Learning.html">UNIT 4. Unsupervised Learning</a></li>
@@ -222,7 +226,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://github.com/Biocomputing-Teaching/Data-Science-with-Python" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Dipòsit de fonts"
+   title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -239,7 +243,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://github.com/Biocomputing-Teaching/Data-Science-with-Python/issues/new?title=Issue%20on%20page%20%2Fcode/UNIT1-Introduction.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Obriu un número"
+   title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -260,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Descarregueu aquesta pàgina">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
@@ -269,7 +273,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="../_sources/code/UNIT1-Introduction.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Baixeu el fitxer font"
+   title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -287,7 +291,7 @@ const thebe_selector_output = ".output, .cell_output"
       <li>
 <button onclick="window.print()"
   class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Imprimeix a PDF"
+  title="Print to PDF"
   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -359,8 +363,22 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">UNIT 1. Import and Visualitzation of data with Python</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#retrieving-data">Retrieving data</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#reformating-tables">Reformating tables</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structuring-features">Structuring features</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-tables-and-statistics">Summary tables and statistics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-visualization">Data visualization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#qualitative-variables">Qualitative variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantitative-variables">Quantitative variables</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -372,59 +390,42 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="unit-1-import-and-visualitzation-of-data-with-python">
-<h1>UNIT 1. Import and Visualitzation of data with Python<a class="headerlink" href="#unit-1-import-and-visualitzation-of-data-with-python" title="Permalink to this headline">#</a></h1>
-<p>This Unit includes some fast shortcuts to representing data in Python, closely following <span id="id1">[]</span></p>
+<h1>UNIT 1. Import and Visualitzation of data with Python<a class="headerlink" href="#unit-1-import-and-visualitzation-of-data-with-python" title="Permalink to this heading">#</a></h1>
+<p>This Unit includes some fast shortcuts to representing data in Python, closely following <span id="id1">[]</span> and the corresponding <a class="reference external" href="https://github.com/DSML-book/">GitHub repo</a>.</p>
 <p>NOTE: being this a training tool, we assume the user will have installed all the needed requirements. In case some package is missing, use a terminal to install it apart using your favorite package manager.</p>
 <p>These notebooks have been tested in Linux Ubuntu using Anaconda as the package manager in most cases. The notebooks are self-containing.</p>
 <section id="retrieving-data">
-<h2>Retrieving data<a class="headerlink" href="#retrieving-data" title="Permalink to this headline">#</a></h2>
+<h2>Retrieving data<a class="headerlink" href="#retrieving-data" title="Permalink to this heading">#</a></h2>
 <p>Typically the files containing data to be analyzed are stored in comma separated value (CSV) format. To work with them, the first thing to do is downloading the data. But before we ensure we have a proper folder to download the file.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 
-<span class="n">directory</span> <span class="o">=</span> <span class="s2">&quot;datasets&quot;</span>
+<span class="n">input_directory</span> <span class="o">=</span> <span class="s2">&quot;datasets&quot;</span>
+<span class="n">output_directory</span> <span class="o">=</span> <span class="s1">&#39;output&#39;</span>
 
-<span class="c1"># Check if the directory exists</span>
-<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">directory</span><span class="p">):</span>
+<span class="c1"># Check if the directories exist</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">input_directory</span><span class="p">):</span>
     <span class="c1"># If it doesn&#39;t exist, create it</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">directory</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">input_directory</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;folder &#39;</span><span class="p">,</span><span class="n">directory</span><span class="p">,</span><span class="s1">&#39; exists&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;folder &#39;</span><span class="p">,</span><span class="n">input_directory</span><span class="p">,</span><span class="s1">&#39; exists&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">output_directory</span><span class="p">):</span>
+    <span class="c1"># If it doesn&#39;t exist, create it</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">output_directory</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;folder &#39;</span><span class="p">,</span><span class="n">output_directory</span><span class="p">,</span><span class="s1">&#39; exists&#39;</span><span class="p">)</span>
 
 <span class="c1"># now use wget to download the file into the datasets folder</span>
-<span class="o">!</span>wget -P <span class="nv">$directory</span> -nc https://archive.ics.uci.edu/static/public/109/wine.zip 
+<span class="o">!</span>wget<span class="w"> </span>-P<span class="w"> </span><span class="nv">$input_directory</span><span class="w"> </span>-nc<span class="w"> </span>https://archive.ics.uci.edu/static/public/109/wine.zip<span class="w"> </span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2023-08-15 11:49:37--  https://archive.ics.uci.edu/static/public/109/wine.zip
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>S&#39;està resolent archive.ics.uci.edu (archive.ics.uci.edu)… 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>128.195.10.252
-S&#39;està connectant a archive.ics.uci.edu (archive.ics.uci.edu)|128.195.10.252|:443… 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>conectat.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HTTP: s&#39;ha enviat la petició, s&#39;està esperant una resposta… 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200 OK
-Mida: no especificat
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>S&#39;està desant a: ‘datasets/wine.zip’
-
-
-wine.zip                [&lt;=&gt;                 ]       0  --.-KB/s               
-wine.zip                [ &lt;=&gt;                ]   5,90K  --.-KB/s    in 0s      
-
-2023-08-15 11:49:38 (37,1 MB/s) - s&#39;ha desat ‘datasets/wine.zip’ [6038]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>folder  datasets  exists
+folder  output  exists
+El fitxer ‘datasets/wine.zip’ ja existeix, no es baixa.
 </pre></div>
 </div>
 </div>
@@ -446,129 +447,21 @@ wine.zip                [ &lt;=&gt;                ]   5,90K  --.-KB/s    in 0s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">7</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">zipfile</span> <span class="kn">import</span> <span class="n">ZipFile</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="k">with</span> <span class="n">ZipFile</span><span class="p">(</span><span class="s1">&#39;datasets/wine.zip&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> 
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1">#extract in current directory</span>
+<span class="ne">----&gt; </span><span class="mi">7</span>     <span class="n">f</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">members</span> <span class="o">=</span><span class="p">[</span><span class="s1">&#39;wine.names&#39;</span><span class="p">,</span><span class="s2">&quot;wine.data&quot;</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">wine</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;datasets/wine.data&#39;</span><span class="p">,</span><span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">wine</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>0</th>
-      <th>1</th>
-      <th>2</th>
-      <th>3</th>
-      <th>4</th>
-      <th>5</th>
-      <th>6</th>
-      <th>7</th>
-      <th>8</th>
-      <th>9</th>
-      <th>10</th>
-      <th>11</th>
-      <th>12</th>
-      <th>13</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>14.23</td>
-      <td>1.71</td>
-      <td>2.43</td>
-      <td>15.6</td>
-      <td>127</td>
-      <td>2.80</td>
-      <td>3.06</td>
-      <td>0.28</td>
-      <td>2.29</td>
-      <td>5.64</td>
-      <td>1.04</td>
-      <td>3.92</td>
-      <td>1065</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1</td>
-      <td>13.20</td>
-      <td>1.78</td>
-      <td>2.14</td>
-      <td>11.2</td>
-      <td>100</td>
-      <td>2.65</td>
-      <td>2.76</td>
-      <td>0.26</td>
-      <td>1.28</td>
-      <td>4.38</td>
-      <td>1.05</td>
-      <td>3.40</td>
-      <td>1050</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>1</td>
-      <td>13.16</td>
-      <td>2.36</td>
-      <td>2.67</td>
-      <td>18.6</td>
-      <td>101</td>
-      <td>2.80</td>
-      <td>3.24</td>
-      <td>0.30</td>
-      <td>2.81</td>
-      <td>5.68</td>
-      <td>1.03</td>
-      <td>3.17</td>
-      <td>1185</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>1</td>
-      <td>14.37</td>
-      <td>1.95</td>
-      <td>2.50</td>
-      <td>16.8</td>
-      <td>113</td>
-      <td>3.85</td>
-      <td>3.49</td>
-      <td>0.24</td>
-      <td>2.18</td>
-      <td>7.80</td>
-      <td>0.86</td>
-      <td>3.45</td>
-      <td>1480</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>1</td>
-      <td>13.24</td>
-      <td>2.59</td>
-      <td>2.87</td>
-      <td>21.0</td>
-      <td>118</td>
-      <td>2.80</td>
-      <td>2.69</td>
-      <td>0.39</td>
-      <td>1.82</td>
-      <td>4.32</td>
-      <td>1.04</td>
-      <td>2.93</td>
-      <td>735</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;directory&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <p>as we do not have the names of the columns, we can add manually assign them based on the information contained in the web link.</p>
 <div class="cell docutils container">
@@ -601,12 +494,7 @@ wine.zip                [ &lt;=&gt;                ]   5,90K  --.-KB/s    in 0s
       <th>Alcohol</th>
       <th>Maliacid</th>
       <th>Ash</th>
-      <th>Alcalinity_of_ash</th>
-      <th>Magnesium</th>
-      <th>Total_phenols</th>
-      <th>Flavanoids</th>
-      <th>Nonflavonoid_phenols</th>
-      <th>Proanthocyanins</th>
+      <th>...</th>
       <th>Color_intensity</th>
       <th>Hue</th>
       <th>0D280_0D315_of_diluted_wines</th>
@@ -620,12 +508,7 @@ wine.zip                [ &lt;=&gt;                ]   5,90K  --.-KB/s    in 0s
       <td>14.23</td>
       <td>1.71</td>
       <td>2.43</td>
-      <td>15.6</td>
-      <td>127</td>
-      <td>2.80</td>
-      <td>3.06</td>
-      <td>0.28</td>
-      <td>2.29</td>
+      <td>...</td>
       <td>5.64</td>
       <td>1.04</td>
       <td>3.92</td>
@@ -637,12 +520,7 @@ wine.zip                [ &lt;=&gt;                ]   5,90K  --.-KB/s    in 0s
       <td>13.20</td>
       <td>1.78</td>
       <td>2.14</td>
-      <td>11.2</td>
-      <td>100</td>
-      <td>2.65</td>
-      <td>2.76</td>
-      <td>0.26</td>
-      <td>1.28</td>
+      <td>...</td>
       <td>4.38</td>
       <td>1.05</td>
       <td>3.40</td>
@@ -654,12 +532,7 @@ wine.zip                [ &lt;=&gt;                ]   5,90K  --.-KB/s    in 0s
       <td>13.16</td>
       <td>2.36</td>
       <td>2.67</td>
-      <td>18.6</td>
-      <td>101</td>
-      <td>2.80</td>
-      <td>3.24</td>
-      <td>0.30</td>
-      <td>2.81</td>
+      <td>...</td>
       <td>5.68</td>
       <td>1.03</td>
       <td>3.17</td>
@@ -671,12 +544,7 @@ wine.zip                [ &lt;=&gt;                ]   5,90K  --.-KB/s    in 0s
       <td>14.37</td>
       <td>1.95</td>
       <td>2.50</td>
-      <td>16.8</td>
-      <td>113</td>
-      <td>3.85</td>
-      <td>3.49</td>
-      <td>0.24</td>
-      <td>2.18</td>
+      <td>...</td>
       <td>7.80</td>
       <td>0.86</td>
       <td>3.45</td>
@@ -688,12 +556,7 @@ wine.zip                [ &lt;=&gt;                ]   5,90K  --.-KB/s    in 0s
       <td>13.24</td>
       <td>2.59</td>
       <td>2.87</td>
-      <td>21.0</td>
-      <td>118</td>
-      <td>2.80</td>
-      <td>2.69</td>
-      <td>0.39</td>
-      <td>1.82</td>
+      <td>...</td>
       <td>4.32</td>
       <td>1.04</td>
       <td>2.93</td>
@@ -701,9 +564,10 @@ wine.zip                [ &lt;=&gt;                ]   5,90K  --.-KB/s    in 0s
     </tr>
   </tbody>
 </table>
+<p>5 rows × 14 columns</p>
 </div></div></div>
 </div>
-<p>Alternatively, we can directly read the CSV from its URL, without previously downloading it. We will use <a class="reference external" href="https://vincentarelbundock.github.io/Rdatasets/doc/datasets/iris.html">Fisher’s <code class="docutils literal notranslate"><span class="pre">iris</span></code> data</a>. Here we already have the name of the features so we read them directly from the dataset.</p>
+<p>Alternatively, we can directly read the CSV from its URL, without previously downloading it. We will use <a class="reference external" href="https://vincentarelbundock.github.io/Rdatasets/doc/datasets/iris.html">Fisher’s <code class="docutils literal notranslate"><span class="pre">iris</span></code> data</a>. Here we already have the name of the columns/features so we read them directly from the dataset.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dataname</span> <span class="o">=</span> <span class="s1">&#39;https://vincentarelbundock.github.io/Rdatasets/csv/datasets/iris.csv&#39;</span>
@@ -793,75 +657,930 @@ wine.zip                [ &lt;=&gt;                ]   5,90K  --.-KB/s    in 0s
 <p>as the first column is a duplicated index column, we can remove it</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s1">&#39;Unnamed:0&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;Unnamed: 0&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="nn">Input In [5],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">iris</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s1">&#39;Unnamed:0&#39;</span><span class="p">)</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="nn">File ~/anaconda3/lib/python3.9/site-packages/pandas/util/_decorators.py:311,</span> in <span class="ni">deprecate_nonkeyword_arguments.&lt;locals&gt;.decorate.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">305</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">num_allow_args</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">306</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">307</span>         <span class="n">msg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arguments</span><span class="o">=</span><span class="n">arguments</span><span class="p">),</span>
-<span class="g g-Whitespace">    </span><span class="mi">308</span>         <span class="ne">FutureWarning</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">309</span>         <span class="n">stacklevel</span><span class="o">=</span><span class="n">stacklevel</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">310</span>     <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">311</span> <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-<span class="nn">File ~/anaconda3/lib/python3.9/site-packages/pandas/core/frame.py:4906,</span> in <span class="ni">DataFrame.drop</span><span class="nt">(self, labels, axis, index, columns, level, inplace, errors)</span>
-<span class="g g-Whitespace">   </span><span class="mi">4774</span> <span class="nd">@deprecate_nonkeyword_arguments</span><span class="p">(</span><span class="n">version</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">allowed_args</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;self&quot;</span><span class="p">,</span> <span class="s2">&quot;labels&quot;</span><span class="p">])</span>
-<span class="g g-Whitespace">   </span><span class="mi">4775</span> <span class="k">def</span> <span class="nf">drop</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">4776</span>     <span class="bp">self</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">4783</span>     <span class="n">errors</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;raise&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">4784</span> <span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">4785</span>     <span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">4786</span><span class="sd">     Drop specified labels from rows or columns.</span>
-<span class="g g-Whitespace">   </span><span class="mi">4787</span><span class="sd"> </span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">   </span><span class="mi">4904</span><span class="sd">             weight  1.0     0.8</span>
-<span class="g g-Whitespace">   </span><span class="mi">4905</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">4906</span>     <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">4907</span>         <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">4908</span>         <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">4909</span>         <span class="n">index</span><span class="o">=</span><span class="n">index</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">4910</span>         <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">4911</span>         <span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">4912</span>         <span class="n">inplace</span><span class="o">=</span><span class="n">inplace</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">4913</span>         <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">4914</span>     <span class="p">)</span>
-
-<span class="nn">File ~/anaconda3/lib/python3.9/site-packages/pandas/core/generic.py:4150,</span> in <span class="ni">NDFrame.drop</span><span class="nt">(self, labels, axis, index, columns, level, inplace, errors)</span>
-<span class="g g-Whitespace">   </span><span class="mi">4148</span> <span class="k">for</span> <span class="n">axis</span><span class="p">,</span> <span class="n">labels</span> <span class="ow">in</span> <span class="n">axes</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-<span class="g g-Whitespace">   </span><span class="mi">4149</span>     <span class="k">if</span> <span class="n">labels</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">4150</span>         <span class="n">obj</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">_drop_axis</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">4152</span> <span class="k">if</span> <span class="n">inplace</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">4153</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_update_inplace</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
-
-<span class="nn">File ~/anaconda3/lib/python3.9/site-packages/pandas/core/generic.py:4185,</span> in <span class="ni">NDFrame._drop_axis</span><span class="nt">(self, labels, axis, level, errors)</span>
-<span class="g g-Whitespace">   </span><span class="mi">4183</span>         <span class="n">new_axis</span> <span class="o">=</span> <span class="n">axis</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">4184</span>     <span class="k">else</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">4185</span>         <span class="n">new_axis</span> <span class="o">=</span> <span class="n">axis</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">4186</span>     <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">reindex</span><span class="p">(</span><span class="o">**</span><span class="p">{</span><span class="n">axis_name</span><span class="p">:</span> <span class="n">new_axis</span><span class="p">})</span>
-<span class="g g-Whitespace">   </span><span class="mi">4188</span> <span class="c1"># Case for non-unique axis</span>
-<span class="g g-Whitespace">   </span><span class="mi">4189</span> <span class="k">else</span><span class="p">:</span>
-
-<span class="nn">File ~/anaconda3/lib/python3.9/site-packages/pandas/core/indexes/base.py:6017,</span> in <span class="ni">Index.drop</span><span class="nt">(self, labels, errors)</span>
-<span class="g g-Whitespace">   </span><span class="mi">6015</span> <span class="k">if</span> <span class="n">mask</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
-<span class="g g-Whitespace">   </span><span class="mi">6016</span>     <span class="k">if</span> <span class="n">errors</span> <span class="o">!=</span> <span class="s2">&quot;ignore&quot;</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">6017</span>         <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">labels</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span><span class="si">}</span><span class="s2"> not found in axis&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">6018</span>     <span class="n">indexer</span> <span class="o">=</span> <span class="n">indexer</span><span class="p">[</span><span class="o">~</span><span class="n">mask</span><span class="p">]</span>
-<span class="g g-Whitespace">   </span><span class="mi">6019</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">indexer</span><span class="p">)</span>
-
-<span class="ne">KeyError</span>: &quot;[&#39;Unnamed:0&#39;] not found in axis&quot;
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Sepal.Length</th>
+      <th>Sepal.Width</th>
+      <th>Petal.Length</th>
+      <th>Petal.Width</th>
+      <th>Species</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5.1</td>
+      <td>3.5</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4.9</td>
+      <td>3.0</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4.7</td>
+      <td>3.2</td>
+      <td>1.3</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4.6</td>
+      <td>3.1</td>
+      <td>1.5</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5.0</td>
+      <td>3.6</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>145</th>
+      <td>6.7</td>
+      <td>3.0</td>
+      <td>5.2</td>
+      <td>2.3</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>146</th>
+      <td>6.3</td>
+      <td>2.5</td>
+      <td>5.0</td>
+      <td>1.9</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>147</th>
+      <td>6.5</td>
+      <td>3.0</td>
+      <td>5.2</td>
+      <td>2.0</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>148</th>
+      <td>6.2</td>
+      <td>3.4</td>
+      <td>5.4</td>
+      <td>2.3</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>149</th>
+      <td>5.9</td>
+      <td>3.0</td>
+      <td>5.1</td>
+      <td>1.8</td>
+      <td>virginica</td>
+    </tr>
+  </tbody>
+</table>
+<p>150 rows × 5 columns</p>
+</div></div></div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="reformating-tables">
+<h1>Reformating tables<a class="headerlink" href="#reformating-tables" title="Permalink to this heading">#</a></h1>
+<p>Some times tha data comes in odd formats, not useful for analysis.</p>
+<p>For example, consider the table with scores given here, with values obtained before and after some particular training:
+<img alt="scores" src="../_images/scores.png" /></p>
+<p>We want to reformat it in such a way that the score data is in a single column. Let us create a table that uses three features: <em>Score</em> (continuous data), <em>Time</em> (before or after) and <em>Student</em> (integer values from 1 to 5). We will use the <code class="docutils literal notranslate"><span class="pre">pandas.melt</span></code> method, <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.melt.html">speciffically devoted to this goal</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># manually create dataframe with data from table</span>
+<span class="n">values</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span> <span class="p">,</span><span class="mi">75</span> <span class="p">,</span><span class="mi">85</span><span class="p">]</span> <span class="p">,[</span><span class="mi">2</span> <span class="p">,</span><span class="mi">30</span> <span class="p">,</span><span class="mi">50</span><span class="p">]</span> <span class="p">,[</span><span class="mi">3</span> <span class="p">,</span><span class="mi">100</span> <span class="p">,</span><span class="mi">100</span><span class="p">]</span> <span class="p">,[</span><span class="mi">4</span> <span class="p">,</span><span class="mi">50</span> <span class="p">,</span><span class="mi">52</span><span class="p">]</span> <span class="p">,[</span><span class="mi">5</span> <span class="p">,</span><span class="mi">60</span> <span class="p">,</span><span class="mi">65</span><span class="p">]]</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span> <span class="n">DataFrame</span> <span class="p">(</span><span class="n">values</span> <span class="p">,</span> <span class="n">columns</span> <span class="o">=</span><span class="p">[</span><span class="s1">&#39;Student &#39;</span><span class="p">,</span><span class="s1">&#39;Before &#39;</span><span class="p">,</span> <span class="s1">&#39;After &#39;</span><span class="p">])</span>
+<span class="c1"># format dataframe as required</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">df</span> <span class="p">,</span> <span class="n">id_vars</span> <span class="o">=</span><span class="p">[</span><span class="s1">&#39;Student &#39;</span><span class="p">],</span> <span class="n">var_name</span> <span class="o">=</span><span class="s2">&quot;Time&quot;</span><span class="p">,</span> <span class="n">value_vars</span> <span class="o">=</span><span class="p">[</span><span class="s1">&#39;Before &#39;</span><span class="p">,</span><span class="s1">&#39;After &#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   Student      Time  value
+0         1  Before      75
+1         2  Before      30
+2         3  Before     100
+3         4  Before      50
+4         5  Before      60
+5         1   After      85
+6         2   After      50
+7         3   After     100
+8         4   After      52
+9         5   After      65
 </pre></div>
 </div>
 </div>
 </div>
+<section id="structuring-features">
+<h2>Structuring features<a class="headerlink" href="#structuring-features" title="Permalink to this heading">#</a></h2>
+<p>Types of features:</p>
+<ul class="simple">
+<li><p>Quantitive (with possible discrete or continuous values)</p></li>
+<li><p>Qualitative; can be eventually divided into a fixed number of categories: that is why they are referred as <strong>categorical</strong> or <strong>factors</strong>.</p></li>
+</ul>
+<p>Here we eill work with data from <span id="id2">[]</span>. In particular, we will download the file containing nutritional measurements of thirteen features (columns) for 226 elderly individuals (rows). Note the <a class="reference external" href="http://www.biostatisticien.eu/springeR/nutrition_elderly.xls">file</a> is now an excel file.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xls</span> <span class="o">=</span> <span class="s1">&#39;http://www.biostatisticien.eu/springeR/nutrition_elderly.xls&#39;</span>
+<span class="n">nutri</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">xls</span><span class="p">)</span>
+
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_columns&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">nutri</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>gender</th>
+      <th>situation</th>
+      <th>tea</th>
+      <th>coffee</th>
+      <th>...</th>
+      <th>raw_fruit</th>
+      <th>cooked_fruit_veg</th>
+      <th>chocol</th>
+      <th>fat</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>1</td>
+      <td>4</td>
+      <td>5</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>...</td>
+      <td>5</td>
+      <td>5</td>
+      <td>1</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>1</td>
+      <td>0</td>
+      <td>4</td>
+      <td>...</td>
+      <td>5</td>
+      <td>2</td>
+      <td>5</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>4</td>
+      <td>0</td>
+      <td>3</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>...</td>
+      <td>5</td>
+      <td>5</td>
+      <td>3</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 13 columns</p>
+</div></div></div>
+</div>
+<p>to check the structure of the data we can use the <code class="docutils literal notranslate"><span class="pre">info</span></code> attribute of the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> dataframe, which matches the description that is given in the original source</p>
+<p><img alt="description" src="../_images/nutriage-en.png" /></p>
+<p>Note the features can be classified as</p>
+<ul class="simple">
+<li><p>qualitative</p>
+<ul>
+<li><p>ordinal (meat, fish, raw_fruit, cooked_fruit_veg,chocol)</p></li>
+<li><p>nominal (gender, situation), fat</p></li>
+</ul>
+</li>
+<li><p>quantitative</p>
+<ul>
+<li><p>discrete (tea, coffee)</p></li>
+<li><p>continuous (height, weight, age)</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nutri</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 226 entries, 0 to 225
+Data columns (total 13 columns):
+ #   Column            Non-Null Count  Dtype
+---  ------            --------------  -----
+ 0   gender            226 non-null    int64
+ 1   situation         226 non-null    int64
+ 2   tea               226 non-null    int64
+ 3   coffee            226 non-null    int64
+ 4   height            226 non-null    int64
+ 5   weight            226 non-null    int64
+ 6   age               226 non-null    int64
+ 7   meat              226 non-null    int64
+ 8   fish              226 non-null    int64
+ 9   raw_fruit         226 non-null    int64
+ 10  cooked_fruit_veg  226 non-null    int64
+ 11  chocol            226 non-null    int64
+ 12  fat               226 non-null    int64
+dtypes: int64(13)
+memory usage: 23.1 KB
+</pre></div>
+</div>
+</div>
+</div>
+<p>let us change now the data value and type of different features by means of the <code class="docutils literal notranslate"><span class="pre">replace</span></code> and the <code class="docutils literal notranslate"><span class="pre">astype</span></code> methods, and finally save the data in CSV format.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># gender, situation, meat, fish, raw_fruit, cooked_fruit_veg chocol and fat feature are categorical</span>
+<span class="n">DICT</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span><span class="s1">&#39;Male&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">:</span><span class="s1">&#39;Female&#39;</span><span class="p">}</span>
+<span class="n">nutri</span><span class="p">[</span><span class="s1">&#39;gender&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">nutri</span><span class="p">[</span><span class="s1">&#39;gender&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">DICT</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span>
+
+<span class="n">DICT</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span><span class="s1">&#39;single&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">:</span><span class="s1">&#39;couple&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">:</span><span class="s1">&#39;family&#39;</span><span class="p">,</span><span class="mi">4</span><span class="p">:</span><span class="s1">&#39;other&#39;</span><span class="p">}</span>
+<span class="n">nutri</span><span class="p">[</span><span class="s1">&#39;situation&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">nutri</span><span class="p">[</span><span class="s1">&#39;situation&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">DICT</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span>
+
+<span class="n">DICT</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span><span class="s1">&#39;never&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="s1">&#39;less than once a week&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">:</span><span class="s1">&#39;once a week&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">:</span><span class="s1">&#39;2-3 times a week&#39;</span><span class="p">,</span><span class="mi">4</span><span class="p">:</span><span class="s1">&#39;4-6 times a week&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">:</span><span class="s1">&#39;every day&#39;</span><span class="p">}</span>
+<span class="n">nutri</span><span class="p">[</span><span class="s1">&#39;meat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">nutri</span><span class="p">[</span><span class="s1">&#39;meat&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">DICT</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span>
+<span class="n">nutri</span><span class="p">[</span><span class="s1">&#39;fish&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">nutri</span><span class="p">[</span><span class="s1">&#39;fish&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">DICT</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span>
+<span class="n">nutri</span><span class="p">[</span><span class="s1">&#39;raw_fruit&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">nutri</span><span class="p">[</span><span class="s1">&#39;raw_fruit&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">DICT</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span>
+<span class="n">nutri</span><span class="p">[</span><span class="s1">&#39;cooked_fruit_veg&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">nutri</span><span class="p">[</span><span class="s1">&#39;cooked_fruit_veg&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">DICT</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span>
+<span class="n">nutri</span><span class="p">[</span><span class="s1">&#39;chocol&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">nutri</span><span class="p">[</span><span class="s1">&#39;chocol&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">DICT</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span>
+
+<span class="n">DICT</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span><span class="s1">&#39;Butter&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">:</span><span class="s1">&#39;Margarine&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">:</span><span class="s1">&#39;Peanut oil&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span><span class="s1">&#39;Sunflower oil&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">:</span><span class="s1">&#39;Olive oil&#39;</span><span class="p">,</span> <span class="mi">6</span><span class="p">:</span><span class="s1">&#39;Mix of vegetable oils&#39;</span><span class="p">,</span> <span class="mi">7</span><span class="p">:</span><span class="s1">&#39;Colza oil&#39;</span><span class="p">,</span><span class="mi">8</span><span class="p">:</span><span class="s1">&#39;Duck or goose fat&#39;</span><span class="p">}</span>
+<span class="n">nutri</span><span class="p">[</span><span class="s1">&#39;fat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">nutri</span><span class="p">[</span><span class="s1">&#39;fat&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">DICT</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span>
+
+<span class="c1"># tea and coffee are integer</span>
+<span class="n">nutri</span><span class="p">[</span><span class="s1">&#39;tea&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">nutri</span><span class="p">[</span><span class="s1">&#39;tea&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">nutri</span><span class="p">[</span><span class="s1">&#39;coffee&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">nutri</span><span class="p">[</span><span class="s1">&#39;coffee&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+
+<span class="c1"># height, weigth, age are float</span>
+<span class="n">nutri</span><span class="p">[</span><span class="s1">&#39;height&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">nutri</span><span class="p">[</span><span class="s1">&#39;height&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+<span class="n">nutri</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">nutri</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+<span class="n">nutri</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">nutri</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+
+
+<span class="n">nutri</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+
+<span class="n">nutri</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;output/nutri.csv&#39;</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 226 entries, 0 to 225
+Data columns (total 13 columns):
+ #   Column            Non-Null Count  Dtype   
+---  ------            --------------  -----   
+ 0   gender            226 non-null    category
+ 1   situation         226 non-null    category
+ 2   tea               226 non-null    int64   
+ 3   coffee            226 non-null    int64   
+ 4   height            226 non-null    float64 
+ 5   weight            226 non-null    float64 
+ 6   age               226 non-null    float64 
+ 7   meat              226 non-null    category
+ 8   fish              226 non-null    category
+ 9   raw_fruit         226 non-null    category
+ 10  cooked_fruit_veg  226 non-null    category
+ 11  chocol            226 non-null    category
+ 12  fat               226 non-null    category
+dtypes: category(8), float64(3), int64(2)
+memory usage: 12.4 KB
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="summary-tables-and-statistics">
+<h2>Summary tables and statistics<a class="headerlink" href="#summary-tables-and-statistics" title="Permalink to this heading">#</a></h2>
+<p>It is extremely important to know your data befroe any analysis. Apart from the descriptive tools shown above, descriptive statistical measurements can be obtained from pandas with two simple methods: <code class="docutils literal notranslate"><span class="pre">describe</span></code> and <code class="docutils literal notranslate"><span class="pre">value_counts</span></code>. Interesting to note that the outcome of both <code class="docutils literal notranslate"><span class="pre">describe</span></code> and <code class="docutils literal notranslate"><span class="pre">value_counts</span></code> are pandas <em>series</em>, one-dimensional ndarrays with axis labels.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nutri</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;output/nutri.csv&#39;</span><span class="p">)</span>
+<span class="n">nutri</span><span class="p">[</span><span class="s1">&#39;fat&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count               226
+unique                8
+top       Sunflower oil
+freq                 68
+Name: fat, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nutri</span><span class="p">[</span><span class="s1">&#39;fat&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fat
+Sunflower oil            68
+Peanut oil               48
+Olive oil                40
+Margarine                27
+Mix of vegetable oils    23
+Butter                   15
+Duck or goose fat         4
+Colza oil                 1
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also generate a contingey table by <em>cross tabulating</em> between two or more variables:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">nutri</span><span class="o">.</span><span class="n">gender</span><span class="p">,</span><span class="n">nutri</span><span class="o">.</span><span class="n">situation</span><span class="p">,</span><span class="n">margins</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># the margins attribute adds the rows/columns totals</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>situation</th>
+      <th>couple</th>
+      <th>family</th>
+      <th>single</th>
+      <th>All</th>
+    </tr>
+    <tr>
+      <th>gender</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Female</th>
+      <td>56</td>
+      <td>7</td>
+      <td>78</td>
+      <td>141</td>
+    </tr>
+    <tr>
+      <th>Male</th>
+      <td>63</td>
+      <td>2</td>
+      <td>20</td>
+      <td>85</td>
+    </tr>
+    <tr>
+      <th>All</th>
+      <td>119</td>
+      <td>9</td>
+      <td>98</td>
+      <td>226</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>we can now turn to descriptive statistics like the <em>sample mean</em>, <span class="math notranslate nohighlight">\(\bar{x}\)</span>:
+$<span class="math notranslate nohighlight">\(\bar{x}=\frac{1}{n}\sum_{i=1}^n x_i\)</span>$</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nutri</span><span class="o">.</span><span class="n">height</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>163.96017699115043
+</pre></div>
+</div>
+</div>
+</div>
+<p>and the <em>p-sampla quantile</em> of <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>, being <span class="math notranslate nohighlight">\(0 &lt;p &lt;1\)</span>, which refers to the value <span class="math notranslate nohighlight">\(x\)</span> such that at least a fraction <span class="math notranslate nohighlight">\(p\)</span> of the data is less than or equal to <span class="math notranslate nohighlight">\(x\)</span> and at least a fraction <span class="math notranslate nohighlight">\(1-p\)</span> is greater or equals to <span class="math notranslate nohighlight">\(x\)</span>. Thus, the <em>sample median</em> is the sample 0.5-quatile. For our <code class="docutils literal notranslate"><span class="pre">nutri</span></code> data the first (25), second (50) and third (75% percentile of the data) can be obtained as:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nutri</span><span class="o">.</span><span class="n">height</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="p">[</span><span class="mf">0.25</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.75</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.25    157.0
+0.50    163.0
+0.75    170.0
+Name: height, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>If, in addition to the location of the data we are interested in its dispersions, we can start by obtaining the range</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nutri</span><span class="o">.</span><span class="n">height</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">-</span><span class="n">nutri</span><span class="o">.</span><span class="n">height</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>48.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next, we can calculate the <em>sample variance</em> as
+$<span class="math notranslate nohighlight">\(s^2 = \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar{x})^2\)</span>$</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="n">nutri</span><span class="o">.</span><span class="n">height</span><span class="o">.</span><span class="n">var</span><span class="p">(),</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>81.06
+</pre></div>
+</div>
+</div>
+</div>
+<p>or the <em>standard deviation</em> as <span class="math notranslate nohighlight">\(s=\sqrt{s^2}\)</span> or, better:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="n">nutri</span><span class="o">.</span><span class="n">height</span><span class="o">.</span><span class="n">std</span><span class="p">(),</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>or simply make use of the <code class="docutils literal notranslate"><span class="pre">describe</span></code> method shown above, taking profit of the quantitative type of the <em>height</em> data</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nutri</span><span class="o">.</span><span class="n">height</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count    226.000000
+mean     163.960177
+std        9.003368
+min      140.000000
+25%      157.000000
+50%      163.000000
+75%      170.000000
+max      188.000000
+Name: height, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="data-visualization">
+<h2>Data visualization<a class="headerlink" href="#data-visualization" title="Permalink to this heading">#</a></h2>
+<p>Depending on the data type, data visualization will differ. In order to use the visualization power of Python , first we will import the <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> module, as well as <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, in addition to the already imported <code class="docutils literal notranslate"><span class="pre">pandas</span></code> module.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="qualitative-variables">
+<h3>Qualitative variables<a class="headerlink" href="#qualitative-variables" title="Permalink to this heading">#</a></h3>
+<p>here we can show the data in a simple bar plot, taking itno account that the category (x-axis) is not per se a numerical value, so we should manually place the different categories in the plot.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">width</span> <span class="o">=</span> <span class="mf">0.35</span>  <span class="c1"># the width of the bars</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">1.6</span><span class="p">]</span>    <span class="c1"># position of the bars</span>
+<span class="n">situation_counts</span> <span class="o">=</span> <span class="n">nutri</span><span class="o">.</span><span class="n">situation</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>  <span class="c1"># note that situation_counts is a pandas series</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">situation_counts</span><span class="p">,</span><span class="n">width</span><span class="p">,</span><span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">situation_counts</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/2540ebf83f464b7ac377dbb7999bad679eca945a7671fb1134c46a25a863853e.png" src="../_images/2540ebf83f464b7ac377dbb7999bad679eca945a7671fb1134c46a25a863853e.png" />
+</div>
+</div>
+</section>
+<section id="quantitative-variables">
+<h3>Quantitative variables<a class="headerlink" href="#quantitative-variables" title="Permalink to this heading">#</a></h3>
+<p>Such type oif variables allow for more complex graphical representation. We will see some possibilities. We are in particular interested in visualizing the location, dispersion and shae of the data.</p>
+<p>The first example is visualizing data with a boxplot, that gives information on the location and dispersion, showing also outliers (data <span class="math notranslate nohighlight">\(x_i\)</span> that is beyond the whiskers of the boxplot, this is, <span class="math notranslate nohighlight">\(x_i&lt;Q_1-1.5 (Q_3-Q_1)\)</span> or <span class="math notranslate nohighlight">\(x_i&gt;Q_3+1.5 (Q_3-Q_1)\)</span>, being <span class="math notranslate nohighlight">\(Q_3-Q_1\)</span> called <em>interquantile range</em> or IQR).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">nutri</span><span class="o">.</span><span class="n">age</span><span class="p">,</span><span class="n">widths</span><span class="o">=</span><span class="n">width</span><span class="p">,</span><span class="n">vert</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># the vert controls the verticality of the plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;age&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/f62c7fc99c1fd8b9a9844230f1e3987b8efe80e8568a404b0a4a5f455157c499.png" src="../_images/f62c7fc99c1fd8b9a9844230f1e3987b8efe80e8568a404b0a4a5f455157c499.png" />
+</div>
+</div>
+<p>In a slightly more complex setup, we can compare two different categories in the boxplot:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">males</span> <span class="o">=</span> <span class="n">nutri</span><span class="p">[</span><span class="n">nutri</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="s1">&#39;Male&#39;</span><span class="p">]</span>
+<span class="n">females</span> <span class="o">=</span> <span class="n">nutri</span><span class="p">[</span><span class="n">nutri</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="s1">&#39;Female&#39;</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">boxplot</span><span class="p">([</span><span class="n">males</span><span class="o">.</span><span class="n">coffee</span><span class="p">,</span> <span class="n">females</span><span class="o">.</span><span class="n">coffee</span><span class="p">],</span> <span class="n">notch</span> <span class="o">=</span><span class="kc">True</span> <span class="p">,</span> <span class="n">widths</span><span class="o">=</span><span class="p">(</span><span class="mf">0.5</span> <span class="p">,</span><span class="mf">0.5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span> <span class="p">(</span><span class="s1">&#39;gender&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span> <span class="p">(</span><span class="s1">&#39;coffee&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span> <span class="p">([</span><span class="mi">1</span> <span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="p">,[</span><span class="s1">&#39;Male&#39;</span><span class="p">,</span><span class="s1">&#39;Female&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/2ceb85dcc4f7dc1016510fe56323c2e1587254de03fb567a2948fd34a42ba546.png" src="../_images/2ceb85dcc4f7dc1016510fe56323c2e1587254de03fb567a2948fd34a42ba546.png" />
+</div>
+</div>
+<p>we can also show the distribution of the data using a histogram, after breaking the data into <em>bins</em> or <em>classes</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">nutri</span><span class="o">.</span><span class="n">age</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span><span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Age&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Quantity&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/28ad56ef2fb5807d9ffe40cefd4ed9d2b82b51236d2d3ddc99eb6cccafd99e60.png" src="../_images/28ad56ef2fb5807d9ffe40cefd4ed9d2b82b51236d2d3ddc99eb6cccafd99e60.png" />
+</div>
+</div>
+<p>alternatively, we can weigth the values to show <span class="math notranslate nohighlight">\(\frac{counts}{total}\)</span> by using the trick of multiplying all values times the quantity <span class="math notranslate nohighlight">\(1/266\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">weigths</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">nutri</span><span class="o">.</span><span class="n">age</span><span class="p">)</span><span class="o">/</span><span class="n">nutri</span><span class="o">.</span><span class="n">age</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">nutri</span><span class="o">.</span><span class="n">age</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span><span class="n">weights</span><span class="o">=</span><span class="n">weigths</span><span class="p">,</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span><span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Age&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Proportion of total&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/ab1160e63b2f380dcd5ae9cc3b6d03f50fcac2496e186e877c3299d1d772caad.png" src="../_images/ab1160e63b2f380dcd5ae9cc3b6d03f50fcac2496e186e877c3299d1d772caad.png" />
+</div>
+</div>
+<p>The <em>empirical cumulative distribution function</em>, <span class="math notranslate nohighlight">\(F_n\)</span>, is a step function that jupms <span class="math notranslate nohighlight">\(k/n\)</span> at observation values, where <span class="math notranslate nohighlight">\(k\)</span> is the fraction of tied observations at that value:
+$<span class="math notranslate nohighlight">\(F_n(x)=\frac{\mathrm{number \; of \; }x_i \leq x}{n}\)</span>$
+The function can be defined and plotted in the same way for both discrete and continuous data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">nutri</span><span class="o">.</span><span class="n">age</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">nutri</span><span class="o">.</span><span class="n">age</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Age&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$F_n(x)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span><span class="n">x</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/7db1bd99bf430948296de986281e99a138a34bd689f0b53b3597786d09c94ee0.png" src="../_images/7db1bd99bf430948296de986281e99a138a34bd689f0b53b3597786d09c94ee0.png" />
+</div>
+</div>
+<p>Next, let us have a look at a plot that takes into account the contingency table shown above. We will make use now of the <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> package, which simplifies the plotting of statistical information.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;situation&#39;</span><span class="p">,</span><span class="n">hue</span><span class="o">=</span><span class="s1">&#39;gender&#39;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">nutri</span><span class="p">,</span><span class="n">hue_order</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Male&#39;</span><span class="p">,</span><span class="s1">&#39;Female&#39;</span><span class="p">],</span><span class="n">palette</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;green&#39;</span><span class="p">,</span><span class="s1">&#39;red&#39;</span><span class="p">],</span><span class="n">saturation</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Situation&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Counts&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/a6d4f0150b17dcd0d2ed33dfdc71f41848c26dc48fb90f0f43cf24ee059671e2.png" src="../_images/a6d4f0150b17dcd0d2ed33dfdc71f41848c26dc48fb90f0f43cf24ee059671e2.png" />
+</div>
+</div>
+<p><em>Scatter plots</em> are useful to visualize patterns between quantitative features.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">nutri</span><span class="o">.</span><span class="n">height</span><span class="p">,</span><span class="n">nutri</span><span class="o">.</span><span class="n">weight</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;height&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;weight&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/ea4f3fa8b8fc722594251eda4dca4126fd858362b2969390161942f6e40815c7.png" src="../_images/ea4f3fa8b8fc722594251eda4dca4126fd858362b2969390161942f6e40815c7.png" />
+</div>
+</div>
+<p>We can get more sophisticated plots and fit some lines to the data to visualy compare data. In this example, we will use data from Vincent Arel Bundock repo on birth weights of babies for smoking and non smoking mothers, and plot the data againts the age of the mother. We will deal with significance of the results in upcoming sessions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">urlprefix</span> <span class="o">=</span> <span class="s1">&#39;http://vincentarelbundock.github.io/Rdatasets/csv/&#39;</span>
+<span class="n">dataname</span> <span class="o">=</span> <span class="s1">&#39;MASS/birthwt.csv&#39;</span>
+<span class="n">bwt</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">urlprefix</span> <span class="o">+</span> <span class="n">dataname</span><span class="p">)</span>
+<span class="n">bwt</span> <span class="o">=</span> <span class="n">bwt</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;Unnamed: 0&#39;</span> <span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1">#drop unnamed column</span>
+<span class="n">bwt</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>low</th>
+      <th>age</th>
+      <th>lwt</th>
+      <th>race</th>
+      <th>...</th>
+      <th>ht</th>
+      <th>ui</th>
+      <th>ftv</th>
+      <th>bwt</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>19</td>
+      <td>182</td>
+      <td>2</td>
+      <td>...</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>2523</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0</td>
+      <td>33</td>
+      <td>155</td>
+      <td>3</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+      <td>2551</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0</td>
+      <td>20</td>
+      <td>105</td>
+      <td>1</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>2557</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0</td>
+      <td>21</td>
+      <td>108</td>
+      <td>1</td>
+      <td>...</td>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>2594</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0</td>
+      <td>18</td>
+      <td>107</td>
+      <td>1</td>
+      <td>...</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>2600</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>184</th>
+      <td>1</td>
+      <td>28</td>
+      <td>95</td>
+      <td>1</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>2466</td>
+    </tr>
+    <tr>
+      <th>185</th>
+      <td>1</td>
+      <td>14</td>
+      <td>100</td>
+      <td>3</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>2495</td>
+    </tr>
+    <tr>
+      <th>186</th>
+      <td>1</td>
+      <td>23</td>
+      <td>94</td>
+      <td>3</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2495</td>
+    </tr>
+    <tr>
+      <th>187</th>
+      <td>1</td>
+      <td>17</td>
+      <td>142</td>
+      <td>2</td>
+      <td>...</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2495</td>
+    </tr>
+    <tr>
+      <th>188</th>
+      <td>1</td>
+      <td>21</td>
+      <td>130</td>
+      <td>1</td>
+      <td>...</td>
+      <td>1</td>
+      <td>0</td>
+      <td>3</td>
+      <td>2495</td>
+    </tr>
+  </tbody>
+</table>
+<p>189 rows × 10 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">styles</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="s1">&#39;red&#39;</span><span class="p">],</span> <span class="mi">1</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;^&#39;</span><span class="p">,</span><span class="s1">&#39;blue&#39;</span><span class="p">]}</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">styles</span><span class="p">:</span>
+    <span class="n">grp</span> <span class="o">=</span> <span class="n">bwt</span><span class="p">[</span><span class="n">bwt</span><span class="o">.</span><span class="n">smoke</span> <span class="o">==</span> <span class="n">k</span><span class="p">]</span>
+    <span class="n">m</span><span class="p">,</span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">grp</span><span class="o">.</span><span class="n">age</span> <span class="p">,</span> <span class="n">grp</span><span class="o">.</span><span class="n">bwt</span> <span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># fit a straight line</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">grp</span><span class="o">.</span><span class="n">age</span> <span class="p">,</span> <span class="n">grp</span><span class="o">.</span><span class="n">bwt</span> <span class="p">,</span> <span class="n">c</span><span class="o">=</span> <span class="n">styles</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">15</span> <span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                 <span class="n">marker</span> <span class="o">=</span> <span class="n">styles</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">grp</span><span class="o">.</span><span class="n">age</span> <span class="p">,</span> <span class="n">m</span><span class="o">*</span><span class="n">grp</span><span class="o">.</span><span class="n">age</span> <span class="o">+</span> <span class="n">b</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="n">styles</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;age&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;birth weight (g)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;non - smokers&#39;</span><span class="p">,</span><span class="s1">&#39;smokers&#39;</span><span class="p">],</span><span class="n">prop</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;size&#39;</span><span class="p">:</span><span class="mi">8</span><span class="p">},</span><span class="n">loc</span><span class="o">=</span><span class="p">(</span><span class="mf">0.7</span> <span class="p">,</span><span class="mf">0.3</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/fe5c1ab28a5b0d227f7ab521586ff4be11c8002d8fa3d4931871a7440a9c6371.png" src="../_images/fe5c1ab28a5b0d227f7ab521586ff4be11c8002d8fa3d4931871a7440a9c6371.png" />
+</div>
+</div>
+</section>
 </section>
 </section>
 
@@ -932,8 +1651,22 @@ wine.zip                [ &lt;=&gt;                ]   5,90K  --.-KB/s    in 0s
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">UNIT 1. Import and Visualitzation of data with Python</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#retrieving-data">Retrieving data</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#reformating-tables">Reformating tables</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structuring-features">Structuring features</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-tables-and-statistics">Summary tables and statistics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-visualization">Data visualization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#qualitative-variables">Qualitative variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantitative-variables">Quantitative variables</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>
@@ -947,7 +1680,7 @@ wine.zip                [ &lt;=&gt;                ]   5,90K  --.-KB/s    in 0s
   <div class="footer-item">
     
 <p class="component-author">
-Per CBBL teaching
+By CBBL teaching
 </p>
 
   </div>

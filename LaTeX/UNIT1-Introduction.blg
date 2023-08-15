@@ -1,0 +1,46 @@
+This is BibTeX, Version 0.99d (TeX Live 2022/dev/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: UNIT1-Introduction.aux
+The style file: plain.bst
+Database file #1: DataSciencewithPython.bib
+You've used 2 entries,
+            2118 wiz_defined-function locations,
+            511 strings with 4490 characters,
+and the built_in function-call counts, 651 in all, are:
+= -- 56
+> -- 41
+< -- 1
++ -- 17
+- -- 14
+* -- 49
+:= -- 120
+add.period$ -- 7
+call.type$ -- 2
+change.case$ -- 11
+chr.to.int$ -- 0
+cite$ -- 2
+duplicate$ -- 25
+empty$ -- 46
+format.name$ -- 14
+if$ -- 130
+int.to.chr$ -- 0
+int.to.str$ -- 2
+missing$ -- 4
+newline$ -- 13
+num.names$ -- 4
+pop$ -- 17
+preamble$ -- 1
+purify$ -- 11
+quote$ -- 0
+skip$ -- 12
+stack$ -- 0
+substring$ -- 11
+swap$ -- 4
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 4
+warning$ -- 0
+while$ -- 4
+width$ -- 3
+write$ -- 25
