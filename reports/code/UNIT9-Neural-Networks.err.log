@@ -17,29 +17,15 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-import pandas as pd
-from zipfile import ZipFile
+# UNIT 9. Neural Networks
 
-with ZipFile('datasets/wine.zip', 'r') as f:
-
-#extract in current directory
-    f.extractall(directory, members =['wine.names',"wine.data"])
-
-wine = pd.read_csv('datasets/wine.data',header=None)
-wine.head()
+This Unit includes an introduction to neural networks, strongly based in {cite:p}`kroese2020`.
 ------------------
 
-[0;31m---------------------------------------------------------------------------[0m
-[0;31mNameError[0m                                 Traceback (most recent call last)
-Cell [0;32mIn[2], line 7[0m
-[1;32m      2[0m [38;5;28;01mfrom[39;00m [38;5;21;01mzipfile[39;00m [38;5;28;01mimport[39;00m ZipFile
-[1;32m      4[0m [38;5;28;01mwith[39;00m ZipFile([38;5;124m'[39m[38;5;124mdatasets/wine.zip[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mr[39m[38;5;124m'[39m) [38;5;28;01mas[39;00m f:
-[1;32m      5[0m 
-[1;32m      6[0m [38;5;66;03m#extract in current directory[39;00m
-[0;32m----> 7[0m     f[38;5;241m.[39mextractall([43mdirectory[49m, members [38;5;241m=[39m[[38;5;124m'[39m[38;5;124mwine.names[39m[38;5;124m'[39m,[38;5;124m"[39m[38;5;124mwine.data[39m[38;5;124m"[39m])
-[1;32m      9[0m wine [38;5;241m=[39m pd[38;5;241m.[39mread_csv([38;5;124m'[39m[38;5;124mdatasets/wine.data[39m[38;5;124m'[39m,header[38;5;241m=[39m[38;5;28;01mNone[39;00m)
-[1;32m     10[0m wine[38;5;241m.[39mhead()
+[0;36m  Cell [0;32mIn[1], line 3[0;36m[0m
+[0;31m    This Unit includes an introduction to neural networks, strongly based in {cite:p}`kroese2020`.[0m
+[0m         ^[0m
+[0;31mSyntaxError[0m[0;31m:[0m invalid syntax
 
-[0;31mNameError[0m: name 'directory' is not defined
-NameError: name 'directory' is not defined
+SyntaxError: invalid syntax (821953441.py, line 3)
 
