@@ -1,22 +1,85 @@
-\documentclass{article}
-    % General document formatting
-    \usepackage[margin=0.7in]{geometry}
-    \usepackage[parfill]{parskip}
-    \usepackage[utf8]{inputenc}
-    
-    % Related to math
-    \usepackage{amsmath,amssymb,amsfonts,amsthm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 1.0 (10/11/12) 
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+\documentclass{beamer}
+
+\input{../tools/common_beamer.tex}
+\graphicspath{{../figures}}
+
+%----------------------------------------------------------------------------------------
+%	 TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[Classification]{Classification} % The short title appears at the bottom of every slide, the full title is only on the title page
+
+\author{Jordi Villà i Freixa} % Your name
+\institute[FCTE] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+Universitat de Vic - Universitat Central de Catalunya \\
+Study Abroad\\ % Your institution for the title page
+\medskip
+\textit{jordi.villa@uvic.cat} % Your email address
+}
+%\date{\today} % Date, can be changed to a custom date
+\date{course 2023-2024}
+\logo{\includegraphics[width=.1\textwidth]{FCTE}}
 \begin{document}
 
-Name, date, Exercise X
+\begin{frame}
+\titlepage % Print the title page as the first slide
+\end{frame}
 
-\section*{Part a}
+\begin{frame}
+\frametitle{Índex} % Table of contents slide, comment this block out to remove it
+\tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+\end{frame}
 
-Put your answer to part a here
+%----------------------------------------------------------------------------------------
+%	PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
 
-\section*{Part b}
+\begin{frame}
+  \frametitle{Preliminary note}
+  The material in these slides is strongly based on \cite{kroese2020}. When other materials are used, they are cited accordingly.
 
-etc2
+  Mathematical notation follows as good as it can a [good practices proposal](https://ctan.math.utah.edu/ctan/tex-archive/macros/latex/contrib/mlmath/mlmath.pdf) from the Beijing Academy of Artificial Intelligence.
+  \end{frame}
+
+%------------------------------------------------
+\section{Introduction} % Sections can be created in order to organize your presentation into discrete blocks, all sections and subsections are automatically printed in the table of contents as an overview of the talk
+%------------------------------------------------
+
+%\subsection{Subsection Example} % A subsection can be created just before a set of slides with a common theme to further break down your presentation into chunks
+
+
+\begin{frame}
+
+  things to define here:
+
+  \begin{itemize}
+    \item 
+  \end{itemize}
+
+\end{frame}
+
+
+%----------------------------------------------------------------------------------------
+\section{Bibliography}
+\bibliographystyle{plain}
+\bibliography{DataSciencewithPython}
 
 \end{document}
