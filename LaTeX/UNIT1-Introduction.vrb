@@ -1,0 +1,21 @@
+\frametitle{Installing Jupyter}
+
+  % We are going to rely on \href{https://docs.anaconda.com}{anaconda} or \href{https://conda.io/miniconda}{miniconda} to install software in our computer.
+
+  % \begin{lstlisting}
+  %   and       del     from    not    while
+  %   as        elif    global  or     with
+  %   assert    else    if      pass   yield
+  %   break     except  import  print
+  %   class     exec    in      raise
+  %   continue  finally is      return
+  %   def       for     lambda  try
+  %   \end{lstlisting}
+
+  \begin{lstlisting}[language=python,caption={installing and executing Jupyter notebook},frame=single]
+  conda install jupyter
+  ls
+  jupyter notebook
+  print(2)
+\end{lstlisting}
+

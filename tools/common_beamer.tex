@@ -84,8 +84,21 @@
 \usepackage{fancyvrb}
 \usepackage{xcolor}
 \usepackage{listings}
-\lstset{language=Python,
-    backgroundcolor=\color{green!90!white},
-    basicstyle=\footnotesize,
-    commentstyle=\color{green},
-    showstringspaces=false}
+\lstset{language=python,
+    basicstyle=\ttfamily,
+    commentstyle=\color{red},
+    keywordstyle=\color{blue},
+    captionpos=b,
+    showstringspaces=false
+}
+\lstset{language=bash,
+    basicstyle=\ttfamily,
+    commentstyle=\color{red},
+    keywordstyle=\color{blue},
+    captionpos=b,
+    showstringspaces=false
+}
+\renewcommand{\lstlistingname}{Code}
+
+\definecolor{links}{HTML}{2A1B81}
+\hypersetup{colorlinks,linkcolor=,urlcolor=links}
