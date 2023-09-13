@@ -1,0 +1,88 @@
+\documentclass[compress]{beamer}
+\mode<presentation>
+{
+  \usetheme[hideothersubsections,width=1.3cm,heigth=1cm]{MSc}
+  \usecolortheme{orchid}
+}
+%\setbeamertemplate{footline}{\hspace*{.5cm}\scriptsize{\insertauthor 
+%\hspace*{50pt} \hfill\insertframenumber\hspace*{.5cm}}} 
+\setbeamertemplate{footline}{\hspace*{.5cm}\insertframenumber\hspace*{.5cm}}
+
+%\usepackage[small]{eulervm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[english]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{times}
+\usepackage[T1]{fontenc}                          
+\usepackage{pgf}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{fancyhdr}
+\usepackage{url}
+\usepackage{fancyvrb}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{lightgrey}{cmyk}{0,0,0,0.1}
+%Including Python scripts in the text
+\usepackage{listings}
+\lstset{language=Python,
+    backgroundcolor=\color{lightgrey},
+    basicstyle=\footnotesize,
+    commentstyle=\color{green},
+    showstringspaces=false}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title[MSc BIOINFO 2011-2012] % (optional, use only with long paper titles)
+{\TitlePresentation}
+\subtitle{\SubtitlePresentation} % (optional)
+
+\author[ ] % (optional, use only with lots of authors)
+{C\'esar L. \'Avila\inst{1} and Jordi Vill\`a i Freixa\inst{2}
+ }
+% - Use the \inst{?} command only if the authors have different
+%   affiliation.
+
+\institute[Universitat Pompeu Fabra] % (optional, but mostly needed)
+{
+  \inst{1}%
+  clavila@gmail.com  \\
+  Universidad Nacional de Tucum\'an \\
+  \inst{2}%
+  jordi.villa@upf.edu // cbbl.imim.es \\
+  Universitat Pompeu Fabra\\
+  \textcopyright Michael A. Johnston 2007; Jordi Vill\`a-Freixa 2007-2012 
+  }
+\date[Barcelona, Winter 2012] % (optional)
+{Barcelona, Winter 2012}
+
+\subject{Introduction to Python}
+
+% If you wish to uncover everything in a step-wise fashion, uncomment
+% the following command: 
+
+%\beamerdefaultoverlayspecification{<+->}
+
+\newcommand{\kb}{\ensuremath{k_{\rm B}}}
+\newcommand{\kbt}{\ensuremath{k_{\rm B} T}}
+\newcommand{\z}[1]{\ensuremath{\mathbf{#1}}}           
+\newcommand{\dg}{\ensuremath{\Delta g}}
+\newcommand{\dG}{\ensuremath{\Delta G}}
+\newcommand{\pka}{\ensuremath{pK_{\mathrm{a}}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% commands to control common compilation of slides
+\newcommand*{\DIRFig}{../../../../talks/figures/}
+\newcommand*{\DIRFigBook}{${HOME}/articles/book/figures/}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% tricks for beamer
+\setlength{\unitlength}{\textwidth} % measure in textwidths
+\newcommand{\cita}[1]{\pgfbox[center,center]{\tiny{\cite{#1}}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+%\author{CLA and JVF}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \titlepage
+\end{frame}
+
+
