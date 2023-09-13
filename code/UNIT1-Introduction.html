@@ -417,8 +417,11 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>folder  output  exists
---2023-08-29 16:07:37--  https://archive.ics.uci.edu/static/public/109/wine.zip
-S&#39;està resolent archive.ics.uci.edu (archive.ics.uci.edu)… 128.195.10.252
+--2023-09-13 20:31:28--  https://archive.ics.uci.edu/static/public/109/wine.zip
+S&#39;està resolent archive.ics.uci.edu (archive.ics.uci.edu)… 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>128.195.10.252
 S&#39;està connectant a archive.ics.uci.edu (archive.ics.uci.edu)|128.195.10.252|:443… 
 </pre></div>
 </div>
@@ -430,15 +433,13 @@ S&#39;està connectant a archive.ics.uci.edu (archive.ics.uci.edu)|128.195.10.25
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200 OK
 Mida: no especificat
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>S&#39;està desant a: ‘datasets/wine.zip’
+S&#39;està desant a: ‘datasets/wine.zip’
 
 
 wine.zip                [&lt;=&gt;                 ]       0  --.-KB/s               
 wine.zip                [ &lt;=&gt;                ]   5,90K  --.-KB/s    in 0s      
 
-2023-08-29 16:07:38 (30,8 MB/s) - s&#39;ha desat ‘datasets/wine.zip’ [6038]
+2023-09-13 20:31:29 (80,9 MB/s) - s&#39;ha desat ‘datasets/wine.zip’ [6038]
 </pre></div>
 </div>
 </div>
@@ -461,17 +462,15 @@ wine.zip                [ &lt;=&gt;                ]   5,90K  --.-KB/s    in 0s
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">7</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">zipfile</span> <span class="kn">import</span> <span class="n">ZipFile</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="k">with</span> <span class="n">ZipFile</span><span class="p">(</span><span class="s1">&#39;datasets/wine.zip&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
 <span class="g g-Whitespace">      </span><span class="mi">5</span> 
 <span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1">#extract in current directory</span>
-<span class="ne">----&gt; </span><span class="mi">7</span>     <span class="n">f</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">members</span> <span class="o">=</span><span class="p">[</span><span class="s1">&#39;wine.names&#39;</span><span class="p">,</span><span class="s2">&quot;wine.data&quot;</span><span class="p">])</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">wine</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;datasets/wine.data&#39;</span><span class="p">,</span><span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">wine</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 
-<span class="ne">NameError</span>: name &#39;directory&#39; is not defined
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
 </pre></div>
 </div>
 </div>
