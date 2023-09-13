@@ -167,5 +167,7 @@ cython_debug/
 *.nav
 *.out
 *.snm
+*.bbl
+*.blg
 
 datasets/
