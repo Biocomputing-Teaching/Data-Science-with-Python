@@ -915,8 +915,8 @@ El fitxer ‘datasets/wine.zip’ ja existeix, no es baixa.
 <section id="reformating-tables">
 <h2>Reformating tables<a class="headerlink" href="#reformating-tables" title="Permalink to this heading">#</a></h2>
 <p>Some times tha data comes in odd formats, not useful for analysis.</p>
-<p>For example, consider the table with scores given here, with values obtained before and after some particular training:
-<img alt="scores" src="../_images/scores.png" /></p>
+<p>For example, consider the table with scores given here, with values obtained before and after some particular training:</p>
+<p><img alt="scores" src="../_images/scores.png" /></p>
 <p>We want to reformat it in such a way that the score data is in a single column. Let us create a table that uses three features: <em>Score</em> (continuous data), <em>Time</em> (before or after) and <em>Student</em> (integer values from 1 to 5). We will use the <code class="docutils literal notranslate"><span class="pre">pandas.melt</span></code> method, <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.melt.html">speciffically devoted to this goal</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -954,7 +954,7 @@ El fitxer ‘datasets/wine.zip’ ja existeix, no es baixa.
 <li><p>Quantitive (with possible discrete or continuous values)</p></li>
 <li><p>Qualitative; can be eventually divided into a fixed number of categories: that is why they are referred as <strong>categorical</strong> or <strong>factors</strong>.</p></li>
 </ul>
-<p>Here we eill work with data from <span id="id2">[]</span>. In particular, we will download the file containing nutritional measurements of thirteen features (columns) for 226 elderly individuals (rows). Note the <a class="reference external" href="http://www.biostatisticien.eu/springeR/nutrition_elderly.xls">file</a> is now an excel file.</p>
+<p>Here we will work with data from <span id="id2">[]</span>. In particular, we will download the file containing nutritional measurements of thirteen features (columns) for 226 elderly individuals (rows). Note the <a class="reference external" href="http://www.biostatisticien.eu/springeR/nutrition_elderly.xls">file</a> is now an excel file.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xls</span> <span class="o">=</span> <span class="s1">&#39;http://www.biostatisticien.eu/springeR/nutrition_elderly.xls&#39;</span>
@@ -1138,8 +1138,109 @@ memory usage: 23.1 KB
 <span class="n">nutri</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">nutri</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
 <span class="n">nutri</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">nutri</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
 
+<span class="n">nutri</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="n">nutri</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>gender</th>
+      <th>situation</th>
+      <th>tea</th>
+      <th>coffee</th>
+      <th>...</th>
+      <th>raw_fruit</th>
+      <th>cooked_fruit_veg</th>
+      <th>chocol</th>
+      <th>fat</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Female</td>
+      <td>single</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>less than once a week</td>
+      <td>4-6 times a week</td>
+      <td>every day</td>
+      <td>Mix of vegetable oils</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Female</td>
+      <td>single</td>
+      <td>1</td>
+      <td>1</td>
+      <td>...</td>
+      <td>every day</td>
+      <td>every day</td>
+      <td>less than once a week</td>
+      <td>Sunflower oil</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Female</td>
+      <td>single</td>
+      <td>0</td>
+      <td>4</td>
+      <td>...</td>
+      <td>every day</td>
+      <td>once a week</td>
+      <td>every day</td>
+      <td>Sunflower oil</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Female</td>
+      <td>single</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>4-6 times a week</td>
+      <td>never</td>
+      <td>2-3 times a week</td>
+      <td>Margarine</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Female</td>
+      <td>single</td>
+      <td>2</td>
+      <td>1</td>
+      <td>...</td>
+      <td>every day</td>
+      <td>every day</td>
+      <td>2-3 times a week</td>
+      <td>Margarine</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 13 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nutri</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 
 <span class="n">nutri</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;output/nutri.csv&#39;</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
@@ -1173,7 +1274,7 @@ memory usage: 12.4 KB
 </section>
 <section id="summary-tables-and-statistics">
 <h2>Summary tables and statistics<a class="headerlink" href="#summary-tables-and-statistics" title="Permalink to this heading">#</a></h2>
-<p>It is extremely important to know your data befroe any analysis. Apart from the descriptive tools shown above, descriptive statistical measurements can be obtained from pandas with two simple methods: <code class="docutils literal notranslate"><span class="pre">describe</span></code> and <code class="docutils literal notranslate"><span class="pre">value_counts</span></code>. Interesting to note that the outcome of both <code class="docutils literal notranslate"><span class="pre">describe</span></code> and <code class="docutils literal notranslate"><span class="pre">value_counts</span></code> are pandas <em>series</em>, one-dimensional ndarrays with axis labels.</p>
+<p>It is extremely important to know your data before any analysis. Apart from the descriptive tools shown above, descriptive statistical measurements can be obtained from pandas with two simple methods: <code class="docutils literal notranslate"><span class="pre">describe</span></code> and <code class="docutils literal notranslate"><span class="pre">value_counts</span></code>. Interesting to note that the outcome of both <code class="docutils literal notranslate"><span class="pre">describe</span></code> and <code class="docutils literal notranslate"><span class="pre">value_counts</span></code> are pandas <em>series</em>, one-dimensional ndarrays with axis labels.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nutri</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;output/nutri.csv&#39;</span><span class="p">)</span>
@@ -1291,7 +1392,7 @@ $<span class="math notranslate nohighlight">\(\bar{x}=\frac{1}{n}\sum_{i=1}^n x_
 </div>
 </div>
 </div>
-<p>and the <em>p-sampla quantile</em> of <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>, being <span class="math notranslate nohighlight">\(0 &lt;p &lt;1\)</span>, which refers to the value <span class="math notranslate nohighlight">\(x\)</span> such that at least a fraction <span class="math notranslate nohighlight">\(p\)</span> of the data is less than or equal to <span class="math notranslate nohighlight">\(x\)</span> and at least a fraction <span class="math notranslate nohighlight">\(1-p\)</span> is greater or equals to <span class="math notranslate nohighlight">\(x\)</span>. Thus, the <em>sample median</em> is the sample 0.5-quatile. For our <code class="docutils literal notranslate"><span class="pre">nutri</span></code> data the first (25), second (50) and third (75% percentile of the data) can be obtained as:</p>
+<p>and the <em>p-sample quantile</em> of <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>, being <span class="math notranslate nohighlight">\(0 &lt;p &lt;1\)</span>, which refers to the value <span class="math notranslate nohighlight">\(x\)</span> such that at least a fraction <span class="math notranslate nohighlight">\(p\)</span> of the data is less than or equal to <span class="math notranslate nohighlight">\(x\)</span> and at least a fraction <span class="math notranslate nohighlight">\(1-p\)</span> is greater or equals to <span class="math notranslate nohighlight">\(x\)</span>. Thus, the <em>sample median</em> is the sample 0.5-quatile. For our <code class="docutils literal notranslate"><span class="pre">nutri</span></code> data the first (25), second (50) and third (75% percentile of the data) can be obtained as:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nutri</span><span class="o">.</span><span class="n">height</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="p">[</span><span class="mf">0.25</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.75</span><span class="p">])</span>
@@ -1481,6 +1582,7 @@ The function can be defined and plotted in the same way for both discrete and co
 </div>
 </div>
 <p>Next, let us have a look at a plot that takes into account the contingency table shown above. We will make use now of the <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> package, which simplifies the plotting of statistical information.</p>
+<p>TODO: add examples with sns.histplot()</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
