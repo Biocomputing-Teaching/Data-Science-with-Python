@@ -12,10 +12,8 @@
   %   def       for     lambda  try
   %   \end{lstlisting}
 
-  \begin{lstlisting}[language=python,caption={installing and executing Jupyter notebook},frame=single]
+  \begin{lstlisting}[language=bash,caption={installing and executing Jupyter notebook},frame=single]
   conda install jupyter
-  ls
   jupyter notebook
-  print(2)
 \end{lstlisting}
 

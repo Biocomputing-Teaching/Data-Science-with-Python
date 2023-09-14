@@ -416,35 +416,14 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>folder  output  exists
---2023-09-13 20:31:28--  https://archive.ics.uci.edu/static/public/109/wine.zip
-S&#39;està resolent archive.ics.uci.edu (archive.ics.uci.edu)… 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>128.195.10.252
-S&#39;està connectant a archive.ics.uci.edu (archive.ics.uci.edu)|128.195.10.252|:443… 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>conectat.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HTTP: s&#39;ha enviat la petició, s&#39;està esperant una resposta… 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200 OK
-Mida: no especificat
-S&#39;està desant a: ‘datasets/wine.zip’
-
-
-wine.zip                [&lt;=&gt;                 ]       0  --.-KB/s               
-wine.zip                [ &lt;=&gt;                ]   5,90K  --.-KB/s    in 0s      
-
-2023-09-13 20:31:29 (80,9 MB/s) - s&#39;ha desat ‘datasets/wine.zip’ [6038]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>folder  datasets  exists
+folder  output  exists
+El fitxer ‘datasets/wine.zip’ ja existeix, no es baixa.
 </pre></div>
 </div>
 </div>
 </div>
-<p>Now, we read the content of the zip file using the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> module. Informatiuon of the data can be found in the <a class="reference external" href="https://archive.ics.uci.edu/dataset/109/wine">ML repository at UCI</a>.</p>
+<p>Now, we read the content of the zip file using the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> module. Information of the data can be found in the <a class="reference external" href="https://archive.ics.uci.edu/dataset/109/wine">ML repository at UCI</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -453,7 +432,7 @@ wine.zip                [ &lt;=&gt;                ]   5,90K  --.-KB/s    in 0s
 <span class="k">with</span> <span class="n">ZipFile</span><span class="p">(</span><span class="s1">&#39;datasets/wine.zip&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
 
 <span class="c1">#extract in current directory</span>
-    <span class="n">f</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">members</span> <span class="o">=</span><span class="p">[</span><span class="s1">&#39;wine.names&#39;</span><span class="p">,</span><span class="s2">&quot;wine.data&quot;</span><span class="p">])</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="n">input_directory</span><span class="p">,</span> <span class="n">members</span> <span class="o">=</span><span class="p">[</span><span class="s1">&#39;wine.names&#39;</span><span class="p">,</span><span class="s2">&quot;wine.data&quot;</span><span class="p">])</span>
 
 <span class="n">wine</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;datasets/wine.data&#39;</span><span class="p">,</span><span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 <span class="n">wine</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -461,21 +440,131 @@ wine.zip                [ &lt;=&gt;                ]   5,90K  --.-KB/s    in 0s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">zipfile</span> <span class="kn">import</span> <span class="n">ZipFile</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="k">with</span> <span class="n">ZipFile</span><span class="p">(</span><span class="s1">&#39;datasets/wine.zip&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> 
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1">#extract in current directory</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+      <th>10</th>
+      <th>11</th>
+      <th>12</th>
+      <th>13</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>14.23</td>
+      <td>1.71</td>
+      <td>2.43</td>
+      <td>15.6</td>
+      <td>127</td>
+      <td>2.80</td>
+      <td>3.06</td>
+      <td>0.28</td>
+      <td>2.29</td>
+      <td>5.64</td>
+      <td>1.04</td>
+      <td>3.92</td>
+      <td>1065</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>13.20</td>
+      <td>1.78</td>
+      <td>2.14</td>
+      <td>11.2</td>
+      <td>100</td>
+      <td>2.65</td>
+      <td>2.76</td>
+      <td>0.26</td>
+      <td>1.28</td>
+      <td>4.38</td>
+      <td>1.05</td>
+      <td>3.40</td>
+      <td>1050</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>13.16</td>
+      <td>2.36</td>
+      <td>2.67</td>
+      <td>18.6</td>
+      <td>101</td>
+      <td>2.80</td>
+      <td>3.24</td>
+      <td>0.30</td>
+      <td>2.81</td>
+      <td>5.68</td>
+      <td>1.03</td>
+      <td>3.17</td>
+      <td>1185</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1</td>
+      <td>14.37</td>
+      <td>1.95</td>
+      <td>2.50</td>
+      <td>16.8</td>
+      <td>113</td>
+      <td>3.85</td>
+      <td>3.49</td>
+      <td>0.24</td>
+      <td>2.18</td>
+      <td>7.80</td>
+      <td>0.86</td>
+      <td>3.45</td>
+      <td>1480</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1</td>
+      <td>13.24</td>
+      <td>2.59</td>
+      <td>2.87</td>
+      <td>21.0</td>
+      <td>118</td>
+      <td>2.80</td>
+      <td>2.69</td>
+      <td>0.39</td>
+      <td>1.82</td>
+      <td>4.32</td>
+      <td>1.04</td>
+      <td>2.93</td>
+      <td>735</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
-</div>
-</div>
-<p>as we do not have the names of the columns, we can add manually assign them based on the information contained in the web link.</p>
+<p>as we do not have the names of the columns, we can manually assign them based on the information contained in the web link.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wine</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">,</span><span class="s1">&#39;Alcohol&#39;</span><span class="p">,</span><span class="s1">&#39;Maliacid&#39;</span><span class="p">,</span><span class="s1">&#39;Ash&#39;</span><span class="p">,</span><span class="s1">&#39;Alcalinity_of_ash&#39;</span><span class="p">,</span><span class="s1">&#39;Magnesium&#39;</span><span class="p">,</span><span class="s1">&#39;Total_phenols&#39;</span><span class="p">,</span><span class="s1">&#39;Flavanoids&#39;</span><span class="p">,</span><span class="s1">&#39;Nonflavonoid_phenols&#39;</span><span class="p">,</span><span class="s1">&#39;Proanthocyanins&#39;</span><span class="p">,</span><span class="s1">&#39;Color_intensity&#39;</span><span class="p">,</span><span class="s1">&#39;Hue&#39;</span><span class="p">,</span><span class="s1">&#39;0D280_0D315_of_diluted_wines&#39;</span><span class="p">,</span><span class="s1">&#39;Proline&#39;</span><span class="p">]</span>
@@ -506,7 +595,12 @@ wine.zip                [ &lt;=&gt;                ]   5,90K  --.-KB/s    in 0s
       <th>Alcohol</th>
       <th>Maliacid</th>
       <th>Ash</th>
-      <th>...</th>
+      <th>Alcalinity_of_ash</th>
+      <th>Magnesium</th>
+      <th>Total_phenols</th>
+      <th>Flavanoids</th>
+      <th>Nonflavonoid_phenols</th>
+      <th>Proanthocyanins</th>
       <th>Color_intensity</th>
       <th>Hue</th>
       <th>0D280_0D315_of_diluted_wines</th>
@@ -520,7 +614,12 @@ wine.zip                [ &lt;=&gt;                ]   5,90K  --.-KB/s    in 0s
       <td>14.23</td>
       <td>1.71</td>
       <td>2.43</td>
-      <td>...</td>
+      <td>15.6</td>
+      <td>127</td>
+      <td>2.80</td>
+      <td>3.06</td>
+      <td>0.28</td>
+      <td>2.29</td>
       <td>5.64</td>
       <td>1.04</td>
       <td>3.92</td>
@@ -532,7 +631,12 @@ wine.zip                [ &lt;=&gt;                ]   5,90K  --.-KB/s    in 0s
       <td>13.20</td>
       <td>1.78</td>
       <td>2.14</td>
-      <td>...</td>
+      <td>11.2</td>
+      <td>100</td>
+      <td>2.65</td>
+      <td>2.76</td>
+      <td>0.26</td>
+      <td>1.28</td>
       <td>4.38</td>
       <td>1.05</td>
       <td>3.40</td>
@@ -544,7 +648,12 @@ wine.zip                [ &lt;=&gt;                ]   5,90K  --.-KB/s    in 0s
       <td>13.16</td>
       <td>2.36</td>
       <td>2.67</td>
-      <td>...</td>
+      <td>18.6</td>
+      <td>101</td>
+      <td>2.80</td>
+      <td>3.24</td>
+      <td>0.30</td>
+      <td>2.81</td>
       <td>5.68</td>
       <td>1.03</td>
       <td>3.17</td>
@@ -556,7 +665,12 @@ wine.zip                [ &lt;=&gt;                ]   5,90K  --.-KB/s    in 0s
       <td>14.37</td>
       <td>1.95</td>
       <td>2.50</td>
-      <td>...</td>
+      <td>16.8</td>
+      <td>113</td>
+      <td>3.85</td>
+      <td>3.49</td>
+      <td>0.24</td>
+      <td>2.18</td>
       <td>7.80</td>
       <td>0.86</td>
       <td>3.45</td>
@@ -568,7 +682,12 @@ wine.zip                [ &lt;=&gt;                ]   5,90K  --.-KB/s    in 0s
       <td>13.24</td>
       <td>2.59</td>
       <td>2.87</td>
-      <td>...</td>
+      <td>21.0</td>
+      <td>118</td>
+      <td>2.80</td>
+      <td>2.69</td>
+      <td>0.39</td>
+      <td>1.82</td>
       <td>4.32</td>
       <td>1.04</td>
       <td>2.93</td>
@@ -576,7 +695,6 @@ wine.zip                [ &lt;=&gt;                ]   5,90K  --.-KB/s    in 0s
     </tr>
   </tbody>
 </table>
-<p>5 rows × 14 columns</p>
 </div></div></div>
 </div>
 <p>Alternatively, we can directly read the CSV from its URL, without previously downloading it. We will use <a class="reference external" href="https://vincentarelbundock.github.io/Rdatasets/doc/datasets/iris.html">Fisher’s <code class="docutils literal notranslate"><span class="pre">iris</span></code> data</a>. Here we already have the name of the columns/features so we read them directly from the dataset.</p>
@@ -608,7 +726,7 @@ wine.zip                [ &lt;=&gt;                ]   5,90K  --.-KB/s    in 0s
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Unnamed: 0</th>
+      <th>rownames</th>
       <th>Sepal.Length</th>
       <th>Sepal.Width</th>
       <th>Petal.Length</th>
@@ -669,7 +787,7 @@ wine.zip                [ &lt;=&gt;                ]   5,90K  --.-KB/s    in 0s
 <p>as the first column is a duplicated index column, we can remove it</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;Unnamed: 0&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;rownames&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1277,7 +1395,7 @@ Name: height, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2540ebf83f464b7ac377dbb7999bad679eca945a7671fb1134c46a25a863853e.png" src="../_images/2540ebf83f464b7ac377dbb7999bad679eca945a7671fb1134c46a25a863853e.png" />
+<img alt="../_images/506619d4c523f0412c455859d9db9e195a45e93852629ef2e7decbc3321f8015.png" src="../_images/506619d4c523f0412c455859d9db9e195a45e93852629ef2e7decbc3321f8015.png" />
 </div>
 </div>
 </section>
@@ -1294,7 +1412,7 @@ Name: height, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f62c7fc99c1fd8b9a9844230f1e3987b8efe80e8568a404b0a4a5f455157c499.png" src="../_images/f62c7fc99c1fd8b9a9844230f1e3987b8efe80e8568a404b0a4a5f455157c499.png" />
+<img alt="../_images/ac8d5d13cd1b2a9ce51db49e2178e3afcf41403b7f7982a81d6cdf3f54221e80.png" src="../_images/ac8d5d13cd1b2a9ce51db49e2178e3afcf41403b7f7982a81d6cdf3f54221e80.png" />
 </div>
 </div>
 <p>In a slightly more complex setup, we can compare two different categories in the boxplot:</p>
@@ -1311,7 +1429,7 @@ Name: height, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2ceb85dcc4f7dc1016510fe56323c2e1587254de03fb567a2948fd34a42ba546.png" src="../_images/2ceb85dcc4f7dc1016510fe56323c2e1587254de03fb567a2948fd34a42ba546.png" />
+<img alt="../_images/9808ce2064fffb0982d9eaeb92fd29c06a6807b060329679f7118d2cd761d50f.png" src="../_images/9808ce2064fffb0982d9eaeb92fd29c06a6807b060329679f7118d2cd761d50f.png" />
 </div>
 </div>
 <p>we can also show the distribution of the data using a histogram, after breaking the data into <em>bins</em> or <em>classes</em></p>
@@ -1325,7 +1443,7 @@ Name: height, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/28ad56ef2fb5807d9ffe40cefd4ed9d2b82b51236d2d3ddc99eb6cccafd99e60.png" src="../_images/28ad56ef2fb5807d9ffe40cefd4ed9d2b82b51236d2d3ddc99eb6cccafd99e60.png" />
+<img alt="../_images/de58b866c659774a45f452e8661b7bee4e9fde5c0175189478ec14ddc0f02306.png" src="../_images/de58b866c659774a45f452e8661b7bee4e9fde5c0175189478ec14ddc0f02306.png" />
 </div>
 </div>
 <p>alternatively, we can weigth the values to show <span class="math notranslate nohighlight">\(\frac{counts}{total}\)</span> by using the trick of multiplying all values times the quantity <span class="math notranslate nohighlight">\(1/266\)</span>.</p>
@@ -1340,7 +1458,7 @@ Name: height, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ab1160e63b2f380dcd5ae9cc3b6d03f50fcac2496e186e877c3299d1d772caad.png" src="../_images/ab1160e63b2f380dcd5ae9cc3b6d03f50fcac2496e186e877c3299d1d772caad.png" />
+<img alt="../_images/8e81a3dc123628df0b758f11a9146248f3f78281c742f7ab9fd27dd55aff7b8c.png" src="../_images/8e81a3dc123628df0b758f11a9146248f3f78281c742f7ab9fd27dd55aff7b8c.png" />
 </div>
 </div>
 <p>The <em>empirical cumulative distribution function</em>, <span class="math notranslate nohighlight">\(F_n\)</span>, is a step function that jupms <span class="math notranslate nohighlight">\(k/n\)</span> at observation values, where <span class="math notranslate nohighlight">\(k\)</span> is the fraction of tied observations at that value:
@@ -1359,7 +1477,7 @@ The function can be defined and plotted in the same way for both discrete and co
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7db1bd99bf430948296de986281e99a138a34bd689f0b53b3597786d09c94ee0.png" src="../_images/7db1bd99bf430948296de986281e99a138a34bd689f0b53b3597786d09c94ee0.png" />
+<img alt="../_images/5c09c0171d2460204a3c45e1fac44b9fb9b6778d7af953e12ef3224554383f20.png" src="../_images/5c09c0171d2460204a3c45e1fac44b9fb9b6778d7af953e12ef3224554383f20.png" />
 </div>
 </div>
 <p>Next, let us have a look at a plot that takes into account the contingency table shown above. We will make use now of the <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> package, which simplifies the plotting of statistical information.</p>
@@ -1375,7 +1493,7 @@ The function can be defined and plotted in the same way for both discrete and co
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a6d4f0150b17dcd0d2ed33dfdc71f41848c26dc48fb90f0f43cf24ee059671e2.png" src="../_images/a6d4f0150b17dcd0d2ed33dfdc71f41848c26dc48fb90f0f43cf24ee059671e2.png" />
+<img alt="../_images/e9a26abe38a2259ab26dc8047e62afbdbe5759286d3b586397751f4b4f3d8679.png" src="../_images/e9a26abe38a2259ab26dc8047e62afbdbe5759286d3b586397751f4b4f3d8679.png" />
 </div>
 </div>
 <p><em>Scatter plots</em> are useful to visualize patterns between quantitative features.</p>
@@ -1389,7 +1507,7 @@ The function can be defined and plotted in the same way for both discrete and co
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ea4f3fa8b8fc722594251eda4dca4126fd858362b2969390161942f6e40815c7.png" src="../_images/ea4f3fa8b8fc722594251eda4dca4126fd858362b2969390161942f6e40815c7.png" />
+<img alt="../_images/7133db2f7c837002dfa12547e2cf32443eee0e79b8af73aa4e13de874966a53f.png" src="../_images/7133db2f7c837002dfa12547e2cf32443eee0e79b8af73aa4e13de874966a53f.png" />
 </div>
 </div>
 <p>We can get more sophisticated plots and fit some lines to the data to visualy compare data. In this example, we will use data from Vincent Arel Bundock repo on birth weights of babies for smoking and non smoking mothers, and plot the data againts the age of the mother. We will deal with significance of the results in upcoming sessions.</p>
@@ -1398,7 +1516,7 @@ The function can be defined and plotted in the same way for both discrete and co
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">urlprefix</span> <span class="o">=</span> <span class="s1">&#39;http://vincentarelbundock.github.io/Rdatasets/csv/&#39;</span>
 <span class="n">dataname</span> <span class="o">=</span> <span class="s1">&#39;MASS/birthwt.csv&#39;</span>
 <span class="n">bwt</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">urlprefix</span> <span class="o">+</span> <span class="n">dataname</span><span class="p">)</span>
-<span class="n">bwt</span> <span class="o">=</span> <span class="n">bwt</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;Unnamed: 0&#39;</span> <span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1">#drop unnamed column</span>
+<span class="n">bwt</span> <span class="o">=</span> <span class="n">bwt</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;rownames&#39;</span> <span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1">#drop unnamed column</span>
 <span class="n">bwt</span>
 </pre></div>
 </div>
@@ -1589,7 +1707,7 @@ The function can be defined and plotted in the same way for both discrete and co
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/fe5c1ab28a5b0d227f7ab521586ff4be11c8002d8fa3d4931871a7440a9c6371.png" src="../_images/fe5c1ab28a5b0d227f7ab521586ff4be11c8002d8fa3d4931871a7440a9c6371.png" />
+<img alt="../_images/ee8a2f69015264c1eabcf8fec03ee2def6eb588a9b41c3d4aa8fa387c30e6c76.png" src="../_images/ee8a2f69015264c1eabcf8fec03ee2def6eb588a9b41c3d4aa8fa387c30e6c76.png" />
 </div>
 </div>
 </section>
