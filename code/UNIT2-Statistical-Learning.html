@@ -373,9 +373,9 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluation-of-the-loss-function-in-k-means">Evaluation of the loss function in K-means</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polynomial-regression">Polynomial  regression</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-data-with-fitted-curves-fordifferent-p">Training data with fitted curves fordifferent <span class="math notranslate nohighlight">\(p\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-loss-as-function-of-the-number-of-parameters-p-of-the-model">Test loss as function of the number of parameters <span class="math notranslate nohighlight">\(p\)</span> of the model.</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polynomial-regression">Polynomial  regression</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#training-data-with-fitted-curves-fordifferent-p">Training data with fitted curves fordifferent <span class="math notranslate nohighlight">\(p\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-loss-as-function-of-the-number-of-parameters-p-of-the-model">Test loss as function of the number of parameters <span class="math notranslate nohighlight">\(p\)</span> of the model.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-validation">Cross-validation</a></li>
 </ul>
 </li>
@@ -392,7 +392,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="unit-2-statistical-learning">
 <h1>UNIT 2. Statistical Learning<a class="headerlink" href="#unit-2-statistical-learning" title="Permalink to this heading">#</a></h1>
-<p>This Unit includes main introduction to statistical learning, strongly based in <span id="id1">[<a class="reference internal" href="#id4" title="Dirk P. Kroese, Zdravko Botev, Thomas Taimre, and Radislav: Vaisman. Data Science and Machine Learning: Mathematical and Statistical Methods. Machine Learning &amp; Pattern Recognition. Chapman &amp; Hall/CRC, 2020. URL: https://acems.org.au/data-science-machine-learning-book-available-download (visited on 2023-08-15).">1</a>]</span>.</p>
+<p>This Unit includes main introduction to statistical learning, strongly based in <span id="id1">[<a class="reference internal" href="UNIT9-Neural-Networks.html#id4" title="Dirk P. Kroese, Zdravko Botev, Thomas Taimre, and Radislav: Vaisman. Data Science and Machine Learning: Mathematical and Statistical Methods. Machine Learning &amp; Pattern Recognition. Chapman &amp; Hall/CRC, 2020. URL: https://acems.org.au/data-science-machine-learning-book-available-download (visited on 2023-08-15).">1</a>]</span>.</p>
 <section id="evaluation-of-the-loss-function-in-k-means">
 <h2>Evaluation of the loss function in K-means<a class="headerlink" href="#evaluation-of-the-loss-function-in-k-means" title="Permalink to this heading">#</a></h2>
 <p>K-means is an example of unsupervised learning method. We will use this method along with <code class="docutils literal notranslate"><span class="pre">scipy</span></code> in order to evaluate the loss function calculated for a given dataset.</p>
@@ -584,9 +584,8 @@ $<span class="math notranslate nohighlight">\(h^*(u) = 10 − 140^u + 400u^2 −
 <img alt="../_images/249cb72348c7908faf9ce26d015c5f055c90cd988da8433999b97032b670233c.png" src="../_images/249cb72348c7908faf9ce26d015c5f055c90cd988da8433999b97032b670233c.png" />
 </div>
 </div>
-</section>
 <section id="training-data-with-fitted-curves-fordifferent-p">
-<h2>Training data with fitted curves fordifferent <span class="math notranslate nohighlight">\(p\)</span><a class="headerlink" href="#training-data-with-fitted-curves-fordifferent-p" title="Permalink to this heading">#</a></h2>
+<h3>Training data with fitted curves fordifferent <span class="math notranslate nohighlight">\(p\)</span><a class="headerlink" href="#training-data-with-fitted-curves-fordifferent-p" title="Permalink to this heading">#</a></h3>
 <p>We will check the models for <span class="math notranslate nohighlight">\(p = 2, 4, 16\)</span>. The true cubic polynomial curve for p = 4 is also plotted (dashed line).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -629,7 +628,7 @@ $<span class="math notranslate nohighlight">\(h^*(u) = 10 − 140^u + 400u^2 −
 </div>
 </section>
 <section id="test-loss-as-function-of-the-number-of-parameters-p-of-the-model">
-<h2>Test loss as function of the number of parameters <span class="math notranslate nohighlight">\(p\)</span> of the model.<a class="headerlink" href="#test-loss-as-function-of-the-number-of-parameters-p-of-the-model" title="Permalink to this heading">#</a></h2>
+<h3>Test loss as function of the number of parameters <span class="math notranslate nohighlight">\(p\)</span> of the model.<a class="headerlink" href="#test-loss-as-function-of-the-number-of-parameters-p-of-the-model" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># generate test data</span>
@@ -661,6 +660,7 @@ $<span class="math notranslate nohighlight">\(h^*(u) = 10 − 140^u + 400u^2 −
 <img alt="../_images/d24c67a2e490f2adc84378468a74466e6b6ac00cd56832efbd5ffd72bb8dcdc2.png" src="../_images/d24c67a2e490f2adc84378468a74466e6b6ac00cd56832efbd5ffd72bb8dcdc2.png" />
 </div>
 </div>
+</section>
 <section id="cross-validation">
 <h3>Cross-validation<a class="headerlink" href="#cross-validation" title="Permalink to this heading">#</a></h3>
 <p>For the polynomial regression example, we can calculate a <span class="math notranslate nohighlight">\(K\)</span>-fold cross-validation loss with a nonrandom partitioning of the training set using the following code.</p>
@@ -708,17 +708,6 @@ $<span class="math notranslate nohighlight">\(h^*(u) = 10 − 140^u + 400u^2 −
 </div>
 <div class="cell_output docutils container">
 <img alt="../_images/37f519a69ef273844084460577cdce64a6d9aff552925cdfd55766726500a383.png" src="../_images/37f519a69ef273844084460577cdce64a6d9aff552925cdfd55766726500a383.png" />
-</div>
-</div>
-<div class="docutils container" id="id2">
-<div class="citation" id="id4" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
-<p>Dirk P. Kroese, Zdravko Botev, Thomas Taimre, and Radislav: Vaisman. <em>Data Science and Machine Learning: Mathematical and Statistical Methods</em>. Machine Learning &amp; Pattern Recognition. Chapman &amp; Hall/CRC, 2020. URL: <a class="reference external" href="https://acems.org.au/data-science-machine-learning-book-available-download">https://acems.org.au/data-science-machine-learning-book-available-download</a> (visited on 2023-08-15).</p>
-</div>
-<div class="citation" id="id3" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></span>
-<p>Pierre Lafaye De Micheaux, Rémy Drouilhet, and Benoit Liquet. <em>The R Software: Fundamentals of Programming and Statistical Analysis</em>. Volume 40 of Statistics and Computing. Springer, New York, NY, 2013. ISBN 978-1-4614-9019-7 978-1-4614-9020-3. URL: <a class="reference external" href="https://link.springer.com/10.1007/978-1-4614-9020-3">https://link.springer.com/10.1007/978-1-4614-9020-3</a> (visited on 2023-08-15), <a class="reference external" href="https://doi.org/10.1007/978-1-4614-9020-3">doi:10.1007/978-1-4614-9020-3</a>.</p>
-</div>
 </div>
 </div>
 </section>
@@ -789,9 +778,9 @@ $<span class="math notranslate nohighlight">\(h^*(u) = 10 − 140^u + 400u^2 −
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluation-of-the-loss-function-in-k-means">Evaluation of the loss function in K-means</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polynomial-regression">Polynomial  regression</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-data-with-fitted-curves-fordifferent-p">Training data with fitted curves fordifferent <span class="math notranslate nohighlight">\(p\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-loss-as-function-of-the-number-of-parameters-p-of-the-model">Test loss as function of the number of parameters <span class="math notranslate nohighlight">\(p\)</span> of the model.</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polynomial-regression">Polynomial  regression</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#training-data-with-fitted-curves-fordifferent-p">Training data with fitted curves fordifferent <span class="math notranslate nohighlight">\(p\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-loss-as-function-of-the-number-of-parameters-p-of-the-model">Test loss as function of the number of parameters <span class="math notranslate nohighlight">\(p\)</span> of the model.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-validation">Cross-validation</a></li>
 </ul>
 </li>
