@@ -171,6 +171,7 @@ cython_debug/
 *.blg
 *.toc 
 *.vrb
+*.dvi
 
 datasets/
 output/

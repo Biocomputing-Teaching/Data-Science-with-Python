@@ -51,7 +51,7 @@ Study Abroad\\ % Your institution for the title page
 %----------------------------------------------------------------------------------------
 %	PRESENTATION SLIDES
 %----------------------------------------------------------------------------------------
-
+\section{Introduction and scope}
 \begin{frame}
   \frametitle{Preliminary note}
   The material in these slides is strongly based on \cite{kroese2020}. When other materials are used, they are cited accordingly.
@@ -65,6 +65,19 @@ Study Abroad\\ % Your institution for the title page
 
 %\subsection{Subsection Example} % A subsection can be created just before a set of slides with a common theme to further break down your presentation into chunks
 
+\begin{frame}{What to expect?}
+  In this session we will discuss:
+  \begin{itemize}
+    \item Modelling data
+    \item Models with independent and identically distributed (iid) data
+    \item The modelling dilemma
+    \item Linear models
+    \item Multivariate normal models
+    \item 
+  \end{itemize}
+\end{frame}
+
+\section{Statistical modelling}
 
 \begin{frame}
 \frametitle{How is data analyzed and used?}
@@ -83,6 +96,22 @@ The goals of modelling data are:
 
 \end{frame}
 
+\section{Modelling data}
+
+\begin{frame}[allowframebreaks]{Example of modelling data}
+  \label{sld:model}
+  Imagine an unsupervised learning problem, with data represented by a vector $\bm{x}=[x_1,\ldots,x_p]^\intercal$, a very general model is to assume that $\bm{x}$ is the outcome of a random vector $\bm{X}=[X_1,\ldots,X_p]^\intercal$ with some unknown pdf $f$.
+
+  The model can be refined by assuming a specific form of $f$.
+  \begin{figure}
+    \includegraphics{supervised_unsupervised}
+    \caption{Supervised vs unsupervised ML}
+    \label{fig:supunsup}
+  \end{figure}
+
+\end{frame}
+
+
 %------------------------------------------------
 
 \begin{frame}
@@ -96,6 +125,49 @@ The goals of modelling data are:
 \end{frame}
 
 %-----------------------------------
+
+\begin{frame}{{\em iid} data}
+  If we are given a sequence of data vectors $\bm{x_1},\ldots,\bm{x_n}$ one of the simplest possible models is to assume that the corresponding random vectors $\bm{X_1},\ldots,\bm{X_n}$ are independent and identically distributed (iid). We express this as:
+  \[\bm{X_1},\ldots,\bm{X_n} \stackrel{iid}{\sim} f \]
+  meaning that the random vectors form an iid sample from a pdf $f$ or sampling distribution $Dist$.
+
+  This is the same as saying that knowing about one variable does not provide information about another variable.
+\end{frame}
+
+\begin{frame}{Independent data models}
+  In independent data models, the joint density of the random vectors $\bm{X_1},\ldots,\bm{X_n}$ is the {\em product} of the marginal ones:
+  \[
+    f_{\bm{X_1},\ldots,\bm{X_n}}(\bm{x}_1,\ldots,\bm{x}_n)=f(\bm{x}_1)\cdots f(\bm{x}_n)  
+  \]
+  The function $g(\bm{x})$, the "model" for $f(\bm{x})$ is usually specified up to a small number of parameters, corresponding to \href{common probability distributions}:
+  \begin{itemize}
+    \item $\mathcal{N}(\mu,\sigma^2)$
+    \item $\mathrm{Bin}(n,p)$
+    \item $\mathrm{Exp}(\lambda$)
+  \end{itemize}
+  The parameters are typically obtained from the data.
+\end{frame}
+
+\begin{frame}{Modeling dilemma}
+  \begin{figure}
+    \includegraphics[width=0.7\linewidth]{dilemma}
+    \caption{Complex models (very few of them) generally applicable but difficult to analyze. Simple models (a lot of options) very tractable but they do not describe well the data\cite{kroese2020}.}
+    \label{fig:dilemma}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Tradeoff}
+  There exists a tradeoff between model tractability and applicability, as seen in Figure \ref{fig:dilemma}. Coming back to the example in page \ref{sld:model}, the {\em training set} $\tau = \{\bm{x_1},\ldots,\bm{x_n}\}$ is viewed as the outcome of $n$ iid random variables $\bm{X_1},\ldots,\bm{X_n}$ for some unknown pdf.
+
+  {\bf Goal:} to learn or estimate $f$ from the finite training set.
+\end{frame}
+
+\begin{frame}{Tradeoff vs risk}
+  Imagine the unsupervised learning framewrok shown before. We can specify a class (a collection) of pdfs  that we will call $\mathcal{G}_p$:
+  \begin{itemize}
+    \item We seek within $\mathcal{G}$ the best approximation to the true pdf $f$, and we will call it $g(\bm{x})$. 
+    \item Such best approaximation will minimize some calculated risk.
+\end{frame}
 
 \begin{frame}[allowframebreaks]
   \frametitle{Some basic notation}
