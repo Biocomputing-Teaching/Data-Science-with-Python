@@ -62,6 +62,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'code/UNIT2-Statistical-Learning';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -371,6 +373,12 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluation-of-the-loss-function-in-k-means">Evaluation of the loss function in K-means</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polynomial-regression">Polynomial  regression</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-data-with-fitted-curves-fordifferent-p">Training data with fitted curves fordifferent <span class="math notranslate nohighlight">\(p\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-loss-as-function-of-the-number-of-parameters-p-of-the-model">Test loss as function of the number of parameters <span class="math notranslate nohighlight">\(p\)</span> of the model.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-validation">Cross-validation</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -537,10 +545,14 @@ Loss = 2.288
 </div>
 </div>
 </div>
+</section>
+<section id="polynomial-regression">
+<h2>Polynomial  regression<a class="headerlink" href="#polynomial-regression" title="Permalink to this heading">#</a></h2>
+<p>Let us generate data drawn from iid random points that have a normal distribution with expectation <span class="math notranslate nohighlight">\(10 − 140ui + 400u^2i − 250u^3\)</span> and variance  25. This is an example of a polynomial regression model. Using a squared-error loss, the optimal prediction function <span class="math notranslate nohighlight">\(h^*(u) = E[Y | U = u]\)</span> is thus
+$<span class="math notranslate nohighlight">\(h^*(u) = 10 − 140^u + 400u^2 − 250u^3\)</span>$</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; polyreg1.py &quot;&quot;&quot;</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">rand</span> <span class="p">,</span> <span class="n">randn</span>
 <span class="kn">from</span> <span class="nn">numpy.linalg</span> <span class="kn">import</span> <span class="n">norm</span> <span class="p">,</span> <span class="n">solve</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -572,11 +584,13 @@ Loss = 2.288
 <img alt="../_images/249cb72348c7908faf9ce26d015c5f055c90cd988da8433999b97032b670233c.png" src="../_images/249cb72348c7908faf9ce26d015c5f055c90cd988da8433999b97032b670233c.png" />
 </div>
 </div>
+</section>
+<section id="training-data-with-fitted-curves-fordifferent-p">
+<h2>Training data with fitted curves fordifferent <span class="math notranslate nohighlight">\(p\)</span><a class="headerlink" href="#training-data-with-fitted-curves-fordifferent-p" title="Permalink to this heading">#</a></h2>
+<p>We will check the models for <span class="math notranslate nohighlight">\(p = 2, 4, 16\)</span>. The true cubic polynomial curve for p = 4 is also plotted (dashed line).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; polyreg2.py &quot;&quot;&quot;</span>
-
-<span class="n">max_p</span> <span class="o">=</span> <span class="mi">18</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">max_p</span> <span class="o">=</span> <span class="mi">18</span>
 <span class="n">p_range</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">max_p</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
 <span class="n">betahat</span><span class="p">,</span> <span class="n">trainloss</span> <span class="o">=</span> <span class="p">{},</span> <span class="p">{}</span>
@@ -613,11 +627,12 @@ Loss = 2.288
 <img alt="../_images/8eaa6a4e2e27a62985935465eef17b498b763e812909b746b50c86ae58cf1052.png" src="../_images/8eaa6a4e2e27a62985935465eef17b498b763e812909b746b50c86ae58cf1052.png" />
 </div>
 </div>
+</section>
+<section id="test-loss-as-function-of-the-number-of-parameters-p-of-the-model">
+<h2>Test loss as function of the number of parameters <span class="math notranslate nohighlight">\(p\)</span> of the model.<a class="headerlink" href="#test-loss-as-function-of-the-number-of-parameters-p-of-the-model" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; polyreg3.py &quot;&quot;&quot;</span>
-  
-<span class="c1"># generate test data</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># generate test data</span>
 <span class="n">u_test</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">generate_data</span><span class="p">(</span><span class="n">beta</span><span class="p">,</span> <span class="n">sig</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
 
 <span class="n">MSE</span> <span class="o">=</span> <span class="p">[]</span>
@@ -646,11 +661,12 @@ Loss = 2.288
 <img alt="../_images/d24c67a2e490f2adc84378468a74466e6b6ac00cd56832efbd5ffd72bb8dcdc2.png" src="../_images/d24c67a2e490f2adc84378468a74466e6b6ac00cd56832efbd5ffd72bb8dcdc2.png" />
 </div>
 </div>
+<section id="cross-validation">
+<h3>Cross-validation<a class="headerlink" href="#cross-validation" title="Permalink to this heading">#</a></h3>
+<p>For the polynomial regression example, we can calculate a <span class="math notranslate nohighlight">\(K\)</span>-fold cross-validation loss with a nonrandom partitioning of the training set using the following code.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; polyregCV.py &quot;&quot;&quot;</span>
-
-<span class="n">K_vals</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>  <span class="c1"># number of folds</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">K_vals</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>  <span class="c1"># number of folds</span>
 <span class="n">cv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">K_vals</span><span class="p">),</span> <span class="n">max_p</span><span class="p">))</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
 
@@ -705,6 +721,7 @@ Loss = 2.288
 </div>
 </div>
 </div>
+</section>
 </section>
 </section>
 
@@ -772,6 +789,12 @@ Loss = 2.288
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluation-of-the-loss-function-in-k-means">Evaluation of the loss function in K-means</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polynomial-regression">Polynomial  regression</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-data-with-fitted-curves-fordifferent-p">Training data with fitted curves fordifferent <span class="math notranslate nohighlight">\(p\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-loss-as-function-of-the-number-of-parameters-p-of-the-model">Test loss as function of the number of parameters <span class="math notranslate nohighlight">\(p\)</span> of the model.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-validation">Cross-validation</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

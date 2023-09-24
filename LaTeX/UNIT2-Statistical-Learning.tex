@@ -177,6 +177,56 @@ The goals of modelling data are:
     \]
 \end{frame}
 
+\begin{frame}{Train-Test-Validate}
+  \begin{figure}
+    \includegraphics[width=0.7\linewidth]{traintestvalidate}
+    \caption{Sometimes we use the second set of data for model validation. Then we need to use a third one for testing.}
+    \label{fig:ttv}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Train-Test-Validate}
+  To compare the predictive performance of various learners in $\mathcal{G}$, as measured by the test loss,
+  \begin{itemize}
+    \item  we can use the same fixed training set  and test set for different learners, or
+    \item if the overall data set is of modest size, we can perform the validation phase (model selection) on the training set only, using {\bf cross-validation}. 
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}{Polynomial regression. Original data.}
+  \begin{figure}
+    \includegraphics[width=0.7\linewidth]{polydatpy}
+    \label{fig:polydatpy}
+    \caption{Training data and the optimal polynomial prediction function $h^*$.}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Polynomial regression. Fitting.}
+  \begin{figure}
+    \includegraphics[width=0.7\linewidth]{polyfitpy}
+    \label{fig:polydatpy}
+    \caption{Fitted models for different orders of polynomial regressions.}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Polynomial regression. Error.}
+  \begin{figure}
+    \includegraphics[width=0.7\linewidth]{MSEpy}
+    \label{fig:MSEpy}
+    \caption{Fitted models for different orders of polynomial regressions.}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Polynomial regression. Cross validation.}
+  \begin{figure}
+    \includegraphics[width=0.4\linewidth]{crossval}
+    \includegraphics[width=0.4\linewidth]{crossvalpy}
+    \label{fig:crossvalpy}
+    \caption{a) Example of four-fold cross-validation, representing four copies of the same data set. The data in each copy is partitioned into a training set (pink) and a test set (blue).  Darker columns are the response variable; and lighter ones the explanatory variables. b) K-fold cross-validation for the polynomial regression.}
+  \end{figure}
+\end{frame}
+
 \section{Detailed notation}
 
 \begin{frame}[allowframebreaks]
@@ -240,15 +290,15 @@ It is unlikely that a mathematical function $g \equiv \ f_{\vtheta}:\fX\to\fY$ w
    
   (In the case of a classification, we denote $\LD(g) \equiv \LD(\vtheta) = \Prob_{\fD} [f_{\vtheta}(\vx) \neq \vy]$ and we say that $g$ is a classifier.)
 
-  Because we are interested in minimizing the risk in our prediction, we are looking for the best possible $g* \colon = \mathrm{argmin}_g \Exp_{\fD}\ell(f_{\vtheta}(\vx),\vy)$
+  Because we are interested in minimizing the risk in our prediction, we are looking for the best possible $g^* \colon = \mathrm{argmin}_g \Exp_{\fD}\ell(f_{\vtheta}(\vx),\vy)$
 
-  (In classification, we look for $g* (\vx) = \underset{y\in\{0,1,\ldots,c-1\}}{\mathrm{argmax}}  \Prob[Y=y \ X=x]$.)
+  (In classification, we look for $g^* (\vx) = \underset{y\in\{0,1,\ldots,c-1\}}{\mathrm{argmax}}  \Prob[Y=y \ X=x]$.)
 
   \begin{theorem}
-    For the squared-error loss $\ell (y,\hat{y})=(y-\hat{y})^2$, the optimal prediction function $g*$ is equal to the conditional expectation of $Y$ given $\vX=\vx$.
+    For the squared-error loss $\ell (y,\hat{y})=(y-\hat{y})^2$, the optimal prediction function $g^*$ is equal to the conditional expectation of $Y$ given $\vX=\vx$.
   \end{theorem}
   which leads to write the random response $Y$ as:
-  \[Y=g*(\vx)+\varepsilon(\vx)\]
+  \[Y=g^*(\vx)+\varepsilon(\vx)\]
   Note that such random deviation satisfies $\Exp \varepsilon(\vx)=0$
 \end{frame}
 
