@@ -56,7 +56,7 @@ Study Abroad\\ % Your institution for the title page
   \frametitle{Preliminary note}
   The material in these slides is strongly based on \cite{kroese2020}. When other materials are used, they are cited accordingly.
 
-  Mathematical notation follows as good as it can a [good practices proposal](https://ctan.math.utah.edu/ctan/tex-archive/macros/latex/contrib/mlmath/mlmath.pdf) from the Beijing Academy of Artificial Intelligence.
+  Mathematical notation follows as good as it can a \href{https://ctan.math.utah.edu/ctan/tex-archive/macros/latex/contrib/mlmath/mlmath.pdf}{good practices proposal} from the Beijing Academy of Artificial Intelligence.
   \end{frame}
 
 %------------------------------------------------
@@ -163,17 +163,24 @@ The goals of modelling data are:
 \end{frame}
 
 \begin{frame}{Tradeoff vs risk}
-  Imagine the unsupervised learning framewrok shown before. We can specify a class (a collection) of pdfs  that we will call $\mathcal{G}_p$:
+  Imagine the {\bf unsupervised learning} framewrok shown before. We can specify a class (a collection) of pdfs  that we will call $\mathcal{G}_p$:
   \begin{itemize}
-    \item We seek within $\mathcal{G}$ the best approximation to the true pdf $f$, and we will call it $g(\bm{x})$. 
-    \item Such best approaximation will minimize some calculated risk.
+    \item We seek within $\mathcal{G}$ the best approximation to the true model pdf $f(\bm{x}$, and we will call it $g(\bm{x}|\bm{\Theta})$. 
+    \item Such best approximation will minimize some calculated risk.
   \end{itemize}
+  \[
+    \mathrm{Loss}(f(\bm{x}),g(\bm{x}|\bm{\Theta})))=\ln f(\bm{x}) - \ln g(\bm{x}|\bm{\Theta}))
+    \]
+    with expected value, this is, the {\bf risk} as
+    \[
+    \ell(g)= \mathbb{E}  \ln \frac{f(\bm{X})}{g(\bm{X}|\bm{\Theta})} = \int f(\bm{x}) \ln \frac{f(\bm{x})}{g(\bm{x}|\bm{\Theta})} \diff \bm{x}
+    \]
 \end{frame}
 
 \section{Detailed notation}
 
 \begin{frame}[allowframebreaks]
-  \frametitle{Some basic notation}
+  \frametitle{Some detailed notation (just for reference)}
 
   Given an input or {\em feature} vector $\bm{x}$, ML aims at predicting an ouput or {\em response} variable vector $\bm{y}$. In particular, we search for a mathematical {\em prediction function} $g$ such that we can {\em guess} an approximation to $\bm{y}$, $\hat{\bm{y}}$:
   \begin{align*}
