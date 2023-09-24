@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,8 +38,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -76,6 +77,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -163,7 +173,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="UNIT3-MC-Methods.html">UNIT 3. Monte Carlo methods</a></li>
 <li class="toctree-l1"><a class="reference internal" href="UNIT4-Unsupervised-Learning.html">UNIT 4. Unsupervised Learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="UNIT5-Regression.html">UNIT 5. Regression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="UNIT6-Regularization-and-Kernel-Methods.html">UNIT 6. Statistical Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UNIT6-Regularization-and-Kernel-Methods.html">UNIT 6. Regularization and kernel methods</a></li>
 <li class="toctree-l1"><a class="reference internal" href="UNIT7-Classification.html">UNIT 7. Classification</a></li>
 <li class="toctree-l1"><a class="reference internal" href="UNIT8-Decision-Trees.html">UNIT 8. Decision Tres</a></li>
 <li class="toctree-l1"><a class="reference internal" href="UNIT9-Neural-Networks.html">UNIT 9. Neural Networks</a></li>
@@ -322,10 +332,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -333,13 +343,11 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -355,17 +363,6 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-general-concepts">Some general concepts</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-distribution-function-pdf">Probability distribution function (pdf)</a></li>
-</ul>
-</li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -377,326 +374,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="unit-2-statistical-learning">
 <h1>UNIT 2. Statistical Learning<a class="headerlink" href="#unit-2-statistical-learning" title="Permalink to this heading">#</a></h1>
-<p>This Unit includes an introduction to statistical learning strongly based in <span id="id1">[]</span>.</p>
-<section id="some-general-concepts">
-<h2>Some general concepts<a class="headerlink" href="#some-general-concepts" title="Permalink to this heading">#</a></h2>
-<section id="probability-distribution-function-pdf">
-<h3>Probability distribution function (pdf)<a class="headerlink" href="#probability-distribution-function-pdf" title="Permalink to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="c1"># Define the parameters of the normal distribution</span>
-<span class="n">mu</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># mean</span>
-<span class="n">sigma</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># standard deviation</span>
-
-<span class="c1"># Generate random numbers from the normal distribution</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span>
-
-<span class="c1"># Plot the PDF of the normal distribution</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Value&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Probability density&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Normal distribution PDF&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/81f9ebfa704ae46b62af11647074a72346da3a6d06d023490dd6b5342fdc7436.png" src="../_images/81f9ebfa704ae46b62af11647074a72346da3a6d06d023490dd6b5342fdc7436.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">scipy.ndimage</span> <span class="kn">import</span> <span class="n">gaussian_filter</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="n">num_centers</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="n">sigma</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="n">Columns</span> <span class="o">=</span> <span class="mi">25</span>
-<span class="n">Rows</span> <span class="o">=</span> <span class="mi">15</span>
-<span class="n">size</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="n">yticks</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">Rows</span><span class="p">)</span>
-<span class="n">impulses</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
-
-<span class="c1"># rows and cols are the row and column indices of the centers</span>
-<span class="c1"># of the gaussian peaks.</span>
-<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">123456</span><span class="p">)</span>
-<span class="n">rows</span><span class="p">,</span> <span class="n">cols</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unravel_index</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">impulses</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-                                               <span class="n">size</span><span class="o">=</span><span class="n">num_centers</span><span class="p">),</span><span class="n">impulses</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span><span class="n">cols</span><span class="p">)</span>
-<span class="n">rows</span><span class="p">,</span> <span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">21</span><span class="p">]</span>
-<span class="n">impulses</span><span class="p">[</span><span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="c1"># or use this if you want duplicates to sum:</span>
-<span class="c1">#np.add.at(impulses, (rows, cols), 1)</span>
-
-<span class="c1"># Filter impulses to create the result.</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">gaussian_filter</span><span class="p">(</span><span class="n">impulses</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">yticks</span><span class="p">,</span> <span class="n">yticks</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">9</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">Columns</span> <span class="o">=</span> <span class="mi">25</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">Rows</span> <span class="o">=</span> <span class="mi">15</span>
-<span class="ne">----&gt; </span><span class="mi">9</span> <span class="n">size</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">yticks</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">Rows</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="n">impulses</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;y&#39; is not defined
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">cm</span>
-<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
-
-<span class="c1"># Our 2-dimensional distribution will be over variables X and Y</span>
-<span class="n">N</span> <span class="o">=</span> <span class="mi">40</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
-<span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
-<span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span>
-
-<span class="c1"># Mean vector and covariance matrix</span>
-<span class="n">mu</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">])</span>
-<span class="n">Sigma</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span> <span class="mf">1.</span> <span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span>  <span class="mf">1.</span><span class="p">]])</span>
-
-<span class="c1"># Pack X and Y into a single 3-dimensional array</span>
-<span class="n">pos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span> <span class="o">+</span> <span class="p">(</span><span class="mi">2</span><span class="p">,))</span>
-<span class="n">pos</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">X</span>
-<span class="n">pos</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">Y</span>
-
-<span class="k">def</span> <span class="nf">multivariate_gaussian</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">Sigma</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the multivariate Gaussian distribution on array pos.&quot;&quot;&quot;</span>
-
-    <span class="n">n</span> <span class="o">=</span> <span class="n">mu</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">Sigma_det</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">Sigma</span><span class="p">)</span>
-    <span class="n">Sigma_inv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">Sigma</span><span class="p">)</span>
-    <span class="n">N</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">**</span><span class="n">n</span> <span class="o">*</span> <span class="n">Sigma_det</span><span class="p">)</span>
-    <span class="c1"># This einsum call calculates (x-mu)T.Sigma-1.(x-mu) in a vectorized</span>
-    <span class="c1"># way across all the input variables.</span>
-    <span class="n">fac</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s1">&#39;...k,kl,...l-&gt;...&#39;</span><span class="p">,</span> <span class="n">pos</span><span class="o">-</span><span class="n">mu</span><span class="p">,</span> <span class="n">Sigma_inv</span><span class="p">,</span> <span class="n">pos</span><span class="o">-</span><span class="n">mu</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">fac</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="n">N</span>
-
-<span class="c1"># The distribution on the variables X, Y packed into pos.</span>
-<span class="n">Z</span> <span class="o">=</span> <span class="n">multivariate_gaussian</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">Sigma</span><span class="p">)</span>
-
-<span class="c1"># plot using subplots</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">ax1</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
-
-<span class="n">ax1</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="n">rstride</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">cstride</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">antialiased</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-                <span class="n">cmap</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">viridis</span><span class="p">)</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">view_init</span><span class="p">(</span><span class="mi">55</span><span class="p">,</span><span class="o">-</span><span class="mi">70</span><span class="p">)</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([])</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([])</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">set_zticks</span><span class="p">([])</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$x_1$&#39;</span><span class="p">)</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$x_2$&#39;</span><span class="p">)</span>
-
-<span class="n">ax2</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="n">zdir</span><span class="o">=</span><span class="s1">&#39;z&#39;</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">viridis</span><span class="p">)</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">view_init</span><span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="mi">270</span><span class="p">)</span>
-
-<span class="n">ax2</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([])</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([])</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">set_zticks</span><span class="p">([])</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$x_1$&#39;</span><span class="p">)</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$x_2$&#39;</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/7f0ac193566983da790a4a825084d27703ee628c08bbb4ed5ed541e2a23695cc.png" src="../_images/7f0ac193566983da790a4a825084d27703ee628c08bbb4ed5ed541e2a23695cc.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="k">def</span> <span class="nf">twoD_Gaussian</span><span class="p">(</span><span class="n">amp0</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">amp1</span><span class="o">=</span><span class="mi">13721</span><span class="p">,</span> <span class="n">x1</span><span class="o">=</span><span class="mi">356</span><span class="p">,</span> <span class="n">y1</span><span class="o">=</span><span class="mi">247</span><span class="p">,</span> <span class="n">amp2</span><span class="o">=</span><span class="mi">14753</span><span class="p">,</span> <span class="n">x2</span><span class="o">=</span><span class="mi">291</span><span class="p">,</span>  <span class="n">y2</span><span class="o">=</span><span class="mi">339</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">40</span><span class="p">):</span>
-
-    <span class="n">x0</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">x0</span><span class="p">)</span>
-    <span class="n">y0</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">y0</span><span class="p">)</span>
-    <span class="n">x1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span>
-    <span class="n">y1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">y1</span><span class="p">)</span>
-    <span class="n">x2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">x2</span><span class="p">)</span>
-    <span class="n">y2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">y2</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span>  <span class="p">(</span><span class="n">amp0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(((</span><span class="n">x0</span><span class="o">-</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">sigma</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="p">((</span><span class="n">y0</span><span class="o">-</span><span class="n">y</span><span class="p">)</span><span class="o">/</span><span class="n">sigma</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span><span class="o">+</span><span class="p">(</span>
-                             <span class="n">amp1</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(((</span><span class="n">x1</span><span class="o">-</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">sigma</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="p">((</span><span class="n">y1</span><span class="o">-</span><span class="n">y</span><span class="p">)</span><span class="o">/</span><span class="n">sigma</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span><span class="o">+</span><span class="p">(</span>
-                             <span class="n">amp2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(((</span><span class="n">x2</span><span class="o">-</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">sigma</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="p">((</span><span class="n">y2</span><span class="o">-</span><span class="n">y</span><span class="p">)</span><span class="o">/</span><span class="n">sigma</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-<span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">F</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">Y</span><span class="p">))])</span>
-<span class="n">Z</span> <span class="o">=</span> <span class="n">z</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Y&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_zlabel</span><span class="p">(</span><span class="s1">&#39;F(X, Y)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">jordivilla</span><span class="o">/</span><span class="n">GitHub</span><span class="o">/</span><span class="n">Classes</span><span class="o">/</span><span class="n">Data</span><span class="o">-</span><span class="n">Science</span><span class="o">-</span><span class="k">with</span><span class="o">-</span><span class="n">Python</span><span class="o">/</span><span class="n">code</span><span class="o">/</span><span class="n">UNIT2</span><span class="o">-</span><span class="n">Statistical</span><span class="o">-</span><span class="n">Learning</span><span class="o">.</span><span class="n">ipynb</span> <span class="n">Cell</span> <span class="mi">4</span> <span class="n">line</span> <span class="mi">5</span>
-      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/home/jordivilla/GitHub/Classes/Data-Science-with-Python/code/UNIT2-Statistical-Learning.ipynb#X10sZmlsZQ%3D%3D?line=2&#39;</span><span class="o">&gt;</span><span class="mi">3</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/home/jordivilla/GitHub/Classes/Data-Science-with-Python/code/UNIT2-Statistical-Learning.ipynb#X10sZmlsZQ%3D%3D?line=3&#39;</span><span class="o">&gt;</span><span class="mi">4</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="nn">----&gt; &lt;a href=&#39;vscode-notebook-cell:/home/jordivilla/GitHub/Classes/Data-Science-with-Python/code/UNIT2-Statistical-Learning.ipynb#X10sZmlsZQ%3D%3D?line=4&#39;&gt;5&lt;/a&gt; z = np.array([F(x,y) for x,y</span> in <span class="ni">zip(np.ravel(X), np.ravel</span><span class="nt">(Y))])</span>
-      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/home/jordivilla/GitHub/Classes/Data-Science-with-Python/code/UNIT2-Statistical-Learning.ipynb#X10sZmlsZQ%3D%3D?line=5&#39;</span><span class="o">&gt;</span><span class="mi">6</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="n">Z</span> <span class="o">=</span> <span class="n">z</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/home/jordivilla/GitHub/Classes/Data-Science-with-Python/code/UNIT2-Statistical-Learning.ipynb#X10sZmlsZQ%3D%3D?line=6&#39;</span><span class="o">&gt;</span><span class="mi">7</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
-
-<span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">jordivilla</span><span class="o">/</span><span class="n">GitHub</span><span class="o">/</span><span class="n">Classes</span><span class="o">/</span><span class="n">Data</span><span class="o">-</span><span class="n">Science</span><span class="o">-</span><span class="k">with</span><span class="o">-</span><span class="n">Python</span><span class="o">/</span><span class="n">code</span><span class="o">/</span><span class="n">UNIT2</span><span class="o">-</span><span class="n">Statistical</span><span class="o">-</span><span class="n">Learning</span><span class="o">.</span><span class="n">ipynb</span> <span class="n">Cell</span> <span class="mi">4</span> <span class="n">line</span> <span class="mi">5</span>
-      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/home/jordivilla/GitHub/Classes/Data-Science-with-Python/code/UNIT2-Statistical-Learning.ipynb#X10sZmlsZQ%3D%3D?line=2&#39;</span><span class="o">&gt;</span><span class="mi">3</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/home/jordivilla/GitHub/Classes/Data-Science-with-Python/code/UNIT2-Statistical-Learning.ipynb#X10sZmlsZQ%3D%3D?line=3&#39;</span><span class="o">&gt;</span><span class="mi">4</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="nn">----&gt; &lt;a href=&#39;vscode-notebook-cell:/home/jordivilla/GitHub/Classes/Data-Science-with-Python/code/UNIT2-Statistical-Learning.ipynb#X10sZmlsZQ%3D%3D?line=4&#39;&gt;5&lt;/a&gt; z = np.array([F(x,y) for x,y</span> in <span class="ni">zip(np.ravel(X), np.ravel</span><span class="nt">(Y))])</span>
-      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/home/jordivilla/GitHub/Classes/Data-Science-with-Python/code/UNIT2-Statistical-Learning.ipynb#X10sZmlsZQ%3D%3D?line=5&#39;</span><span class="o">&gt;</span><span class="mi">6</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="n">Z</span> <span class="o">=</span> <span class="n">z</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/home/jordivilla/GitHub/Classes/Data-Science-with-Python/code/UNIT2-Statistical-Learning.ipynb#X10sZmlsZQ%3D%3D?line=6&#39;</span><span class="o">&gt;</span><span class="mi">7</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
-
-<span class="ne">NameError</span>: name &#39;F&#39; is not defined
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cv2</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="c1">#read image</span>
-<span class="n">src</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;../figures/test.png&#39;</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">IMREAD_UNCHANGED</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">src</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-
-<span class="c1"># extract red channel</span>
-<span class="n">red_channel</span> <span class="o">=</span> <span class="n">src</span><span class="p">[:,:,</span><span class="mi">2</span><span class="p">]</span>
-
-<span class="c1"># create empty image with same shape as that of src image</span>
-<span class="n">red_img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">src</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-
-<span class="c1">#assign the red channel of src to empty image</span>
-<span class="n">red_img</span><span class="p">[:,:,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">red_channel</span>
-
-<span class="c1">#save image</span>
-<span class="n">cv2</span><span class="o">.</span><span class="n">imwrite</span><span class="p">(</span><span class="s1">&#39;../figures/FCTEred.png&#39;</span><span class="p">,</span><span class="n">red_img</span><span class="p">)</span> 
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(5304, 7952, 3)
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">leastsq</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="k">def</span> <span class="nf">twoD_Gaussian</span><span class="p">(</span><span class="n">amp0</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">amp1</span><span class="o">=</span><span class="mi">13721</span><span class="p">,</span> <span class="n">x1</span><span class="o">=</span><span class="mi">356</span><span class="p">,</span> <span class="n">y1</span><span class="o">=</span><span class="mi">247</span><span class="p">,</span>  <span class="n">sigma</span><span class="o">=</span><span class="mi">40</span><span class="p">):</span>
-
-    <span class="n">x0</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">x0</span><span class="p">)</span>
-    <span class="n">y0</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">y0</span><span class="p">)</span>
-    <span class="n">x1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span>
-    <span class="n">y1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">y1</span><span class="p">)</span>
-    
-    <span class="k">return</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span>  <span class="p">(</span><span class="n">amp0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(((</span><span class="n">x0</span><span class="o">-</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">sigma</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="p">((</span><span class="n">y0</span><span class="o">-</span><span class="n">y</span><span class="p">)</span><span class="o">/</span><span class="n">sigma</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span><span class="o">+</span><span class="p">(</span><span class="n">amp1</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(((</span><span class="n">x1</span><span class="o">-</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">sigma</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="p">((</span><span class="n">y1</span><span class="o">-</span><span class="n">y</span><span class="p">)</span><span class="o">/</span><span class="n">sigma</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
-     
-<span class="c1"># Create data indices</span>
-<span class="n">I</span> <span class="o">=</span> <span class="n">red_channel</span>   <span class="c1"># Red channel of a scanned image, equivalent to the  1st image displayed in this post.</span>
-<span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">I</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float&#39;</span><span class="p">)</span>
-<span class="n">w</span><span class="p">,</span><span class="n">h</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">I</span><span class="p">)</span>
-<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mgrid</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">h</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="n">w</span><span class="p">]</span>
-<span class="n">xy</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-
-<span class="c1"># scanned at 150 dpi = 5.91 dots per mm</span>
-<span class="n">dpmm</span> <span class="o">=</span> <span class="mf">5.905511811</span>
-<span class="n">plot_width</span> <span class="o">=</span> <span class="mi">40</span><span class="o">*</span><span class="n">dpmm</span>
-
-<span class="c1"># create function indices</span>
-<span class="n">fdims</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">plot_width</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>  
-<span class="n">xdims</span> <span class="o">=</span> <span class="p">(</span><span class="n">RC</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">fdims</span><span class="p">,</span> <span class="n">RC</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">fdims</span><span class="p">)</span>
-<span class="n">ydims</span> <span class="o">=</span> <span class="p">(</span><span class="n">RC</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">fdims</span><span class="p">,</span> <span class="n">RC</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">fdims</span><span class="p">)</span>
-<span class="n">fx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">xdims</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">xdims</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">plot_width</span><span class="p">))</span>
-<span class="n">fy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">ydims</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ydims</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">plot_width</span><span class="p">))</span>
-<span class="n">fx</span><span class="p">,</span><span class="n">fy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span><span class="n">fy</span><span class="p">)</span>
-
-<span class="c1">#Crop image for display</span>
-<span class="n">crp_data</span> <span class="o">=</span> <span class="n">image</span><span class="p">[</span><span class="n">xdims</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span><span class="n">xdims</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">ydims</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span><span class="n">ydims</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
-<span class="n">z</span> <span class="o">=</span> <span class="n">crp_data</span>    
-
-<span class="c1"># Parameters obtained from separate fits</span>
-<span class="n">Amplitudes</span> <span class="o">=</span> <span class="p">(</span><span class="mi">13245</span><span class="p">,</span> <span class="mi">13721</span><span class="p">,</span> <span class="mi">15374</span><span class="p">)</span>
-<span class="n">px</span> <span class="o">=</span> <span class="p">(</span><span class="mi">410</span><span class="p">,</span> <span class="mi">356</span><span class="p">,</span> <span class="mi">290</span><span class="p">)</span>
-<span class="n">py</span> <span class="o">=</span> <span class="p">(</span><span class="mi">350</span><span class="p">,</span> <span class="mi">247</span><span class="p">,</span> <span class="mi">339</span><span class="p">)</span>
-
-<span class="n">initial_guess_sum</span> <span class="o">=</span> <span class="p">(</span><span class="n">Amp</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">px</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">py</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">Amp</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">px</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">py</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">Amp</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">px</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">py</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
-<span class="n">initial_guess_peak3</span> <span class="o">=</span> <span class="p">(</span><span class="n">Amp</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">px</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">py</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># Try fitting single peak within sum</span>
-
-
-<span class="n">fitted_pars</span> <span class="o">=</span> <span class="n">fitgaussian2D</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">initial_guess_sum</span><span class="p">)</span>
-<span class="c1">#fitted_pars = fitgaussian2D(x, y, z, initial_guess_peak3)</span>
-
-<span class="n">data_fitted</span><span class="o">=</span> <span class="n">twoD_Gaussian</span><span class="p">(</span><span class="o">*</span><span class="n">fitted_pars</span><span class="p">)(</span><span class="n">fx</span><span class="p">,</span><span class="n">fy</span><span class="p">)</span>
-<span class="c1">#data_fitted= twoD_Gaussian(*initial_guess_sum)(fx,fy)</span>
-
-
-
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="s2">&quot;equal&quot;</span><span class="p">)</span>
-<span class="c1">#fig, ax = plt.subplots(1)</span>
-<span class="n">cb</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">jet</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;bottom&#39;</span><span class="p">,</span>
-    <span class="n">extent</span><span class="o">=</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">x</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="n">y</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">y</span><span class="o">.</span><span class="n">max</span><span class="p">()))</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">data_fitted</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">fx</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">fy</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="mi">4</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">)</span>
-
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">(</span><span class="n">RC</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">-</span><span class="mi">135</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">(</span><span class="n">RC</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">+</span><span class="mi">135</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">(</span><span class="n">RC</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">+</span><span class="mi">135</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">(</span><span class="n">RC</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">-</span><span class="mi">135</span><span class="p">)</span>
-
-<span class="c1">#plt.colorbar(cb)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">jordivilla</span><span class="o">/</span><span class="n">GitHub</span><span class="o">/</span><span class="n">Classes</span><span class="o">/</span><span class="n">Data</span><span class="o">-</span><span class="n">Science</span><span class="o">-</span><span class="k">with</span><span class="o">-</span><span class="n">Python</span><span class="o">/</span><span class="n">code</span><span class="o">/</span><span class="n">UNIT2</span><span class="o">-</span><span class="n">Statistical</span><span class="o">-</span><span class="n">Learning</span><span class="o">.</span><span class="n">ipynb</span> <span class="n">Cell</span> <span class="mi">6</span> <span class="n">line</span> <span class="mi">4</span>
-     <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/home/jordivilla/GitHub/Classes/Data-Science-with-Python/code/UNIT2-Statistical-Learning.ipynb#X11sZmlsZQ%3D%3D?line=37&#39;</span><span class="o">&gt;</span><span class="mi">38</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="c1"># create function indices</span>
-     <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/home/jordivilla/GitHub/Classes/Data-Science-with-Python/code/UNIT2-Statistical-Learning.ipynb#X11sZmlsZQ%3D%3D?line=38&#39;</span><span class="o">&gt;</span><span class="mi">39</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="n">fdims</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">plot_width</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>  
-<span class="o">---&gt;</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/home/jordivilla/GitHub/Classes/Data-Science-with-Python/code/UNIT2-Statistical-Learning.ipynb#X11sZmlsZQ%3D%3D?line=39&#39;</span><span class="o">&gt;</span><span class="mi">40</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="n">xdims</span> <span class="o">=</span> <span class="p">(</span><span class="n">RC</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">fdims</span><span class="p">,</span> <span class="n">RC</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">fdims</span><span class="p">)</span>
-     <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/home/jordivilla/GitHub/Classes/Data-Science-with-Python/code/UNIT2-Statistical-Learning.ipynb#X11sZmlsZQ%3D%3D?line=40&#39;</span><span class="o">&gt;</span><span class="mi">41</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="n">ydims</span> <span class="o">=</span> <span class="p">(</span><span class="n">RC</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">fdims</span><span class="p">,</span> <span class="n">RC</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">fdims</span><span class="p">)</span>
-     <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/home/jordivilla/GitHub/Classes/Data-Science-with-Python/code/UNIT2-Statistical-Learning.ipynb#X11sZmlsZQ%3D%3D?line=41&#39;</span><span class="o">&gt;</span><span class="mi">42</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="n">fx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">xdims</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">xdims</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">plot_width</span><span class="p">))</span>
-
-<span class="ne">NameError</span>: name &#39;RC&#39; is not defined
-</pre></div>
-</div>
-</div>
-</div>
+<p>This Unit includes main introduction to statistical learning, strongly based in <span id="id1">[<a class="reference internal" href="UNIT9-Neural-Networks.html#id4" title="Dirk P. Kroese, Zdravko Botev, Thomas Taimre, and Radislav: Vaisman. Data Science and Machine Learning: Mathematical and Statistical Methods. Machine Learning &amp; Pattern Recognition. Chapman &amp; Hall/CRC, 2020. URL: https://acems.org.au/data-science-machine-learning-book-available-download (visited on 2023-08-15).">1</a>]</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; polyreg1.py &quot;&quot;&quot;</span>
@@ -729,7 +407,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b92ebda69862529fae59ad08dae1bd03e66a8be70d3f608de78520a7bb231b05.png" src="../_images/b92ebda69862529fae59ad08dae1bd03e66a8be70d3f608de78520a7bb231b05.png" />
+<img alt="../_images/249cb72348c7908faf9ce26d015c5f055c90cd988da8433999b97032b670233c.png" src="../_images/249cb72348c7908faf9ce26d015c5f055c90cd988da8433999b97032b670233c.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -770,7 +448,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/957d25d2f7d5356476aa903c765a924d442018371d2e3c038709e580ab697e32.png" src="../_images/957d25d2f7d5356476aa903c765a924d442018371d2e3c038709e580ab697e32.png" />
+<img alt="../_images/8eaa6a4e2e27a62985935465eef17b498b763e812909b746b50c86ae58cf1052.png" src="../_images/8eaa6a4e2e27a62985935465eef17b498b763e812909b746b50c86ae58cf1052.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -803,7 +481,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/86a2119bcf5edee2151f22e8007abb9f3d93dd80392d2152af1ecf1f3270ba91.png" src="../_images/86a2119bcf5edee2151f22e8007abb9f3d93dd80392d2152af1ecf1f3270ba91.png" />
+<img alt="../_images/d24c67a2e490f2adc84378468a74466e6b6ac00cd56832efbd5ffd72bb8dcdc2.png" src="../_images/d24c67a2e490f2adc84378468a74466e6b6ac00cd56832efbd5ffd72bb8dcdc2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -851,11 +529,20 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/5dc4023a102784da7f638dd942d15800bf7c5789d512e64ec4bdd37680711f13.png" src="../_images/5dc4023a102784da7f638dd942d15800bf7c5789d512e64ec4bdd37680711f13.png" />
+<img alt="../_images/37f519a69ef273844084460577cdce64a6d9aff552925cdfd55766726500a383.png" src="../_images/37f519a69ef273844084460577cdce64a6d9aff552925cdfd55766726500a383.png" />
 </div>
 </div>
-</section>
-</section>
+<div class="docutils container" id="id2">
+<div class="citation" id="id4" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Dirk P. Kroese, Zdravko Botev, Thomas Taimre, and Radislav: Vaisman. <em>Data Science and Machine Learning: Mathematical and Statistical Methods</em>. Machine Learning &amp; Pattern Recognition. Chapman &amp; Hall/CRC, 2020. URL: <a class="reference external" href="https://acems.org.au/data-science-machine-learning-book-available-download">https://acems.org.au/data-science-machine-learning-book-available-download</a> (visited on 2023-08-15).</p>
+</div>
+<div class="citation" id="id3" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></span>
+<p>Pierre Lafaye De Micheaux, Rémy Drouilhet, and Benoit Liquet. <em>The R Software: Fundamentals of Programming and Statistical Analysis</em>. Volume 40 of Statistics and Computing. Springer, New York, NY, 2013. ISBN 978-1-4614-9019-7 978-1-4614-9020-3. URL: <a class="reference external" href="https://link.springer.com/10.1007/978-1-4614-9020-3">https://link.springer.com/10.1007/978-1-4614-9020-3</a> (visited on 2023-08-15), <a class="reference external" href="https://doi.org/10.1007/978-1-4614-9020-3">doi:10.1007/978-1-4614-9020-3</a>.</p>
+</div>
+</div>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -883,11 +570,10 @@ document.write(`
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="UNIT1-Introduction.html"
@@ -907,32 +593,12 @@ document.write(`
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-general-concepts">Some general concepts</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-distribution-function-pdf">Probability distribution function (pdf)</a></li>
-</ul>
-</li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>
@@ -976,8 +642,8 @@ By CBBL teaching
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
   </footer>
