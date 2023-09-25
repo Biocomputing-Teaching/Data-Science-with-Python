@@ -16,7 +16,7 @@ latex:
     targetname: book.tex
 
 # Add a bibtex file so that we can create citations
-bibtex_bibfiles: LaTeX/DataSciencewithPython.bib
+bibtex_bibfiles: code/code.bib
 
 # Information about where the book exists on the web
 repository:

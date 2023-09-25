@@ -68,12 +68,11 @@ Study Abroad\\ % Your institution for the title page
 \begin{frame}{What to expect?}
   In this session we will discuss:
   \begin{itemize}
-    \item Modelling data
-    \item Models with independent and identically distributed (iid) data
-    \item The modelling dilemma
-    \item Linear models
-    \item Multivariate normal models
-    \item 
+    \item Modelling data.
+    \item Models with independent and identically distributed (iid) data.
+    \item The modelling dilemma.
+    \item Loss function and risk.
+    \item Polynomial regression.
   \end{itemize}
 \end{frame}
 
@@ -85,7 +84,7 @@ Study Abroad\\ % Your institution for the title page
 
 \begin{description}
   \item [Statistical learning] interpret the model and quantify the uncertainity of the data.
-  \item [Machine learning] (or {\em data mining} making predictions using large scale data.
+  \item [Machine learning] (or {\em data mining}) making predictions using large scale data.
 \end{description}
 
 The goals of modelling data are:
@@ -96,19 +95,42 @@ The goals of modelling data are:
 
 \end{frame}
 
+\begin{frame}
+  \frametitle{Types of machine learning}
+    
+    \begin{figure}
+      \includegraphics[width=0.9\linewidth]{MLtypes}
+      \caption{Different types of machine learning techniques\cite{peng_machine_2021}}
+      \label{fig:MLtypes}
+    \end{figure}
+  
+  \end{frame}
+
 \section{Modelling data}
+
+
+\begin{frame}
+  \frametitle{Supervised vs unsupervised}
+    
+    \begin{figure}
+      \includegraphics{supervised_unsupervised}
+      \caption{Supervised vs unsupervised ML}
+      \label{fig:supunsup}
+    \end{figure}
+  
+  \end{frame}
 
 \begin{frame}[allowframebreaks]{Example of modelling data}
   \label{sld:model}
   Imagine an unsupervised learning problem, with data represented by a vector $\bm{x}=[x_1,\ldots,x_p]^\intercal$, a very general model is to assume that $\bm{x}$ is the outcome of a random vector $\bm{X}=[X_1,\ldots,X_p]^\intercal$ with some unknown pdf $f$.
 
   The model can be refined by assuming a specific form of $f$.
+
   \begin{figure}
-    \includegraphics{supervised_unsupervised}
-    \caption{Supervised vs unsupervised ML}
+    \includegraphics[width=0.5\linewidth]{2dbivariate}
+    \caption{Some unknown pdf $f$ from which data was sampled.}
     \label{fig:supunsup}
   \end{figure}
-
 \end{frame}
 
 
@@ -127,19 +149,19 @@ The goals of modelling data are:
 %-----------------------------------
 
 \begin{frame}{{\em iid} data}
-  If we are given a sequence of data vectors $\bm{x_1},\ldots,\bm{x_n}$ one of the simplest possible models is to assume that the corresponding random vectors $\bm{X_1},\ldots,\bm{X_n}$ are independent and identically distributed (iid). We express this as:
-  \[\bm{X_1},\ldots,\bm{X_n} \stackrel{iid}{\sim} f \]
+  If we are given a sequence of data vectors $\bm{x}_1,\ldots,\bm{x}_1$ one of the simplest possible models is to assume that the corresponding random vectors $\bm{X}_1,\ldots,\bm{X}_n$ are independent and identically distributed (iid). We express this as:
+  \[\bm{X}_1,\ldots,\bm{X}_n \stackrel{iid}{\sim} f \]
   meaning that the random vectors form an iid sample from a pdf $f$ or sampling distribution $Dist$.
 
   This is the same as saying that knowing about one variable does not provide information about another variable.
 \end{frame}
 
 \begin{frame}{Independent data models}
-  In independent data models, the joint density of the random vectors $\bm{X_1},\ldots,\bm{X_n}$ is the {\em product} of the marginal ones:
+  In independent data models, the joint density of the random vectors $\bm{X}_1,\ldots,\bm{X}_n$ is the {\em product} of the marginal ones:
   \[
     f_{\bm{X_1},\ldots,\bm{X_n}}(\bm{x}_1,\ldots,\bm{x}_n)=f(\bm{x}_1)\cdots f(\bm{x}_n)  
   \]
-  The function $g(\bm{x})$, the "model" for $f(\bm{x})$ is usually specified up to a small number of parameters, corresponding to \href{common probability distributions}:
+  The function $g(\bm{x})$, our "model" for $f(\bm{x})$, is usually specified up to a small number of parameters, corresponding to \href{common probability distributions}:
   \begin{itemize}
     \item $\mathcal{N}(\mu,\sigma^2)$
     \item $\mathrm{Bin}(n,p)$
@@ -305,7 +327,7 @@ It is unlikely that a mathematical function $g \equiv \ f_{\vtheta}:\fX\to\fY$ w
 
 %----------------------------------------------------------------------------------------
 \section{Bibliography}
-\bibliographystyle{plain}
+\bibliographystyle{unsrt}
 \bibliography{DataSciencewithPython}
 
 \end{document}
