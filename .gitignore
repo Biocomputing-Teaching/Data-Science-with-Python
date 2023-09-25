@@ -173,5 +173,4 @@ cython_debug/
 *.vrb
 *.dvi
 
-datasets/
 output/

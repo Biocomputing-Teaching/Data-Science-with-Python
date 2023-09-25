@@ -122,18 +122,25 @@ The goals of modelling data are:
 
 \begin{frame}[allowframebreaks]{Example of modelling data}
   \label{sld:model}
-  Imagine an unsupervised learning problem, with data represented by a vector $\bm{x}=[x_1,\ldots,x_p]^\intercal$, a very general model is to assume that $\bm{x}$ is the outcome of a random vector $\bm{X}=[X_1,\ldots,X_p]^\intercal$ with some unknown pdf $f$.
-
+  Imagine an unsupervised learning problem, with data represented by a vector $\bm{x}=[x_1,\ldots,x_p]^\intercal$, a very general model is to assume that $\bm{x}$ is the outcome of a random vector $\bm{X}=[X_1,\ldots,X_p]^\intercal$ with some unknown pdf $f$.\\[2ex]
+ 
   The model can be refined by assuming a specific form of $f$.
 
   \begin{figure}
     \includegraphics[width=0.5\linewidth]{2dbivariate}
-    \caption{Some unknown pdf $f$ from which data was sampled.}
+    \caption{Some unknown pdf $f$ from which data in Figure \ref{fig:supunsup} was sampled.}
     \label{fig:supunsup}
   \end{figure}
 \end{frame}
 
-
+\begin{frame}{Example of unsupervised modelling}
+  \begin{Exercise}[title={Unsupervised learning}]
+    Using the data in the file, try to find 3 clusters using the K-means method.
+    \begin{center}
+     \includegraphics[width=0.6\linewidth]{data}
+    \end{center}
+  \end{Exercise}
+\end{frame}
 %------------------------------------------------
 
 \begin{frame}
@@ -179,7 +186,7 @@ The goals of modelling data are:
 \end{frame}
 
 \begin{frame}{Tradeoff}
-  There exists a tradeoff between model tractability and applicability, as seen in Figure \ref{fig:dilemma}. Coming back to the example in page \ref{sld:model}, the {\em training set} $\tau = \{\bm{x_1},\ldots,\bm{x_n}\}$ is viewed as the outcome of $n$ iid random variables $\bm{X_1},\ldots,\bm{X_n}$ for some unknown pdf.
+  There exists a tradeoff between model tractability and applicability, as seen in Figure \ref{fig:dilemma}. Coming back to the example in page \ref{sld:model}, the {\em training set} $\tau = \{\bm{x}_1,\ldots,\bm{x}_n\}$ is viewed as the outcome of $n$ iid random variables $\bm{X}_1,\ldots,\bm{X}_n$ for some unknown pdf $f$.\\[2ex]
 
   {\bf Goal:} to learn or estimate $f$ from the finite training set.
 \end{frame}
@@ -210,7 +217,7 @@ The goals of modelling data are:
 \begin{frame}{Train-Test-Validate}
   To compare the predictive performance of various learners in $\mathcal{G}$, as measured by the test loss,
   \begin{itemize}
-    \item  we can use the same fixed training set  and test set for different learners, or
+    \item  we can use the same fixed training set $\tau$ and test set $\tau'$ for different learners, or
     \item if the overall data set is of modest size, we can perform the validation phase (model selection) on the training set only, using {\bf cross-validation}. 
   \end{itemize}
 
@@ -220,7 +227,7 @@ The goals of modelling data are:
   \begin{figure}
     \includegraphics[width=0.7\linewidth]{polydatpy}
     \label{fig:polydatpy}
-    \caption{Training data and the optimal polynomial prediction function $h^*$.}
+    \caption{Training data and the optimal polynomial prediction function $h^*$\cite{kroese2020}.}
   \end{figure}
 \end{frame}
 
@@ -228,7 +235,7 @@ The goals of modelling data are:
   \begin{figure}
     \includegraphics[width=0.7\linewidth]{polyfitpy}
     \label{fig:polydatpy}
-    \caption{Fitted models for different orders of polynomial regressions.}
+    \caption{Fitted models for different orders of polynomial regressions\cite{kroese2020}.}
   \end{figure}
 \end{frame}
 
@@ -236,7 +243,7 @@ The goals of modelling data are:
   \begin{figure}
     \includegraphics[width=0.7\linewidth]{MSEpy}
     \label{fig:MSEpy}
-    \caption{Fitted models for different orders of polynomial regressions.}
+    \caption{Fitted models for different orders of polynomial regressions\cite{kroese2020}.}
   \end{figure}
 \end{frame}
 
@@ -245,14 +252,18 @@ The goals of modelling data are:
     \includegraphics[width=0.4\linewidth]{crossval}
     \includegraphics[width=0.4\linewidth]{crossvalpy}
     \label{fig:crossvalpy}
-    \caption{a) Example of four-fold cross-validation, representing four copies of the same data set. The data in each copy is partitioned into a training set (pink) and a test set (blue).  Darker columns are the response variable; and lighter ones the explanatory variables. b) K-fold cross-validation for the polynomial regression.}
+    \caption{a) Example of four-fold cross-validation, representing four copies of the same data set. The data in each copy is partitioned into a training set (pink) and a test set (blue).  Darker columns are the response variable; and lighter ones the explanatory variables. b) K-fold cross-validation for the polynomial regression\cite{kroese2020}.}
   \end{figure}
 \end{frame}
+
+\section{Bibliography}
+\bibliographystyle{unsrt}
+\bibliography{DataSciencewithPython}
 
 \section{Detailed notation}
 
 \begin{frame}[allowframebreaks]
-  \frametitle{Some detailed notation (just for reference)}
+  \frametitle{Annex: detailed notation}
 
   Given an input or {\em feature} vector $\bm{x}$, ML aims at predicting an ouput or {\em response} variable vector $\bm{y}$. In particular, we search for a mathematical {\em prediction function} $g$ such that we can {\em guess} an approximation to $\bm{y}$, $\hat{\bm{y}}$:
   \begin{align*}
@@ -326,8 +337,6 @@ It is unlikely that a mathematical function $g \equiv \ f_{\vtheta}:\fX\to\fY$ w
 
 
 %----------------------------------------------------------------------------------------
-\section{Bibliography}
-\bibliographystyle{unsrt}
-\bibliography{DataSciencewithPython}
+
 
 \end{document}
