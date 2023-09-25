@@ -71,6 +71,7 @@ Study Abroad\\ % Your institution for the title page
     \item Modelling data.
     \item Models with independent and identically distributed (iid) data.
     \item The modelling dilemma.
+    \item Clustering as an example of unsupervised learning method.
     \item Loss function and risk.
     \item Polynomial regression.
   \end{itemize}
@@ -133,9 +134,24 @@ The goals of modelling data are:
   \end{figure}
 \end{frame}
 
+\begin{frame}{Example of method for unsupervised learning: K-means clustering}
+  \begin{enumerate}
+    \item Specify the number of clusters $K$
+    \item Randomly initialize the cluster centers (centroids)
+    \item Assign each data point to the closest centroid
+    \item recalculate the cluster centroids from the mean of the data points in the cluster
+    \item come back to step 3 if not converged
+  \end{enumerate}
+  \begin{figure}
+    \includegraphics[width=0.5\linewidth]{kmeans}
+    \caption{Clustering}
+    \label{fig:clustering}
+  \end{figure}
+\end{frame}
+
 \begin{frame}{Example of unsupervised modelling}
   \begin{Exercise}[title={Unsupervised learning}]
-    Using the data in the file, try to find 3 clusters using the K-means method.
+    Using the data in \href{https://raw.githubusercontent.com/Biocomputing-Teaching/Data-Science-with-Python/main/code/datasets/clusterdata.csv}{this file}, try to find 3 clusters using the K-means method.
     \begin{center}
      \includegraphics[width=0.6\linewidth]{data}
     \end{center}
