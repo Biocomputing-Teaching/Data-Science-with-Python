@@ -382,7 +382,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="unit-2-statistical-learning">
 <h1>UNIT 2. Statistical Learning<a class="headerlink" href="#unit-2-statistical-learning" title="Permalink to this heading">#</a></h1>
-<p>This Unit includes main introduction to statistical learning, strongly based in <span id="id1">[<a class="reference internal" href="UNIT9-Neural-Networks.html#id3" title="Dirk P. Kroese, Zdravko Botev, Thomas Taimre, and Radislav: Vaisman. Data Science and Machine Learning: Mathematical and Statistical Methods. Machine Learning &amp; Pattern Recognition. Chapman &amp; Hall/CRC, 2020. URL: https://acems.org.au/data-science-machine-learning-book-available-download (visited on 2023-08-15).">1</a>]</span>.</p>
+<p>This Unit includes main introduction to statistical learning, strongly based in <span id="id1">[<a class="reference internal" href="#id3" title="Dirk P. Kroese, Zdravko Botev, Thomas Taimre, and Radislav: Vaisman. Data Science and Machine Learning: Mathematical and Statistical Methods. Machine Learning &amp; Pattern Recognition. Chapman &amp; Hall/CRC, 2020. URL: https://acems.org.au/data-science-machine-learning-book-available-download (visited on 2023-08-15).">1</a>]</span>.</p>
 <section id="evaluation-of-the-loss-function-in-k-means">
 <h2>Evaluation of the loss function in K-means<a class="headerlink" href="#evaluation-of-the-loss-function-in-k-means" title="Permalink to this heading">#</a></h2>
 <p>K-means is an example of unsupervised learning method. We will use this method along with <code class="docutils literal notranslate"><span class="pre">scipy</span></code> in order to evaluate the loss function calculated for a given dataset.</p>
@@ -539,8 +539,9 @@ Loss = 2.288
 </section>
 <section id="polynomial-regression">
 <h2>Polynomial  regression<a class="headerlink" href="#polynomial-regression" title="Permalink to this heading">#</a></h2>
-<p>Let us generate data drawn from iid random points that have a normal distribution with expectation <span class="math notranslate nohighlight">\(10 − 140ui + 400u^2i − 250u^3\)</span> and variance  25. This is an example of a polynomial regression model. Using a squared-error loss, the optimal prediction function <span class="math notranslate nohighlight">\(h^*(u) = E[Y | U = u]\)</span> is thus
-$<span class="math notranslate nohighlight">\(h^*(u) = 10 − 140^u + 400u^2 − 250u^3\)</span>$</p>
+<p>Let us generate data drawn from iid random points that have a normal distribution with expectation <span class="math notranslate nohighlight">\(10 − 140ui + 400u^2i − 250u^3\)</span> and variance  25. This is an example of a polynomial regression model. Using a squared-error loss, the optimal prediction function <span class="math notranslate nohighlight">\(h^*(u) = E[Y | U = u]\)</span> is thus</p>
+<div class="math notranslate nohighlight">
+\[h^*(u) = 10 − 140^u + 400u^2 − 250u^3\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
