@@ -84,7 +84,7 @@
 \usepackage{fancyvrb}
 \usepackage{xcolor}
 \usepackage{listings}
-\lstset{language=python,
+\lstset{language=Python,
     basicstyle=\ttfamily,
     commentstyle=\color{red},
     keywordstyle=\color{blue},
@@ -98,3 +98,11 @@
 \definecolor{links}{HTML}{2A1B81}
 \hypersetup{colorlinks,linkcolor=,urlcolor=links}
 \setbeamertemplate{caption}[numbered]
+
+\usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+%%% Coloring the comment as blue
+\newcommand\mycommfont[1]{\footnotesize\ttfamily\textcolor{blue}{#1}}
+\SetCommentSty{mycommfont}
+
+\SetKwInput{KwInput}{Input}                % Set the Input
+\SetKwInput{KwOutput}{Output}              % set the Output
