@@ -1,3 +1,4 @@
+# from https://towardsdatascience.com/monte-carlo-integration-in-python-over-univariate-and-multivariate-functions-12615dd252fa
 import numpy as np
 
 def func1(x):
