@@ -51,7 +51,6 @@ Study Abroad\\ % Your institution for the title page
 %----------------------------------------------------------------------------------------
 %	PRESENTATION SLIDES
 %----------------------------------------------------------------------------------------
-\section{Introduction and scope}
 \begin{frame}
   \frametitle{Preliminary note}
   The material in these slides is strongly based on \cite{kroese2020}. When other materials are used, they are cited accordingly.
@@ -69,6 +68,7 @@ Study Abroad\\ % Your institution for the title page
   In this session we will discuss:
   \begin{itemize}
     \item Crude Monte Carlo.
+    \item Average Value theorem.
     \item Monte Carlo Integration.
   \end{itemize}
 \end{frame}
@@ -91,6 +91,8 @@ Suppose we want to compute the expectation for a random variable $Y$:
     ith Crude Monte Carlo (CMC) you can approximate $\mu$ by simulating many independent copies $Y_i,\ldots,Y_N$ of $Y$ and then take their sample mean as an estimator of $\mu$.
 
 \end{frame}
+
+\section{MC integration}
 
 \begin{frame}[allowframebreaks,fragile]{First integration with CMC}
 
@@ -172,7 +174,7 @@ print ("Approx to the integral by CMC: {}.".format(ans))
 \begin{frame}{Monte Carlo integration}
     Consider the complicated integral
     \[
-        \mu = \int_{-\infty}^{infty}  \int_{-\infty}^{infty} \int_{-\infty}^{infty} \sqrt{|x_1+x_2+x_3|} e^{-(x_1^2+x_2^2+x_3^2)/2} \diff x_1 \diff x_2 \diff x_3  
+        \mu = \int_{-\infty}^{\infty}  \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \sqrt{|x_1+x_2+x_3|} e^{-(x_1^2+x_2^2+x_3^2)/2} \diff x_1 \diff x_2 \diff x_3  
     \]
     Defining $Y=|X_1+X_2+X_3|^{1/2}(2\pi)^{3/2}$ with $X_1,X_2,X_3 \stackrel{iid}{\sim} \mathcal{N}(0,1)$, we can write $\mu=\Exp Y$.
     Use the code \href{https://biocomputing-teaching.github.io/Data-Science-with-Python/code/UNIT3-MC-Methods.html}{here} to test the calculation. If you want to learn more about CLT and confidence intervals, a good start can be found \href{https://online.stat.psu.edu/stat506/lesson/1/1.4}{here}.
