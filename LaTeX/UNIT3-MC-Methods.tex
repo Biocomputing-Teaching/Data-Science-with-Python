@@ -184,93 +184,13 @@ print ("Approx to the integral by CMC: {}.".format(ans))
 \begin{frame}{Polynomial regression. Estimating the generalization risk}
     The code \href{https://biocomputing-teaching.github.io/Data-Science-with-Python/code/UNIT3-MC-Methods.html}{here} shows how to estimate how good is the graph below. 
   \begin{figure}
-    \includegraphics[width=0.4\linewidth]{crossvalpy}
+    \includegraphics[width=0.4\linewidth]{MSEpy}
     \label{fig:crossvalpy}
-    \caption{K-fold cross-validation for the polynomial regression\cite{kroese2020}.}
+    \caption{Fitted models for different orders of polynomial regressions\cite{kroese2020}.}
   \end{figure}
 \end{frame}
 
 \section{Bibliography}
 \bibliographystyle{unsrt}
 \bibliography{DataSciencewithPython}
-
-\section{Detailed notation}
-
-\begin{frame}[allowframebreaks]
-  \frametitle{Annex: detailed notation}
-
-  Given an input or {\em feature} vector $\bm{x}$, ML aims at predicting an ouput or {\em response} variable vector $\bm{y}$. In particular, we search for a mathematical {\em prediction function} $g$ such that we can {\em guess} an approximation to $\bm{y}$, $\hat{\bm{y}}$:
-  \begin{align*}
-      g \colon \mathcal{X}  & \rightarrow \mathcal{Y}\\
-      \bm{x}                &\mapsto \hat{\bm{y}}=g(\bm{x})
-  \end{align*}
-
-  \begin{definition}
-    Dataset  $S=\{\vz_i\}_{i=1}^n=\{(\vx_i,\vy_i)\}_{i=1}^n$ is sampled from a distribution $\fD$ over a domain $\fZ=\fX\times\fY$.\\
-    $\fX$  is the instance domain (a set), $\fY$ is the label domain (a set), and $\fZ=\fX\times\fY$ is the example domain (a set).
-  \end{definition}
-  
-  Usually,
-  $\fX$ is a subset of $\sR^d$ and $\fY$ is a subset of $\sR^{d_{o}}$, where $d$ is the input dimension, $d_{o}$ is the output dimension.
-  
-  $n=\#S$ is the number of samples. Without specification, $S$ and $n$ are for the training set.
-
-  \begin{itemize}
-    \item In {\em regression} problems, $\bm{y}$ is a vector of real values.
-    \item In {\em classification} problems, $\bm{y}$ values lie within a finite set of $c$ categories: $y\in\{0, 1, \ldots, c-1\}$.
-  \end{itemize}
-
-  \begin{definition}  
-  A hypothesis space is denoted by $\fH$. A hypothesis function is denoted by $f_{\vtheta}(\vx)\in\fH$ or $f(\vx;\vtheta)\in\fH$ with $f_{\vtheta}:\fX\to\fY$.
-  \end{definition}
-  
-  $\vtheta$  denotes the set of parameters of $f_{\vtheta}$.
-  
-  If there exists a target function, it is denoted by $f^*$or $f:\fX\to\fY$ satisfying $\vy_i=f^*(\vx_i)$ for $i=1,\ldots,n$.
-  
-  A loss function, denoted by $\ell:\fH\times\fZ\to\sR_+:=[0,+\infty)$, measures the difference (or error) between a predicted label and a true label, e.g., $L^2$ loss:
-  \[
-      \ell(f_{\vtheta},\vz)=\frac{1}{2}(f_{\vtheta}(\vx)-\vy)^2,
-  \]
-  where $\vz=(\vx,\vy)$. $\ell(f_{\vtheta},\vz)$ can also be written as
-  \[
-      \ell(f_{\vtheta}(\vx),\vy)
-  \]
-  for convenience.
-  
-  (In the case of a classification, $\ell(f_{\vtheta},\vy)=\mathbbm{1}\{y\neq \hat{\vy}\}$)
-
-We will see other useful loss functions (\{em cross entropy\} or {\em hinge} loss functions) later in this course.
-
-It is unlikely that a mathematical function $g \equiv \ f_{\vtheta}:\fX\to\fY$ would be able to make accurate predictions of all possible pairs $\fZ=\fX\times\fY$.
-
-  So, we use a probabilistic approach here to mpirical risk or training loss for a set $S=\{(\vx_i,\vy_i)\}_{i=1}^{n}$ is denoted by  $\LS(\vtheta)$ or $L_{n}(\vtheta)$ or $R_{n}(\vtheta)$ or $R_{S}(\vtheta)$,
-  \begin{equation}
-      \LS(\vtheta) =\frac{1}{n}\sum_{i=1}^n\ell(f_{\vtheta}(\vx_i),\vy_i).
-  \end{equation}
-  
-  The population risk or expected loss is denoted by $L_{\fD}(\vtheta)$ or $R_{\fD}(\vtheta)$
-  \begin{equation}
-      \LD(\vtheta) =\Exp_{\fD}\ell(f_{\vtheta}(\vx),\vy),
-  \end{equation}
-  where $\vz=(\vx,\vy)$ follows the distribution $\fD$.
-   
-  (In the case of a classification, we denote $\LD(g) \equiv \LD(\vtheta) = \Prob_{\fD} [f_{\vtheta}(\vx) \neq \vy]$ and we say that $g$ is a classifier.)
-
-  Because we are interested in minimizing the risk in our prediction, we are looking for the best possible $g^* \colon = \mathrm{argmin}_g \Exp_{\fD}\ell(f_{\vtheta}(\vx),\vy)$
-
-  (In classification, we look for $g^* (\vx) = \underset{y\in\{0,1,\ldots,c-1\}}{\mathrm{argmax}}  \Prob[Y=y \ X=x]$.)
-
-  \begin{theorem}
-    For the squared-error loss $\ell (y,\hat{y})=(y-\hat{y})^2$, the optimal prediction function $g^*$ is equal to the conditional expectation of $Y$ given $\vX=\vx$.
-  \end{theorem}
-  which leads to write the random response $Y$ as:
-  \[Y=g^*(\vx)+\varepsilon(\vx)\]
-  Note that such random deviation satisfies $\Exp \varepsilon(\vx)=0$
-\end{frame}
-
-
-%----------------------------------------------------------------------------------------
-
-
 \end{document}
