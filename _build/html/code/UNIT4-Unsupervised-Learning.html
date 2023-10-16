@@ -416,13 +416,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/67b7f529aaf8dbcc73f6308237252db72f089871f05990d2ede8d98e70d5e93c.png" src="../_images/67b7f529aaf8dbcc73f6308237252db72f089871f05990d2ede8d98e70d5e93c.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0 1 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0
- 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 1 0 1 0 0 1 0 0 1 0 0 0 1 0 0 1 0 0 0 0 0
- 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 1]
-[1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+<img alt="../_images/500f4540c1f01cb90e3ce7a15376a548bd7aae5c94d626fcbb1529ec32197ad7.png" src="../_images/500f4540c1f01cb90e3ce7a15376a548bd7aae5c94d626fcbb1529ec32197ad7.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
  1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
- 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1]
+ 1 1 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1]
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
 </pre></div>
 </div>
 </div>
@@ -509,7 +509,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;function matplotlib.pyplot.show(close=None, block=None)&gt;
 </pre></div>
 </div>
-<img alt="../_images/ef23404b3fda41be71576eec6a45c903fff3d92e8e77262576c1923ecadeafce.png" src="../_images/ef23404b3fda41be71576eec6a45c903fff3d92e8e77262576c1923ecadeafce.png" />
+<img alt="../_images/993bce99d5341606f1e905d582d6d49ed8f8334c50ac661377ead53e11b22849.png" src="../_images/993bce99d5341606f1e905d582d6d49ed8f8334c50ac661377ead53e11b22849.png" />
 </div>
 </div>
 <p>We will apply the Expectation-Maximization algorithm by introducing auxiliary variables. We use an initial guess of variables <span class="math notranslate nohighlight">\(W\)</span></p>
@@ -555,17 +555,17 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3, 300)
-[[0.32307364 0.31304127 0.36388509]]
-[[-1.53139375 -4.07351278  0.28122712]
- [-2.99815741  0.08177464 -0.90628015]]
-[[[ 1.42909742  0.06069061]
-  [ 0.06069061  0.08054111]]
+[[0.32887114 0.33829569 0.33283317]]
+[[-1.50841655 -4.21191439  0.37574597]
+ [-2.98685261 -0.13190839 -0.99639285]]
+[[[ 2.33838332  0.17161299]
+  [ 0.17161299  0.12812271]]
 
- [[ 2.12901997  1.5908031 ]
-  [ 1.5908031   1.77002616]]
+ [[ 2.20331347  1.46541386]
+  [ 1.46541386  1.5267903 ]]
 
- [[ 2.55440975 -1.35178874]
-  [-1.35178874  1.24858643]]]
+ [[ 2.02680729 -1.12674031]
+  [-1.12674031  1.25167469]]]
 </pre></div>
 </div>
 </div>
@@ -586,7 +586,7 @@ document.write(`
 <span class="n">G</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">X</span> 
 <span class="n">U</span><span class="p">,</span> <span class="n">_</span> <span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">svd</span><span class="p">(</span><span class="n">G</span><span class="o">/</span><span class="n">n</span><span class="p">)</span>
 
-<span class="c1"># projected points</span>
+<span class="c1"># projected points first component</span>
 <span class="n">Y</span> <span class="o">=</span> <span class="n">X</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">outer</span><span class="p">(</span><span class="n">U</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">U</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span>
 
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -614,7 +614,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/v5/vwzdch316vzcj9qldllr58800000gp/T/ipykernel_9755/1590656084.py:20: MatplotlibDeprecationWarning: The w_xaxis attribute was deprecated in Matplotlib 3.1 and will be removed in 3.8. Use xaxis instead.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/v5/vwzdch316vzcj9qldllr58800000gp/T/ipykernel_17928/950857428.py:20: MatplotlibDeprecationWarning: The w_xaxis attribute was deprecated in Matplotlib 3.1 and will be removed in 3.8. Use xaxis instead.
   ax.w_xaxis.set_pane_color((0, 0, 0, 0))
 </pre></div>
 </div>

@@ -78,8 +78,8 @@ Study Abroad\\ % Your institution for the title page
 
 \begin{frame}{Unsupervised learning}
     \begin{figure}
-        \includegraphics{supervised_unsupervised}
-        \includegraphics[width=0.5\linewidth]{2dbivariate}
+        \includegraphics[width=0.7\linewidth]{supervised_unsupervised}
+        \includegraphics[width=0.3\linewidth]{2dbivariate}
         \caption{Supervised-unsupervised learning, and actual pdf behind the data}
         \label{fig:supunsup}
     \end{figure}
@@ -94,7 +94,7 @@ Study Abroad\\ % Your institution for the title page
 
 \begin{frame}{Joint probability distribution}
     \begin{figure}
-        \includegraphics[width=0.8\linewidth]{Multivariate_normal_sample}
+        \includegraphics[width=0.6\linewidth]{Multivariate_normal_sample}
         \caption{\href{https://commons.wikimedia.org/wiki/File:Multivariate_normal_sample.svg}{Multivariate normal sample}}
     \end{figure}
 \end{frame}
@@ -135,11 +135,12 @@ pyplot.show()
 
 \begin{frame}{A one dimensional example for EM}
     \begin{figure}
-        \includegraphics[scale=0.5]{hist}
+        \includegraphics[width=0.7\linewidth]{hist}
     \end{figure}
 \end{frame}
 
 \begin{frame}[fragile]{A one dimensional example for EM}
+    \small
     \begin{lstlisting}
 from numpy import hstack
 from numpy.random import normal
@@ -157,6 +158,7 @@ yhat = model.predict(X) # predict latent values
 print(yhat[:100])       # check latent value for first few points
 print(yhat[-100:])      # check latent value for last few points
     \end{lstlisting}
+    \normalsize
 \end{frame}
 
 \begin{frame}{The maths behind}
@@ -167,6 +169,22 @@ print(yhat[-100:])      # check latent value for last few points
     where we estimate the pdf by using the previous iteration expectation and covariace:
 
     \[p_i^{(t)}(k) \varpropto w_k^{(t-1)} \phi_k(\uvec{x}_i | \mu_k^{(t-1)},\mathrm{Cov}_k^{(t-1)})\]
+\end{frame}
+
+\section{Principal Component Analysis}
+
+\begin{frame}{\href{https://builtin.com/data-science/step-step-explanation-principal-component-analysis}{PCA}}
+    \begin{enumerate}
+        \item Get some data
+        \item Substract the mean from each data dimension. Better standardize: $z=\frac{\uvec{x}-\bar{\uvec{x}}}{\sigma}$. Calculate the covariance matrix $X X^T$.
+        \item Diagonalize and obtain unit eigenvectors $c^T X X^T c -\lambda c^T c$ via SVD: $X X^T=U D^2 U$
+        \item Choosing components and forming a feature vector 
+        \item Recast the data along the chosen PC axes. $\uvec{x}_i^{\mathrm{PC}}=U_k U_k^T \uvec{x}_i$
+    \end{enumerate}
+    \begin{figure}
+        \includegraphics[width=0.7\linewidth]{projection_intuition}
+        \caption{Maximizing variance in principal component space is equivalent to minimizing least-squares reconstruction error. Taken from \href{http://alexhwilliams.info/itsneuronalblog/2016/03/27/pca/}{this post}}
+    \end{figure}
 \end{frame}
 
 \begin{frame}{EX2}
