@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>UNIT 5. Regression &#8212; Data Science with Python Jupyter book</title>
+    <title>&lt;no title&gt; &#8212; Data Science with Python Jupyter book</title>
   
   
   
@@ -62,11 +62,9 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'code/UNIT5-Regression';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'code/Untitled';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="UNIT 6. Regularization and kernel methods" href="UNIT6-Regularization-and-Kernel-Methods.html" />
-    <link rel="prev" title="UNIT 4. Unsupervised Learning" href="UNIT4-Unsupervised-Learning.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -166,13 +164,13 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../README.html">About the course Data-Science-with-Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="UNIT1-Introduction.html">UNIT 1. Import and Visualitzation of data with Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="UNIT2-Statistical-Learning.html">UNIT 2. Statistical Learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="UNIT3-MC-Methods.html">UNIT 3. Monte Carlo methods</a></li>
 <li class="toctree-l1"><a class="reference internal" href="UNIT4-Unsupervised-Learning.html">UNIT 4. Unsupervised Learning</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">UNIT 5. Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UNIT5-Regression.html">UNIT 5. Regression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="UNIT6-Regularization-and-Kernel-Methods.html">UNIT 6. Regularization and kernel methods</a></li>
 <li class="toctree-l1"><a class="reference internal" href="UNIT7-Classification.html">UNIT 7. Classification</a></li>
 <li class="toctree-l1"><a class="reference internal" href="UNIT8-Decision-Trees.html">UNIT 8. Decision Tres</a></li>
@@ -248,7 +246,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Biocomputing-Teaching/Data-Science-with-Python/issues/new?title=Issue%20on%20page%20%2Fcode/UNIT5-Regression.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Biocomputing-Teaching/Data-Science-with-Python/issues/new?title=Issue%20on%20page%20%2Fcode/Untitled.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -278,7 +276,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/code/UNIT5-Regression.ipynb" target="_blank"
+      <li><a href="../_sources/code/Untitled.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -347,7 +345,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -358,11 +358,19 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>UNIT 5. Regression</h1>
+    <h1><no title></h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -372,17 +380,47 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="unit-5-regression">
-<h1>UNIT 5. Regression<a class="headerlink" href="#unit-5-regression" title="Permalink to this heading">#</a></h1>
-<p>This Unit includes main introduction to linear and non-linear regression, strongly based in <span id="id1">[<a class="reference internal" href="UNIT3-MC-Methods.html#id3" title="Dirk P. Kroese, Zdravko Botev, Thomas Taimre, and Radislav: Vaisman. Data Science and Machine Learning: Mathematical and Statistical Methods. Machine Learning &amp; Pattern Recognition. Chapman &amp; Hall/CRC, 2020. URL: https://acems.org.au/data-science-machine-learning-book-available-download (visited on 2023-08-15).">1</a>]</span>.</p>
-<div class="docutils container" id="id2">
-<div class="citation" id="id3" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
-<p>Dirk P. Kroese, Zdravko Botev, Thomas Taimre, and Radislav: Vaisman. <em>Data Science and Machine Learning: Mathematical and Statistical Methods</em>. Machine Learning &amp; Pattern Recognition. Chapman &amp; Hall/CRC, 2020. URL: <a class="reference external" href="https://acems.org.au/data-science-machine-learning-book-available-download">https://acems.org.au/data-science-machine-learning-book-available-download</a> (visited on 2023-08-15).</p>
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">random</span> 
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+        
+<span class="n">a</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> 
+<span class="n">N</span> <span class="o">=</span> <span class="mi">1000</span>
+        
+<span class="n">ar</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span> 
+        
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ar</span><span class="p">)):</span> 
+    <span class="n">ar</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span> 
+        
+<span class="n">integral</span> <span class="o">=</span> <span class="mf">0.0</span>
+        
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> 
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> 
+        
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">ar</span><span class="p">:</span> 
+    <span class="n">integral</span> <span class="o">+=</span> <span class="n">f</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> 
+        
+<span class="n">ans</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="n">N</span><span class="p">)</span><span class="o">*</span><span class="n">integral</span> 
+        
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Approx to the integral by CMC: </span><span class="si">{}</span><span class="s2">.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ans</span><span class="p">))</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">random</span> 
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">a</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+
+<span class="ne">ImportError</span>: cannot import name &#39;random&#39; from &#39;scipy&#39; (/Users/jordivilla/miniconda3/lib/python3.11/site-packages/scipy/__init__.py)
+</pre></div>
 </div>
 </div>
 </div>
-</section>
 
     <script type="text/x-thebe-config">
     {
@@ -414,30 +452,26 @@ document.write(`
                 <footer class="prev-next-footer">
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="UNIT4-Unsupervised-Learning.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">UNIT 4. Unsupervised Learning</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="UNIT6-Regularization-and-Kernel-Methods.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">UNIT 6. Regularization and kernel methods</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>
