@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>UNIT 4. Unsupervised Learning &#8212; Data Science with Python Jupyter book</title>
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,14 +38,12 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -62,15 +60,15 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'code/UNIT4-Unsupervised-Learning';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="UNIT 5. Regression" href="UNIT5-Regression.html" />
     <link rel="prev" title="UNIT 3. Monte Carlo methods" href="UNIT3-MC-Methods.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
   
   
@@ -79,15 +77,6 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
-  
-  <div id="pst-scroll-pixel-helper"></div>
-
-  
-  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
-
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -170,10 +159,10 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../README.html">About the course Data-Science-with-Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="UNIT1-Introduction.html">UNIT 1. Import and Visualitzation of data with Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="UNIT2-Statistical-Learning.html">UNIT 2. Statistical Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UNIT1-Introduction.html"><a id="toc1_"></a><span class="xref myst">UNIT 1. Import and Visualitzation of data with Python</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="UNIT2-Statistical-Learning.html"><a id="toc1_"></a><span class="xref myst">UNIT 2. Statistical Learning</span></a></li>
 <li class="toctree-l1"><a class="reference internal" href="UNIT3-MC-Methods.html">UNIT 3. Monte Carlo methods</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">UNIT 4. Unsupervised Learning</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><a id="toc1_"></a><span class="xref myst">UNIT 4. Unsupervised Learning</span></a></li>
 <li class="toctree-l1"><a class="reference internal" href="UNIT5-Regression.html">UNIT 5. Regression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="UNIT6-Regularization-and-Kernel-Methods.html">UNIT 6. Regularization and kernel methods</a></li>
 <li class="toctree-l1"><a class="reference internal" href="UNIT7-Classification.html">UNIT 7. Classification</a></li>
@@ -235,7 +224,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://github.com/Biocomputing-Teaching/Data-Science-with-Python" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Source repository"
+   title="Dipòsit de fonts"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -252,7 +241,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://github.com/Biocomputing-Teaching/Data-Science-with-Python/issues/new?title=Issue%20on%20page%20%2Fcode/UNIT4-Unsupervised-Learning.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Open an issue"
+   title="Obriu un número"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -273,7 +262,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Descarregueu aquesta pàgina">
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
@@ -282,7 +271,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="../_sources/code/UNIT4-Unsupervised-Learning.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
+   title="Baixeu el fitxer font"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -300,7 +289,7 @@ const thebe_selector_output = ".output, .cell_output"
       <li>
 <button onclick="window.print()"
   class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
+  title="Imprimeix a PDF"
   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -334,10 +323,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
 `);
 </script>
@@ -345,7 +334,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
 `);
 </script>
@@ -362,7 +351,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>UNIT 4. Unsupervised Learning</h1>
+    <h1><a id='toc1_'></a>UNIT 4. Unsupervised Learning</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -372,9 +361,15 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#em-univariate-problem">EM: Univariate problem</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#em-multivariate-case">EM: Multivariate case</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pca-with-singular-value-decomposition">PCA with Singular Value Decomposition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-id-toc1-1-a-em-univariate-problem"><a id="toc1_1_"></a><span class="xref myst">EM: Univariate problem</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-id-toc1-2-a-em-multivariate-case"><a id="toc1_2_"></a><span class="xref myst">EM: Multivariate case</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-id-toc1-3-a-dbscan"><a id="toc1_3_"></a><span class="xref myst">DBSCAN</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-id-toc1-4-a-hierarchical-clustering"><a id="toc1_4_"></a><span class="xref myst">Hierarchical clustering</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-id-toc1-4-1-a-agglomerative-hierarchical-clustering"><a id="toc1_4_1_"></a><span class="xref myst">Agglomerative Hierarchical Clustering</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-id-toc1-4-2-a-divisive-hierarchical-clustering"><a id="toc1_4_2_"></a><span class="xref myst">Divisive Hierarchical Clustering</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-id-toc1-5-a-pca-with-singular-value-decomposition"><a id="toc1_5_"></a><span class="xref myst">PCA with Singular Value Decomposition</span></a></li>
 </ul>
             </nav>
         </div>
@@ -386,11 +381,35 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="unit-4-unsupervised-learning">
-<h1>UNIT 4. Unsupervised Learning<a class="headerlink" href="#unit-4-unsupervised-learning" title="Permalink to this heading">#</a></h1>
-<p>This Unit includes main introduction to unsupervised learning, strongly based in <span id="id1">[<a class="reference internal" href="UNIT3-MC-Methods.html#id3" title="Dirk P. Kroese, Zdravko Botev, Thomas Taimre, and Radislav: Vaisman. Data Science and Machine Learning: Mathematical and Statistical Methods. Machine Learning &amp; Pattern Recognition. Chapman &amp; Hall/CRC, 2020. URL: https://acems.org.au/data-science-machine-learning-book-available-download (visited on 2023-08-15).">1</a>]</span>.</p>
-<section id="em-univariate-problem">
-<h2>EM: Univariate problem<a class="headerlink" href="#em-univariate-problem" title="Permalink to this heading">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="a-id-toc1-a-unit-4-unsupervised-learning">
+<h1><a id='toc1_'></a><span class="xref myst">UNIT 4. Unsupervised Learning</span><a class="headerlink" href="#a-id-toc1-a-unit-4-unsupervised-learning" title="Permalink to this headline">#</a></h1>
+<p>This Unit includes main introduction to unsupervised learning, strongly based in <span id="id1">[<a class="reference internal" href="UNIT9-Neural-Networks.html#id3" title="Dirk P. Kroese, Zdravko Botev, Thomas Taimre, and Radislav: Vaisman. Data Science and Machine Learning: Mathematical and Statistical Methods. Machine Learning &amp; Pattern Recognition. Chapman &amp; Hall/CRC, 2020. URL: https://acems.org.au/data-science-machine-learning-book-available-download (visited on 2023-08-15).">1</a>]</span>.</p>
+<p><strong>Table of contents</strong><a id='toc0_'></a></p>
+<ul class="simple">
+<li><p><span class="xref myst">UNIT 4. Unsupervised Learning</span></p>
+<ul>
+<li><p><span class="xref myst">EM: Univariate problem</span></p></li>
+<li><p><span class="xref myst">EM: Multivariate case</span></p></li>
+<li><p><span class="xref myst">DBSCAN</span></p></li>
+<li><p><span class="xref myst">Hierarchical clustering</span></p>
+<ul>
+<li><p><span class="xref myst">Agglomerative Hierarchical Clustering</span></p></li>
+<li><p><span class="xref myst">Divisive Hierarchical Clustering</span></p></li>
+</ul>
+</li>
+<li><p><span class="xref myst">PCA with Singular Value Decomposition</span></p></li>
+</ul>
+</li>
+</ul>
+<!-- vscode-jupyter-toc-config
+	numbering=false
+	anchor=true
+	flat=false
+	minLevel=1
+	maxLevel=6
+	/vscode-jupyter-toc-config -->
+<!-- THIS CELL WILL BE REPLACED ON TOC UPDATE. DO NOT WRITE YOUR TEXT IN THIS CELL --><section id="a-id-toc1-1-a-em-univariate-problem">
+<h2><a id='toc1_1_'></a><span class="xref myst">EM: Univariate problem</span><a class="headerlink" href="#a-id-toc1-1-a-em-univariate-problem" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">hstack</span>
@@ -416,24 +435,24 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/500f4540c1f01cb90e3ce7a15376a548bd7aae5c94d626fcbb1529ec32197ad7.png" src="../_images/500f4540c1f01cb90e3ce7a15376a548bd7aae5c94d626fcbb1529ec32197ad7.png" />
+<img alt="../_images/97841a3c7688a9655152d95d96c5c785af317d57e99b7b988897480901178a65.png" src="../_images/97841a3c7688a9655152d95d96c5c785af317d57e99b7b988897480901178a65.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
  1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
- 1 1 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1]
-[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
- 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
- 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+ 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1]
+[0 1 0 1 0 0 0 0 0 0 0 0 1 0 0 1 1 0 0 0 0 0 1 0 0 0 0 1 1 0 0 0 0 0 0 0 0
+ 0 1 0 0 0 0 0 0 0 0 1 0 0 1 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0
+ 0 0 0 0 0 1 0 0 1 0 0 1 1 0 0 0 0 0 0 0 0 0 0 1 0 0]
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="em-multivariate-case">
-<h2>EM: Multivariate case<a class="headerlink" href="#em-multivariate-case" title="Permalink to this heading">#</a></h2>
+<section id="a-id-toc1-2-a-em-multivariate-case">
+<h2><a id='toc1_2_'></a><span class="xref myst">EM: Multivariate case</span><a class="headerlink" href="#a-id-toc1-2-a-em-multivariate-case" title="Permalink to this headline">#</a></h2>
 <p>We will code now a step by step example of the ME algorithm.</p>
 <p>We will start by retaking the data in the K-Means experiment used in UNIT 2. Now, we are going to use the Expectation-Maximization (EM) algorithm.</p>
 <p>In this exercise, we use 300 data points that were independently generated from three bivariate normal distributiuons with means:</p>
-<table class="table">
+<table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>cluster</p></th>
 <th class="head"><p>mean vector</p></th>
@@ -509,7 +528,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;function matplotlib.pyplot.show(close=None, block=None)&gt;
 </pre></div>
 </div>
-<img alt="../_images/993bce99d5341606f1e905d582d6d49ed8f8334c50ac661377ead53e11b22849.png" src="../_images/993bce99d5341606f1e905d582d6d49ed8f8334c50ac661377ead53e11b22849.png" />
+<img alt="../_images/6c964bb7af1f5b91944fd7334f50e8c6762cf2e730139a4d259ee9c91a1af005.png" src="../_images/6c964bb7af1f5b91944fd7334f50e8c6762cf2e730139a4d259ee9c91a1af005.png" />
 </div>
 </div>
 <p>We will apply the Expectation-Maximization algorithm by introducing auxiliary variables. We use an initial guess of variables <span class="math notranslate nohighlight">\(W\)</span></p>
@@ -555,24 +574,840 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3, 300)
-[[0.32887114 0.33829569 0.33283317]]
-[[-1.50841655 -4.21191439  0.37574597]
- [-2.98685261 -0.13190839 -0.99639285]]
-[[[ 2.33838332  0.17161299]
-  [ 0.17161299  0.12812271]]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.30811885 0.3417826  0.35009855]]
+[[-1.54716006 -4.09550252  0.80081707]
+ [-2.98874145 -0.04513584 -1.31832856]]
+[[[ 2.42875572  0.16570491]
+  [ 0.16570491  0.10175855]]
 
- [[ 2.20331347  1.46541386]
-  [ 1.46541386  1.5267903 ]]
+ [[ 1.80454936  1.12889005]
+  [ 1.12889005  1.23348418]]
 
- [[ 2.02680729 -1.12674031]
-  [-1.12674031  1.25167469]]]
+ [[ 1.94232761 -0.7793724 ]
+  [-0.7793724   0.96187334]]]
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="pca-with-singular-value-decomposition">
-<h2>PCA with Singular Value Decomposition<a class="headerlink" href="#pca-with-singular-value-decomposition" title="Permalink to this heading">#</a></h2>
+<section id="a-id-toc1-3-a-dbscan">
+<h2><a id='toc1_3_'></a><span class="xref myst">DBSCAN</span><a class="headerlink" href="#a-id-toc1-3-a-dbscan" title="Permalink to this headline">#</a></h2>
+<p>DBSCAN (Density-Based spatial Clustering of Applications with Noise) finds core samples in regions of high density and expands clusters from them. the algorithm works very well for data which contains clusters of similar density.</p>
+<p>In the example below we run DBSCAN on the data generated above. In doing so, we realize how data that has not a clear difference in compactness is difficult to clusterize with DBSCAN which, in turn, does a very good job with clearly separated (and grouped) data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">metrics</span>
+<span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">DBSCAN</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">Xmat</span><span class="p">)</span>
+
+<span class="n">db</span> <span class="o">=</span> <span class="n">DBSCAN</span><span class="p">(</span><span class="n">eps</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">min_samples</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Xmat</span><span class="p">)</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">labels_</span>
+
+<span class="c1"># Number of clusters in labels, ignoring noise if present (noisy samples are given the label math: -1)</span>
+<span class="n">n_clusters_</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">labels</span><span class="p">))</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span> <span class="k">if</span> <span class="o">-</span><span class="mi">1</span> <span class="ow">in</span> <span class="n">labels</span> <span class="k">else</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">n_noise_</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Estimated number of clusters: </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">n_clusters_</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Estimated number of noise points: </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">n_noise_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-3.68586805e+00  1.04535095e-01]
+ [-3.73786659e+00  1.53294597e-01]
+ [-2.80147624e+00  1.26232239e+00]
+ [-3.02779398e+00  2.01279903e+00]
+ [-4.22684541e+00 -2.20732466e-01]
+ [-5.96418668e+00 -1.63515718e+00]
+ [-1.10860163e+00  2.17524827e+00]
+ [-4.01691267e+00  7.46308389e-01]
+ [-4.53620407e+00  6.28668179e-01]
+ [-5.38367713e+00 -8.67750023e-02]
+ [-5.22043277e+00  7.27783868e-01]
+ [-5.72419971e+00 -9.97901082e-01]
+ [-2.55420947e+00 -1.37182775e+00]
+ [-6.48511859e+00 -2.31082994e+00]
+ [-6.26787507e+00 -8.47241155e-01]
+ [-4.78859721e+00 -4.82420170e-01]
+ [-3.11867989e+00 -6.28632331e-01]
+ [-3.32886311e+00  5.06316292e-01]
+ [-2.89252952e+00  2.86386198e-01]
+ [-6.10360832e+00 -1.77866419e+00]
+ [-4.09961779e+00 -1.48557723e+00]
+ [-1.38180034e+00  2.43831184e+00]
+ [-2.61133615e+00  8.85677323e-01]
+ [-3.80580700e+00 -1.43616612e+00]
+ [-3.41944309e+00 -7.41444513e-01]
+ [-3.36693379e+00  1.93503978e-01]
+ [-3.70220394e+00  6.64567259e-01]
+ [-3.48622372e+00  8.37020384e-01]
+ [-5.27247684e+00 -1.67107853e-01]
+ [-3.64997231e+00 -2.23641294e-01]
+ [-6.08655477e+00 -8.87343388e-01]
+ [-3.11237682e+00 -5.92653778e-02]
+ [-5.27640063e+00  1.49683386e-01]
+ [-4.11158938e+00  5.62664788e-01]
+ [-3.74202667e+00 -2.19332892e-01]
+ [-5.08881050e+00 -1.02107459e+00]
+ [-3.82704188e+00  1.43941377e+00]
+ [-3.52607942e+00 -2.43440249e-01]
+ [-3.26163186e+00  1.77996510e+00]
+ [-3.82933763e+00  1.14616580e-02]
+ [-4.14190597e+00 -3.82177862e-01]
+ [-5.54070564e+00 -1.13317187e+00]
+ [-5.40411244e+00  4.10260031e-01]
+ [-4.69202772e+00 -6.07432023e-01]
+ [-6.59598158e+00 -1.34631280e+00]
+ [-5.74903223e+00 -1.02716616e+00]
+ [-6.11826952e+00 -1.63088231e+00]
+ [-3.20361631e+00  4.27234010e-01]
+ [-1.48391835e+00  1.62703025e+00]
+ [-3.59158298e+00  1.30377049e+00]
+ [-4.40984285e+00 -3.84195663e-01]
+ [-2.20556394e+00  8.69183187e-01]
+ [-2.97109026e+00  1.09389282e+00]
+ [-4.76599970e+00  8.98268009e-01]
+ [-2.50024081e+00  8.68329097e-01]
+ [-3.05552387e+00  8.32484836e-01]
+ [-4.53314536e+00 -6.03529807e-01]
+ [-4.79032407e+00 -6.80666051e-01]
+ [-4.11711025e+00 -9.91316551e-02]
+ [-6.44939861e+00 -1.79386967e+00]
+ [-4.10873193e+00 -1.27885267e+00]
+ [-3.57476701e+00 -3.74709388e-01]
+ [-3.71488032e+00 -9.56248979e-01]
+ [-3.79133325e+00 -1.13516623e+00]
+ [-3.18381041e+00  1.71218651e+00]
+ [-4.12614397e+00  3.49645231e-01]
+ [-5.36064094e+00 -1.19115428e+00]
+ [-2.17931309e+00 -7.07475465e-02]
+ [-6.56142874e+00 -1.66327708e+00]
+ [-6.78855212e+00 -1.19373327e+00]
+ [-6.25544548e+00 -8.71717652e-01]
+ [-3.71381543e+00  1.92877039e+00]
+ [-5.07119565e+00 -1.29237381e+00]
+ [-1.59775814e+00  2.19593333e+00]
+ [-3.93517370e+00 -4.11335301e-03]
+ [-2.80475980e+00  6.15555547e-01]
+ [-5.51268948e+00 -1.57954382e+00]
+ [-2.58598068e+00 -3.27315406e-01]
+ [-3.12994703e+00  3.50452920e-01]
+ [-4.57618311e+00  6.21738977e-04]
+ [-3.72125425e+00 -8.08933202e-01]
+ [-5.26377962e+00 -5.20548121e-01]
+ [-2.15628730e+00 -9.40951638e-02]
+ [-5.56200170e+00 -1.08807957e+00]
+ [-2.85022369e+00  1.05772794e+00]
+ [-4.38777227e+00 -1.13984703e+00]
+ [-3.01705605e+00  1.14465714e+00]
+ [-3.17312843e+00 -6.07711107e-01]
+ [-5.59006539e+00 -1.53224203e+00]
+ [-4.67570377e+00 -9.36124778e-01]
+ [-3.94743790e+00  5.38657281e-01]
+ [-5.60775143e+00 -1.11685208e+00]
+ [-4.91450646e+00 -1.09292510e+00]
+ [-3.60209618e+00 -4.01888252e-01]
+ [-3.68100488e+00  3.01080262e-01]
+ [-2.90390707e+00  6.06573681e-01]
+ [-3.94324508e+00  8.53216588e-01]
+ [-7.47631296e+00 -3.14786071e+00]
+ [-4.07202329e+00  6.02036565e-01]
+ [-3.21314175e+00  1.29349900e+00]
+ [ 2.89475743e+00 -3.97598745e+00]
+ [-1.80956459e+00 -1.13014772e-01]
+ [-3.00569972e+00  1.65480116e+00]
+ [-1.30857164e+00 -9.39222551e-01]
+ [-8.18680354e-01 -1.74268069e-01]
+ [-2.91200529e-01 -8.00841923e-01]
+ [ 1.78419798e+00 -2.39625679e+00]
+ [ 1.02591432e+00 -1.21951712e+00]
+ [ 2.18236261e+00 -6.73937446e-01]
+ [ 3.92176221e+00 -2.48206932e+00]
+ [ 2.40483997e+00 -3.08162482e+00]
+ [ 3.10708702e+00 -2.99239311e+00]
+ [ 2.04351104e+00 -7.45602857e-01]
+ [ 1.39704407e+00 -1.00460377e+00]
+ [-9.25019686e-01  1.68051589e+00]
+ [-1.90097235e-01 -6.42761538e-01]
+ [ 1.64575105e+00 -1.38244384e+00]
+ [ 1.98509885e+00 -2.13390903e+00]
+ [ 2.47848814e+00 -7.40193803e-01]
+ [ 1.93178226e+00 -2.12158877e+00]
+ [ 1.26974396e+00 -5.42164788e-01]
+ [-3.80484193e+00  2.91958301e-01]
+ [-1.19523728e+00 -1.10952718e+00]
+ [ 1.12378596e+00 -1.28700004e+00]
+ [ 1.80729911e+00 -2.29497019e+00]
+ [ 2.90544495e+00 -3.79799026e+00]
+ [-1.56761739e+00  7.58514613e-01]
+ [ 4.18883419e-01 -7.09314775e-01]
+ [ 1.28094965e+00 -1.44927938e+00]
+ [-4.98004233e-01 -2.77851793e-01]
+ [ 2.09039099e-02 -1.32617623e+00]
+ [ 2.38133459e-01 -1.45311882e+00]
+ [-1.16590290e+00 -1.18694084e+00]
+ [ 3.48722746e-01 -1.32371513e+00]
+ [-5.03176541e-01 -1.27463402e+00]
+ [ 8.56677741e-01 -3.80194142e-01]
+ [ 3.76996501e-01 -5.94732773e-01]
+ [-1.45764628e-01 -3.17445291e-01]
+ [ 3.09004793e+00 -1.99146298e+00]
+ [ 2.03510166e+00 -8.92813805e-01]
+ [ 5.03879073e-01 -1.59982619e+00]
+ [-6.25880389e-01 -9.81134346e-01]
+ [ 1.15564811e+00 -2.05773712e+00]
+ [-5.93575370e-01 -6.41185361e-01]
+ [-7.63015824e-03 -1.38918058e+00]
+ [-6.03925103e-02 -1.21271510e+00]
+ [ 3.03700141e+00 -1.89718242e+00]
+ [ 1.32239940e+00 -3.46085526e-01]
+ [ 4.07005098e-02 -1.23735053e+00]
+ [-3.88960747e-01  3.50315226e-01]
+ [ 1.60345199e+00 -1.52905338e+00]
+ [ 3.27260061e+00 -3.60457663e+00]
+ [ 1.19287862e+00 -1.03124930e+00]
+ [ 1.45912844e+00 -1.76401023e+00]
+ [-6.22594293e-01 -1.17415302e+00]
+ [ 1.65979619e+00 -1.36950869e+00]
+ [ 4.51985728e-02  3.81615301e-01]
+ [-6.05341988e-01 -1.65942059e+00]
+ [ 1.70696262e-01 -8.08892501e-01]
+ [ 5.45946196e-01 -8.80301739e-01]
+ [ 9.69220501e-02 -2.01698062e+00]
+ [ 1.02404089e+00 -1.59788456e+00]
+ [-1.42725131e+00 -1.28886472e+00]
+ [ 4.10988372e+00 -3.57542309e+00]
+ [ 1.69995919e+00 -1.49319619e+00]
+ [-2.44786299e-01 -1.29757621e+00]
+ [-1.96179291e+00  1.06104283e+00]
+ [ 4.97968959e-02 -4.09275996e-01]
+ [ 9.09107067e-01 -1.77972129e-01]
+ [ 7.05461615e-01 -3.48419096e-01]
+ [ 7.74429178e-01 -5.24983841e-01]
+ [-1.02830754e+00  1.84306621e-02]
+ [ 2.93721086e+00 -2.95193005e+00]
+ [ 1.15093867e+00 -1.96052631e+00]
+ [-4.67835474e-01 -9.09631625e-01]
+ [-1.69288493e+00 -3.01052110e-01]
+ [ 8.36693832e-01  4.65939180e-01]
+ [ 1.52012571e+00  1.07327762e-01]
+ [ 8.00692133e-01 -1.60295563e+00]
+ [ 8.43301851e-01 -3.85651683e-01]
+ [ 4.98591145e-01 -1.28355775e+00]
+ [ 2.38121947e+00 -1.34920842e+00]
+ [ 1.62338023e+00 -7.11727405e-04]
+ [-4.60840130e-01 -9.03531077e-01]
+ [ 3.66536696e-01 -2.50442759e+00]
+ [ 8.23453899e-01 -2.05345773e+00]
+ [ 2.31202117e+00 -1.37528295e+00]
+ [ 1.59534678e+00 -1.99937015e+00]
+ [-1.56614384e+00 -4.03027292e-01]
+ [ 6.41544578e-01 -1.72810710e+00]
+ [ 2.61889783e+00 -2.53847763e+00]
+ [-2.87850335e+00  1.51485110e+00]
+ [ 5.40696766e-01 -1.27754071e-01]
+ [ 1.16340849e+00 -1.56240233e+00]
+ [ 2.71538843e+00 -1.50564934e+00]
+ [ 1.42924700e+00 -1.04394011e+00]
+ [ 6.18426789e-01 -1.22546822e+00]
+ [ 2.62144300e+00 -1.26742527e+00]
+ [ 2.15374656e+00 -1.04035301e+00]
+ [ 2.95570559e-01 -8.13494869e-01]
+ [-3.49532958e+00 -3.18655975e+00]
+ [-1.06699262e+00 -3.01961317e+00]
+ [ 6.76297677e-01 -2.80895945e+00]
+ [ 5.90279542e-01 -3.33550579e+00]
+ [-2.19033211e+00 -3.32178804e+00]
+ [-1.24885437e+00 -2.69518863e+00]
+ [-3.07167227e-01 -2.85057235e+00]
+ [-3.81910410e+00 -3.21755138e+00]
+ [-3.83203750e+00 -3.41829132e+00]
+ [-3.34021226e-01 -3.05591028e+00]
+ [ 5.96423009e-03 -3.09606365e+00]
+ [-1.16812427e+00 -3.08438210e+00]
+ [ 1.75943515e+00 -3.13584959e+00]
+ [ 1.38620504e+00 -2.01753984e+00]
+ [ 9.52444604e-01 -2.64684713e+00]
+ [-4.12415377e-01 -3.60950861e+00]
+ [-3.08744911e+00 -3.04521655e+00]
+ [-3.62322961e+00 -3.20363804e+00]
+ [-7.58147046e-02 -2.93631229e+00]
+ [-2.04713575e+00 -2.95597257e+00]
+ [-5.31327244e+00 -3.63279293e+00]
+ [-3.14845075e+00 -2.88597782e+00]
+ [-1.35875874e+00 -2.88410792e+00]
+ [-1.95473004e+00 -3.22209080e+00]
+ [-7.20173528e-01 -2.65063886e+00]
+ [-3.13329221e+00 -3.36942836e+00]
+ [ 7.14428115e-01 -3.19703579e+00]
+ [ 1.97046762e+00 -2.36960234e+00]
+ [-1.65078164e+00 -3.43329038e+00]
+ [-1.89625256e-01 -2.93754640e+00]
+ [-1.84196483e+00 -2.47483543e+00]
+ [-7.36253742e-01 -2.72701525e+00]
+ [-1.02160953e+00 -3.11663761e+00]
+ [-1.53820237e+00 -3.22117907e+00]
+ [-2.00138297e+00 -2.68376234e+00]
+ [-8.92459911e-01 -2.86097971e+00]
+ [-3.59017076e+00 -3.12363393e+00]
+ [-3.78657370e+00 -3.64551386e+00]
+ [ 8.14664927e-01 -2.91642809e+00]
+ [-2.62699716e+00 -3.02247194e+00]
+ [-2.88395948e+00 -3.01169526e+00]
+ [-3.44680607e+00 -3.42808707e+00]
+ [ 5.81718138e-02 -2.71209959e+00]
+ [-2.86113468e+00 -3.12466313e+00]
+ [ 1.69903609e+00 -2.60098145e+00]
+ [-2.54756192e+00 -2.50696634e+00]
+ [-8.83761527e-01 -3.30072527e+00]
+ [ 7.15606002e-01 -2.93921152e+00]
+ [-8.24396524e-01 -2.82664001e+00]
+ [-3.07431459e+00 -3.08104765e+00]
+ [ 6.51222767e-01 -3.14466728e+00]
+ [ 9.56571339e-02 -1.99880061e+00]
+ [-3.94100522e+00 -2.77790366e+00]
+ [ 7.31634027e-01 -3.16431270e+00]
+ [-2.01022736e+00 -2.65573686e+00]
+ [-1.70388152e+00 -2.61618253e+00]
+ [-2.79149304e+00 -3.15854081e+00]
+ [-7.41177420e-01 -2.83687439e+00]
+ [-7.21291138e-01 -2.95795791e+00]
+ [-6.82127679e-01 -3.19162948e+00]
+ [-3.07164415e+00 -2.95619897e+00]
+ [ 5.84401376e-01 -2.67539833e+00]
+ [-2.43604908e+00 -3.31939016e+00]
+ [-1.58922326e+00 -2.67846862e+00]
+ [-5.82701107e-01 -2.56011225e+00]
+ [-2.26066228e+00 -3.01961565e+00]
+ [-1.59862442e+00 -2.86295600e+00]
+ [-3.91226200e+00 -3.89576196e+00]
+ [ 2.92926640e-01 -2.82578973e+00]
+ [ 1.20619760e-01 -3.44210900e+00]
+ [-1.55159413e+00 -2.81344546e+00]
+ [ 2.97732498e-01 -2.86248529e+00]
+ [-2.06722498e+00 -2.97233960e+00]
+ [-2.71074644e+00 -2.91779688e+00]
+ [-3.54229275e+00 -2.94056047e+00]
+ [-1.93609885e+00 -2.64763855e+00]
+ [-7.71517422e-01 -2.70377784e+00]
+ [-2.03618234e+00 -3.25550744e+00]
+ [-9.57487826e-02 -2.44963599e+00]
+ [-2.55033429e+00 -3.13242171e+00]
+ [-4.21188673e+00 -2.84026109e+00]
+ [-2.75069990e+00 -3.19155565e+00]
+ [-2.21483104e+00 -3.25315261e+00]
+ [-1.70254326e+00 -2.71040554e+00]
+ [-1.31020115e+00 -2.45019376e+00]
+ [-1.21822260e+00 -3.36886732e+00]
+ [-1.01220943e+00 -2.67335600e+00]
+ [-3.88310451e+00 -3.21819468e+00]
+ [ 7.36989132e-01 -2.44029573e+00]
+ [-3.64932926e+00 -2.89417168e+00]
+ [ 2.27431402e-01 -3.00696089e+00]
+ [-8.15598529e-02 -2.52634105e+00]
+ [-2.09160684e+00 -3.21427148e+00]
+ [-9.07571236e-01 -3.85777781e+00]
+ [ 2.67204608e+00 -2.67903952e+00]
+ [-2.61314978e+00 -2.98057194e+00]
+ [ 2.05043758e-01 -2.54379381e+00]
+ [ 1.18266751e+00 -2.45147761e+00]
+ [-3.16351495e+00 -2.44421384e+00]
+ [ 5.74934004e-01 -2.82250250e+00]]
+Estimated number of clusters: 1
+Estimated number of noise points: 10
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unique_labels</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span>
+<span class="n">core_samples_mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
+<span class="n">core_samples_mask</span><span class="p">[</span><span class="n">db</span><span class="o">.</span><span class="n">core_sample_indices_</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Spectral</span><span class="p">(</span><span class="n">each</span><span class="p">)</span> <span class="k">for</span> <span class="n">each</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">unique_labels</span><span class="p">))]</span>
+<span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">unique_labels</span><span class="p">,</span> <span class="n">colors</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+        <span class="c1"># Black used for noise.</span>
+        <span class="n">col</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+
+    <span class="n">class_member_mask</span> <span class="o">=</span> <span class="n">labels</span> <span class="o">==</span> <span class="n">k</span>
+
+    <span class="n">xy</span> <span class="o">=</span> <span class="n">Xmat</span><span class="p">[</span><span class="n">class_member_mask</span> <span class="o">&amp;</span> <span class="n">core_samples_mask</span><span class="p">]</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="n">xy</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="n">xy</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span>
+        <span class="s2">&quot;o&quot;</span><span class="p">,</span>
+        <span class="n">markerfacecolor</span><span class="o">=</span><span class="nb">tuple</span><span class="p">(</span><span class="n">col</span><span class="p">),</span>
+        <span class="n">markeredgecolor</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span>
+        <span class="n">markersize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">xy</span> <span class="o">=</span> <span class="n">Xmat</span><span class="p">[</span><span class="n">class_member_mask</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">core_samples_mask</span><span class="p">]</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="n">xy</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="n">xy</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span>
+        <span class="s2">&quot;o&quot;</span><span class="p">,</span>
+        <span class="n">markerfacecolor</span><span class="o">=</span><span class="nb">tuple</span><span class="p">(</span><span class="n">col</span><span class="p">),</span>
+        <span class="n">markeredgecolor</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span>
+        <span class="n">markersize</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span>
+    <span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Estimated number of clusters: </span><span class="si">{</span><span class="n">n_clusters_</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/d284391c3a0a1651404c62de321cc06e12c53a505f99fce1f258c9bcec6bdc47.png" src="../_images/d284391c3a0a1651404c62de321cc06e12c53a505f99fce1f258c9bcec6bdc47.png" />
+</div>
+</div>
+</section>
+<section id="a-id-toc1-4-a-hierarchical-clustering">
+<h2><a id='toc1_4_'></a><span class="xref myst">Hierarchical clustering</span><a class="headerlink" href="#a-id-toc1-4-a-hierarchical-clustering" title="Permalink to this headline">#</a></h2>
+<p>In hierarchical clustering we use either an agglomerative or divisive algorithm to generate clusters in a given dataset. In this very simple implementation, we use scipy to clusterize a collection of 3 clusters and one single orphan data point. Adapted from <a class="reference external" href="https://stackoverflow.com/questions/10136470/unsupervised-clustering-with-unknown-number-of-clusters">this entry</a> in Stackoverflow.</p>
+<p>The threshold given as a parameter in the code (<code class="docutils literal notranslate"><span class="pre">thresh</span></code>) is a distance value on which basis the decision is made whether points/clusters will be merged into another cluster. The distance metric being used can also be specified.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span>
+<span class="kn">import</span> <span class="nn">scipy.cluster.hierarchy</span> <span class="k">as</span> <span class="nn">hcluster</span>
+
+<span class="c1"># generate 3 clusters of each around 100 points and one orphan point</span>
+<span class="n">N</span><span class="o">=</span><span class="mi">100</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">N</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">data</span><span class="p">[:</span><span class="n">N</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">5</span>
+<span class="n">data</span><span class="p">[</span><span class="o">-</span><span class="n">N</span><span class="p">:]</span> <span class="o">+=</span> <span class="mi">10</span>
+<span class="n">data</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">:]</span> <span class="o">-=</span> <span class="mi">20</span>
+
+<span class="c1"># clustering</span>
+<span class="n">thresh</span> <span class="o">=</span> <span class="mf">1.5</span>
+<span class="n">clusters</span> <span class="o">=</span> <span class="n">hcluster</span><span class="o">.</span><span class="n">fclusterdata</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">thresh</span><span class="p">,</span> <span class="n">criterion</span><span class="o">=</span><span class="s2">&quot;distance&quot;</span><span class="p">)</span>
+
+<span class="c1"># plotting</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="o">*</span><span class="n">numpy</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">data</span><span class="p">),</span> <span class="n">c</span><span class="o">=</span><span class="n">clusters</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;equal&quot;</span><span class="p">)</span>
+<span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;threshold: </span><span class="si">%f</span><span class="s2">, number of clusters: </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">thresh</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">clusters</span><span class="p">)))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/aef486cea8e42a974c1cc86270a6e808126840f46f1a2cce9b3282235dc0e101.png" src="../_images/aef486cea8e42a974c1cc86270a6e808126840f46f1a2cce9b3282235dc0e101.png" />
+</div>
+</div>
+<section id="a-id-toc1-4-1-a-agglomerative-hierarchical-clustering">
+<h3><a id='toc1_4_1_'></a><span class="xref myst">Agglomerative Hierarchical Clustering</span><a class="headerlink" href="#a-id-toc1-4-1-a-agglomerative-hierarchical-clustering" title="Permalink to this headline">#</a></h3>
+<p>Find below a basic implementation of the Ward linkage function for agglomerative hierarchical clustering, using <code class="docutils literal notranslate"><span class="pre">scipy</span></code> functions. Adapted from <span id="id2">[<a class="reference internal" href="UNIT9-Neural-Networks.html#id3" title="Dirk P. Kroese, Zdravko Botev, Thomas Taimre, and Radislav: Vaisman. Data Science and Machine Learning: Mathematical and Statistical Methods. Machine Learning &amp; Pattern Recognition. Chapman &amp; Hall/CRC, 2020. URL: https://acems.org.au/data-science-machine-learning-book-available-download (visited on 2023-08-15).">1</a>]</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+<span class="kn">from</span> <span class="nn">scipy.spatial.distance</span> <span class="kn">import</span> <span class="n">cdist</span>
+
+<span class="k">def</span> <span class="nf">update_distances</span><span class="p">(</span><span class="n">D</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span> <span class="n">sizes</span><span class="p">):</span> <span class="c1"># calculate distances for merged cluster</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">D</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>     
+    <span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span> <span class="c1"># Update distances     </span>
+       <span class="n">d</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="p">((</span><span class="n">sizes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">sizes</span><span class="p">[</span><span class="n">k</span><span class="p">])</span><span class="o">*</span><span class="n">D</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">k</span><span class="p">]</span> <span class="o">+</span> 
+       <span class="p">(</span><span class="n">sizes</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">+</span><span class="n">sizes</span><span class="p">[</span><span class="n">k</span><span class="p">])</span><span class="o">*</span><span class="n">D</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">]</span> <span class="o">-</span> 
+       <span class="n">sizes</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">*</span><span class="n">D</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">])</span><span class="o">/</span><span class="p">(</span><span class="n">sizes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">sizes</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">sizes</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+                   
+    <span class="n">infs</span> <span class="o">=</span>  <span class="n">np</span><span class="o">.</span><span class="n">inf</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="c1"># array of infinity</span>
+    <span class="n">D</span><span class="p">[</span><span class="n">i</span><span class="p">,:],</span><span class="n">D</span><span class="p">[:,</span><span class="n">i</span><span class="p">],</span><span class="n">D</span><span class="p">[</span><span class="n">j</span><span class="p">,:],</span><span class="n">D</span><span class="p">[:,</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span>  <span class="n">infs</span><span class="p">,</span><span class="n">infs</span><span class="p">,</span><span class="n">infs</span><span class="p">,</span><span class="n">infs</span> <span class="c1"># deactivate </span>
+    <span class="n">new_D</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+    <span class="n">new_D</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">n</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">D</span> <span class="c1"># copy old matrix into new_D</span>
+    <span class="n">new_D</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,:],</span> <span class="n">new_D</span><span class="p">[:,</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">d</span><span class="p">,</span><span class="n">d</span> <span class="c1"># add new row and column</span>
+    <span class="k">return</span> <span class="n">new_D</span>
+            
+<span class="k">def</span> <span class="nf">agg_cluster</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>  
+    <span class="n">n</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">sizes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">D</span> <span class="o">=</span> <span class="n">cdist</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span><span class="n">metric</span> <span class="o">=</span> <span class="s1">&#39;sqeuclidean&#39;</span><span class="p">)</span>   <span class="c1"># initialize distance matr.</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">fill_diagonal</span><span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">D</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>    
+    <span class="n">Z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>  <span class="c1">#linkage matrix encodes hierachy tree</span>
+    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">i</span><span class="p">,</span><span class="n">j</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unravel_index</span><span class="p">(</span><span class="n">D</span><span class="o">.</span><span class="n">argmin</span><span class="p">(),</span> <span class="n">D</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="c1"># minimizer pair</span>
+        <span class="n">sizes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sizes</span><span class="p">,</span> <span class="n">sizes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">sizes</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+        <span class="n">Z</span><span class="p">[</span><span class="n">t</span><span class="p">,:]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">D</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]),</span> <span class="n">sizes</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]])</span> 
+        <span class="n">D</span> <span class="o">=</span> <span class="n">update_distances</span><span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span> <span class="n">sizes</span><span class="p">)</span>  <span class="c1"># update distance matr.</span>
+    <span class="k">return</span> <span class="n">Z</span>   
+    
+<span class="c1"># MAIN ROUTINE</span>
+<span class="kn">import</span> <span class="nn">scipy.cluster.hierarchy</span> <span class="k">as</span> <span class="nn">h</span> 
+
+<span class="c1">#X = np.genfromtxt(&#39;clusterdata.csv&#39;,delimiter=&#39;,&#39;) # read the data</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="n">agg_cluster</span><span class="p">(</span><span class="n">Xmat</span><span class="p">)</span>  <span class="c1"># form the linkage matrix</span>
+
+<span class="n">h</span><span class="o">.</span><span class="n">dendrogram</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span> <span class="c1"># SciPy can produce a dendogram from Z </span>
+<span class="c1"># fcluster function assigns cluster ids to all points based on Z </span>
+<span class="n">cl</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">fcluster</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span> <span class="n">criterion</span> <span class="o">=</span> <span class="s1">&#39;maxclust&#39;</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span> 
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">plt</span><span class="o">.</span><span class="n">clf</span><span class="p">()</span>
+<span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="s1">&#39;green&#39;</span><span class="p">,</span><span class="s1">&#39;blue&#39;</span><span class="p">]</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="n">cols</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">cl</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">Xmat</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">Xmat</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="n">c</span><span class="o">=</span><span class="n">colors</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/242c9183548cffdfe98cc9668dbf20e4a1e492227b68d59ab0d2fc8dab8ffdf5.png" src="../_images/242c9183548cffdfe98cc9668dbf20e4a1e492227b68d59ab0d2fc8dab8ffdf5.png" />
+<img alt="../_images/4e9ede66165a3702c32daffc02cc85845b00918c15ebaf88fbf9a2aea6ec6e1e.png" src="../_images/4e9ede66165a3702c32daffc02cc85845b00918c15ebaf88fbf9a2aea6ec6e1e.png" />
+</div>
+</div>
+</section>
+<section id="a-id-toc1-4-2-a-divisive-hierarchical-clustering">
+<h3><a id='toc1_4_2_'></a><span class="xref myst">Divisive Hierarchical Clustering</span><a class="headerlink" href="#a-id-toc1-4-2-a-divisive-hierarchical-clustering" title="Permalink to this headline">#</a></h3>
+<p>and now, for the same data, we aply a divisive clustering approach (also taken from <span id="id3">[<a class="reference internal" href="UNIT9-Neural-Networks.html#id3" title="Dirk P. Kroese, Zdravko Botev, Thomas Taimre, and Radislav: Vaisman. Data Science and Machine Learning: Mathematical and Statistical Methods. Machine Learning &amp; Pattern Recognition. Chapman &amp; Hall/CRC, 2020. URL: https://acems.org.au/data-science-machine-learning-book-available-download (visited on 2023-08-15).">1</a>]</span>)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; clustCE2.py &quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">genfromtxt</span>
+<span class="kn">from</span> <span class="nn">scipy.spatial.distance</span> <span class="kn">import</span> <span class="n">squareform</span>
+<span class="kn">from</span> <span class="nn">scipy.spatial.distance</span> <span class="kn">import</span> <span class="n">pdist</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="k">def</span> <span class="nf">S</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">D</span><span class="p">):</span>
+    <span class="n">V1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">x</span><span class="o">==</span><span class="mi">0</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># {V1,V2} is the partition </span>
+    <span class="n">V2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">x</span><span class="o">==</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">tmp</span> <span class="o">=</span> <span class="n">D</span><span class="p">[</span><span class="n">V1</span><span class="p">]</span>
+    <span class="n">tmp</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">[:,</span><span class="n">V2</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">tmp</span><span class="p">)</span> <span class="c1"># the size of the cut</span>
+
+<span class="k">def</span> <span class="nf">maxcut</span><span class="p">(</span><span class="n">D</span><span class="p">,</span><span class="n">N</span><span class="p">,</span><span class="n">eps</span><span class="p">,</span><span class="n">rho</span><span class="p">,</span><span class="n">alpha</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">D</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">Ne</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">rho</span><span class="o">*</span><span class="n">N</span><span class="p">)</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> 
+    <span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">minimum</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">subtract</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">p</span><span class="p">)))</span> <span class="o">&gt;</span> <span class="n">eps</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">n</span><span class="p">))</span><span class="o">&lt;=</span><span class="n">p</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">)</span>
+        <span class="n">sx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+            <span class="n">sx</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">S</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">D</span><span class="p">)</span>
+        
+        <span class="n">sortSX</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">sx</span><span class="p">))</span>
+        <span class="n">elIds</span> <span class="o">=</span> <span class="n">sortSX</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">Ne</span><span class="p">]</span>
+        <span class="n">elites</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="n">elIds</span><span class="p">]</span>
+        <span class="n">pnew</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">elites</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="n">alpha</span><span class="o">*</span><span class="n">pnew</span> <span class="o">+</span> <span class="p">(</span><span class="mf">1.0</span><span class="o">-</span><span class="n">alpha</span><span class="p">)</span><span class="o">*</span><span class="n">p</span>
+
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+
+<span class="c1">#Xmat = genfromtxt(&#39;clusterdata.csv&#39;, delimiter=&#39;,&#39;)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">Xmat</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">D</span> <span class="o">=</span> <span class="n">squareform</span><span class="p">(</span><span class="n">pdist</span><span class="p">(</span><span class="n">Xmat</span><span class="p">))</span>
+
+<span class="n">N</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">eps</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**-</span><span class="mi">2</span>
+<span class="n">rho</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.9</span>
+
+<span class="c1"># CE</span>
+<span class="n">pout</span> <span class="o">=</span> <span class="n">maxcut</span><span class="p">(</span><span class="n">D</span><span class="p">,</span><span class="n">N</span><span class="p">,</span><span class="n">eps</span><span class="p">,</span><span class="n">rho</span><span class="p">,</span> <span class="n">alpha</span><span class="p">);</span>
+
+<span class="n">cutval</span> <span class="o">=</span> <span class="n">S</span><span class="p">(</span><span class="n">pout</span><span class="p">,</span><span class="n">D</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;cutvalue &quot;</span><span class="p">,</span><span class="n">cutval</span><span class="p">)</span>
+<span class="c1">#plot</span>
+<span class="n">V1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">pout</span><span class="o">==</span><span class="mi">0</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">xblue</span> <span class="o">=</span> <span class="n">Xmat</span><span class="p">[</span><span class="n">V1</span><span class="p">]</span>
+<span class="n">V2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">pout</span><span class="o">==</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">xred</span> <span class="o">=</span> <span class="n">Xmat</span><span class="p">[</span><span class="n">V2</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xblue</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">xblue</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xred</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">xred</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cutvalue  4.89440804758133
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fa96b147880&gt;
+</pre></div>
+</div>
+<img alt="../_images/72a7b7df37d8c85be0f7215ca775e786eca5b6c9ce4d7f353539839d3be17ed5.png" src="../_images/72a7b7df37d8c85be0f7215ca775e786eca5b6c9ce4d7f353539839d3be17ed5.png" />
+</div>
+</div>
+<p>We will apply HCA to the famous Iris dataset by Fisher. we start by retrieving the data</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span><span class="o">,</span> <span class="nn">zipfile</span><span class="o">,</span> <span class="nn">io</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://archive.ics.uci.edu/static/public/53/iris.zip&quot;</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;datasets/iris.data&quot;</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">content</span><span class="p">))</span>
+<span class="n">z</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="s2">&quot;datasets&quot;</span><span class="p">)</span>
+
+<span class="c1"># from iris.names</span>
+<span class="c1">#   1. sepal length in cm</span>
+<span class="c1">#   2. sepal width in cm</span>
+<span class="c1">#   3. petal length in cm</span>
+<span class="c1">#   4. petal width in cm</span>
+<span class="c1">#   5. class</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span><span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Sepal.length&#39;</span><span class="p">,</span> <span class="s1">&#39;Sepal.width&#39;</span><span class="p">,</span> <span class="s1">&#39;Petal.length&#39;</span><span class="p">,</span><span class="s1">&#39;Petal.width&#39;</span><span class="p">,</span><span class="s1">&#39;Species&#39;</span><span class="p">])</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Sepal.length</th>
+      <th>Sepal.width</th>
+      <th>Petal.length</th>
+      <th>Petal.width</th>
+      <th>Species</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5.1</td>
+      <td>3.5</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4.9</td>
+      <td>3.0</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4.7</td>
+      <td>3.2</td>
+      <td>1.3</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4.6</td>
+      <td>3.1</td>
+      <td>1.5</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5.0</td>
+      <td>3.6</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>145</th>
+      <td>6.7</td>
+      <td>3.0</td>
+      <td>5.2</td>
+      <td>2.3</td>
+      <td>Iris-virginica</td>
+    </tr>
+    <tr>
+      <th>146</th>
+      <td>6.3</td>
+      <td>2.5</td>
+      <td>5.0</td>
+      <td>1.9</td>
+      <td>Iris-virginica</td>
+    </tr>
+    <tr>
+      <th>147</th>
+      <td>6.5</td>
+      <td>3.0</td>
+      <td>5.2</td>
+      <td>2.0</td>
+      <td>Iris-virginica</td>
+    </tr>
+    <tr>
+      <th>148</th>
+      <td>6.2</td>
+      <td>3.4</td>
+      <td>5.4</td>
+      <td>2.3</td>
+      <td>Iris-virginica</td>
+    </tr>
+    <tr>
+      <th>149</th>
+      <td>5.9</td>
+      <td>3.0</td>
+      <td>5.1</td>
+      <td>1.8</td>
+      <td>Iris-virginica</td>
+    </tr>
+  </tbody>
+</table>
+<p>150 rows × 5 columns</p>
+</div></div></div>
+</div>
+<p>now we build a Scatter Plot Matrix</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pandas.plotting</span> <span class="kn">import</span> <span class="n">scatter_matrix</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">colors</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="mi">50</span><span class="o">*</span><span class="p">[</span><span class="s1">&#39;r&#39;</span><span class="p">]</span><span class="o">+</span><span class="mi">50</span><span class="o">*</span><span class="p">[</span><span class="s1">&#39;g&#39;</span><span class="p">]</span><span class="o">+</span><span class="mi">50</span><span class="o">*</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">])</span>
+<span class="n">scatter_matrix</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span><span class="n">grid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">diagonal</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[&lt;AxesSubplot:xlabel=&#39;Sepal.length&#39;, ylabel=&#39;Sepal.length&#39;&gt;,
+        &lt;AxesSubplot:xlabel=&#39;Sepal.width&#39;, ylabel=&#39;Sepal.length&#39;&gt;,
+        &lt;AxesSubplot:xlabel=&#39;Petal.length&#39;, ylabel=&#39;Sepal.length&#39;&gt;,
+        &lt;AxesSubplot:xlabel=&#39;Petal.width&#39;, ylabel=&#39;Sepal.length&#39;&gt;],
+       [&lt;AxesSubplot:xlabel=&#39;Sepal.length&#39;, ylabel=&#39;Sepal.width&#39;&gt;,
+        &lt;AxesSubplot:xlabel=&#39;Sepal.width&#39;, ylabel=&#39;Sepal.width&#39;&gt;,
+        &lt;AxesSubplot:xlabel=&#39;Petal.length&#39;, ylabel=&#39;Sepal.width&#39;&gt;,
+        &lt;AxesSubplot:xlabel=&#39;Petal.width&#39;, ylabel=&#39;Sepal.width&#39;&gt;],
+       [&lt;AxesSubplot:xlabel=&#39;Sepal.length&#39;, ylabel=&#39;Petal.length&#39;&gt;,
+        &lt;AxesSubplot:xlabel=&#39;Sepal.width&#39;, ylabel=&#39;Petal.length&#39;&gt;,
+        &lt;AxesSubplot:xlabel=&#39;Petal.length&#39;, ylabel=&#39;Petal.length&#39;&gt;,
+        &lt;AxesSubplot:xlabel=&#39;Petal.width&#39;, ylabel=&#39;Petal.length&#39;&gt;],
+       [&lt;AxesSubplot:xlabel=&#39;Sepal.length&#39;, ylabel=&#39;Petal.width&#39;&gt;,
+        &lt;AxesSubplot:xlabel=&#39;Sepal.width&#39;, ylabel=&#39;Petal.width&#39;&gt;,
+        &lt;AxesSubplot:xlabel=&#39;Petal.length&#39;, ylabel=&#39;Petal.width&#39;&gt;,
+        &lt;AxesSubplot:xlabel=&#39;Petal.width&#39;, ylabel=&#39;Petal.width&#39;&gt;]],
+      dtype=object)
+</pre></div>
+</div>
+<img alt="../_images/9eadf093c533503147dc7d90528c6a874c6a40c7c07689abc1332bb2a4b59a22.png" src="../_images/9eadf093c533503147dc7d90528c6a874c6a40c7c07689abc1332bb2a4b59a22.png" />
+</div>
+</div>
+<p>which, in terms of numerical correlation, yields</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matrix</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              Sepal.length  Sepal.width  Petal.length  Petal.width
+Sepal.length      1.000000    -0.109369      0.871754     0.817954
+Sepal.width      -0.109369     1.000000     -0.420516    -0.356544
+Petal.length      0.871754    -0.420516      1.000000     0.962757
+Petal.width       0.817954    -0.356544      0.962757     1.000000
+</pre></div>
+</div>
+</div>
+</div>
+<p>which can be visualized easily with a heatmap with seaborn:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;YlGnBu&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/aab46d7129840a869c2ac7be62b1c4d1f01735f57ea512ae29e175a30c713bd1.png" src="../_images/aab46d7129840a869c2ac7be62b1c4d1f01735f57ea512ae29e175a30c713bd1.png" />
+</div>
+</div>
+<p>we can also see the diversity of the data using a Parallel Coordinates plot</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">parallel_coordinates</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="s1">&#39;Species&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/4fb10fa53a081ed9223d4249d7de3a68c89d03ac6cd549c22ea694ddc36880ec.png" src="../_images/4fb10fa53a081ed9223d4249d7de3a68c89d03ac6cd549c22ea694ddc36880ec.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.cluster.hierarchy</span> <span class="kn">import</span> <span class="n">dendrogram</span><span class="p">,</span> <span class="n">linkage</span>
+
+
+<span class="n">df_dend</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Species&#39;</span><span class="p">)</span>
+<span class="n">df_dend</span> <span class="o">=</span> <span class="n">df_dend</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+
+<span class="n">Z</span> <span class="o">=</span> <span class="n">linkage</span><span class="p">(</span><span class="n">df_dend</span><span class="p">,</span><span class="s1">&#39;ward&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Hierarchical clustering dendrogram&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;sample index&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;distance (Ward)&#39;</span><span class="p">)</span>
+
+<span class="n">dendrogram</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">labels</span><span class="o">=</span><span class="n">df_dend</span><span class="o">.</span><span class="n">index</span><span class="p">,</span><span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/dfc2ccf07cec2a0c95100d0811c97aa67630f20de988ded3497935bf5b9ea407.png" src="../_images/dfc2ccf07cec2a0c95100d0811c97aa67630f20de988ded3497935bf5b9ea407.png" />
+</div>
+</div>
+<p>These visualizations easily demonstrat how the separation of the hierarchical clustering is very good with the “Setosa” species, but misses in labeling many “Versicolor” species as “Virginica”.
+Using again seaborn we can mix the HCA with a heatmap:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">clustermap</span><span class="p">(</span><span class="n">df_dend</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.matrix.ClusterGrid at 0x7fa9629c85b0&gt;
+</pre></div>
+</div>
+<img alt="../_images/c6fcd9c8eca529966eaf34a5ab171ea5f4aa1d7ab72ef62a034d6fa03615e143.png" src="../_images/c6fcd9c8eca529966eaf34a5ab171ea5f4aa1d7ab72ef62a034d6fa03615e143.png" />
+</div>
+</div>
+<p>Other hierarchical clustering methods are more popular, like <a class="reference external" href="https://scikit-learn.org/stable/auto_examples/cluster/plot_dbscan.html">DBSCAN</a>. DBSCAN works well when seeking areas in the data that have a high density of observations, versus areas of the data that are not very dense with observations. DBSCAN can sort data into clusters of varying shapes as well, another strong advantage.</p>
+</section>
+</section>
+<section id="a-id-toc1-5-a-pca-with-singular-value-decomposition">
+<h2><a id='toc1_5_'></a><span class="xref myst">PCA with Singular Value Decomposition</span><a class="headerlink" href="#a-id-toc1-5-a-pca-with-singular-value-decomposition" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; PCAdat.py &quot;&quot;&quot;</span>
@@ -614,19 +1449,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/v5/vwzdch316vzcj9qldllr58800000gp/T/ipykernel_17928/950857428.py:20: MatplotlibDeprecationWarning: The w_xaxis attribute was deprecated in Matplotlib 3.1 and will be removed in 3.8. Use xaxis instead.
-  ax.w_xaxis.set_pane_color((0, 0, 0, 0))
-</pre></div>
-</div>
-<img alt="../_images/f1625ef1b7ac1110a837c774a4bfbf82a5d7d0769a429ac66dd377204fb4e2e8.png" src="../_images/f1625ef1b7ac1110a837c774a4bfbf82a5d7d0769a429ac66dd377204fb4e2e8.png" />
+<img alt="../_images/def4195413a80b6a219aa95ffa154af60fc6d67f1eeb7f1750f85d8838661c2d.png" src="../_images/def4195413a80b6a219aa95ffa154af60fc6d67f1eeb7f1750f85d8838661c2d.png" />
 </div>
 </div>
-<div class="docutils container" id="id2">
-<div class="citation" id="id3" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
-<p>Dirk P. Kroese, Zdravko Botev, Thomas Taimre, and Radislav: Vaisman. <em>Data Science and Machine Learning: Mathematical and Statistical Methods</em>. Machine Learning &amp; Pattern Recognition. Chapman &amp; Hall/CRC, 2020. URL: <a class="reference external" href="https://acems.org.au/data-science-machine-learning-book-available-download">https://acems.org.au/data-science-machine-learning-book-available-download</a> (visited on 2023-08-15).</p>
-</div>
-</div>
+<div class="docutils container" id="id4">
+<dl class="citation">
+<dt class="label" id="id5"><span class="brackets">1</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id2">2</a>,<a href="#id3">3</a>)</span></dt>
+<dd><p>Dirk P. Kroese, Zdravko Botev, Thomas Taimre, and Radislav: Vaisman. <em>Data Science and Machine Learning: Mathematical and Statistical Methods</em>. Machine Learning &amp; Pattern Recognition. Chapman &amp; Hall/CRC, 2020. URL: <a class="reference external" href="https://acems.org.au/data-science-machine-learning-book-available-download">https://acems.org.au/data-science-machine-learning-book-available-download</a> (visited on 2023-08-15).</p>
+</dd>
+</dl>
 </div>
 </section>
 </section>
@@ -656,10 +1487,11 @@ document.write(`
 
               
               
-              
-              
-                <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="UNIT3-MC-Methods.html"
@@ -679,7 +1511,10 @@ document.write(`
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -694,9 +1529,15 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#em-univariate-problem">EM: Univariate problem</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#em-multivariate-case">EM: Multivariate case</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pca-with-singular-value-decomposition">PCA with Singular Value Decomposition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-id-toc1-1-a-em-univariate-problem"><a id="toc1_1_"></a><span class="xref myst">EM: Univariate problem</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-id-toc1-2-a-em-multivariate-case"><a id="toc1_2_"></a><span class="xref myst">EM: Multivariate case</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-id-toc1-3-a-dbscan"><a id="toc1_3_"></a><span class="xref myst">DBSCAN</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-id-toc1-4-a-hierarchical-clustering"><a id="toc1_4_"></a><span class="xref myst">Hierarchical clustering</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-id-toc1-4-1-a-agglomerative-hierarchical-clustering"><a id="toc1_4_1_"></a><span class="xref myst">Agglomerative Hierarchical Clustering</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-id-toc1-4-2-a-divisive-hierarchical-clustering"><a id="toc1_4_2_"></a><span class="xref myst">Divisive Hierarchical Clustering</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-id-toc1-5-a-pca-with-singular-value-decomposition"><a id="toc1_5_"></a><span class="xref myst">PCA with Singular Value Decomposition</span></a></li>
 </ul>
   </nav></div>
 
@@ -711,7 +1552,7 @@ document.write(`
   <div class="footer-item">
     
 <p class="component-author">
-By CBBL teaching
+Per CBBL teaching
 </p>
 
   </div>
@@ -744,8 +1585,8 @@ By CBBL teaching
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
   </footer>
