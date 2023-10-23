@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>UNIT 2. Statistical Learning &#8212; Data Science with Python Jupyter book</title>
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,12 +38,14 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -60,15 +62,15 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'code/UNIT2-Statistical-Learning';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="UNIT 3. Monte Carlo methods" href="UNIT3-MC-Methods.html" />
     <link rel="prev" title="UNIT 1. Import and Visualitzation of data with Python" href="UNIT1-Introduction.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -77,6 +79,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -224,7 +235,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://github.com/Biocomputing-Teaching/Data-Science-with-Python" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Dipòsit de fonts"
+   title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -241,7 +252,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://github.com/Biocomputing-Teaching/Data-Science-with-Python/issues/new?title=Issue%20on%20page%20%2Fcode/UNIT2-Statistical-Learning.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Obriu un número"
+   title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -262,7 +273,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Descarregueu aquesta pàgina">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
@@ -271,7 +282,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="../_sources/code/UNIT2-Statistical-Learning.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Baixeu el fitxer font"
+   title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -289,7 +300,7 @@ const thebe_selector_output = ".output, .cell_output"
       <li>
 <button onclick="window.print()"
   class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Imprimeix a PDF"
+  title="Print to PDF"
   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -323,10 +334,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -334,7 +345,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -380,7 +391,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="a-id-toc1-a-unit-2-statistical-learning">
-<h1><a id='toc1_'></a><span class="xref myst">UNIT 2. Statistical Learning</span><a class="headerlink" href="#a-id-toc1-a-unit-2-statistical-learning" title="Permalink to this headline">#</a></h1>
+<h1><a id='toc1_'></a><span class="xref myst">UNIT 2. Statistical Learning</span><a class="headerlink" href="#a-id-toc1-a-unit-2-statistical-learning" title="Permalink to this heading">#</a></h1>
 <p>This Unit includes main introduction to statistical learning, strongly based in <span id="id1">[<a class="reference internal" href="UNIT9-Neural-Networks.html#id3" title="Dirk P. Kroese, Zdravko Botev, Thomas Taimre, and Radislav: Vaisman. Data Science and Machine Learning: Mathematical and Statistical Methods. Machine Learning &amp; Pattern Recognition. Chapman &amp; Hall/CRC, 2020. URL: https://acems.org.au/data-science-machine-learning-book-available-download (visited on 2023-08-15).">1</a>]</span>.</p>
 <p><strong>Table of contents</strong><a id='toc0_'></a></p>
 <ul class="simple">
@@ -405,7 +416,7 @@ document.write(`
 	maxLevel=6
 	/vscode-jupyter-toc-config -->
 <!-- THIS CELL WILL BE REPLACED ON TOC UPDATE. DO NOT WRITE YOUR TEXT IN THIS CELL --><section id="a-id-toc1-1-a-evaluation-of-the-loss-function-in-k-means">
-<h2><a id='toc1_1_'></a><span class="xref myst">Evaluation of the loss function in K-means</span><a class="headerlink" href="#a-id-toc1-1-a-evaluation-of-the-loss-function-in-k-means" title="Permalink to this headline">#</a></h2>
+<h2><a id='toc1_1_'></a><span class="xref myst">Evaluation of the loss function in K-means</span><a class="headerlink" href="#a-id-toc1-1-a-evaluation-of-the-loss-function-in-k-means" title="Permalink to this heading">#</a></h2>
 <p>K-means is an example of unsupervised learning method. We will use this method along with <code class="docutils literal notranslate"><span class="pre">scipy</span></code> in order to evaluate the loss function calculated for a given dataset.</p>
 <p>We will first import some data using <code class="docutils literal notranslate"><span class="pre">numpy</span></code>.</p>
 <div class="cell docutils container">
@@ -635,7 +646,7 @@ Loss = 2.288
 </div>
 </section>
 <section id="a-id-toc1-2-a-polynomial-regression">
-<h2><a id='toc1_2_'></a><span class="xref myst">Polynomial  regression</span><a class="headerlink" href="#a-id-toc1-2-a-polynomial-regression" title="Permalink to this headline">#</a></h2>
+<h2><a id='toc1_2_'></a><span class="xref myst">Polynomial  regression</span><a class="headerlink" href="#a-id-toc1-2-a-polynomial-regression" title="Permalink to this heading">#</a></h2>
 <p>Let us generate data drawn from iid random points that have a normal distribution with expectation <span class="math notranslate nohighlight">\(10 − 140ui + 400u^2i − 250u^3\)</span> and variance  25. This is an example of a polynomial regression model. Using a squared-error loss, the optimal prediction function <span class="math notranslate nohighlight">\(h^*(u) = E[Y | U = u]\)</span> is thus</p>
 <div class="math notranslate nohighlight">
 \[h^*(u) = 10 − 140^u + 400u^2 − 250u^3\]</div>
@@ -679,7 +690,7 @@ Loss = 2.288
 </div>
 </div>
 <section id="a-id-toc1-2-1-a-training-data-with-fitted-curves-fordifferent-p">
-<h3><a id='toc1_2_1_'></a><span class="xref myst">Training data with fitted curves fordifferent <span class="math notranslate nohighlight">\(p\)</span></span><a class="headerlink" href="#a-id-toc1-2-1-a-training-data-with-fitted-curves-fordifferent-p" title="Permalink to this headline">#</a></h3>
+<h3><a id='toc1_2_1_'></a><span class="xref myst">Training data with fitted curves fordifferent <span class="math notranslate nohighlight">\(p\)</span></span><a class="headerlink" href="#a-id-toc1-2-1-a-training-data-with-fitted-curves-fordifferent-p" title="Permalink to this heading">#</a></h3>
 <p>We will check the models for <span class="math notranslate nohighlight">\(p = 2, 4, 16\)</span>. The true cubic polynomial curve for p = 4 is also plotted (dashed line).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -724,7 +735,7 @@ Loss = 2.288
 </div>
 </section>
 <section id="a-id-toc1-2-2-a-test-loss-as-function-of-the-number-of-parameters-p-of-the-model">
-<h3><a id='toc1_2_2_'></a><span class="xref myst">Test loss as function of the number of parameters <span class="math notranslate nohighlight">\(p\)</span> of the model.</span><a class="headerlink" href="#a-id-toc1-2-2-a-test-loss-as-function-of-the-number-of-parameters-p-of-the-model" title="Permalink to this headline">#</a></h3>
+<h3><a id='toc1_2_2_'></a><span class="xref myst">Test loss as function of the number of parameters <span class="math notranslate nohighlight">\(p\)</span> of the model.</span><a class="headerlink" href="#a-id-toc1-2-2-a-test-loss-as-function-of-the-number-of-parameters-p-of-the-model" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># generate test data</span>
@@ -758,7 +769,7 @@ Loss = 2.288
 </div>
 </section>
 <section id="a-id-toc1-2-3-a-cross-validation">
-<h3><a id='toc1_2_3_'></a><span class="xref myst">Cross-validation</span><a class="headerlink" href="#a-id-toc1-2-3-a-cross-validation" title="Permalink to this headline">#</a></h3>
+<h3><a id='toc1_2_3_'></a><span class="xref myst">Cross-validation</span><a class="headerlink" href="#a-id-toc1-2-3-a-cross-validation" title="Permalink to this heading">#</a></h3>
 <p>For the polynomial regression example, we can calculate a <span class="math notranslate nohighlight">\(K\)</span>-fold cross-validation loss with a nonrandom partitioning of the training set using the following code.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -807,11 +818,11 @@ Loss = 2.288
 </div>
 </div>
 <div class="docutils container" id="id2">
-<dl class="citation">
-<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>Dirk P. Kroese, Zdravko Botev, Thomas Taimre, and Radislav: Vaisman. <em>Data Science and Machine Learning: Mathematical and Statistical Methods</em>. Machine Learning &amp; Pattern Recognition. Chapman &amp; Hall/CRC, 2020. URL: <a class="reference external" href="https://acems.org.au/data-science-machine-learning-book-available-download">https://acems.org.au/data-science-machine-learning-book-available-download</a> (visited on 2023-08-15).</p>
-</dd>
-</dl>
+<div class="citation" id="id3" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Dirk P. Kroese, Zdravko Botev, Thomas Taimre, and Radislav: Vaisman. <em>Data Science and Machine Learning: Mathematical and Statistical Methods</em>. Machine Learning &amp; Pattern Recognition. Chapman &amp; Hall/CRC, 2020. URL: <a class="reference external" href="https://acems.org.au/data-science-machine-learning-book-available-download">https://acems.org.au/data-science-machine-learning-book-available-download</a> (visited on 2023-08-15).</p>
+</div>
+</div>
 </div>
 </section>
 </section>
@@ -842,11 +853,10 @@ Loss = 2.288
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="UNIT1-Introduction.html"
@@ -866,10 +876,7 @@ Loss = 2.288
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -905,7 +912,7 @@ Loss = 2.288
   <div class="footer-item">
     
 <p class="component-author">
-Per CBBL teaching
+By CBBL teaching
 </p>
 
   </div>
@@ -938,8 +945,8 @@ Per CBBL teaching
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
   </footer>
