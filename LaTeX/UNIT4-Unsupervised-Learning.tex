@@ -24,7 +24,7 @@
 %	 TITLE PAGE
 %----------------------------------------------------------------------------------------
 
-\title[Monte Carlo Methods]{Unsupervised learning} % The short title appears at the bottom of every slide, the full title is only on the title page
+\title[Unsupervised learning]{Unsupervised learning} % The short title appears at the bottom of every slide, the full title is only on the title page
 
 \author{Jordi Villà i Freixa} % Your name
 \institute[FCTE] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
@@ -84,6 +84,29 @@ Study Abroad\\ % Your institution for the title page
         \label{fig:supunsup}
     \end{figure}
 \end{frame}
+
+\begin{frame}
+    {\bf Unsupervised learning} is the process of inferring hidden patterns from historical data. We try here to find similarities, differences, patterns and structure in data by itself, without human intervention. Within this set of techniques, one can find many different real life applications:
+    \begin{itemize}
+        \item data exploration, preparation or visualization,
+        \item customer segmentation,
+        \item anomaly detection,
+        \item target marketing campaigns,
+        \item recommender systems, and many more.
+    \end{itemize}
+    We use them, in general, for clustering and association problems. We exect less accurate results. Some algorithms: K-Means, Gaussian Mixture models, Frequent Pattern (FP) Growth, Principal Component Analysis, Hierarchical Clustering Analysis, etc.
+\end{frame}
+
+\begin{frame}
+    \begin{itemize}
+        \item Unsupervised learning is useful for data analysis when we do not know what are we looking for in the data. finding similarities, creating groups, etc. for example, by categorizing elements by their activity (cells with respect to their RNA expression, customer segmentation, etc).
+        \item Data does not need to be labelled, and such datais much easier and faster to obtain.
+        \item We can now find unknown paterns and useful insights in data.
+        \item Last, but equally important, it reduces human biass and error.
+    \end{itemize}
+\end{frame}
+
+
 
 \begin{frame}{Generating data}
     \begin{Exercise}{Generate bivariate data}
@@ -171,6 +194,7 @@ print(yhat[-100:])      # check latent value for last few points
     \[p_i^{(t)}(k) \varpropto w_k^{(t-1)} \phi_k(\uvec{x}_i | \mu_k^{(t-1)},\mathrm{Cov}_k^{(t-1)})\]
 \end{frame}
 
+
 \section{Principal Component Analysis}
 
 \begin{frame}{\href{https://builtin.com/data-science/step-step-explanation-principal-component-analysis}{PCA}}
@@ -196,8 +220,97 @@ print(yhat[-100:])      # check latent value for last few points
             \item In order to analyze the possible correlatoons between the different data in the file, perform a PCA and obtain the principal component matrix $U$ as well as the diagonal matrix $D^2$. What can you say in terms of the variance?
             \item Project the data on the first component and plot the kernel density estimate of the PCA-combined data. 
         \end{enumerate}
+        See also \href{https://cran.r-project.org/web/packages/dendextend/vignettes/Cluster_Analysis.html\#iris---edgar-andersons-iris-data}{implementations in R} of hierarchical clustering in this famous dataset.
     \end{Exercise}
 \end{frame}
+
+\section{Clustering}
+
+\subsection{Hierarchical clustering analysis}
+
+\begin{frame}{Hierarchical clustering}
+    \begin{figure}
+        \includegraphics[width=\linewidth]{HCA}
+        \caption{Left, a cluster hierarchy of 15 clusters. Right, the corresponding dendrogram\cite{kroese2020}.}
+    \end{figure}
+\end{frame}
+
+
+\begin{frame}{Hierarchical clustering}
+    In hierarchical cluster analysis (or HCA) one seeks to build a hierarchy of clusters with one of these two strategies:
+    \begin{itemize}
+        \item Agglomerative: "bottom-up" approach: Each observation starts in its own cluster, and pairs of clusters are merged as one moves up the hierarchy.
+        \item Divisive: "top-down" approach: All observations start in one cluster, and splits are performed recursively as one moves down the hierarchy.
+    \end{itemize}
+
+Merges and splits are determined in a {\bf greedy} manner. Results are usually presented in a dendrogram. Any valid measure of distance can be used. In fact, the observations themselves are not required: all that is used is a matrix of distances. Except for some specific cases, the algorithms cannot be guaranteed to find the optimum solution. 
+\end{frame}
+
+\begin{frame}{HCA flavours}
+    Different types of HCA can be done, depending on the way the distance between points (typically the Euclidena distance) and between clusters $I$ and $J$ (how the clusters are linked: {\em linkage criterion}) is computed:
+    \begin{itemize}
+        \item Single linkage: The closest distance between the clusters
+        \[
+            d_{\mathrm{min}} = \underset{i \in I, j \in J}{\mathrm{min}}
+            \mathrm{dist} 
+            (\uvec{x}_i,\uvec{x}_j) 
+        \]
+        \item Complete linkage: The closest distance between the clusters
+        \[
+            d_{\mathrm{max}} = \underset{i \in I, j \in J}{\mathrm{max}}
+            \mathrm{dist} 
+            (\uvec{x}_i,\uvec{x}_j) 
+        \]
+        \item Group average: The mean distance between clusters
+        \item Ward's minimal variance: distance computed as the additional amount of "variance" that would be introduced if two clusters would be merged.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Algorithm for HCA}
+    \begin{algorithm}[H]
+        \DontPrintSemicolon
+          
+        \KwInput{Distance function; linkage function $d$; number of clusters $K$.}
+        \KwOutput{The labels set for the tree}
+        Initialize the set of $n$ cluster identifiers $I$;
+        Initialize the corresponding label sets $L_i$;
+        Initialize a distance marix $D=[d_{ij}]$;
+
+        \For{$k=n+1$ \KwTo $2n-K$}{
+            Find $i$ and $j<i$ in $I$ such that $d_{ij}$ is minimal;
+            Create a new label set $L_k$;
+            Add the new identifier $k$ to $I$ and remove the old identifiers $i$ and $j$ from $I$;
+            Update the distance matrix $D$ with respect to $i$ and $j$;
+            }
+        \Return{$L_i$}\;
+        \caption{Greedy Agglomerative Clustering}
+    \end{algorithm}
+\end{frame}
+
+\begin{frame}
+    \begin{figure}
+        \includegraphics[width=\linewidth]{clustering}
+        \caption{Overview of clustering methods from the \href{https://scikit-learn.org/stable/modules/clustering.html}{scikit site}}
+    \end{figure}
+\end{frame}
+
+\subsection{DBSCAN}
+
+\begin{frame}{Density-Based Clustering of Applications with Noise (DBSCAN)}
+    \begin{figure}
+        \includegraphics[width=\linewidth]{DBSCAN}
+        \caption{Schema of DBSCAN clustering for the distinction of hiugh to low density data clusters. Obtained from the \href{https://elutins.medium.com/dbscan-what-is-it-when-to-use-it-how-to-use-it-8bd506293818}{Medium web site}. See also a good explanation of the difference between HCA and DBSCAN \href{https://ryanwingate.com/intro-to-machine-learning/unsupervised/hierarchical-and-density-based-clustering/}{here}.}
+    \end{figure}
+\end{frame}
+
+
+\begin{frame}{Exercise on clustering}
+    \begin{Exercise}{Testing DBSCAN}
+        Try to use HCA and DBSCAN on the {\em Iris} dataset. You can use \href{https://www.kaggle.com/code/raphaelekete/cluster-analysis-of-breast-cancer-data-set/notebook}{as a template} the work done on the \href{https://archive.ics.uci.edu/dataset/17/breast+cancer+wisconsin+diagnostic}{Breast Cancer Wisconsin (Diagnostic) Data Set}. 
+        Which one of the two methods can provide better clustring of the data? What oher methods would perform better to separate the three species?
+    \end{Exercise}
+\end{frame}
+
 
 \section{Bibliography}
 \bibliographystyle{unsrt}
