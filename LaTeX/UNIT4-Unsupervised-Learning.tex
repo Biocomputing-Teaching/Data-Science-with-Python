@@ -100,7 +100,7 @@ Study Abroad\\ % Your institution for the title page
 \begin{frame}
     \begin{itemize}
         \item Unsupervised learning is useful for data analysis when we do not know what are we looking for in the data. finding similarities, creating groups, etc. for example, by categorizing elements by their activity (cells with respect to their RNA expression, customer segmentation, etc).
-        \item Data does not need to be labelled, and such datais much easier and faster to obtain.
+        \item Data does not need to be labelled, and such data is much easier and faster to obtain.
         \item We can now find unknown paterns and useful insights in data.
         \item Last, but equally important, it reduces human biass and error.
     \end{itemize}
@@ -126,7 +126,7 @@ Study Abroad\\ % Your institution for the title page
 \begin{frame}{Maximum likelihood and Expectation-Maximization algorithm}
     We already saw how to use the K-means algorithm, based on the {\em distances} of the different data points. Now we will use another method that is based on assuming a given distribution of the data. 
     \\[10pt]
-    Maximum likelihood estimation (MLE) is an approach to density estimation for a dataset by searching accross probability distributions and their parameters. However, it needs that {\em latents} (or hidden) variables not to exist in the training dataset. It requires the dataset to be complete, or fully observed: that all variables that are relevant to the problem are present.
+    Maximum likelihood estimation (MLE) is an approach to density estimation for a dataset by searching accross probability distributions and their parameters. However, it needs that {\em latent} (or hidden) variables not to exist in the training dataset. It requires the dataset to be complete, or fully observed: that all variables that are relevant to the problem are present.
     \\[10pt]
     The {\bf expectation-maximization (EM)} algorithm is an approach for performing MLE when latent variables are present. It is common to use it in estimating the density when data is missing, such as clustering in the {\bf Gaussian Mixture Model}.
 \end{frame}
@@ -139,31 +139,15 @@ Study Abroad\\ % Your institution for the title page
     \end{enumerate}
 \end{frame}
 
-\begin{frame}[fragile]{A one dimensional example for EM}
-    Adapted from \href{https://machinelearningmastery.com/expectation-maximization-em-algorithm/}{here}
-    \begin{lstlisting}
-# example of a bimodal constructed from two gaussian processes
-from numpy import hstack
-from numpy.random import normal
-from matplotlib import pyplot
-# generate a sample
-X1 = normal(loc=20, scale=5, size=3000)
-X2 = normal(loc=40, scale=5, size=7000)
-X = hstack((X1, X2))
-# plot the histogram
-pyplot.hist(X, bins=50, density=True)
-pyplot.show()
-    \end{lstlisting}
-\end{frame}
-
 \begin{frame}{A one dimensional example for EM}
     \begin{figure}
         \includegraphics[width=0.7\linewidth]{hist}
+        \caption{Adapted from \href{https://machinelearningmastery.com/expectation-maximization-em-algorithm/}{here}}
     \end{figure}
 \end{frame}
 
 \begin{frame}[fragile]{A one dimensional example for EM}
-    \small
+    \footnotesize
     \begin{lstlisting}
 from numpy import hstack
 from numpy.random import normal
@@ -172,6 +156,9 @@ from sklearn.mixture import GaussianMixture
 X1 = normal(loc=20, scale=5, size=3000)
 X2 = normal(loc=40, scale=5, size=7000)
 X = hstack((X1, X2))
+# plot the histogram
+pyplot.hist(X, bins=50, density=True)
+pyplot.show()
 # reshape into a table with one column
 X = X.reshape((len(X), 1))
 # fit model
@@ -200,8 +187,8 @@ print(yhat[-100:])      # check latent value for last few points
 \begin{frame}{\href{https://builtin.com/data-science/step-step-explanation-principal-component-analysis}{PCA}}
     \begin{enumerate}
         \item Get some data
-        \item Substract the mean from each data dimension. Better standardize: $z=\frac{\uvec{x}-\bar{\uvec{x}}}{\sigma}$. Calculate the covariance matrix $X X^T$.
-        \item Diagonalize and obtain unit eigenvectors $c^T X X^T c -\lambda c^T c$ via SVD: $X X^T=U D^2 U$
+        \item Substract the mean from each data dimension. Better standardize: $z=\frac{\uvec{x}-\bar{\uvec{x}}}{\sigma}$. Calculate the \href{https://datascienceplus.com/understanding-the-covariance-matrix/}{covariance matrix} $X X^T$.
+        \item Diagonalize and obtain unit eigenvectors via SVD: $X X^T=U D^2 U$
         \item Choosing components and forming a feature vector 
         \item Recast the data along the chosen PC axes. $\uvec{x}_i^{\mathrm{PC}}=U_k U_k^T \uvec{x}_i$
     \end{enumerate}
