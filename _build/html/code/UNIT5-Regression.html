@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,9 +38,8 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -79,15 +78,6 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
-  
-  <div id="pst-scroll-pixel-helper"></div>
-
-  
-  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
-
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -334,10 +324,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
 `);
 </script>
@@ -345,7 +335,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
 `);
 </script>
@@ -434,7 +424,18 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ee1edb2da17ffa3c4089454ec1929ea8420e5e45eaa398f2c7f9f375dbd0fa1e.png" src="../_images/ee1edb2da17ffa3c4089454ec1929ea8420e5e45eaa398f2c7f9f375dbd0fa1e.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span><span class="w"> </span><span class="sd">&quot;&quot;&quot; confpred.py &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span>  <span class="nn">numpy.linalg</span> <span class="kn">import</span> <span class="n">inv</span><span class="p">,</span> <span class="n">lstsq</span><span class="p">,</span> <span class="n">norm</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;matplotlib&#39;
+</pre></div>
+</div>
 </div>
 </div>
 </section>
@@ -444,22 +445,7 @@ document.write(`
 $<span class="math notranslate nohighlight">\(Y=\beta_0  + \beta_1 x_1 + \cdots + \beta_d x_d + \varepsilon\)</span><span class="math notranslate nohighlight">\(
 where \)</span>\mathbb{E}\varepsilon=0<span class="math notranslate nohighlight">\( and \)</span>\mathbb{Var}\varepsilon =\sigma^2$.</p>
 <p>This is true for a given pair <span class="math notranslate nohighlight">\((\mathbf{x},Y)\)</span> of data. If we want to apply it to a whole training set <span class="math notranslate nohighlight">\(\mathcal{T}=\{(\mathbf{x_1},Y_1),\ldots,(\mathbf{x_n},Y_n)\}\)</span>, we consider a linear model of the form:
-$<span class="math notranslate nohighlight">\(\mathbf{Y}=\mathbf{X}\mathbf{\beta}+\mathbf{\varepsilon}\)</span><span class="math notranslate nohighlight">\(
-where \)</span>\mathbf{X}<span class="math notranslate nohighlight">\( is the \)</span>n \times p<span class="math notranslate nohighlight">\( **model matrix** given by:
-\)</span><span class="math notranslate nohighlight">\(\mathbf{X}=\begin{pmatrix}
-1 &amp; x_{11} &amp; x_{12} &amp; \cdots &amp; x_{1d}\\
-1 &amp; x_{21} &amp; x_{22} &amp; \cdots &amp; x_{2d}\\
-\vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots\\
-1 &amp; x_{n1} &amp; x_{n2} &amp; \cdots &amp; x_{nd}\\
-\end{pmatrix}=
-\begin{pmatrix}
-1 &amp; \mathbf{x}_1^T\\
-1 &amp; \mathbf{x}_2^T\\
-\vdots &amp; \vdots\\
-1 &amp; \mathbf{x}_n^T\\
-\end{pmatrix}
-\)</span><span class="math notranslate nohighlight">\(
-and \)</span>\mathbf{\varepsilon}=[\varepsilon_1,\ldots,\varepsilon_n]^T<span class="math notranslate nohighlight">\( is a vector of **iid** copies of \)</span>\varepsilon$.</p>
+$<span class="math notranslate nohighlight">\(\mathbf{Y}=\mathbf{X}\mathbf{\beta}+\mathbf{\varepsilon}\)</span>$</p>
 <p>We return here to the polynomial regression problem that we explored in (Chapter 2)[UNIT2-Statistical-Learning.ipynb]. There, we estimated the generalization risk for various polynomial prediction functions using independent validation data. Here we calculate such generalization risk using cross validation and compute the PRESS using
 $<span class="math notranslate nohighlight">\(
 \mathrm{PRESS}=\sum_{i=1}^n \left(\frac{e_i}{1-p_i}\right)^2
@@ -499,7 +485,7 @@ where \)</span>e_i=y_i-\hat{y_i}=y_i-(\mathbf{X}\hat{\mathbf{\beta}})<span class
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x12a274750&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x127544950&gt;]
 </pre></div>
 </div>
 <img alt="../_images/ce493329b2255ca7625aca6ceb49aa7ffcf599bfa11d1e4c177fa391134e8da7.png" src="../_images/ce493329b2255ca7625aca6ceb49aa7ffcf599bfa11d1e4c177fa391134e8da7.png" />
@@ -673,7 +659,7 @@ where \)</span>e_i=y_i-\hat{y_i}=y_i-(\mathbf{X}\hat{\mathbf{\beta}})<span class
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x12a4af050&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x127601750&gt;]
 </pre></div>
 </div>
 <img alt="../_images/87e7685bf2d1b82c95bd05ca97db0cbb1b4c9946dc17d942ff9ef3a4fc0d4119.png" src="../_images/87e7685bf2d1b82c95bd05ca97db0cbb1b4c9946dc17d942ff9ef3a4fc0d4119.png" />
@@ -794,7 +780,7 @@ Dep. Variable:                 height   R-squared:                       0.178
 Model:                            OLS   Adj. R-squared:                  0.170
 Method:                 Least Squares   F-statistic:                     21.28
 Date:                Mon, 30 Oct 2023   Prob (F-statistic):           1.20e-05
-Time:                        08:33:51   Log-Likelihood:                -363.88
+Time:                        08:33:20   Log-Likelihood:                -363.88
 No. Observations:                 100   AIC:                             731.8
 Df Residuals:                      98   BIC:                             737.0
 Df Model:                           1                                         
@@ -873,7 +859,7 @@ $<span class="math notranslate nohighlight">\(height=\beta_0 + \beta_1 shoe + \b
   <th>Date:</th>             <td>Mon, 30 Oct 2023</td> <th>  Prob (F-statistic):</th> <td>1.43e-12</td>
 </tr>
 <tr>
-  <th>Time:</th>                 <td>08:33:52</td>     <th>  Log-Likelihood:    </th> <td> -345.58</td>
+  <th>Time:</th>                 <td>08:33:21</td>     <th>  Log-Likelihood:    </th> <td> -345.58</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>   100</td>      <th>  AIC:               </th> <td>   697.2</td>
@@ -950,8 +936,6 @@ Residual  97.0  5878.091294    60.598879        NaN           NaN
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fit</span><span class="o">.</span><span class="n">fittedvalues</span> <span class="p">,</span><span class="n">fit</span><span class="o">.</span><span class="n">resid</span> <span class="p">,</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span> <span class="p">(</span><span class="s2">&quot;fitted values&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span> <span class="p">(</span><span class="s2">&quot;residuals&quot;</span><span class="p">)</span>
-<span class="n">sm</span><span class="o">.</span><span class="n">qqplot</span> <span class="p">(</span><span class="n">fit</span><span class="o">.</span><span class="n">resid</span><span class="p">)</span>
-<span class="c1"># %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span>
 </pre></div>
 </div>
 </div>
@@ -965,6 +949,15 @@ Residual  97.0  5878.091294    60.598879        NaN           NaN
 <img alt="../_images/45204610989dc2addfd438b27d6fc19cf6a5de606048606d75122197159ae07b.png" src="../_images/45204610989dc2addfd438b27d6fc19cf6a5de606048606d75122197159ae07b.png" />
 <img alt="../_images/5aed9b7b694f928c8c3082641e3cd438671d3ceaaf876cb86a05f435ae8c3ad6.png" src="../_images/5aed9b7b694f928c8c3082641e3cd438671d3ceaaf876cb86a05f435ae8c3ad6.png" />
 <img alt="../_images/45204610989dc2addfd438b27d6fc19cf6a5de606048606d75122197159ae07b.png" src="../_images/45204610989dc2addfd438b27d6fc19cf6a5de606048606d75122197159ae07b.png" />
+</div>
+</div>
+<p>Finallky, we generate a Q-Q plot to <a class="reference external" href="https://www.ucd.ie/ecomodel/Resources/QQplots_WebVersion.html">explore</a> the normality of the data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sm</span><span class="o">.</span><span class="n">qqplot</span> <span class="p">(</span><span class="n">fit</span><span class="o">.</span><span class="n">resid</span><span class="p">)</span>
+<span class="c1"># %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span>
+</pre></div>
+</div>
 </div>
 </div>
 </section>
@@ -995,10 +988,11 @@ Residual  97.0  5878.091294    60.598879        NaN           NaN
 
               
               
-              
-              
-                <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="UNIT4-Unsupervised-Learning.html"
@@ -1018,7 +1012,10 @@ Residual  97.0  5878.091294    60.598879        NaN           NaN
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -1085,8 +1082,8 @@ By CBBL teaching
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
   </footer>
