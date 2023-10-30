@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,8 +38,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -61,6 +62,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'code/UNIT5-Regression';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -76,6 +79,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -322,10 +334,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -333,11 +345,13 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -353,6 +367,18 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-linear-regression">Simple linear regression</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-id-toc1-1-a-calculation-of-the-predicted-residual-sum-of-squares-press"><a id="toc1_1_"></a><span class="xref myst">Calculation of the Predicted Residual Sum of Squares (PRESS)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inference-for-normal-linear-models">Inference for Normal Linear Models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#confidence-and-prediction-intervals">Confidence and prediction intervals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-models-with-python-statsmodels">Linear models with python <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -372,6 +398,576 @@ document.write(`
 </div>
 </div>
 </div>
+<section id="simple-linear-regression">
+<h2>Simple linear regression<a class="headerlink" href="#simple-linear-regression" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; confpred.py &quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span>  <span class="nn">numpy.linalg</span> <span class="kn">import</span> <span class="n">inv</span><span class="p">,</span> <span class="n">lstsq</span><span class="p">,</span> <span class="n">norm</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">n</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="c1"># parameters</span>
+<span class="n">beta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">6</span><span class="p">,</span><span class="mi">13</span><span class="p">])</span>
+<span class="n">sigma</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">Xmat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">n</span><span class="p">,</span><span class="mi">1</span><span class="p">)),</span> <span class="n">x</span><span class="p">))</span> <span class="c1">#design matrix</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">Xmat</span> <span class="o">@</span> <span class="n">beta</span> <span class="o">+</span> <span class="n">sigma</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> 
+
+<span class="c1"># solve the normal equations</span>
+<span class="n">betahat</span> <span class="o">=</span> <span class="n">lstsq</span><span class="p">(</span><span class="n">Xmat</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span><span class="n">rcond</span><span class="o">=</span><span class="kc">None</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> 
+
+<span class="n">rl</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>  <span class="c1"># (true) regression line</span>
+<span class="n">u</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">u</span> <span class="o">=</span> <span class="n">u</span> <span class="o">+</span> <span class="mi">1</span><span class="o">/</span><span class="n">n</span><span class="p">;</span>
+    <span class="n">xvec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="n">u</span><span class="p">])</span>
+    <span class="n">rl</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">xvec</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">beta</span><span class="p">;</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">rl</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;../figures/linreg.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/ee1edb2da17ffa3c4089454ec1929ea8420e5e45eaa398f2c7f9f375dbd0fa1e.png" src="../_images/ee1edb2da17ffa3c4089454ec1929ea8420e5e45eaa398f2c7f9f375dbd0fa1e.png" />
+</div>
+</div>
+</section>
+<section id="a-id-toc1-1-a-calculation-of-the-predicted-residual-sum-of-squares-press">
+<h2><a id='toc1_1_'></a><span class="xref myst">Calculation of the Predicted Residual Sum of Squares (PRESS)</span><a class="headerlink" href="#a-id-toc1-1-a-calculation-of-the-predicted-residual-sum-of-squares-press" title="Permalink to this heading">#</a></h2>
+<p>We start by defining that in a <em>multiple linear regression model</em> the response <span class="math notranslate nohighlight">\(Y\)</span> depends on a <span class="math notranslate nohighlight">\(d\)</span>-dimensional explanatory vector <span class="math notranslate nohighlight">\(\mathbf{x}=[x_1,\ldots,x_d]^T\)</span> via the relationship:
+$<span class="math notranslate nohighlight">\(Y=\beta_0  + \beta_1 x_1 + \cdots + \beta_d x_d + \varepsilon\)</span><span class="math notranslate nohighlight">\(
+where \)</span>\mathbb{E}\varepsilon=0<span class="math notranslate nohighlight">\( and \)</span>\mathbb{Var}\varepsilon =\sigma^2$.</p>
+<p>This is true for a given pair <span class="math notranslate nohighlight">\((\mathbf{x},Y)\)</span> of data. If we want to apply it to a whole training set <span class="math notranslate nohighlight">\(\mathcal{T}=\{(\mathbf{x_1},Y_1),\ldots,(\mathbf{x_n},Y_n)\}\)</span>, we consider a linear model of the form:
+$<span class="math notranslate nohighlight">\(\mathbf{Y}=\mathbf{X}\mathbf{\beta}+\mathbf{\varepsilon}\)</span><span class="math notranslate nohighlight">\(
+where \)</span>\mathbf{X}<span class="math notranslate nohighlight">\( is the \)</span>n \times p<span class="math notranslate nohighlight">\( **model matrix** given by:
+\)</span><span class="math notranslate nohighlight">\(\mathbf{X}=\begin{pmatrix}
+1 &amp; x_{11} &amp; x_{12} &amp; \cdots &amp; x_{1d}\\
+1 &amp; x_{21} &amp; x_{22} &amp; \cdots &amp; x_{2d}\\
+\vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots\\
+1 &amp; x_{n1} &amp; x_{n2} &amp; \cdots &amp; x_{nd}\\
+\end{pmatrix}=
+\begin{pmatrix}
+1 &amp; \mathbf{x}_1^T\\
+1 &amp; \mathbf{x}_2^T\\
+\vdots &amp; \vdots\\
+1 &amp; \mathbf{x}_n^T\\
+\end{pmatrix}
+\)</span><span class="math notranslate nohighlight">\(
+and \)</span>\mathbf{\varepsilon}=[\varepsilon_1,\ldots,\varepsilon_n]^T<span class="math notranslate nohighlight">\( is a vector of **iid** copies of \)</span>\varepsilon$.</p>
+<p>We return here to the polynomial regression problem that we explored in (Chapter 2)[UNIT2-Statistical-Learning.ipynb]. There, we estimated the generalization risk for various polynomial prediction functions using independent validation data. Here we calculate such generalization risk using cross validation and compute the PRESS using
+$<span class="math notranslate nohighlight">\(
+\mathrm{PRESS}=\sum_{i=1}^n \left(\frac{e_i}{1-p_i}\right)^2
+\)</span><span class="math notranslate nohighlight">\(
+where \)</span>e_i=y_i-\hat{y_i}=y_i-(\mathbf{X}\hat{\mathbf{\beta}})<span class="math notranslate nohighlight">\( is the \)</span>i<span class="math notranslate nohighlight">\( th residual and \)</span>p_i<span class="math notranslate nohighlight">\( are the diagonal values of the orthogonal projection matrix \)</span>\mathbf{X}\mathbf{X}^+$</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; polyregpress.py &quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">rand</span><span class="p">,</span> <span class="n">randn</span>
+<span class="kn">from</span> <span class="nn">numpy.linalg</span> <span class="kn">import</span> <span class="n">norm</span><span class="p">,</span> <span class="n">solve</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">PolynomialFeatures</span>
+
+<span class="k">def</span> <span class="nf">generate_data</span><span class="p">(</span><span class="n">beta</span> <span class="p">,</span> <span class="n">sig</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="n">u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">u</span> <span class="o">**</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> <span class="o">@</span> <span class="n">beta</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span> <span class="o">+</span> <span class="n">sig</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">u</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">n</span><span class="p">,)),</span> <span class="n">y</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">n</span><span class="p">,))</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">beta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">140</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="o">-</span><span class="mi">250</span><span class="p">]);</span>
+<span class="n">sig</span><span class="o">=</span><span class="mi">5</span><span class="p">;</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="mi">2</span><span class="p">;</span>
+<span class="n">u</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">generate_data</span><span class="p">(</span><span class="n">beta</span><span class="p">,</span><span class="n">sig</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
+
+<span class="n">K</span> <span class="o">=</span> <span class="mi">12</span> <span class="c1">#maximum number of parameters</span>
+<span class="n">press</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">K</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">K</span><span class="p">):</span>
+    <span class="n">poly</span> <span class="o">=</span> <span class="n">PolynomialFeatures</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="n">poly</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="c1"># construct the model matrix</span>
+    <span class="n">P</span> <span class="o">=</span> <span class="n">X</span> <span class="o">@</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">X</span><span class="p">)</span> <span class="o">@</span> <span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="p">))</span> <span class="c1"># hat matrix</span>
+    <span class="n">e</span> <span class="o">=</span> <span class="n">y</span> <span class="o">-</span> <span class="n">P</span> <span class="o">@</span> <span class="n">y</span>
+
+    <span class="n">press</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="n">e</span><span class="p">,(</span><span class="mi">1</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">P</span><span class="p">))),</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">press</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x12a274750&gt;]
+</pre></div>
+</div>
+<img alt="../_images/ce493329b2255ca7625aca6ceb49aa7ffcf599bfa11d1e4c177fa391134e8da7.png" src="../_images/ce493329b2255ca7625aca6ceb49aa7ffcf599bfa11d1e4c177fa391134e8da7.png" />
+</div>
+</div>
+</section>
+<section id="inference-for-normal-linear-models">
+<h2>Inference for Normal Linear Models<a class="headerlink" href="#inference-for-normal-linear-models" title="Permalink to this heading">#</a></h2>
+<p>Example on the yield of crop for four different crop treatments (columns) on four different plots (rows)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; crop.py &quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">f</span>
+<span class="kn">from</span> <span class="nn">numpy.linalg</span> <span class="kn">import</span> <span class="n">lstsq</span><span class="p">,</span> <span class="n">norm</span> 
+ 
+<span class="n">yy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">9.2988</span><span class="p">,</span> <span class="mf">9.4978</span><span class="p">,</span> <span class="mf">9.7604</span><span class="p">,</span> <span class="mf">10.1025</span><span class="p">,</span>
+      <span class="mf">8.2111</span><span class="p">,</span> <span class="mf">8.3387</span><span class="p">,</span> <span class="mf">8.5018</span><span class="p">,</span>  <span class="mf">8.1942</span><span class="p">,</span>
+      <span class="mf">9.0688</span><span class="p">,</span> <span class="mf">9.1284</span><span class="p">,</span> <span class="mf">9.3484</span><span class="p">,</span>  <span class="mf">9.5086</span><span class="p">,</span>
+      <span class="mf">8.2552</span><span class="p">,</span> <span class="mf">7.8999</span><span class="p">,</span> <span class="mf">8.4859</span><span class="p">,</span>  <span class="mf">8.9485</span><span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">yy</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 9.2988  8.2111  9.0688  8.2552]
+ [ 9.4978  8.3387  9.1284  7.8999]
+ [ 9.7604  8.5018  9.3484  8.4859]
+ [10.1025  8.1942  9.5086  8.9485]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nrow</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">=</span> <span class="n">yy</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">yy</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">nrow</span> <span class="o">*</span> <span class="n">ncol</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">yy</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">16</span><span class="p">,))</span>
+<span class="n">X_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">n</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">KM</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">kron</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="n">ncol</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">nrow</span><span class="p">,</span><span class="mi">1</span><span class="p">)))</span>
+<span class="n">KM</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">X_2</span> <span class="o">=</span> <span class="n">KM</span><span class="p">[:,</span><span class="mi">1</span><span class="p">:</span><span class="n">ncol</span><span class="p">]</span>
+<span class="n">IM</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="n">nrow</span><span class="p">)</span>
+<span class="n">C</span> <span class="o">=</span> <span class="n">IM</span><span class="p">[:,</span><span class="mi">1</span><span class="p">:</span><span class="n">nrow</span><span class="p">]</span>
+
+<span class="n">X_3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">C</span><span class="p">,</span> <span class="n">C</span><span class="p">))</span>
+<span class="n">X_3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">X_3</span><span class="p">,</span> <span class="n">C</span><span class="p">))</span>
+<span class="n">X_3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">X_3</span><span class="p">,</span> <span class="n">C</span><span class="p">))</span>
+ 
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">X_1</span><span class="p">,</span><span class="n">X_2</span><span class="p">))</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">X</span><span class="p">,</span><span class="n">X_3</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1. 0. 0. 0. 0. 0. 0.]
+ [1. 0. 0. 0. 1. 0. 0.]
+ [1. 0. 0. 0. 0. 1. 0.]
+ [1. 0. 0. 0. 0. 0. 1.]
+ [1. 1. 0. 0. 0. 0. 0.]
+ [1. 1. 0. 0. 1. 0. 0.]
+ [1. 1. 0. 0. 0. 1. 0.]
+ [1. 1. 0. 0. 0. 0. 1.]
+ [1. 0. 1. 0. 0. 0. 0.]
+ [1. 0. 1. 0. 1. 0. 0.]
+ [1. 0. 1. 0. 0. 1. 0.]
+ [1. 0. 1. 0. 0. 0. 1.]
+ [1. 0. 0. 1. 0. 0. 0.]
+ [1. 0. 0. 1. 1. 0. 0.]
+ [1. 0. 0. 1. 0. 1. 0.]
+ [1. 0. 0. 1. 0. 0. 1.]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="c1">#number of parameters in full model</span>
+<span class="n">betahat</span> <span class="o">=</span> <span class="n">lstsq</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span><span class="n">rcond</span><span class="o">=</span><span class="kc">None</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1">#estimate under the full model</span>
+
+<span class="n">ym</span> <span class="o">=</span> <span class="n">X</span> <span class="o">@</span> <span class="n">betahat</span>
+
+<span class="n">X_12</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">X_1</span><span class="p">,</span> <span class="n">X_2</span><span class="p">))</span> <span class="c1">#omitting the block effect</span>
+<span class="n">k</span> <span class="o">=</span> <span class="n">X_12</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="c1">#number of parameters in reduced model</span>
+<span class="n">betahat_12</span> <span class="o">=</span> <span class="n">lstsq</span><span class="p">(</span><span class="n">X_12</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span><span class="n">rcond</span><span class="o">=</span><span class="kc">None</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> 
+<span class="n">y_12</span> <span class="o">=</span> <span class="n">X_12</span> <span class="o">@</span> <span class="n">betahat_12</span>
+
+<span class="n">T_12</span><span class="o">=</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="n">p</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">p</span><span class="o">-</span><span class="n">k</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">norm</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">y_12</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> 
+      <span class="n">norm</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">ym</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">norm</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">ym</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="n">pval_12</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">f</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="n">T_12</span><span class="p">,</span><span class="n">p</span><span class="o">-</span><span class="n">k</span><span class="p">,</span><span class="n">n</span><span class="o">-</span><span class="n">p</span><span class="p">)</span>
+
+<span class="n">X_13</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">X_1</span><span class="p">,</span> <span class="n">X_3</span><span class="p">))</span> <span class="c1">#omitting the treatment effect</span>
+<span class="n">k</span> <span class="o">=</span> <span class="n">X_13</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="c1">#number of parameters in reduced model</span>
+<span class="n">betahat_13</span> <span class="o">=</span> <span class="n">lstsq</span><span class="p">(</span><span class="n">X_13</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span><span class="n">rcond</span><span class="o">=</span><span class="kc">None</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">y_13</span> <span class="o">=</span> <span class="n">X_13</span> <span class="o">@</span> <span class="n">betahat_13</span>
+<span class="n">T_13</span><span class="o">=</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="n">p</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">p</span><span class="o">-</span><span class="n">k</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">norm</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">y_13</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> 
+      <span class="n">norm</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">ym</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">norm</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">ym</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">pval_13</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">f</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="n">T_13</span><span class="p">,</span><span class="n">p</span><span class="o">-</span><span class="n">k</span><span class="p">,</span><span class="n">n</span><span class="o">-</span><span class="n">p</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">pval_12</span><span class="p">,</span><span class="n">pval_13</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.730857009958232e-05 0.03455786133297134
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="confidence-and-prediction-intervals">
+<h2>Confidence and prediction intervals<a class="headerlink" href="#confidence-and-prediction-intervals" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; confpred.py &quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">t</span>
+<span class="kn">from</span>  <span class="nn">numpy.linalg</span> <span class="kn">import</span> <span class="n">inv</span><span class="p">,</span> <span class="n">lstsq</span><span class="p">,</span> <span class="n">norm</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">n</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="c1"># parameters</span>
+<span class="n">beta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">6</span><span class="p">,</span><span class="mi">13</span><span class="p">])</span>
+<span class="n">sigma</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">Xmat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">n</span><span class="p">,</span><span class="mi">1</span><span class="p">)),</span> <span class="n">x</span><span class="p">))</span> <span class="c1">#design matrix</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">Xmat</span> <span class="o">@</span> <span class="n">beta</span> <span class="o">+</span> <span class="n">sigma</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> 
+
+<span class="c1"># solve the normal equations</span>
+<span class="n">betahat</span> <span class="o">=</span> <span class="n">lstsq</span><span class="p">(</span><span class="n">Xmat</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span><span class="n">rcond</span><span class="o">=</span><span class="kc">None</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> 
+<span class="c1"># estimate for sigma</span>
+<span class="n">sqMSE</span> <span class="o">=</span> <span class="n">norm</span><span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">Xmat</span> <span class="o">@</span> <span class="n">betahat</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> 
+
+<span class="n">tquant</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.975</span><span class="p">,</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># 0.975 quantile </span>
+<span class="c1">#upper/lower conf. limits</span>
+<span class="n">ucl</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="n">lcl</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>  
+<span class="n">upl</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>  
+<span class="n">lpl</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>  
+<span class="n">rl</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>  <span class="c1"># (true) regression line</span>
+<span class="n">u</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">u</span> <span class="o">=</span> <span class="n">u</span> <span class="o">+</span> <span class="mi">1</span><span class="o">/</span><span class="n">n</span><span class="p">;</span>
+    <span class="n">xvec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="n">u</span><span class="p">])</span>
+    <span class="n">sqc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">xvec</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">inv</span><span class="p">(</span><span class="n">Xmat</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">Xmat</span><span class="p">)</span> <span class="o">@</span> <span class="n">xvec</span><span class="p">)</span>
+    <span class="n">sqp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">xvec</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">inv</span><span class="p">(</span><span class="n">Xmat</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">Xmat</span><span class="p">)</span> <span class="o">@</span> <span class="n">xvec</span><span class="p">)</span>
+    <span class="n">rl</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">xvec</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">beta</span><span class="p">;</span>
+    <span class="n">ucl</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">xvec</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">betahat</span> <span class="o">+</span> <span class="n">tquant</span><span class="o">*</span><span class="n">sqMSE</span><span class="o">*</span><span class="n">sqc</span><span class="p">;</span>
+    <span class="n">lcl</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">xvec</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">betahat</span> <span class="o">-</span> <span class="n">tquant</span><span class="o">*</span><span class="n">sqMSE</span><span class="o">*</span><span class="n">sqc</span><span class="p">;</span>  
+    <span class="n">upl</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">xvec</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">betahat</span> <span class="o">+</span> <span class="n">tquant</span><span class="o">*</span><span class="n">sqMSE</span><span class="o">*</span><span class="n">sqp</span><span class="p">;</span>
+    <span class="n">lpl</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">xvec</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">betahat</span> <span class="o">-</span> <span class="n">tquant</span><span class="o">*</span><span class="n">sqMSE</span><span class="o">*</span><span class="n">sqp</span><span class="p">;</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">rl</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">ucl</span><span class="p">,</span><span class="s1">&#39;k:&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">lcl</span><span class="p">,</span><span class="s1">&#39;k:&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">upl</span><span class="p">,</span><span class="s1">&#39;r--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">lpl</span><span class="p">,</span><span class="s1">&#39;r--&#39;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x12a4af050&gt;]
+</pre></div>
+</div>
+<img alt="../_images/87e7685bf2d1b82c95bd05ca97db0cbb1b4c9946dc17d942ff9ef3a4fc0d4119.png" src="../_images/87e7685bf2d1b82c95bd05ca97db0cbb1b4c9946dc17d942ff9ef3a4fc0d4119.png" />
+</div>
+</div>
+</section>
+<section id="linear-models-with-python-statsmodels">
+<h2>Linear models with python <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code><a class="headerlink" href="#linear-models-with-python-statsmodels" title="Permalink to this heading">#</a></h2>
+<p>A simple calculation of the linear model for a bidimensional regression with the ordinary least squares model (<code class="docutils literal notranslate"><span class="pre">ols</span></code>). Case with two quantitative variables:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; snippets.py &quot;&quot;&quot;</span> 
+<span class="c1"># %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<span class="kn">from</span> <span class="nn">statsmodels.formula</span> <span class="o">.</span><span class="n">api</span> <span class="kn">import</span> <span class="nn">ols</span>
+<span class="c1"># %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span>
+<span class="n">myData</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="p">({</span><span class="s1">&#39;y&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">10</span> <span class="p">,</span><span class="mi">9</span> <span class="p">,</span><span class="mi">4</span> <span class="p">,</span><span class="mi">2</span> <span class="p">,</span><span class="mi">4</span> <span class="p">,</span><span class="mi">9</span><span class="p">]</span> <span class="p">,</span>
+<span class="s1">&#39;x1&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mf">7.4</span> <span class="p">,</span><span class="mf">1.2</span> <span class="p">,</span><span class="mf">3.1</span> <span class="p">,</span><span class="mf">4.8</span> <span class="p">,</span><span class="mf">2.8</span> <span class="p">,</span><span class="mf">6.5</span><span class="p">]</span> <span class="p">,</span>
+<span class="s1">&#39;x2&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">1</span> <span class="p">,</span><span class="mi">1</span> <span class="p">,</span><span class="mi">2</span> <span class="p">,</span><span class="mi">2</span> <span class="p">,</span><span class="mi">3</span> <span class="p">,</span><span class="mi">3</span><span class="p">]})</span>
+<span class="n">mod</span> <span class="o">=</span> <span class="n">ols</span><span class="p">(</span><span class="s2">&quot;y~x1+x2&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span> <span class="n">myData</span> <span class="p">)</span>
+<span class="n">mod_matrix</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="p">(</span><span class="n">mod</span><span class="o">.</span><span class="n">exog</span> <span class="p">,</span> <span class="n">columns</span> <span class="o">=</span><span class="n">mod</span><span class="o">.</span> <span class="n">exog_names</span> <span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span> <span class="n">mod_matrix</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   Intercept   x1   x2
+0        1.0  7.4  1.0
+1        1.0  1.2  1.0
+2        1.0  3.1  2.0
+3        1.0  4.8  2.0
+4        1.0  2.8  3.0
+5        1.0  6.5  3.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the second example, we treat the student survey dataset, that contains measurements such as weight, height, sex, etc with <span class="math notranslate nohighlight">\(n=100\)</span> university students sample.</p>
+<p>Let us styudy the relationaship between the shoe size (explanatory variable) and the height (response variable).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span>
+<span class="n">survey</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span> <span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/DSML-book/Programs/master/Chapter5/survey.csv&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">survey</span><span class="o">.</span><span class="n">shoe</span> <span class="p">,</span> <span class="n">survey</span><span class="o">.</span><span class="n">height</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Shoe size&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Height&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Height&#39;)
+</pre></div>
+</div>
+<img alt="../_images/c34a7aa604e3d50fb387b1bb19d383115aaa32d7914e36ddd266687cca37d376.png" src="../_images/c34a7aa604e3d50fb387b1bb19d383115aaa32d7914e36ddd266687cca37d376.png" />
+</div>
+</div>
+<p>Parameter estimation. Let us find <span class="math notranslate nohighlight">\(\beta_0\)</span> and <span class="math notranslate nohighlight">\(\beta_1\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">ols</span><span class="p">(</span><span class="s2">&quot;height~shoe&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">survey</span> <span class="p">)</span> <span class="c1"># define the model</span>
+<span class="n">fit</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span> <span class="p">()</span> <span class="c1">#fit the model defined above</span>
+<span class="n">b0</span> <span class="p">,</span> <span class="n">b1</span> <span class="o">=</span> <span class="n">fit</span><span class="o">.</span><span class="n">params</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">fit</span><span class="o">.</span><span class="n">params</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Intercept    145.777570
+shoe           1.004803
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>we will now plot the estimated line on the data:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">survey</span><span class="o">.</span><span class="n">shoe</span> <span class="p">,</span> <span class="n">b0</span> <span class="o">+</span> <span class="n">b1</span><span class="o">*</span> <span class="n">survey</span><span class="o">.</span><span class="n">shoe</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">survey</span><span class="o">.</span><span class="n">shoe</span> <span class="p">,</span><span class="n">survey</span><span class="o">.</span><span class="n">height</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Shoe size&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Height&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Height&#39;)
+</pre></div>
+</div>
+<img alt="../_images/301d42775332e940dd0eaa5722a0645efe7f57d991384e3e3fa7c7ece122cbd1.png" src="../_images/301d42775332e940dd0eaa5722a0645efe7f57d991384e3e3fa7c7ece122cbd1.png" />
+</div>
+</div>
+<p>the summary of the results can be obtained by the <code class="docutils literal notranslate"><span class="pre">summary</span></code> method:</p>
+<ul class="simple">
+<li><p>coef: Estimates of the parameters</p></li>
+<li><p>std error: standard deviations of the regression line (suare root of the variances)</p></li>
+<li><p>t: Student’s t-test statistics associated with the hypotheses <span class="math notranslate nohighlight">\(H_0:\beta_i=0\)</span> and <span class="math notranslate nohighlight">\(H_1:\beta_i\neq 0\)</span>, for <span class="math notranslate nohighlight">\(i=0,1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(P&gt;|t|\)</span>: P-value of the Student’s test</p></li>
+<li><p><span class="math notranslate nohighlight">\([0.025,0.975]\)</span>: 95% confidence intervals for the parameters.</p></li>
+<li><p>R-squared: coefficient of determination <span class="math notranslate nohighlight">\(R^2\)</span> (percentage of variation explained by the regression).</p></li>
+<li><p>F-statistic: <span class="math notranslate nohighlight">\(F\)</span> statistic associated with testing the full model against the default model.</p></li>
+<li><p>AIC: Akaike information criterion</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">fit</span><span class="o">.</span><span class="n">summary</span> <span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                 height   R-squared:                       0.178
+Model:                            OLS   Adj. R-squared:                  0.170
+Method:                 Least Squares   F-statistic:                     21.28
+Date:                Mon, 30 Oct 2023   Prob (F-statistic):           1.20e-05
+Time:                        08:33:51   Log-Likelihood:                -363.88
+No. Observations:                 100   AIC:                             731.8
+Df Residuals:                      98   BIC:                             737.0
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P&gt;|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+Intercept    145.7776      5.763     25.296      0.000     134.341     157.214
+shoe           1.0048      0.218      4.613      0.000       0.573       1.437
+==============================================================================
+Omnibus:                        1.958   Durbin-Watson:                   1.772
+Prob(Omnibus):                  0.376   Jarque-Bera (JB):                1.459
+Skew:                          -0.072   Prob(JB):                        0.482
+Kurtosis:                       2.426   Cond. No.                         164.
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Only 17.8% of the height is explained by the shoe size.</p>
+<p>If we check the p-value of the slope we see that it is signifficantly different than zero (small p-value).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span>
+<span class="nb">dir</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+<span class="c1"># %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span>
+<span class="n">fit</span><span class="o">.</span><span class="n">pvalues</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.1993996732477541e-05
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we will add additional features (weight):
+$<span class="math notranslate nohighlight">\(height=\beta_0 + \beta_1 shoe + \beta_2 weigth + \varepsilon\)</span>$</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">ols</span><span class="p">(</span><span class="s2">&quot;height~shoe+weight&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">survey</span><span class="p">)</span>
+<span class="n">fit</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span> <span class="p">()</span>
+<span class="n">axes</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">scatter_matrix</span><span class="p">(</span><span class="n">survey</span><span class="p">[[</span><span class="s1">&#39;height&#39;</span><span class="p">,</span><span class="s1">&#39;shoe&#39;</span><span class="p">,</span><span class="s1">&#39;weight&#39;</span><span class="p">]])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/60bd26cd81eb03cc2b4995a06676f9e02ae6ba1d913652facd9786bca91a2069.png" src="../_images/60bd26cd81eb03cc2b4995a06676f9e02ae6ba1d913652facd9786bca91a2069.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span>
+<span class="n">fit</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="simpletable">
+<caption>OLS Regression Results</caption>
+<tr>
+  <th>Dep. Variable:</th>         <td>height</td>      <th>  R-squared:         </th> <td>   0.430</td>
+</tr>
+<tr>
+  <th>Model:</th>                   <td>OLS</td>       <th>  Adj. R-squared:    </th> <td>   0.418</td>
+</tr>
+<tr>
+  <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   36.61</td>
+</tr>
+<tr>
+  <th>Date:</th>             <td>Mon, 30 Oct 2023</td> <th>  Prob (F-statistic):</th> <td>1.43e-12</td>
+</tr>
+<tr>
+  <th>Time:</th>                 <td>08:33:52</td>     <th>  Log-Likelihood:    </th> <td> -345.58</td>
+</tr>
+<tr>
+  <th>No. Observations:</th>      <td>   100</td>      <th>  AIC:               </th> <td>   697.2</td>
+</tr>
+<tr>
+  <th>Df Residuals:</th>          <td>    97</td>      <th>  BIC:               </th> <td>   705.0</td>
+</tr>
+<tr>
+  <th>Df Model:</th>              <td>     2</td>      <th>                     </th>     <td> </td>   
+</tr>
+<tr>
+  <th>Covariance Type:</th>      <td>nonrobust</td>    <th>                     </th>     <td> </td>   
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+      <td></td>         <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>Intercept</th> <td>  132.2677</td> <td>    5.247</td> <td>   25.207</td> <td> 0.000</td> <td>  121.853</td> <td>  142.682</td>
+</tr>
+<tr>
+  <th>shoe</th>      <td>    0.5304</td> <td>    0.196</td> <td>    2.703</td> <td> 0.008</td> <td>    0.141</td> <td>    0.920</td>
+</tr>
+<tr>
+  <th>weight</th>    <td>    0.3744</td> <td>    0.057</td> <td>    6.546</td> <td> 0.000</td> <td>    0.261</td> <td>    0.488</td>
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+  <th>Omnibus:</th>       <td> 1.647</td> <th>  Durbin-Watson:     </th> <td>   1.824</td>
+</tr>
+<tr>
+  <th>Prob(Omnibus):</th> <td> 0.439</td> <th>  Jarque-Bera (JB):  </th> <td>   1.103</td>
+</tr>
+<tr>
+  <th>Skew:</th>          <td>-0.133</td> <th>  Prob(JB):          </th> <td>   0.576</td>
+</tr>
+<tr>
+  <th>Kurtosis:</th>      <td> 3.440</td> <th>  Cond. No.          </th> <td>    508.</td>
+</tr>
+</table><br/><br/>Notes:<br/>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</div></div>
+</div>
+<p>The F-statistic is used to test whether the full model (here with two explanatory variables) is better at “explaining” the height than the default model. The P-value obtained says that at least one of the two variables is associated with the height.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span>
+<span class="n">table</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">anova_lm</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">table</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            df       sum_sq      mean_sq          F        PR(&gt;F)
+shoe       1.0  1840.467359  1840.467359  30.371310  2.938651e-07
+weight     1.0  2596.275747  2596.275747  42.843626  2.816065e-09
+Residual  97.0  5878.091294    60.598879        NaN           NaN
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">ols</span><span class="p">(</span><span class="s2">&quot;height~weight+shoe&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">survey</span><span class="p">)</span>
+<span class="n">fit</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span> <span class="p">()</span>
+<span class="n">table</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">anova_lm</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span> <span class="n">table</span> <span class="p">)</span>
+<span class="c1"># %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;shoe&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">30.0</span><span class="p">]</span> <span class="p">,</span> <span class="s1">&#39;weight&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">75.0</span><span class="p">]}</span> <span class="c1"># new input ( dictionary )</span>
+<span class="n">pred</span> <span class="o">=</span> <span class="n">fit</span><span class="o">.</span><span class="n">get_prediction</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">pred</span><span class="o">.</span> <span class="n">summary_frame</span><span class="p">(</span><span class="n">alpha</span> <span class="o">=</span><span class="mf">0.05</span><span class="p">)</span><span class="o">.</span><span class="n">unstack</span> <span class="p">()</span>
+<span class="c1"># %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fit</span><span class="o">.</span><span class="n">fittedvalues</span> <span class="p">,</span><span class="n">fit</span><span class="o">.</span><span class="n">resid</span> <span class="p">,</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span> <span class="p">(</span><span class="s2">&quot;fitted values&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span> <span class="p">(</span><span class="s2">&quot;residuals&quot;</span><span class="p">)</span>
+<span class="n">sm</span><span class="o">.</span><span class="n">qqplot</span> <span class="p">(</span><span class="n">fit</span><span class="o">.</span><span class="n">resid</span><span class="p">)</span>
+<span class="c1"># %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            df       sum_sq      mean_sq          F        PR(&gt;F)
+weight     1.0  3993.860167  3993.860167  65.906502  1.503553e-12
+shoe       1.0   442.882938   442.882938   7.308434  8.104688e-03
+Residual  97.0  5878.091294    60.598879        NaN           NaN
+</pre></div>
+</div>
+<img alt="../_images/45204610989dc2addfd438b27d6fc19cf6a5de606048606d75122197159ae07b.png" src="../_images/45204610989dc2addfd438b27d6fc19cf6a5de606048606d75122197159ae07b.png" />
+<img alt="../_images/5aed9b7b694f928c8c3082641e3cd438671d3ceaaf876cb86a05f435ae8c3ad6.png" src="../_images/5aed9b7b694f928c8c3082641e3cd438671d3ceaaf876cb86a05f435ae8c3ad6.png" />
+<img alt="../_images/45204610989dc2addfd438b27d6fc19cf6a5de606048606d75122197159ae07b.png" src="../_images/45204610989dc2addfd438b27d6fc19cf6a5de606048606d75122197159ae07b.png" />
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -399,11 +995,10 @@ document.write(`
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="UNIT4-Unsupervised-Learning.html"
@@ -423,15 +1018,30 @@ document.write(`
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-linear-regression">Simple linear regression</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-id-toc1-1-a-calculation-of-the-predicted-residual-sum-of-squares-press"><a id="toc1_1_"></a><span class="xref myst">Calculation of the Predicted Residual Sum of Squares (PRESS)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inference-for-normal-linear-models">Inference for Normal Linear Models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#confidence-and-prediction-intervals">Confidence and prediction intervals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-models-with-python-statsmodels">Linear models with python <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
@@ -475,8 +1085,8 @@ By CBBL teaching
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
   </footer>
