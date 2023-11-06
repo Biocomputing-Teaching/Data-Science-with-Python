@@ -123,7 +123,7 @@ The goals of modelling data are:
 
 \begin{frame}[allowframebreaks]{Example of modelling data}
   \label{sld:model}
-  Imagine an unsupervised learning problem, with data represented by a vector $\bm{x}=[x_1,\ldots,x_p]^\intercal$, a very general model is to assume that $\bm{x}$ is the outcome of a random vector $\bm{X}=[X_1,\ldots,X_p]^\intercal$ with some unknown pdf $f$.\\[2ex]
+  Imagine an unsupervised learning problem, with data represented by a vector $\mathbf{x}=[x_1,\ldots,x_p]^\intercal$, a very general model is to assume that $\mathbf{x}$ is the outcome of a random vector $\mathbf{X}=[X_1,\ldots,X_p]^\intercal$ with some unknown pdf $f$.\\[2ex]
  
   The model can be refined by assuming a specific form of $f$.
 
@@ -172,19 +172,19 @@ The goals of modelling data are:
 %-----------------------------------
 
 \begin{frame}{{\em iid} data}
-  If we are given a sequence of data vectors $\bm{x}_1,\ldots,\bm{x}_1$ one of the simplest possible models is to assume that the corresponding random vectors $\bm{X}_1,\ldots,\bm{X}_n$ are independent and identically distributed (iid). We express this as:
-  \[\bm{X}_1,\ldots,\bm{X}_n \stackrel{iid}{\sim} f \]
+  If we are given a sequence of data vectors $\mathbf{x}_1,\ldots,\mathbf{x}_1$ one of the simplest possible models is to assume that the corresponding random vectors $\mathbf{X}_1,\ldots,\mathbf{X}_n$ are independent and identically distributed (iid). We express this as:
+  \[\mathbf{X}_1,\ldots,\mathbf{X}_n \stackrel{iid}{\sim} f \]
   meaning that the random vectors form an iid sample from a pdf $f$ or sampling distribution $Dist$.
 
   This is the same as saying that knowing about one variable does not provide information about another variable.
 \end{frame}
 
 \begin{frame}{Independent data models}
-  In independent data models, the joint density of the random vectors $\bm{X}_1,\ldots,\bm{X}_n$ is the {\em product} of the marginal ones:
+  In independent data models, the joint density of the random vectors $\mathbf{X}_1,\ldots,\mathbf{X}_n$ is the {\em product} of the marginal ones:
   \[
-    f_{\bm{X_1},\ldots,\bm{X_n}}(\bm{x}_1,\ldots,\bm{x}_n)=f(\bm{x}_1)\cdots f(\bm{x}_n)  
+    f_{\mathbf{X_1},\ldots,\mathbf{X_n}}(\mathbf{x}_1,\ldots,\mathbf{x}_n)=f(\mathbf{x}_1)\cdots f(\mathbf{x}_n)  
   \]
-  The function $g(\bm{x})$, our "model" for $f(\bm{x})$, is usually specified up to a small number of parameters, corresponding to \href{common probability distributions}:
+  The function $g(\mathbf{x})$, our "model" for $f(\mathbf{x})$, is usually specified up to a small number of parameters, corresponding to \href{common probability distributions}:
   \begin{itemize}
     \item $\mathcal{N}(\mu,\sigma^2)$
     \item $\mathrm{Bin}(n,p)$
@@ -201,24 +201,25 @@ The goals of modelling data are:
   \end{figure}
 \end{frame}
 
+
 \begin{frame}{Tradeoff}
-  There exists a tradeoff between model tractability and applicability, as seen in Figure \ref{fig:dilemma}. Coming back to the example in page \ref{sld:model}, the {\em training set} $\tau = \{\bm{x}_1,\ldots,\bm{x}_n\}$ is viewed as the outcome of $n$ iid random variables $\bm{X}_1,\ldots,\bm{X}_n$ for some unknown pdf $f$.\\[2ex]
+  There exists a tradeoff between model tractability and applicability, as seen in Figure \ref{fig:dilemma}. Coming back to the example in page \ref{sld:model}, the {\em training set} $\tau = \{\mathbf{x}_1,\ldots,\mathbf{x}_n\}$ is viewed as the outcome of $n$ iid random variables $\mathbf{X}_1,\ldots,\mathbf{X}_n$ for some unknown pdf $f$.\\[2ex]
 
   {\bf Goal:} to learn or estimate $f$ from the finite training set.
 \end{frame}
 
 \begin{frame}{Tradeoff vs risk}
-  Imagine the {\bf unsupervised learning} framewrok shown before. We can specify a class (a collection) of pdfs  that we will call $\mathcal{G}_p$:
+  Imagine the {\bf unsupervised learning} framework shown before. We can specify a class (a collection) of pdfs  that we will call $G_p$:
   \begin{itemize}
-    \item We seek within $\mathcal{G}$ the best approximation to the true model pdf $f(\bm{x}$, and we will call it $g(\bm{x}|\bm{\Theta})$. 
+    \item We seek within $\mathcal{G}$ the best approximation to the true model pdf $f(\mathbf{x}$, and we will call it $g(\mathbf{x}|\mathbf{\Theta})$. 
     \item Such best approximation will minimize some calculated risk.
   \end{itemize}
   \[
-    \mathrm{Loss}(f(\bm{x}),g(\bm{x}|\bm{\Theta})))=\ln f(\bm{x}) - \ln g(\bm{x}|\bm{\Theta}))
+    \mathrm{Loss}(f(\uvec{x}),g(\uvec{x}|\mathbf{\Theta})))=\ln f(\uvec{x}) - \ln g(\uvec{x}|\mathbf{\Theta})
     \]
     with expected value, this is, the {\bf risk} as
     \[
-    \ell(g)= \mathbb{E}  \ln \frac{f(\bm{X})}{g(\bm{X}|\bm{\Theta})} = \int f(\bm{x}) \ln \frac{f(\bm{x})}{g(\bm{x}|\bm{\Theta})} \diff \bm{x}
+    \ell(g)= \mathbb{E}  \ln \frac{f(\uvec{X})}{g(\mathbf{X}|\mathbf{\Theta})} = \int f(\uvec{x}) \ln \frac{f(\uvec{x})}{g(\uvec{x}|\mathbf{\Theta})} \diff \uvec{x}
     \]
 \end{frame}
 
@@ -278,29 +279,38 @@ The goals of modelling data are:
 
 \section{Detailed notation}
 
-\begin{frame}[allowframebreaks]
+\begin{frame}
   \frametitle{Annex: detailed notation}
 
-  Given an input or {\em feature} vector $\bm{x}$, ML aims at predicting an ouput or {\em response} variable vector $\bm{y}$. In particular, we search for a mathematical {\em prediction function} $g$ such that we can {\em guess} an approximation to $\bm{y}$, $\hat{\bm{y}}$:
+  Given an input or {\em feature} vector $\mathbf{x}$, ML aims at predicting an ouput or {\em response} variable vector $\mathbf{y}$. In particular, we search for a mathematical {\em prediction function} $g$ such that we can {\em guess} an approximation to $\mathbf{y}$, $\hat{\mathbf{y}}$:
   \begin{align*}
       g \colon \mathcal{X}  & \rightarrow \mathcal{Y}\\
-      \bm{x}                &\mapsto \hat{\bm{y}}=g(\bm{x})
+      \mathbf{x}                &\mapsto \hat{\mathbf{y}}=g(\mathbf{x})
   \end{align*}
 
   \begin{definition}
     Dataset  $S=\{\vz_i\}_{i=1}^n=\{(\vx_i,\vy_i)\}_{i=1}^n$ is sampled from a distribution $\fD$ over a domain $\fZ=\fX\times\fY$.\\
     $\fX$  is the instance domain (a set), $\fY$ is the label domain (a set), and $\fZ=\fX\times\fY$ is the example domain (a set).
   \end{definition}
+
+\end{frame}
+  
+\begin{frame}
   
   Usually,
   $\fX$ is a subset of $\sR^d$ and $\fY$ is a subset of $\sR^{d_{o}}$, where $d$ is the input dimension, $d_{o}$ is the output dimension.
   
-  $n=\#S$ is the number of samples. Without specification, $S$ and $n$ are for the training set.
+  $n=\#S$ is the number of samples. Without specification, $S$ and $n$ are for the training set. 
 
   \begin{itemize}
-    \item In {\em regression} problems, $\bm{y}$ is a vector of real values.
-    \item In {\em classification} problems, $\bm{y}$ values lie within a finite set of $c$ categories: $y\in\{0, 1, \ldots, c-1\}$.
+    \item In {\em regression} problems, $\mathbf{y}$ is a vector of real values.
+    \item In {\em classification} problems, $\mathbf{y}$ values lie within a finite set of $c$ categories: $y\in\{0, 1, \ldots, c-1\}$.
   \end{itemize}
+
+
+\end{frame}
+  
+\begin{frame}
 
   \begin{definition}  
   A hypothesis space is denoted by $\fH$. A hypothesis function is denoted by $f_{\vtheta}(\vx)\in\fH$ or $f(\vx;\vtheta)\in\fH$ with $f_{\vtheta}:\fX\to\fY$.
@@ -322,6 +332,9 @@ The goals of modelling data are:
   
   (In the case of a classification, $\ell(f_{\vtheta},\vy)=\mathbbm{1}\{y\neq \hat{\vy}\}$)
 
+\end{frame}
+  
+\begin{frame}
 We will see other useful loss functions (\{em cross entropy\} or {\em hinge} loss functions) later in this course.
 
 It is unlikely that a mathematical function $g \equiv \ f_{\vtheta}:\fX\to\fY$ would be able to make accurate predictions of all possible pairs $\fZ=\fX\times\fY$.
@@ -331,6 +344,9 @@ It is unlikely that a mathematical function $g \equiv \ f_{\vtheta}:\fX\to\fY$ w
       \LS(\vtheta) =\frac{1}{n}\sum_{i=1}^n\ell(f_{\vtheta}(\vx_i),\vy_i).
   \end{equation}
   
+\end{frame}
+  
+\begin{frame}
   The population risk or expected loss is denoted by $L_{\fD}(\vtheta)$ or $R_{\fD}(\vtheta)$
   \begin{equation}
       \LD(\vtheta) =\Exp_{\fD}\ell(f_{\vtheta}(\vx),\vy),
@@ -343,6 +359,9 @@ It is unlikely that a mathematical function $g \equiv \ f_{\vtheta}:\fX\to\fY$ w
 
   (In classification, we look for $g^* (\vx) = \underset{y\in\{0,1,\ldots,c-1\}}{\mathrm{argmax}}  \Prob[Y=y \ X=x]$.)
 
+\end{frame}
+  
+\begin{frame}
   \begin{theorem}
     For the squared-error loss $\ell (y,\hat{y})=(y-\hat{y})^2$, the optimal prediction function $g^*$ is equal to the conditional expectation of $Y$ given $\vX=\vx$.
   \end{theorem}
