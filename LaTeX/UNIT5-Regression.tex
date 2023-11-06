@@ -126,7 +126,7 @@ Study Abroad\\ % Your institution for the title page
 \begin{frame}{Multiple Linear Regression}
     If instead that a single pair $(x,Y)$, we consider the whole training set $\mathcal{T}=\{(\uvec{X}_1,Y_1),\ldots,(\uvec{X}_n,Y_n)\}$, by settling $\uvec{Y}=[Y_1,\ldots,Y_n]^T$ we can express the multiple linear regression modelfor the training set as:
     \[
-        \uvec{Y}=\uvec{X}\uvec{\beta}+\uvec{\varepsilon}    
+        \uvec{Y}=\uvec{X}\beta+\varepsilon  
     \]
     where $\uvec{\varepsilon}=[\varepsilon_1,\ldots,\varepsilon_n]^T$ is a vector of iid copies of $\varepsilon$ and $\uvec{X}$ is the model matrix given by:
     \[
@@ -159,24 +159,24 @@ Study Abroad\\ % Your institution for the title page
 \begin{frame}{Parameter estimation}
     As we have seen, in the multiple linear regression model given by 
     \[
-        \uvec{Y}=\uvec{X}\uvec{\beta}+\uvec{\varepsilon}    
+        \uvec{Y}=\uvec{X}\beta+\varepsilon   
     \]
-$\uvec{X}$ is assumed to be fixed, and only $\uvec{Y}$ and $\uvec{\varepsilon}$ are random.
+$\uvec{X}$ is assumed to be fixed, and only $\uvec{Y}$ and $\varepsilon$ are random.
 
-Thus, the model contains two different parameters: $\uvec{\beta}$ and $\sigma^2$ that need to be estimated from the training data $\tau$. Given a linear prediction function $g(\uvec{x})= \uvec{x}^T\uvec{\beta}$, the squarred error training loss is calculated as:
+Thus, the model contains two different parameters: $\beta$ and $\sigma^2$ that need to be estimated from the training data $\tau$. Given a linear prediction function $g(\uvec{x})= \uvec{x}^T\uvec{\beta}$, the squarred error training loss is calculated as:
 \[
-    \mathscr{l}_{\tau}(g)=\frac{1}{n} \norm{\uvec{y}-\uvec{X}\uvec{\beta}}^2
+    \mathscr{l}_{\tau}(g)=\frac{1}{n} \norm{\uvec{y}-\uvec{X}\beta}^2
 \]
 The optimal learner $g_{\tau}$ minimizes this expression, leading to the expression that yields $\uvec{\beta}$ through:
 \[
-    \uvec{X}^T \uvec{X} \uvec{\beta} = \uvec{X}^T \uvec{y}
+    \uvec{X}^T \uvec{X} \beta = \uvec{X}^T \uvec{y}
 \]
 \end{frame}
 
 \begin{frame}{Residuals}
     The traing loss can be then taken as an estimation of $\sigma^2$:
     \[
-    \hat{\sigma^2}=\frac{1}{n} \norm{\uvec{y}-\uvec{X}\uvec{\beta}}^2
+    \hat{\sigma^2}=\frac{1}{n} \norm{\uvec{y}-\uvec{X}\beta^2}
 \]
 The vector $\uvec{e}=\uvec{y}-\uvec{X}\uvec{\beta}$ is called the vector of residuals. $\norm{\uvec{e}}^2$ is called the residual sum of squares (RSS) and dividing RSS by $n-p$ gives an unbiassed estimate of $\sigma^2$, which we call the estimated residual squared error (RSE).
 \end{frame}
