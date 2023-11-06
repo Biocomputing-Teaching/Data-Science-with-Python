@@ -9,6 +9,8 @@ This is the jupyter book of the github repo `Data Science with Python`. Contents
 * [UNIT 2. Statistical Learning](LaTeX/UNIT2-Statistical-Learning.pdf)
 * [UNIT 3. Monte Carlo methods](LaTeX/UNIT3-MC-Methods.pdf)
 * [UNIT 4. Unsupervised Learning](LaTeX/UNIT4-Unsupervised-Learning.pdf)
+* [UNIT 5. Regression](LaTeX/UNIT5-Regression.pdf)
+* [UNIT 7. Classification](LaTeX/UNIT7-Classification.pdf)
 * (...)
 
 
