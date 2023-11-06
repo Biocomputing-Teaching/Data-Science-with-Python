@@ -62,6 +62,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'code/UNIT7-Classification';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -175,6 +177,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="UNIT5-Regression.html">UNIT 5. Regression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="UNIT6-Regularization-and-Kernel-Methods.html">UNIT 6. Regularization and kernel methods</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">UNIT 7. Classification</a></li>
+
+
+
+
+
 
 <li class="toctree-l1"><a class="reference internal" href="UNIT8-Decision-Trees.html">UNIT 8. Decision Tres</a></li>
 <li class="toctree-l1"><a class="reference internal" href="UNIT9-Neural-Networks.html">UNIT 9. Neural Networks</a></li>
@@ -372,6 +379,11 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">UNIT 7. Classification</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#naive-bayes">Naive Bayes</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-and-quadratic-discriminant-analysis">Linear and quadratic discriminant analysis</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#k-nearest-neighbors-classification"><span class="math notranslate nohighlight">\(K\)</span>-Nearest Neighbors Classification</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#suport-vector-machine">Suport vector machine</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-classifiers">Testing classifiers</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ex3-accuracy-metrics">EX3: Accuracy metrics</a></li>
 </ul>
 
@@ -387,7 +399,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="unit-7-classification">
 <h1>UNIT 7. Classification<a class="headerlink" href="#unit-7-classification" title="Permalink to this heading">#</a></h1>
-<p>This Unit includes main introduction to classification in machine learning, strongly based in <span id="id1">[<a class="reference internal" href="UNIT9-Neural-Networks.html#id3" title="Dirk P. Kroese, Zdravko Botev, Thomas Taimre, and Radislav: Vaisman. Data Science and Machine Learning: Mathematical and Statistical Methods. Machine Learning &amp; Pattern Recognition. Chapman &amp; Hall/CRC, 2020. URL: https://acems.org.au/data-science-machine-learning-book-available-download (visited on 2023-08-15).">1</a>]</span>.</p>
+<p>This Unit includes main introduction to classification in machine learning, strongly based in <span id="id1">[<a class="reference internal" href="#id3" title="Dirk P. Kroese, Zdravko Botev, Thomas Taimre, and Radislav: Vaisman. Data Science and Machine Learning: Mathematical and Statistical Methods. Machine Learning &amp; Pattern Recognition. Chapman &amp; Hall/CRC, 2020. URL: https://acems.org.au/data-science-machine-learning-book-available-download (visited on 2023-08-15).">1</a>]</span>.</p>
 <div class="docutils container" id="id2">
 <div class="citation" id="id3" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
@@ -395,6 +407,11 @@ document.write(`
 </div>
 </div>
 </div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="naive-bayes">
+<h1>Naive Bayes<a class="headerlink" href="#naive-bayes" title="Permalink to this heading">#</a></h1>
+<p>In naive Bayes, the value of the overall function <span class="math notranslate nohighlight">\(g\)</span> depends on the product of the function <span class="math notranslate nohighlight">\(g\)</span> for each feature. Thus, the classification is done by choosing the highset <span class="math notranslate nohighlight">\(g\)</span> value.</p>
+<p>For example, below we assume we have three features with different means <span class="math notranslate nohighlight">\(\mu\)</span> and standard deviations <span class="math notranslate nohighlight">\(\sigma\)</span>. How can a given vector of features <span class="math notranslate nohighlight">\(\uvec{x}\)</span> be classified?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; naiveBayes.py &quot;&quot;&quot;</span>
@@ -424,6 +441,11 @@ document.write(`
 </div>
 </div>
 </div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="linear-and-quadratic-discriminant-analysis">
+<h1>Linear and quadratic discriminant analysis<a class="headerlink" href="#linear-and-quadratic-discriminant-analysis" title="Permalink to this heading">#</a></h1>
+<p>Built on the above Bayesian approach, and after some mathematical manipulation, one can draw the lines that discriminate between two groups. This is called the decison boundary, that is quadratic for two given normal distributions but becomes linear if the distributions have the same covariance matrix.</p>
+<p>See tha case for a LDA below, with the same <span class="math notranslate nohighlight">\(\sigma\)</span> for two underlying normal distributions:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; LDAmixture.py &quot;&quot;&quot;</span>
@@ -462,6 +484,7 @@ document.write(`
 <img alt="../_images/ff18b8cfdd9b49093a3190a0b14dd2d5c315e9421b460deb93551378139aa668.png" src="../_images/ff18b8cfdd9b49093a3190a0b14dd2d5c315e9421b460deb93551378139aa668.png" />
 </div>
 </div>
+<p>or QDA if <span class="math notranslate nohighlight">\(\sigma_1\neq\sigma_2\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; QDA.py &quot;&quot;&quot;</span>
@@ -562,6 +585,11 @@ document.write(`
 <img alt="../_images/7fdc907ef2e8422c421c25e2cc02ce694e76ecc2a0e534d8f682ca83a103b2e3.png" src="../_images/7fdc907ef2e8422c421c25e2cc02ce694e76ecc2a0e534d8f682ca83a103b2e3.png" />
 </div>
 </div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="k-nearest-neighbors-classification">
+<h1><span class="math notranslate nohighlight">\(K\)</span>-Nearest Neighbors Classification<a class="headerlink" href="#k-nearest-neighbors-classification" title="Permalink to this heading">#</a></h1>
+<p><img alt="KNN" src="../_images/knn.png" /></p>
+<p>Figure adapted from <span class="xref myst">https://medium.com/swlh/k-nearest-neighbor-ca2593d7a3c4</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; nearestnb.py &quot;&quot;&quot;</span>
@@ -601,6 +629,11 @@ document.write(`
 <img alt="../_images/863b10d9c16f2df5396aa4b75c85d0614d6440685a53aa3172274fcbfa0a69ac.png" src="../_images/863b10d9c16f2df5396aa4b75c85d0614d6440685a53aa3172274fcbfa0a69ac.png" />
 </div>
 </div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="suport-vector-machine">
+<h1>Suport vector machine<a class="headerlink" href="#suport-vector-machine" title="Permalink to this heading">#</a></h1>
+<p><img alt="SVM" src="../_images/SVM.png" />
+Figure adapted from <span class="xref myst">https://www.javatpoint.com/machine-learning-support-vector-machine-algorithm</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; svmquad.py &quot;&quot;&quot;</span>
@@ -714,6 +747,9 @@ Bias  [-3.9763643]
 <img alt="../_images/af16e58d95b7e93695b7583f82d23717209fd045a38fffd645c63e83f453203a.png" src="../_images/af16e58d95b7e93695b7583f82d23717209fd045a38fffd645c63e83f453203a.png" />
 </div>
 </div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="testing-classifiers">
+<h1>Testing classifiers<a class="headerlink" href="#testing-classifiers" title="Permalink to this heading">#</a></h1>
 <p>Obtain data from the <a class="reference external" href="https://archive.ics.uci.edu/dataset/17/breast+cancer+wisconsin+diagnostic">UCI’s Breast Cancer Wisconsin data set</a>.</p>
 <p>Let us have a look at the data with the UCI’s API:</p>
 <div class="cell docutils container">
@@ -1001,6 +1037,11 @@ Please also refer to the documentation for alternative solver options:
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">UNIT 7. Classification</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#naive-bayes">Naive Bayes</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-and-quadratic-discriminant-analysis">Linear and quadratic discriminant analysis</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#k-nearest-neighbors-classification"><span class="math notranslate nohighlight">\(K\)</span>-Nearest Neighbors Classification</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#suport-vector-machine">Suport vector machine</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-classifiers">Testing classifiers</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ex3-accuracy-metrics">EX3: Accuracy metrics</a></li>
 </ul>
 
