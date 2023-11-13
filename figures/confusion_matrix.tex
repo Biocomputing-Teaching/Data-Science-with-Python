@@ -1,0 +1,54 @@
+\documentclass[11pt]{report}
+\usepackage{graphicx}
+\usepackage[printonlyused,nohyperlinks]{acronym}
+
+%%%% Confusion Matrix Body %%%%
+\newcommand\MyBox[1]{%
+    \fbox{\parbox[c][3cm][c]{3cm}{\centering #1}}%
+    % Size of boxes
+}
+\newcommand\MyVBox[1]{%
+    \parbox[c][1cm][c]{1cm}{\centering\bfseries #1}%
+}  
+\newcommand\MyHBox[2][\dimexpr3cm+2\fboxsep\relax]{%
+    \parbox[c][1cm][c]{#1}{\centering\bfseries #2}%
+}  
+\newcommand\MyTBox[4]{%
+    \MyVBox{#1}
+    \MyBox{#2}\hspace*{-\fboxrule}%
+    \MyBox{#3}\par\vspace{-\fboxrule}%
+}  
+%%%%
+\newcommand*\rot{\rotatebox{90}}
+
+\begin{document}
+
+\begin{acronym}
+    \acro{TP}{True Positive}
+    \acro{FP}{False Positive}
+    \acro{TN}{True Negative}
+    \acro{FN}{False Negative}
+\end{acronym}
+
+\begin{figure}
+    \begin{center}
+    {
+
+        \offinterlineskip
+
+        \raisebox{-6cm}[0pt][0pt]{
+            \parbox[c][5pt][c]{1cm}{\hspace{-4.1cm}\rot{\textbf{Actual}}\\[20pt]}}\par
+
+        \hspace*{1cm}\MyHBox[\dimexpr3.4cm+6\fboxsep\relax]{Predicted}\par
+
+        \hspace*{1cm}\MyHBox{Cancelled}\MyHBox{Not Cancelled}\par
+
+        \MyTBox{\rot{Cancelled}}{\ac{TP}}{\ac{FN}}
+
+        \MyTBox{\rot{Not Cancelled}}{\ac{FP}}{\ac{TN}}
+
+    }
+\end{center}
+
+\end{figure}
+\end{document}
