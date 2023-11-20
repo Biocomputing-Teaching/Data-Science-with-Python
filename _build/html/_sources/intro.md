@@ -12,6 +12,7 @@ This is the jupyter book of the github repo `Data Science with Python`. Contents
 * [UNIT 5. Regression](LaTeX/UNIT5-Regression.pdf)
 * [UNIT 7. Classification](LaTeX/UNIT7-Classification.pdf)
 * [UNIT 7. ROC and precision-recall curves](LaTeX/UNIT7-Classification_ROC.pdf)
+* [UNIT 7. Support Vector Machines](LaTeX/UNIT7-Classification_SVM.pdf)
 * (...)
 
 
