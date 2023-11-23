@@ -1,22 +1,242 @@
-\documentclass{article}
-    % General document formatting
-    \usepackage[margin=0.7in]{geometry}
-    \usepackage[parfill]{parskip}
-    \usepackage[utf8]{inputenc}
-    
-    % Related to math
-    \usepackage{amsmath,amssymb,amsfonts,amsthm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 1.0 (10/11/12) 
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+\documentclass{beamer}
+
+\input{../tools/common_beamer.tex}
+\graphicspath{{../figures}}
+
+%----------------------------------------------------------------------------------------
+%	 TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[Decision Trees]{Decision Trees} % The short title appears at the bottom of every slide, the full title is only on the title page
+
+\author{Jordi Villà i Freixa} % Your name
+\institute[FCTE] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+Universitat de Vic - Universitat Central de Catalunya \\
+Study Abroad\\ % Your institution for the title page
+\medskip
+\textit{jordi.villa@uvic.cat} % Your email address
+}
+%\date{\today} % Date, can be changed to a custom date
+\date{course 2023-2024}
+\logo{\includegraphics[width=.1\textwidth]{FCTE}}
 \begin{document}
 
-Name, date, Exercise X
+\begin{frame}
+\titlepage % Print the title page as the first slide
+\end{frame}
 
-\section*{Part a}
+\begin{frame}
+\frametitle{Index} % Table of contents slide, comment this block out to remove it
+\tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+\end{frame}
 
-Put your answer to part a here
+%----------------------------------------------------------------------------------------
+%	PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
+\begin{frame}
+  \frametitle{Preliminary note}
+  The material in these slides is strongly based on \cite{kroese2020}. When other materials are used, they are cited accordingly.
 
-\section*{Part b}
+  Mathematical notation follows as good as it can a \href{https://ctan.math.utah.edu/ctan/tex-archive/macros/latex/contrib/mlmath/mlmath.pdf}{good practices proposal} from the Beijing Academy of Artificial Intelligence.
+  \end{frame}
 
-etc3
+%\subsection{Subsection Example} % A subsection can be created just before a set of slides with a common theme to further break down your presentation into chunks
 
+\begin{frame}{What to expect?}
+  In this session we will discuss:
+  \begin{itemize}
+    \item Decision trees
+    \item Random Forests
+    \item Boosting
+  \end{itemize}
+\end{frame}
+
+\section{Tree-based methods}
+
+
+\begin{frame}{Tree-based methods}
+\begin{itemize}
+    \item Simple, intuitive and powerfiul for both regression and classification
+    \item The method divides a feature space $X$ into smaller regions and fit a simple prediction function for each region.
+    \begin{description}
+        \item[Regression] eg, take the mean of the training responses associated with the training features that fall in the specific region
+        \item[Classification] eg, take the majority vote among corresponding response variables.
+    \end{description}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+    \begin{figure}
+        \includegraphics[width=0.9\linewidth]{F81Kroese}
+        \caption{Left: training data and a new feature. Right: a partition of the feature space\cite{kroese2020}}
+        \label{Fig:F81Kroese}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \begin{itemize}
+        \item In the example above, we cannot separate regions linearly, but we can create rectangles in the $\mathbb{R}^2$ space.
+        \item The classifier $g$, thus takes a color "blue" or "red" according to where the new black dot goes.
+        \item Both the classification procedure and the partitioning can be represented by a binary {\em decision tree}.
+    \end{itemize}
+    \end{frame}
+
+\begin{frame}{Partitioning of feature space $X$}
+    \begin{columns}
+        \begin{column}{0.4\linewidth}
+            \begin{figure}
+                \includegraphics[width=0.7\linewidth]{F82Kroese}
+                \label{Fig:F82Kroese}
+            \end{figure}
+        \end{column}
+        \begin{column}{0.6\linewidth}
+            The decision tree corresponding to Fig. \ref{Fig:F81Kroese}\cite{kroese2020}
+            \begin{itemize}
+                \item Each node $\nu$ corresponds to a region $\mathcal{R}_{\nu}$ of the feature space $X$. 
+                \item The root node is the featre space $X$ itself.
+                \item The final (undivided) leafs $w_1, w_2, \ldots$ (red/blue squares) form a partition of $X$, as they are disjoint and their union is $X$.
+                \item Regional prediction functions $g^w$ are associated with each leaf.
+            \end{itemize}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Decision}
+    Let us take the input $\uvec{x}=(x_1,x_2)^T$:
+    \begin{enumerate}
+        \item we start at the root node, which contains a condition $x_2\leq 12.0$ that the input data satisifes.
+        \item We then proceed to the left child which contains the condition $x_2 \leq -20.5$, which our data does not satisfies, so we go the next right leaf and so on.
+    \end{enumerate}
+    More generally, a binary tree $\mathbb{T}$ will partition the feature space into as many regions as leaf nodes, and the prediction function becomes:
+    \[
+        g(\uvec{x})=\sum_{w\in\mathcal{W}}g^w (\uvec{x})\mathbb{1}\{\uvec{x}\in \mathcal{R}_w\}   
+    \]
+\end{frame}
+
+\section{Top down construction trees}
+
+\begin{frame}
+    \begin{figure}
+        \includegraphics[width=0.9\linewidth]{A821Kroese}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \begin{figure}
+        \includegraphics[width=0.7\linewidth]{F83Kroese}
+        \caption{Entropy(normilized, divided by 2), Gini and missclassification impurities in binary classification.\cite{kroese2020}}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \begin{figure}
+        \includegraphics[width=0.7\linewidth]{F84Kroese}
+        \caption{Ten-fold crossvalidation loss fnction as a function of the maximal tree depth in a classification problem.\cite{kroese2020}}
+    \end{figure}
+\end{frame}
+
+\section{Additional considerations}
+
+\begin{frame}
+    \begin{figure}
+        \includegraphics[width=0.9\linewidth]{F85Kroese}
+        \caption{The two groups are separated, in decision tree, with a collection of rectangles, leading to an unnecessary classification procedure some times.\cite{kroese2020}}
+    \end{figure}
+\end{frame}
+
+\section{Controlling the tree shape}
+
+\begin{frame}
+    \begin{figure}
+        \includegraphics[width=0.7\linewidth]{F86Kroese}
+        \caption{Cross-validation and training loss as a function of the tree depth dfor a binary classification problem.\cite{kroese2020}}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \begin{figure}
+        \includegraphics[width=0.7\linewidth]{F87Kroese}
+        \caption{Different ancestors for different nodes.\cite{kroese2020}}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \begin{figure}
+        \includegraphics[width=0.9\linewidth]{F88Kroese}
+        \caption{Pruning branches of the tree.\cite{kroese2020}}
+    \end{figure}
+\end{frame}
+
+\section{Boostrapping aggregation}
+
+\begin{frame}
+    \begin{figure}
+        \includegraphics[width=0.9\linewidth]{A851Kroese}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \begin{figure}
+        \includegraphics[width=0.9\linewidth]{A852Kroese}
+    \end{figure}
+\end{frame}
+
+\section{Random Forests}
+
+\begin{frame}
+    \begin{figure}
+        \includegraphics[width=0.9\linewidth]{A861Kroese}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \begin{figure}
+        \includegraphics[width=0.7\linewidth]{F89Kroese}
+        \caption{Importance measure for a 15-feature data set with only informative features $x_1,x_2,x_3,x_4,x_5$\cite{kroese2020}.}
+    \end{figure}
+\end{frame}
+
+\section{Boosting}
+
+\begin{frame}
+    \begin{figure}
+        \includegraphics[width=0.9\linewidth]{A871Kroese}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \begin{figure}
+        \includegraphics[width=0.9\linewidth]{F810Kroese}
+        \caption{Fitted boosting regression model with two different values of $\gamma$. \cite{kroese2020}}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \begin{figure}
+        \includegraphics[width=0.7\linewidth]{F811Kroese}
+        \caption{Exponential and zero-one training loss as a function of the number of boosting rounds $B$ for a binary classification problem. \cite{kroese2020}}
+    \end{figure}
+\end{frame}
+
+\section{Bibliography}
+\bibliographystyle{unsrt}
+\bibliography{DataSciencewithPython}
 \end{document}
