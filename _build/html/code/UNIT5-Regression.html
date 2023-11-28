@@ -395,8 +395,21 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="unit-5-regression">
-<h1><span class="section-number">6. </span>UNIT 5. Regression<a class="headerlink" href="#unit-5-regression" title="Permalink to this heading">#</a></h1>
-<p>This Unit includes main introduction to linear and non-linear regression, strongly based in <span id="id1">[<a class="reference internal" href="#id3" title="Dirk P. Kroese, Zdravko Botev, Thomas Taimre, and Radislav: Vaisman. Data Science and Machine Learning: Mathematical and Statistical Methods. Machine Learning &amp; Pattern Recognition. Chapman &amp; Hall/CRC, 2020. URL: https://acems.org.au/data-science-machine-learning-book-available-download (visited on 2023-08-15).">1</a>]</span>.</p>
+<h1><a class="toc-backref" href="#id4" role="doc-backlink"><span class="section-number">6. </span>UNIT 5. Regression</a><a class="headerlink" href="#unit-5-regression" title="Permalink to this heading">#</a></h1>
+<p>This Unit includes main introduction to linear and non-linear regression, strongly based in <span id="id1">[<a class="reference internal" href="UNIT9-Neural-Networks.html#id3" title="Dirk P. Kroese, Zdravko Botev, Thomas Taimre, and Radislav: Vaisman. Data Science and Machine Learning: Mathematical and Statistical Methods. Machine Learning &amp; Pattern Recognition. Chapman &amp; Hall/CRC, 2020. URL: https://acems.org.au/data-science-machine-learning-book-available-download (visited on 2023-08-15).">1</a>]</span>.</p>
+<nav class="contents" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#unit-5-regression" id="id4">UNIT 5. Regression</a></p>
+<ul>
+<li><p><a class="reference internal" href="#simple-linear-regression" id="id5">Simple linear regression</a></p></li>
+<li><p><a class="reference internal" href="#a-id-toc1-1-a-calculation-of-the-predicted-residual-sum-of-squares-press" id="id6"><a id='toc1_1_'></a><span class="xref myst">Calculation of the Predicted Residual Sum of Squares (PRESS)</span></a></p></li>
+<li><p><a class="reference internal" href="#inference-for-normal-linear-models" id="id7">Inference for Normal Linear Models</a></p></li>
+<li><p><a class="reference internal" href="#confidence-and-prediction-intervals" id="id8">Confidence and prediction intervals</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
 <div class="docutils container" id="id2">
 <div class="citation" id="id3" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
@@ -405,7 +418,7 @@ document.write(`
 </div>
 </div>
 <section id="simple-linear-regression">
-<h2><span class="section-number">6.1. </span>Simple linear regression<a class="headerlink" href="#simple-linear-regression" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id5" role="doc-backlink"><span class="section-number">6.1. </span>Simple linear regression</a><a class="headerlink" href="#simple-linear-regression" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; confpred.py &quot;&quot;&quot;</span>
@@ -445,7 +458,7 @@ document.write(`
 </div>
 </section>
 <section id="a-id-toc1-1-a-calculation-of-the-predicted-residual-sum-of-squares-press">
-<h2><span class="section-number">6.2. </span><a id='toc1_1_'></a><span class="xref myst">Calculation of the Predicted Residual Sum of Squares (PRESS)</span><a class="headerlink" href="#a-id-toc1-1-a-calculation-of-the-predicted-residual-sum-of-squares-press" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id6" role="doc-backlink"><span class="section-number">6.2. </span><a id='toc1_1_'></a><span class="xref myst">Calculation of the Predicted Residual Sum of Squares (PRESS)</span></a><a class="headerlink" href="#a-id-toc1-1-a-calculation-of-the-predicted-residual-sum-of-squares-press" title="Permalink to this heading">#</a></h2>
 <p>We start by defining that in a <em>multiple linear regression model</em> the response <span class="math notranslate nohighlight">\(Y\)</span> depends on a <span class="math notranslate nohighlight">\(d\)</span>-dimensional explanatory vector <span class="math notranslate nohighlight">\(\mathbf{x}=[x_1,\ldots,x_d]^T\)</span> via the relationship:
 $<span class="math notranslate nohighlight">\(Y=\beta_0  + \beta_1 x_1 + \cdots + \beta_d x_d + \varepsilon\)</span><span class="math notranslate nohighlight">\(
 where \)</span>\mathbb{E}\varepsilon=0<span class="math notranslate nohighlight">\( and \)</span>\mathbb{Var}\varepsilon =\sigma^2$.</p>
@@ -498,7 +511,7 @@ where \)</span>e_i=y_i-\hat{y_i}=y_i-(\mathbf{X}\hat{\mathbf{\beta}})<span class
 </div>
 </section>
 <section id="inference-for-normal-linear-models">
-<h2><span class="section-number">6.3. </span>Inference for Normal Linear Models<a class="headerlink" href="#inference-for-normal-linear-models" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id7" role="doc-backlink"><span class="section-number">6.3. </span>Inference for Normal Linear Models</a><a class="headerlink" href="#inference-for-normal-linear-models" title="Permalink to this heading">#</a></h2>
 <p>Example on the yield of crop for four different crop treatments (columns) on four different plots (rows)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -611,7 +624,7 @@ where \)</span>e_i=y_i-\hat{y_i}=y_i-(\mathbf{X}\hat{\mathbf{\beta}})<span class
 </div>
 </section>
 <section id="confidence-and-prediction-intervals">
-<h2><span class="section-number">6.4. </span>Confidence and prediction intervals<a class="headerlink" href="#confidence-and-prediction-intervals" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id8" role="doc-backlink"><span class="section-number">6.4. </span>Confidence and prediction intervals</a><a class="headerlink" href="#confidence-and-prediction-intervals" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; confpred.py &quot;&quot;&quot;</span>
