@@ -43,5 +43,5 @@ parse:
     - amsmath
     - dollarmath
 
-exclude_patterns: [
-code/Untitled.ipynb,code/riskfolio.ipynb,LaTeX/README.md]
+only_build_toc_files: true
+# exclude_patterns: [code/Untitled.ipynb,code/riskfolio.ipynb,LaTeX/README.md]

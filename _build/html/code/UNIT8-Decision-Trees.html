@@ -442,6 +442,12 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1222b3c10&gt;]
+</pre></div>
+</div>
+<img alt="../_images/f7372744e22a03f72402402670e0a955bbf8cf1da29af868e0c93307a31104ab.png" src="../_images/f7372744e22a03f72402402670e0a955bbf8cf1da29af868e0c93307a31104ab.png" />
+</div>
 </div>
 </section>
 <section id="basic-step-by-step-implementation">
@@ -701,9 +707,54 @@ DecisionTreeRegressor: tree loss =  10.19925448488538
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DecisionTreeRegressor R^2 score =  0.5676142169432943 
-Bagging R^2 score =  0.8033628042959 
-Bagging OOB R^2 score =  0.8206807868974851
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">54</span>
+<span class="g g-Whitespace">     </span><span class="mi">52</span> <span class="n">C</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="g g-Whitespace">     </span><span class="mi">53</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_estimators</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">54</span>     <span class="k">if</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">bootstrap_ds_arr</span><span class="p">[</span><span class="n">b</span><span class="p">])</span><span class="o">==</span><span class="kc">False</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">55</span>         <span class="n">C</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">56</span> <span class="k">for</span> <span class="n">pred</span> <span class="ow">in</span>  <span class="n">bag</span><span class="p">[</span><span class="n">C</span><span class="p">]:</span>    
+
+<span class="nn">File ~/miniconda3/lib/python3.11/site-packages/numpy/lib/arraysetops.py:890,</span> in <span class="ni">isin</span><span class="nt">(element, test_elements, assume_unique, invert, kind)</span>
+<span class="g g-Whitespace">    </span><span class="mi">769</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">770</span><span class="sd"> Calculates ``element in test_elements``, broadcasting over `element` only.</span>
+<span class="g g-Whitespace">    </span><span class="mi">771</span><span class="sd"> Returns a boolean array of the same shape as `element` that is True</span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">887</span><span class="sd">        [ True, False]])</span>
+<span class="g g-Whitespace">    </span><span class="mi">888</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">889</span> <span class="n">element</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">890</span> <span class="k">return</span> <span class="n">in1d</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">test_elements</span><span class="p">,</span> <span class="n">assume_unique</span><span class="o">=</span><span class="n">assume_unique</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">891</span>             <span class="n">invert</span><span class="o">=</span><span class="n">invert</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="n">kind</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">element</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="nn">File ~/miniconda3/lib/python3.11/site-packages/numpy/lib/arraysetops.py:647,</span> in <span class="ni">in1d</span><span class="nt">(ar1, ar2, assume_unique, invert, kind)</span>
+<span class="g g-Whitespace">    </span><span class="mi">644</span>     <span class="n">ar2</span> <span class="o">=</span> <span class="n">ar2</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">646</span> <span class="n">ar2_min</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">ar2</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">647</span> <span class="n">ar2_max</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">ar2</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">649</span> <span class="n">ar2_range</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">ar2_max</span><span class="p">)</span> <span class="o">-</span> <span class="nb">int</span><span class="p">(</span><span class="n">ar2_min</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">651</span> <span class="c1"># Constraints on whether we can actually use the table method:</span>
+<span class="g g-Whitespace">    </span><span class="mi">652</span> <span class="c1">#  1. Assert memory usage is not too large</span>
+
+<span class="nn">File ~/miniconda3/lib/python3.11/site-packages/numpy/core/fromnumeric.py:2810,</span> in <span class="ni">max</span><span class="nt">(a, axis, out, keepdims, initial, where)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2692</span> <span class="nd">@array_function_dispatch</span><span class="p">(</span><span class="n">_max_dispatcher</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2693</span> <span class="nd">@set_module</span><span class="p">(</span><span class="s1">&#39;numpy&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2694</span> <span class="k">def</span> <span class="nf">max</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">_NoValue</span><span class="p">,</span> <span class="n">initial</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">_NoValue</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2695</span>          <span class="n">where</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">_NoValue</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">2696</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">2697</span><span class="sd">     Return the maximum of an array or maximum along an axis.</span>
+<span class="g g-Whitespace">   </span><span class="mi">2698</span><span class="sd"> </span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2808</span><span class="sd">     5</span>
+<span class="g g-Whitespace">   </span><span class="mi">2809</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">2810</span>     <span class="k">return</span> <span class="n">_wrapreduction</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">out</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2811</span>                           <span class="n">keepdims</span><span class="o">=</span><span class="n">keepdims</span><span class="p">,</span> <span class="n">initial</span><span class="o">=</span><span class="n">initial</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="n">where</span><span class="p">)</span>
+
+<span class="nn">File ~/miniconda3/lib/python3.11/site-packages/numpy/core/fromnumeric.py:88,</span> in <span class="ni">_wrapreduction</span><span class="nt">(obj, ufunc, method, axis, dtype, out, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">85</span>         <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">86</span>             <span class="k">return</span> <span class="n">reduction</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">,</span> <span class="o">**</span><span class="n">passkwargs</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">88</span> <span class="k">return</span> <span class="n">ufunc</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">dtype</span><span class="p">,</span> <span class="n">out</span><span class="p">,</span> <span class="o">**</span><span class="n">passkwargs</span><span class="p">)</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>
