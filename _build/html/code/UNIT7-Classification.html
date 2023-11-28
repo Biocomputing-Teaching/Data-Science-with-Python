@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>UNIT 7. Classification &#8212; Data Science with Python Jupyter book</title>
+    <title>8. UNIT 7. Classification &#8212; Data Science with Python Jupyter book</title>
   
   
   
@@ -67,8 +67,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'code/UNIT7-Classification';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="UNIT 8. Decision Tres" href="UNIT8-Decision-Trees.html" />
-    <link rel="prev" title="UNIT 6. Regularization and kernel methods" href="UNIT6-Regularization-and-Kernel-Methods.html" />
+    <link rel="next" title="16. UNIT 8. Decision Tres" href="UNIT8-Decision-Trees.html" />
+    <link rel="prev" title="7. UNIT 6. Regularization and kernel methods" href="UNIT6-Regularization-and-Kernel-Methods.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -169,14 +169,14 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../README.html">About the course Data-Science-with-Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="UNIT1-Introduction.html"><a id="toc1_"></a><span class="xref myst">UNIT 1. Import and Visualitzation of data with Python</span></a></li>
-<li class="toctree-l1"><a class="reference internal" href="UNIT2-Statistical-Learning.html"><a id="toc1_"></a><span class="xref myst">UNIT 2. Statistical Learning</span></a></li>
-<li class="toctree-l1"><a class="reference internal" href="UNIT3-MC-Methods.html">UNIT 3. Monte Carlo methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="UNIT4-Unsupervised-Learning.html"><a id="toc1_"></a><span class="xref myst">UNIT 4. Unsupervised Learning</span></a></li>
-<li class="toctree-l1"><a class="reference internal" href="UNIT5-Regression.html">UNIT 5. Regression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="UNIT6-Regularization-and-Kernel-Methods.html">UNIT 6. Regularization and kernel methods</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">UNIT 7. Classification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">1. About the course Data-Science-with-Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UNIT1-Introduction.html">2. <a id="toc1_"></a><span class="xref myst">UNIT 1. Import and Visualitzation of data with Python</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="UNIT2-Statistical-Learning.html">3. <a id="toc1_"></a><span class="xref myst">UNIT 2. Statistical Learning</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="UNIT3-MC-Methods.html">4. UNIT 3. Monte Carlo methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UNIT4-Unsupervised-Learning.html">5. <a id="toc1_"></a><span class="xref myst">UNIT 4. Unsupervised Learning</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="UNIT5-Regression.html">6. UNIT 5. Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UNIT6-Regularization-and-Kernel-Methods.html">7. UNIT 6. Regularization and kernel methods</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">8. UNIT 7. Classification</a></li>
 
 
 
@@ -184,8 +184,8 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="UNIT8-Decision-Trees.html">UNIT 8. Decision Tres</a></li>
-<li class="toctree-l1"><a class="reference internal" href="UNIT9-Neural-Networks.html">UNIT 9. Neural Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UNIT8-Decision-Trees.html">16. UNIT 8. Decision Tres</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UNIT9-Neural-Networks.html">17. UNIT 9. Neural Networks</a></li>
 </ul>
 
     </div>
@@ -379,14 +379,14 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">UNIT 7. Classification</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#naive-bayes">Naive Bayes</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-and-quadratic-discriminant-analysis">Linear and quadratic discriminant analysis</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#k-nearest-neighbors-classification"><span class="math notranslate nohighlight">\(K\)</span>-Nearest Neighbors Classification</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#suport-vector-machine">Suport vector machine</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-classifiers">Testing classifiers</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ex3-accuracy-metrics">EX3: Accuracy metrics</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#roc-curves">ROC curves</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">8. UNIT 7. Classification</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#naive-bayes">9. Naive Bayes</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-and-quadratic-discriminant-analysis">10. Linear and quadratic discriminant analysis</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#k-nearest-neighbors-classification">11. <span class="math notranslate nohighlight">\(K\)</span>-Nearest Neighbors Classification</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#suport-vector-machine">12. Suport vector machine</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-classifiers">13. Testing classifiers</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ex3-accuracy-metrics">14. EX3: Accuracy metrics</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#roc-curves">15. ROC curves</a></li>
 </ul>
 
             </nav>
@@ -400,8 +400,8 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="unit-7-classification">
-<h1>UNIT 7. Classification<a class="headerlink" href="#unit-7-classification" title="Permalink to this heading">#</a></h1>
-<p>This Unit includes main introduction to classification in machine learning, strongly based in <span id="id1">[<a class="reference internal" href="UNIT9-Neural-Networks.html#id3" title="Dirk P. Kroese, Zdravko Botev, Thomas Taimre, and Radislav: Vaisman. Data Science and Machine Learning: Mathematical and Statistical Methods. Machine Learning &amp; Pattern Recognition. Chapman &amp; Hall/CRC, 2020. URL: https://acems.org.au/data-science-machine-learning-book-available-download (visited on 2023-08-15).">1</a>]</span>.</p>
+<h1><span class="section-number">8. </span>UNIT 7. Classification<a class="headerlink" href="#unit-7-classification" title="Permalink to this heading">#</a></h1>
+<p>This Unit includes main introduction to classification in machine learning, strongly based in <span id="id1">[<a class="reference internal" href="UNIT5-Regression.html#id3" title="Dirk P. Kroese, Zdravko Botev, Thomas Taimre, and Radislav: Vaisman. Data Science and Machine Learning: Mathematical and Statistical Methods. Machine Learning &amp; Pattern Recognition. Chapman &amp; Hall/CRC, 2020. URL: https://acems.org.au/data-science-machine-learning-book-available-download (visited on 2023-08-15).">1</a>]</span>.</p>
 <div class="docutils container" id="id2">
 <div class="citation" id="id3" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
@@ -411,7 +411,7 @@ document.write(`
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="naive-bayes">
-<h1>Naive Bayes<a class="headerlink" href="#naive-bayes" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">9. </span>Naive Bayes<a class="headerlink" href="#naive-bayes" title="Permalink to this heading">#</a></h1>
 <p>In naive Bayes, the value of the overall function <span class="math notranslate nohighlight">\(g\)</span> depends on the product of the function <span class="math notranslate nohighlight">\(g\)</span> for each feature. Thus, the classification is done by choosing the highset <span class="math notranslate nohighlight">\(g\)</span> value.</p>
 <p>For example, below we assume we have three features with different means <span class="math notranslate nohighlight">\(\mu\)</span> and standard deviations <span class="math notranslate nohighlight">\(\sigma\)</span>. How can a given vector of features <span class="math notranslate nohighlight">\(\uvec{x}\)</span> be classified?</p>
 <div class="cell docutils container">
@@ -445,7 +445,7 @@ document.write(`
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="linear-and-quadratic-discriminant-analysis">
-<h1>Linear and quadratic discriminant analysis<a class="headerlink" href="#linear-and-quadratic-discriminant-analysis" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">10. </span>Linear and quadratic discriminant analysis<a class="headerlink" href="#linear-and-quadratic-discriminant-analysis" title="Permalink to this heading">#</a></h1>
 <p>Built on the above Bayesian approach, and after some mathematical manipulation, one can draw the lines that discriminate between two groups. This is called the decison boundary, that is quadratic for two given normal distributions but becomes linear if the distributions have the same covariance matrix.</p>
 <p>See tha case for a LDA below, with the same <span class="math notranslate nohighlight">\(\sigma\)</span> for two underlying normal distributions:</p>
 <div class="cell docutils container">
@@ -589,7 +589,7 @@ document.write(`
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="k-nearest-neighbors-classification">
-<h1><span class="math notranslate nohighlight">\(K\)</span>-Nearest Neighbors Classification<a class="headerlink" href="#k-nearest-neighbors-classification" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">11. </span><span class="math notranslate nohighlight">\(K\)</span>-Nearest Neighbors Classification<a class="headerlink" href="#k-nearest-neighbors-classification" title="Permalink to this heading">#</a></h1>
 <p><img alt="KNN" src="../_images/knn.png" /></p>
 <p>Figure adapted from <span class="xref myst">https://medium.com/swlh/k-nearest-neighbor-ca2593d7a3c4</span>.</p>
 <div class="cell docutils container">
@@ -633,7 +633,7 @@ document.write(`
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="suport-vector-machine">
-<h1>Suport vector machine<a class="headerlink" href="#suport-vector-machine" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">12. </span>Suport vector machine<a class="headerlink" href="#suport-vector-machine" title="Permalink to this heading">#</a></h1>
 <p><img alt="SVM" src="../_images/SVM.png" />
 Figure adapted from <span class="xref myst">https://www.javatpoint.com/machine-learning-support-vector-machine-algorithm</span>.</p>
 <p>Here is a calculator of the support vectors for a given dataset, taken from <a class="reference external" href="https://www.mltut.com/svm-implementation-in-python-from-scratch/">here</a>. The data contains information about the purchase or not of an SUV (dependent variable) as a function of gender, age and estimated salary (explanatory or independent variables). We start by importing and visualizing the data, and we will prune the table eliminating userID and gender.</p>
@@ -1321,7 +1321,7 @@ Bias  [-3.9763643]
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="testing-classifiers">
-<h1>Testing classifiers<a class="headerlink" href="#testing-classifiers" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">13. </span>Testing classifiers<a class="headerlink" href="#testing-classifiers" title="Permalink to this heading">#</a></h1>
 <p>Obtain data from the <a class="reference external" href="https://archive.ics.uci.edu/dataset/17/breast+cancer+wisconsin+diagnostic">UCI’s Breast Cancer Wisconsin data set</a>.</p>
 <p>Let us have a look at the data with the UCI’s API:</p>
 <div class="cell docutils container">
@@ -1548,12 +1548,12 @@ SVM     0.939
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="ex3-accuracy-metrics">
-<h1>EX3: Accuracy metrics<a class="headerlink" href="#ex3-accuracy-metrics" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">14. </span>EX3: Accuracy metrics<a class="headerlink" href="#ex3-accuracy-metrics" title="Permalink to this heading">#</a></h1>
 <p>Explore which other types of metrics provided by <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> may give better appropriate measure for the breast cancer data classification with the different methods. Provide a jupyter notebook with the comparisons, plotting an image similar to this one (taken from the internet from data not related to this exercise at all) but including the methods discussed in the class notes:
 <img alt="" src="https://i.stack.imgur.com/MPaJk.png" /></p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="roc-curves">
-<h1>ROC curves<a class="headerlink" href="#roc-curves" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">15. </span>ROC curves<a class="headerlink" href="#roc-curves" title="Permalink to this heading">#</a></h1>
 <p>Adapted from <a class="reference external" href="https://machinelearningmastery.com/roc-curves-and-precision-recall-curves-for-classification-in-python/">here</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1696,7 +1696,7 @@ Logistic: ROC AUC=0.903
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">UNIT 6. Regularization and kernel methods</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>UNIT 6. Regularization and kernel methods</p>
       </div>
     </a>
     <a class="right-next"
@@ -1704,7 +1704,7 @@ Logistic: ROC AUC=0.903
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">UNIT 8. Decision Tres</p>
+        <p class="prev-next-title"><span class="section-number">16. </span>UNIT 8. Decision Tres</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1723,14 +1723,14 @@ Logistic: ROC AUC=0.903
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">UNIT 7. Classification</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#naive-bayes">Naive Bayes</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-and-quadratic-discriminant-analysis">Linear and quadratic discriminant analysis</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#k-nearest-neighbors-classification"><span class="math notranslate nohighlight">\(K\)</span>-Nearest Neighbors Classification</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#suport-vector-machine">Suport vector machine</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-classifiers">Testing classifiers</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ex3-accuracy-metrics">EX3: Accuracy metrics</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#roc-curves">ROC curves</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">8. UNIT 7. Classification</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#naive-bayes">9. Naive Bayes</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-and-quadratic-discriminant-analysis">10. Linear and quadratic discriminant analysis</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#k-nearest-neighbors-classification">11. <span class="math notranslate nohighlight">\(K\)</span>-Nearest Neighbors Classification</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#suport-vector-machine">12. Suport vector machine</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-classifiers">13. Testing classifiers</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ex3-accuracy-metrics">14. EX3: Accuracy metrics</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#roc-curves">15. ROC curves</a></li>
 </ul>
 
   </nav></div>

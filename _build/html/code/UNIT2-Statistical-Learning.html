@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>UNIT 2. Statistical Learning &#8212; Data Science with Python Jupyter book</title>
+    <title>3. UNIT 2. Statistical Learning &#8212; Data Science with Python Jupyter book</title>
   
   
   
@@ -67,8 +67,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'code/UNIT2-Statistical-Learning';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="UNIT 3. Monte Carlo methods" href="UNIT3-MC-Methods.html" />
-    <link rel="prev" title="UNIT 1. Import and Visualitzation of data with Python" href="UNIT1-Introduction.html" />
+    <link rel="next" title="4. UNIT 3. Monte Carlo methods" href="UNIT3-MC-Methods.html" />
+    <link rel="prev" title="2. UNIT 1. Import and Visualitzation of data with Python" href="UNIT1-Introduction.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -169,14 +169,14 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../README.html">About the course Data-Science-with-Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="UNIT1-Introduction.html"><a id="toc1_"></a><span class="xref myst">UNIT 1. Import and Visualitzation of data with Python</span></a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#"><a id="toc1_"></a><span class="xref myst">UNIT 2. Statistical Learning</span></a></li>
-<li class="toctree-l1"><a class="reference internal" href="UNIT3-MC-Methods.html">UNIT 3. Monte Carlo methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="UNIT4-Unsupervised-Learning.html"><a id="toc1_"></a><span class="xref myst">UNIT 4. Unsupervised Learning</span></a></li>
-<li class="toctree-l1"><a class="reference internal" href="UNIT5-Regression.html">UNIT 5. Regression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="UNIT6-Regularization-and-Kernel-Methods.html">UNIT 6. Regularization and kernel methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="UNIT7-Classification.html">UNIT 7. Classification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">1. About the course Data-Science-with-Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UNIT1-Introduction.html">2. <a id="toc1_"></a><span class="xref myst">UNIT 1. Import and Visualitzation of data with Python</span></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. <a id="toc1_"></a><span class="xref myst">UNIT 2. Statistical Learning</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="UNIT3-MC-Methods.html">4. UNIT 3. Monte Carlo methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UNIT4-Unsupervised-Learning.html">5. <a id="toc1_"></a><span class="xref myst">UNIT 4. Unsupervised Learning</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="UNIT5-Regression.html">6. UNIT 5. Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UNIT6-Regularization-and-Kernel-Methods.html">7. UNIT 6. Regularization and kernel methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UNIT7-Classification.html">8. UNIT 7. Classification</a></li>
 
 
 
@@ -184,8 +184,8 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="UNIT8-Decision-Trees.html">UNIT 8. Decision Tres</a></li>
-<li class="toctree-l1"><a class="reference internal" href="UNIT9-Neural-Networks.html">UNIT 9. Neural Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UNIT8-Decision-Trees.html">16. UNIT 8. Decision Tres</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UNIT9-Neural-Networks.html">17. UNIT 9. Neural Networks</a></li>
 </ul>
 
     </div>
@@ -379,11 +379,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-id-toc1-1-a-evaluation-of-the-loss-function-in-k-means"><a id="toc1_1_"></a><span class="xref myst">Evaluation of the loss function in K-means</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-id-toc1-2-a-polynomial-regression"><a id="toc1_2_"></a><span class="xref myst">Polynomial  regression</span></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-id-toc1-2-1-a-training-data-with-fitted-curves-fordifferent-p"><a id="toc1_2_1_"></a><span class="xref myst">Training data with fitted curves fordifferent <span class="math notranslate nohighlight">\(p\)</span></span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-id-toc1-2-2-a-test-loss-as-function-of-the-number-of-parameters-p-of-the-model"><a id="toc1_2_2_"></a><span class="xref myst">Test loss as function of the number of parameters <span class="math notranslate nohighlight">\(p\)</span> of the model.</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-id-toc1-2-3-a-cross-validation"><a id="toc1_2_3_"></a><span class="xref myst">Cross-validation</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-id-toc1-1-a-evaluation-of-the-loss-function-in-k-means">3.1. <a id="toc1_1_"></a><span class="xref myst">Evaluation of the loss function in K-means</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-id-toc1-2-a-polynomial-regression">3.2. <a id="toc1_2_"></a><span class="xref myst">Polynomial  regression</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-id-toc1-2-1-a-training-data-with-fitted-curves-fordifferent-p">3.2.1. <a id="toc1_2_1_"></a><span class="xref myst">Training data with fitted curves fordifferent <span class="math notranslate nohighlight">\(p\)</span></span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-id-toc1-2-2-a-test-loss-as-function-of-the-number-of-parameters-p-of-the-model">3.2.2. <a id="toc1_2_2_"></a><span class="xref myst">Test loss as function of the number of parameters <span class="math notranslate nohighlight">\(p\)</span> of the model.</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-id-toc1-2-3-a-cross-validation">3.2.3. <a id="toc1_2_3_"></a><span class="xref myst">Cross-validation</span></a></li>
 </ul>
 </li>
 </ul>
@@ -398,8 +398,8 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="a-id-toc1-a-unit-2-statistical-learning">
-<h1><a id='toc1_'></a><span class="xref myst">UNIT 2. Statistical Learning</span><a class="headerlink" href="#a-id-toc1-a-unit-2-statistical-learning" title="Permalink to this heading">#</a></h1>
-<p>This Unit includes main introduction to statistical learning, strongly based in <span id="id1">[<a class="reference internal" href="UNIT9-Neural-Networks.html#id3" title="Dirk P. Kroese, Zdravko Botev, Thomas Taimre, and Radislav: Vaisman. Data Science and Machine Learning: Mathematical and Statistical Methods. Machine Learning &amp; Pattern Recognition. Chapman &amp; Hall/CRC, 2020. URL: https://acems.org.au/data-science-machine-learning-book-available-download (visited on 2023-08-15).">1</a>]</span>.</p>
+<h1><span class="section-number">3. </span><a id='toc1_'></a><span class="xref myst">UNIT 2. Statistical Learning</span><a class="headerlink" href="#a-id-toc1-a-unit-2-statistical-learning" title="Permalink to this heading">#</a></h1>
+<p>This Unit includes main introduction to statistical learning, strongly based in <span id="id1">[<a class="reference internal" href="UNIT5-Regression.html#id3" title="Dirk P. Kroese, Zdravko Botev, Thomas Taimre, and Radislav: Vaisman. Data Science and Machine Learning: Mathematical and Statistical Methods. Machine Learning &amp; Pattern Recognition. Chapman &amp; Hall/CRC, 2020. URL: https://acems.org.au/data-science-machine-learning-book-available-download (visited on 2023-08-15).">1</a>]</span>.</p>
 <p><strong>Table of contents</strong><a id='toc0_'></a></p>
 <ul class="simple">
 <li><p><span class="xref myst">UNIT 2. Statistical Learning</span></p>
@@ -423,7 +423,7 @@ document.write(`
 	maxLevel=6
 	/vscode-jupyter-toc-config -->
 <!-- THIS CELL WILL BE REPLACED ON TOC UPDATE. DO NOT WRITE YOUR TEXT IN THIS CELL --><section id="a-id-toc1-1-a-evaluation-of-the-loss-function-in-k-means">
-<h2><a id='toc1_1_'></a><span class="xref myst">Evaluation of the loss function in K-means</span><a class="headerlink" href="#a-id-toc1-1-a-evaluation-of-the-loss-function-in-k-means" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.1. </span><a id='toc1_1_'></a><span class="xref myst">Evaluation of the loss function in K-means</span><a class="headerlink" href="#a-id-toc1-1-a-evaluation-of-the-loss-function-in-k-means" title="Permalink to this heading">#</a></h2>
 <p>K-means is an example of unsupervised learning method. We will use this method along with <code class="docutils literal notranslate"><span class="pre">scipy</span></code> in order to evaluate the loss function calculated for a given dataset.</p>
 <p>We will first import some data using <code class="docutils literal notranslate"><span class="pre">numpy</span></code>.</p>
 <div class="cell docutils container">
@@ -653,7 +653,7 @@ Loss = 2.288
 </div>
 </section>
 <section id="a-id-toc1-2-a-polynomial-regression">
-<h2><a id='toc1_2_'></a><span class="xref myst">Polynomial  regression</span><a class="headerlink" href="#a-id-toc1-2-a-polynomial-regression" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.2. </span><a id='toc1_2_'></a><span class="xref myst">Polynomial  regression</span><a class="headerlink" href="#a-id-toc1-2-a-polynomial-regression" title="Permalink to this heading">#</a></h2>
 <p>Let us generate data drawn from iid random points that have a normal distribution with expectation <span class="math notranslate nohighlight">\(10 − 140ui + 400u^2i − 250u^3\)</span> and variance  25. This is an example of a polynomial regression model. Using a squared-error loss, the optimal prediction function <span class="math notranslate nohighlight">\(h^*(u) = E[Y | U = u]\)</span> is thus</p>
 <div class="math notranslate nohighlight">
 \[h^*(u) = 10 − 140^u + 400u^2 − 250u^3\]</div>
@@ -697,7 +697,7 @@ Loss = 2.288
 </div>
 </div>
 <section id="a-id-toc1-2-1-a-training-data-with-fitted-curves-fordifferent-p">
-<h3><a id='toc1_2_1_'></a><span class="xref myst">Training data with fitted curves fordifferent <span class="math notranslate nohighlight">\(p\)</span></span><a class="headerlink" href="#a-id-toc1-2-1-a-training-data-with-fitted-curves-fordifferent-p" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">3.2.1. </span><a id='toc1_2_1_'></a><span class="xref myst">Training data with fitted curves fordifferent <span class="math notranslate nohighlight">\(p\)</span></span><a class="headerlink" href="#a-id-toc1-2-1-a-training-data-with-fitted-curves-fordifferent-p" title="Permalink to this heading">#</a></h3>
 <p>We will check the models for <span class="math notranslate nohighlight">\(p = 2, 4, 16\)</span>. The true cubic polynomial curve for p = 4 is also plotted (dashed line).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -742,7 +742,7 @@ Loss = 2.288
 </div>
 </section>
 <section id="a-id-toc1-2-2-a-test-loss-as-function-of-the-number-of-parameters-p-of-the-model">
-<h3><a id='toc1_2_2_'></a><span class="xref myst">Test loss as function of the number of parameters <span class="math notranslate nohighlight">\(p\)</span> of the model.</span><a class="headerlink" href="#a-id-toc1-2-2-a-test-loss-as-function-of-the-number-of-parameters-p-of-the-model" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">3.2.2. </span><a id='toc1_2_2_'></a><span class="xref myst">Test loss as function of the number of parameters <span class="math notranslate nohighlight">\(p\)</span> of the model.</span><a class="headerlink" href="#a-id-toc1-2-2-a-test-loss-as-function-of-the-number-of-parameters-p-of-the-model" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># generate test data</span>
@@ -776,7 +776,7 @@ Loss = 2.288
 </div>
 </section>
 <section id="a-id-toc1-2-3-a-cross-validation">
-<h3><a id='toc1_2_3_'></a><span class="xref myst">Cross-validation</span><a class="headerlink" href="#a-id-toc1-2-3-a-cross-validation" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">3.2.3. </span><a id='toc1_2_3_'></a><span class="xref myst">Cross-validation</span><a class="headerlink" href="#a-id-toc1-2-3-a-cross-validation" title="Permalink to this heading">#</a></h3>
 <p>For the polynomial regression example, we can calculate a <span class="math notranslate nohighlight">\(K\)</span>-fold cross-validation loss with a nonrandom partitioning of the training set using the following code.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -871,7 +871,7 @@ Loss = 2.288
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><a id='toc1_'></a><span class="xref myst">UNIT 1. Import and Visualitzation of data with Python</span></p>
+        <p class="prev-next-title"><span class="section-number">2. </span><a id='toc1_'></a><span class="xref myst">UNIT 1. Import and Visualitzation of data with Python</span></p>
       </div>
     </a>
     <a class="right-next"
@@ -879,7 +879,7 @@ Loss = 2.288
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">UNIT 3. Monte Carlo methods</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>UNIT 3. Monte Carlo methods</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -898,11 +898,11 @@ Loss = 2.288
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-id-toc1-1-a-evaluation-of-the-loss-function-in-k-means"><a id="toc1_1_"></a><span class="xref myst">Evaluation of the loss function in K-means</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-id-toc1-2-a-polynomial-regression"><a id="toc1_2_"></a><span class="xref myst">Polynomial  regression</span></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-id-toc1-2-1-a-training-data-with-fitted-curves-fordifferent-p"><a id="toc1_2_1_"></a><span class="xref myst">Training data with fitted curves fordifferent <span class="math notranslate nohighlight">\(p\)</span></span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-id-toc1-2-2-a-test-loss-as-function-of-the-number-of-parameters-p-of-the-model"><a id="toc1_2_2_"></a><span class="xref myst">Test loss as function of the number of parameters <span class="math notranslate nohighlight">\(p\)</span> of the model.</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-id-toc1-2-3-a-cross-validation"><a id="toc1_2_3_"></a><span class="xref myst">Cross-validation</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-id-toc1-1-a-evaluation-of-the-loss-function-in-k-means">3.1. <a id="toc1_1_"></a><span class="xref myst">Evaluation of the loss function in K-means</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-id-toc1-2-a-polynomial-regression">3.2. <a id="toc1_2_"></a><span class="xref myst">Polynomial  regression</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-id-toc1-2-1-a-training-data-with-fitted-curves-fordifferent-p">3.2.1. <a id="toc1_2_1_"></a><span class="xref myst">Training data with fitted curves fordifferent <span class="math notranslate nohighlight">\(p\)</span></span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-id-toc1-2-2-a-test-loss-as-function-of-the-number-of-parameters-p-of-the-model">3.2.2. <a id="toc1_2_2_"></a><span class="xref myst">Test loss as function of the number of parameters <span class="math notranslate nohighlight">\(p\)</span> of the model.</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-id-toc1-2-3-a-cross-validation">3.2.3. <a id="toc1_2_3_"></a><span class="xref myst">Cross-validation</span></a></li>
 </ul>
 </li>
 </ul>
