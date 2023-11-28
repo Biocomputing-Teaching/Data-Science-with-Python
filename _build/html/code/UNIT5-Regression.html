@@ -356,9 +356,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -374,17 +372,6 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-linear-regression">6.1. Simple linear regression</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-id-toc1-1-a-calculation-of-the-predicted-residual-sum-of-squares-press">6.2. <a id="toc1_1_"></a><span class="xref myst">Calculation of the Predicted Residual Sum of Squares (PRESS)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inference-for-normal-linear-models">6.3. Inference for Normal Linear Models</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#confidence-and-prediction-intervals">6.4. Confidence and prediction intervals</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -404,8 +391,7 @@ document.write(`
 </div>
 </div>
 </div>
-<section id="simple-linear-regression">
-<h2><span class="section-number">6.1. </span>Simple linear regression<a class="headerlink" href="#simple-linear-regression" title="Permalink to this heading">#</a></h2>
+<p><strong>Simple linear regression</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; confpred.py &quot;&quot;&quot;</span>
@@ -443,9 +429,7 @@ document.write(`
 <img alt="../_images/ee1edb2da17ffa3c4089454ec1929ea8420e5e45eaa398f2c7f9f375dbd0fa1e.png" src="../_images/ee1edb2da17ffa3c4089454ec1929ea8420e5e45eaa398f2c7f9f375dbd0fa1e.png" />
 </div>
 </div>
-</section>
-<section id="a-id-toc1-1-a-calculation-of-the-predicted-residual-sum-of-squares-press">
-<h2><span class="section-number">6.2. </span><a id='toc1_1_'></a><span class="xref myst">Calculation of the Predicted Residual Sum of Squares (PRESS)</span><a class="headerlink" href="#a-id-toc1-1-a-calculation-of-the-predicted-residual-sum-of-squares-press" title="Permalink to this heading">#</a></h2>
+<p><strong><a id='toc1_1_'></a><span class="xref myst">Calculation of the Predicted Residual Sum of Squares (PRESS)</span></strong></p>
 <p>We start by defining that in a <em>multiple linear regression model</em> the response <span class="math notranslate nohighlight">\(Y\)</span> depends on a <span class="math notranslate nohighlight">\(d\)</span>-dimensional explanatory vector <span class="math notranslate nohighlight">\(\mathbf{x}=[x_1,\ldots,x_d]^T\)</span> via the relationship:
 $<span class="math notranslate nohighlight">\(Y=\beta_0  + \beta_1 x_1 + \cdots + \beta_d x_d + \varepsilon\)</span><span class="math notranslate nohighlight">\(
 where \)</span>\mathbb{E}\varepsilon=0<span class="math notranslate nohighlight">\( and \)</span>\mathbb{Var}\varepsilon =\sigma^2$.</p>
@@ -496,9 +480,7 @@ where \)</span>e_i=y_i-\hat{y_i}=y_i-(\mathbf{X}\hat{\mathbf{\beta}})<span class
 <img alt="../_images/ce493329b2255ca7625aca6ceb49aa7ffcf599bfa11d1e4c177fa391134e8da7.png" src="../_images/ce493329b2255ca7625aca6ceb49aa7ffcf599bfa11d1e4c177fa391134e8da7.png" />
 </div>
 </div>
-</section>
-<section id="inference-for-normal-linear-models">
-<h2><span class="section-number">6.3. </span>Inference for Normal Linear Models<a class="headerlink" href="#inference-for-normal-linear-models" title="Permalink to this heading">#</a></h2>
+<p><strong>Inference for Normal Linear Models</strong></p>
 <p>Example on the yield of crop for four different crop treatments (columns) on four different plots (rows)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -609,9 +591,7 @@ where \)</span>e_i=y_i-\hat{y_i}=y_i-(\mathbf{X}\hat{\mathbf{\beta}})<span class
 </div>
 </div>
 </div>
-</section>
-<section id="confidence-and-prediction-intervals">
-<h2><span class="section-number">6.4. </span>Confidence and prediction intervals<a class="headerlink" href="#confidence-and-prediction-intervals" title="Permalink to this heading">#</a></h2>
+<p><strong>Confidence and prediction intervals</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; confpred.py &quot;&quot;&quot;</span>
@@ -969,7 +949,6 @@ Residual  97.0  5878.091294    60.598879        NaN           NaN
 </div>
 </div>
 </section>
-</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1025,23 +1004,6 @@ Residual  97.0  5878.091294    60.598879        NaN           NaN
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-linear-regression">6.1. Simple linear regression</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-id-toc1-1-a-calculation-of-the-predicted-residual-sum-of-squares-press">6.2. <a id="toc1_1_"></a><span class="xref myst">Calculation of the Predicted Residual Sum of Squares (PRESS)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inference-for-normal-linear-models">6.3. Inference for Normal Linear Models</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#confidence-and-prediction-intervals">6.4. Confidence and prediction intervals</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>
