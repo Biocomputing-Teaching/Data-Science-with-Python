@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>16. UNIT 8. Decision Tres &#8212; Data Science with Python Jupyter book</title>
+    <title>17. UNIT 8. Decision Tres &#8212; Data Science with Python Jupyter book</title>
   
   
   
@@ -67,8 +67,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'code/UNIT8-Decision-Trees';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="17. UNIT 9. Neural Networks" href="UNIT9-Neural-Networks.html" />
-    <link rel="prev" title="8. UNIT 7. Classification" href="UNIT7-Classification.html" />
+    <link rel="next" title="18. UNIT 9. Neural Networks" href="UNIT9-Neural-Networks.html" />
+    <link rel="prev" title="9. UNIT 7. Classification" href="UNIT7-Classification.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -175,8 +175,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="UNIT3-MC-Methods.html">4. UNIT 3. Monte Carlo methods</a></li>
 <li class="toctree-l1"><a class="reference internal" href="UNIT4-Unsupervised-Learning.html">5. <a id="toc1_"></a><span class="xref myst">UNIT 4. Unsupervised Learning</span></a></li>
 <li class="toctree-l1"><a class="reference internal" href="UNIT5-Regression.html">6. UNIT 5. Regression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="UNIT6-Regularization-and-Kernel-Methods.html">7. UNIT 6. Regularization and kernel methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="UNIT7-Classification.html">8. UNIT 7. Classification</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="UNIT6-Regularization-and-Kernel-Methods.html">8. UNIT 6. Regularization and kernel methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UNIT7-Classification.html">9. UNIT 7. Classification</a></li>
 
 
 
@@ -184,8 +185,8 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">16. UNIT 8. Decision Tres</a></li>
-<li class="toctree-l1"><a class="reference internal" href="UNIT9-Neural-Networks.html">17. UNIT 9. Neural Networks</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">17. UNIT 8. Decision Tres</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UNIT9-Neural-Networks.html">18. UNIT 9. Neural Networks</a></li>
 </ul>
 
     </div>
@@ -379,12 +380,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-validation-loss-as-a-function-of-three-depth">16.1. Cross-validation loss as a function of three depth</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-step-by-step-implementation">16.2. Basic step-by-step implementation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bootstrap-aggregation-or-bagging">16.3. Bootstrap Aggregation or <em>bagging</em></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random-forests">16.4. Random Forests</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-importance">16.4.1. Feature importance</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-boosting">16.4.2. Regression boosting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-validation-loss-as-a-function-of-three-depth">17.1. Cross-validation loss as a function of three depth</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-step-by-step-implementation">17.2. Basic step-by-step implementation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bootstrap-aggregation-or-bagging">17.3. Bootstrap Aggregation or <em>bagging</em></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random-forests">17.4. Random Forests</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-importance">17.4.1. Feature importance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-boosting">17.4.2. Regression boosting</a></li>
 </ul>
 </li>
 </ul>
@@ -399,10 +400,10 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="unit-8-decision-tres">
-<h1><span class="section-number">16. </span>UNIT 8. Decision Tres<a class="headerlink" href="#unit-8-decision-tres" title="Permalink to this heading">#</a></h1>
-<p>This Unit includes main introduction to decision trees, strongly based in <span id="id1">[<a class="reference internal" href="UNIT9-Neural-Networks.html#id3" title="Dirk P. Kroese, Zdravko Botev, Thomas Taimre, and Radislav: Vaisman. Data Science and Machine Learning: Mathematical and Statistical Methods. Machine Learning &amp; Pattern Recognition. Chapman &amp; Hall/CRC, 2020. URL: https://acems.org.au/data-science-machine-learning-book-available-download (visited on 2023-08-15).">1</a>]</span>.</p>
+<h1><span class="section-number">17. </span>UNIT 8. Decision Tres<a class="headerlink" href="#unit-8-decision-tres" title="Permalink to this heading">#</a></h1>
+<p>This Unit includes main introduction to decision trees, strongly based in <span id="id1">[<a class="reference internal" href="UNIT5-Regression.html#id3" title="Dirk P. Kroese, Zdravko Botev, Thomas Taimre, and Radislav: Vaisman. Data Science and Machine Learning: Mathematical and Statistical Methods. Machine Learning &amp; Pattern Recognition. Chapman &amp; Hall/CRC, 2020. URL: https://acems.org.au/data-science-machine-learning-book-available-download (visited on 2023-08-15).">1</a>]</span>.</p>
 <section id="cross-validation-loss-as-a-function-of-three-depth">
-<h2><span class="section-number">16.1. </span>Cross-validation loss as a function of three depth<a class="headerlink" href="#cross-validation-loss-as-a-function-of-three-depth" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">17.1. </span>Cross-validation loss as a function of three depth<a class="headerlink" href="#cross-validation-loss-as-a-function-of-three-depth" title="Permalink to this heading">#</a></h2>
 <p>We start by seeing how <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> builds the typical behavior of the cross-validation loss as a function of the tree depth. The cross-validation is an estimate of the expected generalization risk. Complicated trees tend to overfit the training data by producing many divisions of the feature space, as occurs with most learning methods.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -451,7 +452,7 @@ document.write(`
 </div>
 </section>
 <section id="basic-step-by-step-implementation">
-<h2><span class="section-number">16.2. </span>Basic step-by-step implementation<a class="headerlink" href="#basic-step-by-step-implementation" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">17.2. </span>Basic step-by-step implementation<a class="headerlink" href="#basic-step-by-step-implementation" title="Permalink to this heading">#</a></h2>
 <p>First, we import packages and define a function to generate the training and test data</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -636,7 +637,7 @@ DecisionTreeRegressor: tree loss =  10.19925448488538
 </div>
 </section>
 <section id="bootstrap-aggregation-or-bagging">
-<h2><span class="section-number">16.3. </span>Bootstrap Aggregation or <em>bagging</em><a class="headerlink" href="#bootstrap-aggregation-or-bagging" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">17.3. </span>Bootstrap Aggregation or <em>bagging</em><a class="headerlink" href="#bootstrap-aggregation-or-bagging" title="Permalink to this heading">#</a></h2>
 <p>Basic bagging implementation for a regression tree, in which we compare the decision tree estimator with the corresponding bagged estimator. We use the <span class="math notranslate nohighlight">\(R^2\)</span> metric as a comparison.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -769,7 +770,7 @@ DecisionTreeRegressor: tree loss =  10.19925448488538
 </div>
 </section>
 <section id="random-forests">
-<h2><span class="section-number">16.4. </span>Random Forests<a class="headerlink" href="#random-forests" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">17.4. </span>Random Forests<a class="headerlink" href="#random-forests" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; BaggingExampleRF.py &quot;&quot;&quot;</span>
@@ -802,7 +803,7 @@ RF OOB R^2 score =  0.8254263172303116
 </div>
 </div>
 <section id="feature-importance">
-<h3><span class="section-number">16.4.1. </span>Feature importance<a class="headerlink" href="#feature-importance" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">17.4.1. </span>Feature importance<a class="headerlink" href="#feature-importance" title="Permalink to this heading">#</a></h3>
 <p>Let us consider a classification problem with 15 features, only 5 of them informative.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -871,8 +872,8 @@ Feature 12 (0.019606)
 </div>
 </section>
 <section id="regression-boosting">
-<h3><span class="section-number">16.4.2. </span>Regression boosting<a class="headerlink" href="#regression-boosting" title="Permalink to this heading">#</a></h3>
-<p>Basic implementation of the regression boosting algorithm in <span id="id4">[<a class="reference internal" href="UNIT9-Neural-Networks.html#id3" title="Dirk P. Kroese, Zdravko Botev, Thomas Taimre, and Radislav: Vaisman. Data Science and Machine Learning: Mathematical and Statistical Methods. Machine Learning &amp; Pattern Recognition. Chapman &amp; Hall/CRC, 2020. URL: https://acems.org.au/data-science-machine-learning-book-available-download (visited on 2023-08-15).">1</a>]</span>:
+<h3><span class="section-number">17.4.2. </span>Regression boosting<a class="headerlink" href="#regression-boosting" title="Permalink to this heading">#</a></h3>
+<p>Basic implementation of the regression boosting algorithm in <span id="id4">[<a class="reference internal" href="UNIT5-Regression.html#id3" title="Dirk P. Kroese, Zdravko Botev, Thomas Taimre, and Radislav: Vaisman. Data Science and Machine Learning: Mathematical and Statistical Methods. Machine Learning &amp; Pattern Recognition. Chapman &amp; Hall/CRC, 2020. URL: https://acems.org.au/data-science-machine-learning-book-available-download (visited on 2023-08-15).">1</a>]</span>:
 <img alt="Regression boosting" src="../_images/A871Kroese.png" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1090,7 +1091,7 @@ AdaBoost Classifier zero-one loss =  0.0
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">8. </span>UNIT 7. Classification</p>
+        <p class="prev-next-title"><span class="section-number">9. </span>UNIT 7. Classification</p>
       </div>
     </a>
     <a class="right-next"
@@ -1098,7 +1099,7 @@ AdaBoost Classifier zero-one loss =  0.0
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">17. </span>UNIT 9. Neural Networks</p>
+        <p class="prev-next-title"><span class="section-number">18. </span>UNIT 9. Neural Networks</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1117,12 +1118,12 @@ AdaBoost Classifier zero-one loss =  0.0
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-validation-loss-as-a-function-of-three-depth">16.1. Cross-validation loss as a function of three depth</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-step-by-step-implementation">16.2. Basic step-by-step implementation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bootstrap-aggregation-or-bagging">16.3. Bootstrap Aggregation or <em>bagging</em></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random-forests">16.4. Random Forests</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-importance">16.4.1. Feature importance</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-boosting">16.4.2. Regression boosting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-validation-loss-as-a-function-of-three-depth">17.1. Cross-validation loss as a function of three depth</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-step-by-step-implementation">17.2. Basic step-by-step implementation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bootstrap-aggregation-or-bagging">17.3. Bootstrap Aggregation or <em>bagging</em></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random-forests">17.4. Random Forests</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-importance">17.4.1. Feature importance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-boosting">17.4.2. Regression boosting</a></li>
 </ul>
 </li>
 </ul>
