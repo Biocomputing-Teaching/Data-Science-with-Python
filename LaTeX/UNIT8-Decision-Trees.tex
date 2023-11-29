@@ -104,11 +104,12 @@ Study Abroad\\ % Your institution for the title page
         \begin{column}{0.4\linewidth}
             \begin{figure}
                 \includegraphics[width=0.7\linewidth]{F82Kroese}
+                \caption{The decision tree corresponding to Fig. \ref{Fig:F81Kroese} \cite{kroese2020}.}
                 \label{Fig:F82Kroese}
             \end{figure}
         \end{column}
         \begin{column}{0.6\linewidth}
-            The decision tree corresponding to Fig. \ref{Fig:F81Kroese}\cite{kroese2020}
+           
             \begin{itemize}
                 \item Each node $\nu$ corresponds to a region $\mathcal{R}_{\nu}$ of the feature space $X$. 
                 \item The root node is the featre space $X$ itself.
@@ -197,15 +198,24 @@ Study Abroad\\ % Your institution for the title page
 \begin{frame}{Regional prediction functions $g^{w}$}
     
     \begin{Exercise}{Splitting}
-        Can you rationalize how to generate a termination criteria based on the previous fact?
+        Can you rationalize how to generate a termination criteria based on the previous fact? Post an entry in the class forum and discuss  your classmates entries.
     \end{Exercise}
 \end{frame}
 
 \begin{frame}{Measuring impurity}
     \begin{figure}
-        \includegraphics[width=0.7\linewidth]{F83Kroese}
-        \caption{Entropy(normalized, divided by 2), Gini and missclassification impurities in binary classification (with probabilities $p$ and $1-p$). They are maximal when the label proportions are equal to $1/c$\cite{kroese2020}}
+        \includegraphics[width=0.6\linewidth]{F83Kroese}
+        \caption{Entropy (normalized, divided by 2), Gini and missclassification impurities in binary classification (with probabilities $p$ and $1-p$). They are maximal when the label proportions are equal to $1/c$\cite{kroese2020}}
     \end{figure}
+\end{frame}
+
+
+\begin{frame}{Calculating information gain}
+    
+    \begin{Exercise}{Information gain}
+        Following the description of information gain given in \href{https://towardsdatascience.com/decision-trees-explained-entropy-information-gain-gini-index-ccp-pruning-4d78070db36c}{this link}, calculate the information gain in the example given in Figures \ref{Fig:F81Kroese} and \ref{Fig:F82Kroese}. Post an entry in the class forum with the details of your calculation (either manual or computational). Discuss your classmates entries.
+    \end{Exercise}
+
 \end{frame}
 
 \begin{frame}{Termination criterion}
@@ -223,7 +233,7 @@ Study Abroad\\ % Your institution for the title page
     \item Binary (preferred) vs non binary trees. Too few data points in nodes close to the tree root.
     \item Alternative splitting rules (see Slide \ref{Slide:alternative}). Perhaps use several variables?
     \item Categorical variables ($2^k$ subsets for optimal partition with $k$ different categorical variables).
-    \item Missing values (add a catgeory of {\em missing values})
+    \item Missing values (add a category of {\em missing values})
 \end{itemize}
 \end{frame}
 
