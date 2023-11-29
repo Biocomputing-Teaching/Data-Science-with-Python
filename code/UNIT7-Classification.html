@@ -3,13 +3,13 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>UNIT 7. Classification &#8212; Data Science with Python Jupyter book</title>
+    <title>8. UNIT 7. Classification &#8212; Data Science with Python Jupyter book</title>
   
   
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,8 +38,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -66,8 +67,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'code/UNIT7-Classification';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="UNIT 8. Decision Tres" href="UNIT8-Decision-Trees.html" />
-    <link rel="prev" title="UNIT 6. Regularization and kernel methods" href="UNIT6-Regularization-and-Kernel-Methods.html" />
+    <link rel="next" title="16. UNIT 8. Decision Tres" href="UNIT8-Decision-Trees.html" />
+    <link rel="prev" title="7. UNIT 6. Regularization and kernel methods" href="UNIT6-Regularization-and-Kernel-Methods.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -78,6 +79,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -131,9 +141,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../intro.html">
+  
   
   
   
@@ -143,8 +155,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/FCTE.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/FCTE.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/FCTE.png" class="logo__image only-light" alt="Data Science with Python Jupyter book - Home"/>
+    <script>document.write(`<img src="../_static/FCTE.png" class="logo__image only-dark" alt="Data Science with Python Jupyter book - Home"/>`);</script>
   
   
 </a></div>
@@ -159,14 +171,14 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../README.html">About the course Data-Science-with-Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="UNIT1-Introduction.html"><a id="toc1_"></a><span class="xref myst">UNIT 1. Import and Visualitzation of data with Python</span></a></li>
-<li class="toctree-l1"><a class="reference internal" href="UNIT2-Statistical-Learning.html"><a id="toc1_"></a><span class="xref myst">UNIT 2. Statistical Learning</span></a></li>
-<li class="toctree-l1"><a class="reference internal" href="UNIT3-MC-Methods.html">UNIT 3. Monte Carlo methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="UNIT4-Unsupervised-Learning.html"><a id="toc1_"></a><span class="xref myst">UNIT 4. Unsupervised Learning</span></a></li>
-<li class="toctree-l1"><a class="reference internal" href="UNIT5-Regression.html">UNIT 5. Regression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="UNIT6-Regularization-and-Kernel-Methods.html">UNIT 6. Regularization and kernel methods</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">UNIT 7. Classification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">1. About the course Data-Science-with-Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UNIT1-Introduction.html">2. <a id="toc1_"></a><span class="xref myst">UNIT 1. Import and Visualitzation of data with Python</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="UNIT2-Statistical-Learning.html">3. <a id="toc1_"></a><span class="xref myst">UNIT 2. Statistical Learning</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="UNIT3-MC-Methods.html">4. UNIT 3. Monte Carlo methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UNIT4-Unsupervised-Learning.html">5. <a id="toc1_"></a><span class="xref myst">UNIT 4. Unsupervised Learning</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="UNIT5-Regression.html">6. <a id="toc1_"></a><span class="xref myst">UNIT 5. Regression</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="UNIT6-Regularization-and-Kernel-Methods.html">7. UNIT 6. Regularization and kernel methods</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">8. UNIT 7. Classification</a></li>
 
 
 
@@ -174,8 +186,8 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="UNIT8-Decision-Trees.html">UNIT 8. Decision Tres</a></li>
-<li class="toctree-l1"><a class="reference internal" href="UNIT9-Neural-Networks.html">UNIT 9. Neural Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UNIT8-Decision-Trees.html">16. UNIT 8. Decision Tres</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UNIT9-Neural-Networks.html">17. UNIT 9. Neural Networks</a></li>
 </ul>
 
     </div>
@@ -329,20 +341,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -369,14 +383,14 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">UNIT 7. Classification</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#naive-bayes">Naive Bayes</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-and-quadratic-discriminant-analysis">Linear and quadratic discriminant analysis</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#k-nearest-neighbors-classification"><span class="math notranslate nohighlight">\(K\)</span>-Nearest Neighbors Classification</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#suport-vector-machine">Suport vector machine</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-classifiers">Testing classifiers</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ex3-accuracy-metrics">EX3: Accuracy metrics</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#roc-curves">ROC curves</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">8. UNIT 7. Classification</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#naive-bayes">9. Naive Bayes</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-and-quadratic-discriminant-analysis">10. Linear and quadratic discriminant analysis</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#k-nearest-neighbors-classification">11. <span class="math notranslate nohighlight">\(K\)</span>-Nearest Neighbors Classification</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#suport-vector-machine">12. Suport vector machine</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-classifiers">13. Testing classifiers</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ex3-accuracy-metrics">14. EX3: Accuracy metrics</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#roc-curves">15. ROC curves</a></li>
 </ul>
 
             </nav>
@@ -390,7 +404,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="unit-7-classification">
-<h1>UNIT 7. Classification<a class="headerlink" href="#unit-7-classification" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">8. </span>UNIT 7. Classification<a class="headerlink" href="#unit-7-classification" title="Permalink to this heading">#</a></h1>
 <p>This Unit includes main introduction to classification in machine learning, strongly based in <span id="id1">[<a class="reference internal" href="UNIT9-Neural-Networks.html#id3" title="Dirk P. Kroese, Zdravko Botev, Thomas Taimre, and Radislav: Vaisman. Data Science and Machine Learning: Mathematical and Statistical Methods. Machine Learning &amp; Pattern Recognition. Chapman &amp; Hall/CRC, 2020. URL: https://acems.org.au/data-science-machine-learning-book-available-download (visited on 2023-08-15).">1</a>]</span>.</p>
 <div class="docutils container" id="id2">
 <div class="citation" id="id3" role="doc-biblioentry">
@@ -401,7 +415,7 @@ document.write(`
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="naive-bayes">
-<h1>Naive Bayes<a class="headerlink" href="#naive-bayes" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">9. </span>Naive Bayes<a class="headerlink" href="#naive-bayes" title="Permalink to this heading">#</a></h1>
 <p>In naive Bayes, the value of the overall function <span class="math notranslate nohighlight">\(g\)</span> depends on the product of the function <span class="math notranslate nohighlight">\(g\)</span> for each feature. Thus, the classification is done by choosing the highset <span class="math notranslate nohighlight">\(g\)</span> value.</p>
 <p>For example, below we assume we have three features with different means <span class="math notranslate nohighlight">\(\mu\)</span> and standard deviations <span class="math notranslate nohighlight">\(\sigma\)</span>. How can a given vector of features <span class="math notranslate nohighlight">\(\uvec{x}\)</span> be classified?</p>
 <div class="cell docutils container">
@@ -435,7 +449,7 @@ document.write(`
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="linear-and-quadratic-discriminant-analysis">
-<h1>Linear and quadratic discriminant analysis<a class="headerlink" href="#linear-and-quadratic-discriminant-analysis" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">10. </span>Linear and quadratic discriminant analysis<a class="headerlink" href="#linear-and-quadratic-discriminant-analysis" title="Permalink to this heading">#</a></h1>
 <p>Built on the above Bayesian approach, and after some mathematical manipulation, one can draw the lines that discriminate between two groups. This is called the decison boundary, that is quadratic for two given normal distributions but becomes linear if the distributions have the same covariance matrix.</p>
 <p>See tha case for a LDA below, with the same <span class="math notranslate nohighlight">\(\sigma\)</span> for two underlying normal distributions:</p>
 <div class="cell docutils container">
@@ -546,7 +560,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/85dd960a290dd72d98f5ec821b503b8ae058a7ff1f7c48b29a1dcb49d8651c11.png" src="../_images/85dd960a290dd72d98f5ec821b503b8ae058a7ff1f7c48b29a1dcb49d8651c11.png" />
+<img alt="../_images/6056302d53802682cb7a7825ca2f13c08d006c3f5ba0d616095fb49c6d1ef423.png" src="../_images/6056302d53802682cb7a7825ca2f13c08d006c3f5ba0d616095fb49c6d1ef423.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -574,12 +588,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9355cf9d090a8b546e78598c70203e54c9cf406ace654b4f38938a462b771ae8.png" src="../_images/9355cf9d090a8b546e78598c70203e54c9cf406ace654b4f38938a462b771ae8.png" />
+<img alt="../_images/7ca22c0130ba06539b36e340c92ba67733d7df8e61f4d810a350c0d3ea6ee81a.png" src="../_images/7ca22c0130ba06539b36e340c92ba67733d7df8e61f4d810a350c0d3ea6ee81a.png" />
 </div>
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="k-nearest-neighbors-classification">
-<h1><span class="math notranslate nohighlight">\(K\)</span>-Nearest Neighbors Classification<a class="headerlink" href="#k-nearest-neighbors-classification" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">11. </span><span class="math notranslate nohighlight">\(K\)</span>-Nearest Neighbors Classification<a class="headerlink" href="#k-nearest-neighbors-classification" title="Permalink to this heading">#</a></h1>
 <p><img alt="KNN" src="../_images/knn.png" /></p>
 <p>Figure adapted from <span class="xref myst">https://medium.com/swlh/k-nearest-neighbor-ca2593d7a3c4</span>.</p>
 <div class="cell docutils container">
@@ -623,7 +637,7 @@ document.write(`
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="suport-vector-machine">
-<h1>Suport vector machine<a class="headerlink" href="#suport-vector-machine" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">12. </span>Suport vector machine<a class="headerlink" href="#suport-vector-machine" title="Permalink to this heading">#</a></h1>
 <p><img alt="SVM" src="../_images/SVM.png" />
 Figure adapted from <span class="xref myst">https://www.javatpoint.com/machine-learning-support-vector-machine-algorithm</span>.</p>
 <p>Here is a calculator of the support vectors for a given dataset, taken from <a class="reference external" href="https://www.mltut.com/svm-implementation-in-python-from-scratch/">here</a>. The data contains information about the purchase or not of an SUV (dependent variable) as a function of gender, age and estimated salary (explanatory or independent variables). We start by importing and visualizing the data, and we will prune the table eliminating userID and gender.</p>
@@ -1519,7 +1533,7 @@ Bias  [-3.9763643]
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="testing-classifiers">
-<h1>Testing classifiers<a class="headerlink" href="#testing-classifiers" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">13. </span>Testing classifiers<a class="headerlink" href="#testing-classifiers" title="Permalink to this heading">#</a></h1>
 <p>Obtain data from the <a class="reference external" href="https://archive.ics.uci.edu/dataset/17/breast+cancer+wisconsin+diagnostic">UCI’s Breast Cancer Wisconsin data set</a>.</p>
 <p>Let us have a look at the data with the UCI’s API:</p>
 <div class="cell docutils container">
@@ -1740,12 +1754,12 @@ SVM     0.939
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="ex3-accuracy-metrics">
-<h1>EX3: Accuracy metrics<a class="headerlink" href="#ex3-accuracy-metrics" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">14. </span>EX3: Accuracy metrics<a class="headerlink" href="#ex3-accuracy-metrics" title="Permalink to this heading">#</a></h1>
 <p>Explore which other types of metrics provided by <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> may give better appropriate measure for the breast cancer data classification with the different methods. Provide a jupyter notebook with the comparisons, plotting an image similar to this one (taken from the internet from data not related to this exercise at all) but including the methods discussed in the class notes:
 <img alt="" src="https://i.stack.imgur.com/MPaJk.png" /></p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="roc-curves">
-<h1>ROC curves<a class="headerlink" href="#roc-curves" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">15. </span>ROC curves<a class="headerlink" href="#roc-curves" title="Permalink to this heading">#</a></h1>
 <p>Adapted from <a class="reference external" href="https://machinelearningmastery.com/roc-curves-and-precision-recall-curves-for-classification-in-python/">here</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1877,11 +1891,10 @@ Logistic: ROC AUC=0.903
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="UNIT6-Regularization-and-Kernel-Methods.html"
@@ -1889,7 +1902,7 @@ Logistic: ROC AUC=0.903
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">UNIT 6. Regularization and kernel methods</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>UNIT 6. Regularization and kernel methods</p>
       </div>
     </a>
     <a class="right-next"
@@ -1897,14 +1910,11 @@ Logistic: ROC AUC=0.903
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">UNIT 8. Decision Tres</p>
+        <p class="prev-next-title"><span class="section-number">16. </span>UNIT 8. Decision Tres</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1919,14 +1929,14 @@ Logistic: ROC AUC=0.903
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">UNIT 7. Classification</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#naive-bayes">Naive Bayes</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-and-quadratic-discriminant-analysis">Linear and quadratic discriminant analysis</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#k-nearest-neighbors-classification"><span class="math notranslate nohighlight">\(K\)</span>-Nearest Neighbors Classification</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#suport-vector-machine">Suport vector machine</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-classifiers">Testing classifiers</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ex3-accuracy-metrics">EX3: Accuracy metrics</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#roc-curves">ROC curves</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">8. UNIT 7. Classification</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#naive-bayes">9. Naive Bayes</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-and-quadratic-discriminant-analysis">10. Linear and quadratic discriminant analysis</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#k-nearest-neighbors-classification">11. <span class="math notranslate nohighlight">\(K\)</span>-Nearest Neighbors Classification</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#suport-vector-machine">12. Suport vector machine</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-classifiers">13. Testing classifiers</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ex3-accuracy-metrics">14. EX3: Accuracy metrics</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#roc-curves">15. ROC curves</a></li>
 </ul>
 
   </nav></div>
@@ -1949,6 +1959,7 @@ By CBBL teaching
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -1975,8 +1986,8 @@ By CBBL teaching
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>
