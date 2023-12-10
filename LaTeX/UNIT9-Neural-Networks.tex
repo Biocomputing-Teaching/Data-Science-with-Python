@@ -81,9 +81,9 @@ Study Abroad\\ % Your institution for the title page
     \end{figure}
 \end{frame}
 
-\begin{frame}{Supervised ML}
+\begin{frame}{Supervised ML\cite{kroese2020}}
     \begin{itemize}
-        \item Build models capable of learning from a series of data (x)
+        \item Build models capable of learning from a series of data $X$.
         \item The learning process depends on the task we want to train the model:
             \begin{description}
                 \item[Supervised] the input data $X$ is accompanied by the values ​$​y$ that we want the model to learn or also called targets (linear regression, decision trees, ...). The objective is that the prediction of the model given some data $x$ is equal to the target. 
@@ -237,6 +237,13 @@ Study Abroad\\ % Your institution for the title page
     \end{itemize}
 \end{frame}
 
+\begin{frame}{The logistic function}
+    \begin{figure}
+        \includegraphics[width=0.6\linewidth]{logistic}
+        \caption{A binary classification problem. The class-conditional densities are Gaussians with unit $\sigma^2$. The posterior probability is the logistic function $y=1/(1+\exp{(-2x)})$\cite{jordan_why_1995}.}
+        \label{Fig:logistic}
+    \end{figure}
+\end{frame}
 
 \begin{frame}{Activation functions}
     \begin{columns}
@@ -277,13 +284,7 @@ Study Abroad\\ % Your institution for the title page
      \end{columns}
 \end{frame}
 
-\begin{frame}{The logistic function}
-    \begin{figure}
-        \includegraphics[width=0.6\linewidth]{logistic}
-        \caption{A binary classification problem. The class-conditional densities are Gaussians with unit $\sigma^2$. The posterior probability is the logistic function $y=1/(1+\exp{(-2x)})$\cite{jordan_why_1995}.}
-        \label{Fig:TrainingDart}
-    \end{figure}
-\end{frame}
+
 
 
 \begin{frame}
