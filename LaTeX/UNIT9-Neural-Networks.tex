@@ -68,7 +68,7 @@ Study Abroad\\ % Your institution for the title page
 \begin{frame}{Evolution of AI}
     \begin{figure}
         \includegraphics[width=0.8\linewidth]{MLDLevol}
-        \caption{Evolution of AI, ML and DL. Source \href{https://blog.bismart.com/diferencia-machine-learning-deep-learning}{BISMART}.}
+        \caption{Evolution of AI, ML and DL. Source \href{https://blog.bismart.com/diferencia-machine-learning-deep-learning}{BISMART}. Check also this \href{https://www.3blue1brown.com/topics/neural-networks}{3blue1brown set of videos}.}
         \label{Fig:MLDLevol}
     \end{figure}
 \end{frame}
@@ -106,7 +106,7 @@ Study Abroad\\ % Your institution for the title page
         \item In the ML example above, we use lemmatization to eliminate inflection from words, generating a simpler model.
         \item In neural networks, {\bf we leave the network itself} to find out the most important features in the data, without relying on feature engineering techniques. 
     \end{itemize}
-    Neural Networks \href{https://towardsdatascience.com/deep-learning-with-python-neural-networks-complete-tutorial-6b53c0b06af0}{are based on} a collection of connected units (neurons), which, just like the synapses in a brain, can transmit a signal to other neurons, so that, acting like interconnected brain cells, they can learn and make decisions in a more human-like manner.
+    Neural Networks \href{https://towardsdatascience.com/deep-learning-with-python-neural-networks-complete-tutorial-6b53c0b06af0}{are based on} a collection of connected units (neurons), which, just like the synapses in a brain, can transmit a signal to other neurons, so that, acting like interconnected brain cells, they can learn and make decisions in a more human-like manner.\cite{nielsen_neural_2015}
 \end{frame}
 
 \begin{frame}{ML vs DL}
@@ -157,7 +157,7 @@ Study Abroad\\ % Your institution for the title page
 \begin{frame}{Multilayer perceptron}
     \begin{figure}
         \includegraphics[width=0.9\linewidth]{MLP}
-        \caption{A multilayer perceptron with 5 hidden units.}
+        \caption{A multilayer perceptron with 5 hidden units.See also \href{https://youtu.be/aircAruvnKk?si=J6nqx_aSnjgYggvm}{this video}.}
         \label{Fig:perceptron}
     \end{figure}
 \end{frame}
@@ -344,6 +344,60 @@ derror_dbias =  derror_dprediction
      \end{columns}
 \end{frame}
 
+\section{Convolutional Neural Networks}
+
+\begin{frame}[fragile]{Convolutional Neural Networks}
+    \begin{columns}
+        \begin{column}{0.4\linewidth}  
+            \begin{figure}
+                \href{https://www.youtube.com/watch?v=FwFduRA_L6Q}{\includegraphics[width=0.9\linewidth]{CNNvideo}}
+                \caption{Neural network for ZIP code recognition. To learn more: \cite{Olah_2014} and \href{https://distill.pub/}{distill}.}
+                \label{Fig:CNNvideo}
+            \end{figure}
+        \end{column}
+        \begin{column}{0.6\linewidth}
+            \begin{figure}
+                \includegraphics[width=0.9\linewidth]{CNN}
+                \caption{Structure of the Lecun et al. neural network for ZIP code recognition\cite{lecun_backpropagation_1989}.}
+                \label{Fig:CNN}
+            \end{figure}
+        \end{column}
+     \end{columns}
+\end{frame}
+
+\begin{frame}
+    \frametitle{CNN}
+    \begin{itemize}
+        \item Unlike traditional NN, which are fully connected, a CNN uses convolutional layers to learn features
+        \item A CNN uses filters to extract features such as edges, corners or textures.
+        \item It includes pooling layers, which downsample the output by taking the maximim or average value in a local neighborhood.
+        \item Once the CNN layers have been passed, the data is flattened into a one-dimensional array that is input into one or more fully connected layers to predict from the learned features.
+    \end{itemize}
+
+    
+\end{frame}
+
+\begin{frame}
+    \frametitle{The MNIST Handwritten Digit Classification Dataset}
+    \begin{itemize}
+        \item The MNIST dataset is an acronym that stands for the Modified National Institute of Standards and Technology dataset.
+        \item It contains 60,000 small square 28×28 pixel grayscale images of handwritten single digits between 0 and 9.
+        \item The task is to classify a given image of a handwritten digit into one of 10 classes representing integer values from 0 to 9, inclusively.
+        \item  Top-performing models are deep learning convolutional neural networks that achieve a classification accuracy of above 99\%, with an error rate between 0.4\% and 0.2\% on the hold out test dataset.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Keras vs Tensorflow vs pytorch}
+% https://www.simplilearn.com/keras-vs-tensorflow-vs-pytorch-article
+    \begin{description}
+        \item[Tensorflow] Low-level software library created by Google to implement ML and to solve complex numerical problems. Every element is converted into a graphical form. The variables in the graph are tensors and the operations are called {\em operators}. Tensors are unmutable. High productivity.
+        \item[Keras] High-level deep learning API written in Python for easy implementation and computation of neural newtworks. Keras uses Tensorflow as its low-level engine.
+        \item[Pytorch] Low-level API developed by Facebook for natural language processing and computer vision. More powerful than numpy. Most popular among researchers.
+    \end{description}
+\end{frame}
+
+
 
 % nous temes:
 % -encoding/decoding
@@ -356,6 +410,7 @@ derror_dbias =  derror_dprediction
 % -recommender
 
 \section{Bibliography}
+
 \bibliographystyle{unsrt}
 \bibliography{DataSciencewithPython}
 \end{document}
