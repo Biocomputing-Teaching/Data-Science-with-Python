@@ -60,6 +60,8 @@ Study Abroad\\ % Your institution for the title page
     \item Neural networks
     \item Gradient Descent
     \item Backpropagation
+    \item Network training
+    \item Convolutional Neural Networks
   \end{itemize}
 \end{frame}
 
@@ -67,7 +69,7 @@ Study Abroad\\ % Your institution for the title page
 
 \begin{frame}{Evolution of AI}
     \begin{figure}
-        \includegraphics[width=0.8\linewidth]{MLDLevol}
+        \includegraphics[width=0.7\linewidth]{MLDLevol}
         \caption{Evolution of AI, ML and DL. Source \href{https://blog.bismart.com/diferencia-machine-learning-deep-learning}{BISMART}. Check also this \href{https://www.3blue1brown.com/topics/neural-networks}{3blue1brown set of videos}.}
         \label{Fig:MLDLevol}
     \end{figure}
@@ -111,8 +113,8 @@ Study Abroad\\ % Your institution for the title page
 
 \begin{frame}{ML vs DL}
     \begin{figure}
-        \includegraphics[width=0.8\linewidth]{MLvsDL}
-        \caption{ML vs DL. Source \href{https://blog.bismart.com/diferencia-machine-learning-deep-learning}{BISMART}.}
+        \includegraphics[width=0.7\linewidth]{MLvsDL}
+        \caption{ML (fixed/engineered features + trainable classifier) vs DL (trainable feature extractor + trainable classifier). Source \href{https://blog.bismart.com/diferencia-machine-learning-deep-learning}{BISMART}. }
         \label{Fig:MLvsDL}
     \end{figure}
 \end{frame}
@@ -285,7 +287,7 @@ Study Abroad\\ % Your institution for the title page
 \end{frame}
 
 
-
+\section{Cost and Backpropagation}
 
 \begin{frame}
     \begin{Exercise}{Loss/Cost function in a simple 2 layer NN}
@@ -324,6 +326,8 @@ derror_dprediction
      \end{columns}
 \end{frame}
 
+
+
 \begin{frame}[fragile]{Backpropagation: bias}
     \begin{columns}
         \begin{column}{0.6\linewidth}  
@@ -342,6 +346,22 @@ derror_dbias =  derror_dprediction
             \end{figure}
         \end{column}
      \end{columns}
+\end{frame}
+
+\section{NN layers}
+
+\begin{frame}
+    \frametitle{\href{https://cs.nyu.edu/~yann/talks/lecun-ranzato-icml2013.pdf}{Trainable feature hierarchy}}
+
+    \begin{itemize}
+        \item Increasing level of abstraction in hierarchy of representations
+        \item Each stage is a kind of trainable feature transform
+        \item Image recognition: Pixel $\rightarrow$ edge $\rightarrow$  texton $\rightarrow$  motif $\rightarrow$  part $\rightarrow$  objective
+        \item Text: Character $\rightarrow$ word $\rightarrow$ word group $\rightarrow$ clause $\rightarrow$ sentence $\rightarrow$ story
+        \item Speech: Sample $\rightarrow$  spectral band $\rightarrow$  sound $\rightarrow$ ... phoneme $\rightarrow$ word
+    \end{itemize}
+    
+
 \end{frame}
 
 \section{Convolutional Neural Networks}
@@ -374,8 +394,34 @@ derror_dbias =  derror_dprediction
         \item Once the CNN layers have been passed, the data is flattened into a one-dimensional array that is input into one or more fully connected layers to predict from the learned features.
     \end{itemize}
 
+
     
 \end{frame}
+
+\begin{frame}
+    \frametitle{Convolution and kernels}
+
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=\linewidth]{convolution.png}
+        \caption{Convolution between an input image and a kernel. Source \href{https://towardsdatascience.com/conv2d-to-finally-understand-what-happens-in-the-forward-pass-1bbaafb0b148}{TowardsDataScience}.}
+        \label{<label>}
+    \end{figure}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Kernels}
+
+    The trainable parameters in a CNN are all the parameters that will be updated when the network is trained. In a Conv2D, the trainable elements are the values that compose the kernels. In a $3\times 3$ convolution kernel, we have $3\cdot 3=9$ trainable parameters plus, eventually, a biass (for a complete explanation, check \href{https://towardsdatascience.com/conv2d-to-finally-understand-what-happens-in-the-forward-pass-1bbaafb0b148}{this link}):
+    \[
+    \omega\cdot F(x,y)= \omega_{bias}+\sum_{\delta x=-k_i}^{k_i}  \sum_{\delta y=-k_j}^{k_j}
+    \omega(\delta x,\delta y)\cdot F(x+\delta x,y + \delta y)
+    \]
+    The number of parameters increases linearly with the number of convolution kernels. Hence linearly with the number of desired output channels. 
+
+\end{frame}
+
 
 \begin{frame}
     \frametitle{The MNIST Handwritten Digit Classification Dataset}
