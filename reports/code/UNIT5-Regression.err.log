@@ -21,16 +21,46 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-import seaborn as sns
-sns.scatterplot(x=Xmat[:,0],y=Xmat[:,1],hue=labels,legend='full',palette="Set1")
+""" confpred.py """
+import numpy as np
+import matplotlib.pyplot as plt
+from  numpy.linalg import inv, lstsq, norm
+np.random.seed(123)
+
+n = 100
+x = np.linspace(0.01,1,100).reshape((n,1))
+# parameters
+beta = np.array([6,13])
+sigma = 2
+Xmat = np.hstack((np.ones((n,1)), x)) #design matrix
+y = Xmat @ beta + sigma*np.random.randn(n) 
+
+# solve the normal equations
+betahat = lstsq(Xmat, y,rcond=None)[0] 
+
+rl = np.zeros(n)  # (true) regression line
+u = 0
+
+for i in range(n):
+    u = u + 1/n;
+    xvec = np.array([1,u])
+    rl[i] = xvec.T @ beta;
+
+plt.plot(x,y, '.')
+plt.plot(x,rl,'b')
+plt.savefig("../figures/linreg.png")
+
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-Cell [0;32mIn[6], line 1[0m
-[0;32m----> 1[0m [38;5;28;01mimport[39;00m [38;5;21;01mseaborn[39;00m [38;5;28;01mas[39;00m [38;5;21;01msns[39;00m
-[1;32m      2[0m sns[38;5;241m.[39mscatterplot(x[38;5;241m=[39mXmat[:,[38;5;241m0[39m],y[38;5;241m=[39mXmat[:,[38;5;241m1[39m],hue[38;5;241m=[39mlabels,legend[38;5;241m=[39m[38;5;124m'[39m[38;5;124mfull[39m[38;5;124m'[39m,palette[38;5;241m=[39m[38;5;124m"[39m[38;5;124mSet1[39m[38;5;124m"[39m)
+Cell [0;32mIn[1], line 3[0m
+[1;32m      1[0m [38;5;124;03m""" confpred.py """[39;00m
+[1;32m      2[0m [38;5;28;01mimport[39;00m [38;5;21;01mnumpy[39;00m [38;5;28;01mas[39;00m [38;5;21;01mnp[39;00m
+[0;32m----> 3[0m [38;5;28;01mimport[39;00m [38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpyplot[39;00m [38;5;28;01mas[39;00m [38;5;21;01mplt[39;00m
+[1;32m      4[0m [38;5;28;01mfrom[39;00m  [38;5;21;01mnumpy[39;00m[38;5;21;01m.[39;00m[38;5;21;01mlinalg[39;00m [38;5;28;01mimport[39;00m inv, lstsq, norm
+[1;32m      5[0m np[38;5;241m.[39mrandom[38;5;241m.[39mseed([38;5;241m123[39m)
 
-[0;31mModuleNotFoundError[0m: No module named 'seaborn'
-ModuleNotFoundError: No module named 'seaborn'
+[0;31mModuleNotFoundError[0m: No module named 'matplotlib'
+ModuleNotFoundError: No module named 'matplotlib'
 
