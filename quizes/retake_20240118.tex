@@ -1,0 +1,403 @@
+%%Template made by Uday Khankhoje for examinations using the exam template
+%%Refer to the documentation http://www-math.mit.edu/~psh/exam/examdoc.pdf 
+%%for lot more bells and whistles to the standard template shown below
+\documentclass[a4paper,11pt,addpoints]{exam}
+\usepackage[left=1.5cm,right=1.5cm,top=1.5cm,bottom=2cm]{geometry}
+%\usepackage{mathrsfs}
+\usepackage{graphicx,color}
+\usepackage{epic,eepic}
+%\usepackage{mathpazo}
+\usepackage{url}
+\usepackage{amsmath, amsthm, amssymb}
+\pointsinmargin
+\boxedpoints 
+\renewcommand*\half{.5}
+\usepackage{setspace}
+\DeclareMathOperator{\vecc}{vec}
+%\renewcommand{\vec}[1]{\ensuremath{\mathbf{#1}}}
+
+\usepackage{listings}
+\usepackage{xcolor}
+
+\lstset{
+    language=Python,
+    basicstyle=\small\ttfamily,
+    commentstyle=\color{green!40!black},
+    keywordstyle=\color{blue},
+    numberstyle=\tiny\color{gray},
+    numbers=left,
+    stepnumber=1,
+    numbersep=5pt,
+    frame=single,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+    breaklines=true,
+    breakatwhitespace=false,
+}
+
+\pagestyle{headandfoot}
+\runningheadrule
+\firstpageheader{}{}{}
+\runningheader{Data Science and AI with Python}{Retake Exam}{January 18th, 2024}
+\runningfooter{UVic-UCC}{Faculty of Sciences, Technology and Engineering}{Page \thepage\ of \numpages}
+\firstpagefooter{}{Page \thepage\ of \numpages}{}
+
+\begin{document}
+\noindent 
+%%PART 1 of header
+\begin{center}
+	\vspace*{-3em}
+\def\arraystretch{2.0}
+\begin{tabular}{|p{0.7\linewidth}|p{0.2\linewidth}|}
+\hline 
+\textbf{Study Abroad: Data Science and AI with Python. Retake Exam} & Marks obtained $\downarrow$ \\
+\hline 
+Date: 18.01.2024,\hspace{1cm}  Total questions: \textbf{\numquestions} \hspace{1cm} Total points: \textbf{\numpoints} &   \\ 
+\hline 
+\multicolumn{2}{|l|}{Name: \hspace{0.7\linewidth} Time: 1.5 hrs} \\
+\hline
+\end{tabular} 
+\end{center}
+%%PART 2 of header, if you have too many questions, this may be a problem
+%%if so, use \multirowgradetable{n}[questions], where n is the number of rows you want
+%%or, switch to \gradetable[h][pages] instead, 
+\begin{center}
+\multirowgradetable{4}[questions]
+\end{center}
+%%PART 3 of header
+
+%%toggle comment on next line to show/hide the answers
+\printanswers
+%%Now the actual paper!
+
+\section{Multiple choice questions}
+\textbf{Instructions:
+\begin{enumerate}
+    \item All questions count 1 point
+    \item Wrong answers substract 0.25 points
+\end{enumerate}}
+
+\begin{questions}
+
+\question[1] In Python, which library is commonly used for data manipulation and analysis?
+\begin{choices}
+\choice TensorFlow
+\choice Scikit-Learn
+\CorrectChoice Numpy
+\choice PyTorch
+\end{choices}
+
+\question[1] What is the primary advantage of using Jupyter notebooks for data analysis in Python?
+\begin{choices}
+\choice Better performance
+\CorrectChoice Code modularity 
+\choice Real-time collaboration
+\choice Strong typing
+\end{choices}
+
+\question[1] In statistical learning, what does the term "Supervised Learning" mean?
+\begin{choices}
+\CorrectChoice Learning with labeled data 
+\choice Learning with a teacher or mentor
+\choice Learning without guidance
+\choice Learning using neural networks
+\end{choices}
+
+\question[1]  What is the main goal of clustering in unsupervised learning?
+\begin{choices}
+\choice  Predicting outcomes
+\choice Finding hidden patterns
+\CorrectChoice Minimizing error
+\choice Reducing dimensionality
+\end{choices}
+
+\question[1] Which of the following clustering algorithms is based on centroid initialization and iterative assignment and update steps?
+\begin{choices}
+\choice DBSCAN
+\choice Agglomerative Hierarchical Clustering
+\choice Mean Shift
+\CorrectChoice K-Means 
+\end{choices}
+
+\question[1] In hierarchical clustering, what is the linkage criterion used to measure the distance between clusters when merging them?
+\begin{choices}
+\choice Euclidean distance
+\choice Manhattan distance
+\choice Silhouette coefficient
+\CorrectChoice Ward's method 
+\end{choices}
+
+\question[1] What is a limitation of the K-Means clustering algorithm?
+\begin{choices}
+\choice Sensitivity to cluster shapes
+\CorrectChoice Sensitivity to outliers
+\choice Difficulty handling noisy data
+\choice  Lack of scalability
+\end{choices}
+
+\question[1] DBSCAN (Density-Based Spatial Clustering of Applications with Noise) is known for:
+\begin{choices}
+\choice Partitioning data into a predetermined number of clusters
+\choice Agglomerative merging of clusters
+\CorrectChoice Clustering data based on density connectivity
+\choice Assigning data points to the nearest centroid
+\end{choices}
+
+\question[1] What does PCA stand for in the context of dimensionality reduction?
+\begin{choices}
+\CorrectChoice Principal Component Analysis 
+\choice Primary Component Analysis
+\choice Predictive Cluster Algorithm
+\choice Probability and Causality Analysis
+\end{choices}
+
+\question[1] What does the term "Unsupervised learning" mean?
+\begin{choices}
+\choice Learning without any feedback
+\choice Learning with a mentor
+\choice Learning using neural networks
+\CorrectChoice Learning without labeled data  
+\end{choices}
+
+\question[1] What is the primary difference between linear and nonlinear models in regression?
+\begin{choices}
+\choice Linearity of the relationship
+\choice Number of features
+\CorrectChoice Degree of complexity 
+\choice Use of optimization techniques
+\end{choices}
+
+\question[1] What role do kernel models play in machine learning?
+\begin{choices}
+\choice Dimensionality reduction
+\choice Clustering of data points
+\choice Regularization of models
+\CorrectChoice Nonlinear transformation of input features 
+\end{choices}
+
+\question[1] What is KNN (K-Nearest Neighbors) primarily used for in classification?
+\begin{choices}
+\choice Dimensionality reduction
+\CorrectChoice Assigning labels based on nearest neighbors 
+\choice Clustering
+\choice Predicting probabilities
+\end{choices}
+
+\question[1]  How does SVM (Support Vector Machines) handle nonlinear decision boundaries?
+\begin{choices}
+\choice By increasing the model complexity
+\choice By reducing the number of support vectors
+\choice By using gradient boosting
+\CorrectChoice By transforming features using kernels 
+\end{choices}
+
+\question[1] What is the primary advantage of using decision trees in machine learning?
+\begin{choices}
+\choice Robustness to outliers
+\choice High computational efficiency
+\CorrectChoice Simplicity and interpretability 
+\choice Ability to handle high-dimensional data
+\end{choices}
+
+\question[1]  In ensemble methods, how does Random Forest improve model performance?
+\begin{choices}
+\choice By reducing bias
+\CorrectChoice By combining multiple weak learners 
+\choice By increasing variance
+\choice By removing outliers
+\end{choices}
+
+\question[1] How are categorical variables typically encoded in decision trees?
+\begin{choices}
+\choice Label Encoding
+\CorrectChoice  One-Hot Encoding 
+\choice Integer Encoding
+\choice Binary Encoding
+\end{choices}
+
+\question[1]  What is the primary difference between a neural network and a traditional machine learning model?
+\begin{choices}
+\choice  Use of linear models
+\choice Lack of optimization techniques
+\CorrectChoice Depth and complexity 
+\choice Independence from data size
+\end{choices}
+
+\question[1] In deep learning, what is the purpose of Convolutional Neural Networks (CNN)?
+\begin{choices}
+\choice Sequence prediction
+\choice Clustering
+\choice Dimensionality reduction
+\CorrectChoice Image classification and recognition 
+\end{choices}
+
+
+\question[1] What does the term "Training NN" refer to in the context of deep learning?
+\begin{choices}
+\CorrectChoice Fine-tuning model parameters 
+\choice Normalizing input data
+\choice Evaluating model performance
+\choice Reducing model complexity
+\end{choices}
+
+\section{Regular questions}
+\textbf{Instructions:
+\begin{enumerate}
+    \item Give clear answers
+    \item Use only the space provided below the question
+\end{enumerate}}
+
+    \question[5] 
+    Consider a dataset with the following points: A(2, 3), B(5, 4), C(3, 6), D(8, 7), E(9, 5). Perform the first iteration of the K-Means clustering algorithm with initial centroids at A(2, 3) and D(8, 7).
+    
+    \begin{solution}[3in]
+        \begin{enumerate}
+            \item Initial centroids: A(2, 3) and D(8, 7)
+            \item Assignment: A, B, C to cluster 1; D, E to cluster 2
+            \item Update centroids: (3.33, 4.33) and (8.5, 6)
+        \end{enumerate}
+        
+    \end{solution}
+    
+    \question[5]
+    Compare and contrast K-Means clustering and hierarchical clustering algorithms. Highlight their differences in terms of approach, scalability, and sensitivity to cluster shapes.
+    
+    \begin{solution}[3in]
+        \begin{itemize}
+            \item K-Means: Centroid-based, iterative, scalable, sensitive to cluster shapes.
+            \item Hierarchical Clustering: Tree-based, not as scalable, captures hierarchical relationships, less sensitive to cluster shapes.
+        \end{itemize}
+    \end{solution}
+    
+    \question[5]
+    Suppose you have a dataset with outliers, and you want to use a clustering algorithm that is less sensitive to outliers. Which clustering algorithm would you choose, and why?
+    
+    \begin{solution}[3in]
+        DBSCAN (Density-Based Spatial Clustering of Applications with Noise) would be a good choice because it can identify clusters of varying shapes and is less sensitive to outliers. It defines clusters as dense regions separated by sparser regions, making it robust against outliers.
+    \end{solution}
+
+    \question[10]
+    Explain the concept of Principal Component Analysis (PCA) in the context of dimensionality reduction. How does PCA work, and what is the primary goal of this technique in machine learning?
+    
+    \begin{solution}[5in]
+        Principal Component Analysis (PCA) is a dimensionality reduction technique used in machine learning and statistics. Its primary goal is to transform high-dimensional data into a lower-dimensional representation while retaining as much of the original variability as possible. PCA achieves this by identifying and selecting the principal components, which are linear combinations of the original features.
+
+        The steps involved in PCA are as follows:
+        \begin{itemize}
+        \item Normalization: Standardize the data to have zero mean and unit variance.
+        \item Covariance Matrix: Compute the covariance matrix of the standardized data.
+        \item Eigendecomposition: Find the eigenvectors and eigenvalues of the covariance matrix.
+        \item Principal Components: Sort the eigenvectors by their corresponding eigenvalues in descending order to obtain the principal components.
+        \item Projection: Project the original data onto the selected principal components to obtain a reduced-dimensional representation.
+        \end{itemize}
+        PCA is widely used for reducing the dimensionality of datasets, eliminating redundant information, and improving computational efficiency in machine learning models.
+    \end{solution}
+
+    \question[10]
+    Explain the concept of a Random Forest in machine learning. What are the key components of a Random Forest, and how does it contribute to the overall performance of the algorithm? Additionally, how does a Random Forest handle overfitting compared to a single decision tree?
+
+    \begin{solution}[5in]
+    A Random Forest is an ensemble learning method in machine learning that operates by constructing a multitude of decision trees during training and outputs the mode of the classes for classification tasks or the average prediction for regression tasks.
+
+Key components of a Random Forest include:
+\begin{itemize}
+\item Decision Trees: The base learner in a Random Forest is a decision tree. However, instead of using a single decision tree, a forest is constructed by training multiple trees.
+\item Random Subspace Sampling: During the training process, each decision tree in the forest is trained on a random subset of the features, known as the random subspace. This introduces diversity among the trees.
+\item Bootstrap Aggregating (Bagging): Each tree in the forest is trained on a bootstrapped sample of the original dataset. Bagging helps in reducing variance and improving the generalization of the model.
+\item Voting or Averaging: For classification tasks, the final prediction is determined by a majority vote from all the trees, while for regression tasks, it is the average prediction across all trees.
+\end{itemize}
+The Random Forest addresses overfitting compared to a single decision tree through the following mechanisms:
+\begin{itemize}
+\item Diversity: The use of random subspace sampling and bagging introduces diversity among the trees, making the overall model more robust and less prone to overfitting.
+\item Ensemble Averaging: The combination of predictions from multiple trees helps to smooth out individual tree idiosyncrasies and reduces the risk of capturing noise in the data.
+\item Out-of-Bag (OOB) Error: Random Forests use an out-of-bag error estimate during training, which is calculated on data not used in the bootstrap sample. This provides an unbiased estimate of the model's performance and helps in monitoring for overfitting.
+\end{itemize}
+In summary, a Random Forest is a powerful ensemble learning method that leverages the strength of multiple decision trees, introduces randomness to improve generalization, and effectively addresses overfitting concerns.
+    
+    \end{solution}
+
+    \question[10]
+    Explain the key concepts and components of Convolutional Neural Networks (CNNs) in the context of image processing. What is the role of convolutional layers, pooling layers, and fully connected layers in a typical CNN architecture? Also, how do CNNs capture hierarchical features in images?
+    
+    \begin{solution}[5in]
+        Convolutional Neural Networks (CNNs) are a class of deep neural networks designed for tasks related to image processing and computer vision. The key components of CNNs include convolutional layers, pooling layers, and fully connected layers.
+        \begin{itemize}
+        \item Convolutional Layers:
+        Convolutional layers apply convolution operations to the input data. These operations involve sliding small filters (kernels) across the input image to extract local features.
+        The filters learn to detect patterns like edges, textures, and simple shapes. Multiple filters are used to capture various features.
+
+        \item Pooling Layers:
+        Pooling layers downsample the spatial dimensions of the feature maps produced by convolutional layers. Common pooling operations include max pooling and average pooling.
+        Pooling helps reduce the dimensionality of the data, making it computationally efficient. It also introduces a form of translation invariance.
+        \item Fully Connected Layers:
+        Fully connected layers process the high-level features learned by the previous layers and make final predictions.
+        These layers connect every neuron to every neuron in the previous and subsequent layers, forming a traditional neural network structure.
+        \end{itemize}
+        CNNs capture hierarchical features in images through the arrangement of convolutional layers:
+        
+        Early layers detect simple features like edges and textures.
+        Intermediate layers combine simple features to detect more complex patterns and shapes.
+        Deep layers represent high-level features and object compositions.
+        CNNs leverage parameter sharing and local connectivity in convolutional layers, enabling them to learn hierarchical representations efficiently. The shared weights in convolutional layers allow the network to recognize the same pattern regardless of its location in the input, contributing to the model's translation invariance.
+        
+        In summary, CNNs use convolutional layers to extract local features, pooling layers to downsample and enhance translation invariance, and fully connected layers for high-level feature processing. The hierarchical structure of CNNs enables them to learn and represent complex visual features in images.
+    \end{solution}
+
+
+    \question[10] Can you briefly explain the different steps in this code? 
+
+    \begin{lstlisting}
+import tensorflow as tf
+mnist = tf.keras.datasets.mnist
+(train_images, train_labels), (test_images, test_labels) = mnist.load_data()
+train_images, test_images = train_images / 255.0, test_images / 255.0
+model = tf.keras.Sequential([
+        tf.keras.layers.Flatten(input_shape=(28, 28)),
+        tf.keras.layers.Dense(128, activation='relu'),
+        tf.keras.layers.Dense(10, activation='softmax')
+        ])
+model.compile(optimizer='adam',
+              loss='sparse_categorical_crossentropy',
+              metrics=['accuracy'])
+model.fit(train_images, train_labels, epochs=5)
+test_loss, test_acc = model.evaluate(test_images, test_labels)
+print("Test accuracy:", test_acc)
+        \end{lstlisting}
+
+        \begin{solution}[5in]
+
+    \begin{lstlisting}[caption={TensorFlow Pseudocode for Simple Neural Network}, label={lst:tensorflow_pseudocode}]
+import tensorflow as tf
+        
+# Load MNIST dataset
+mnist = tf.keras.datasets.mnist
+(train_images, train_labels), (test_images, test_labels) = mnist.load_data()
+        
+# Normalize pixel values
+train_images, test_images = train_images / 255.0, test_images / 255.0
+        
+# Build the neural network model
+model = tf.keras.Sequential([
+        tf.keras.layers.Flatten(input_shape=(28, 28)),
+        tf.keras.layers.Dense(128, activation='relu'),
+        tf.keras.layers.Dense(10, activation='softmax')
+        ])
+        
+# Compile the model
+model.compile(optimizer='adam',
+              loss='sparse_categorical_crossentropy',
+              metrics=['accuracy'])
+        
+# Train the model
+model.fit(train_images, train_labels, epochs=5)
+        
+# Evaluate the model
+test_loss, test_acc = model.evaluate(test_images, test_labels)
+print("Test accuracy:", test_acc)
+        \end{lstlisting}
+        \end{solution}
+    \end{questions}
+
+\end{document}
